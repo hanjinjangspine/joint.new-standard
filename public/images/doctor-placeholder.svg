@@ -1,0 +1,13 @@
+<svg width="560" height="680" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">의료진 사진 placeholder</title>
+  <desc id="desc">실제 의료진 사진으로 교체 가능한 placeholder 이미지</desc>
+  <rect width="560" height="680" rx="20" fill="#F2F7FA"/>
+  <rect x="64" y="72" width="432" height="536" rx="20" fill="white"/>
+  <circle cx="280" cy="208" r="76" fill="#D7E8F2"/>
+  <path d="M180 456C190 371 226 320 280 320C334 320 370 371 380 456" fill="#E4EEF5"/>
+  <path d="M202 456H358V552H202V456Z" fill="#2E5A79"/>
+  <path d="M236 332L280 396L324 332" stroke="#2E5A79" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="164" y="560" width="232" height="14" rx="7" fill="#D7E8F2"/>
+  <rect x="204" y="590" width="152" height="12" rx="6" fill="#E4EEF5"/>
+  <path d="M428 116V156M408 136H448" stroke="#3B6E91" stroke-width="10" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,66 @@
+import Link from "next/link";
+import { hospitalInfo, navItems } from "@/lib/data";
+
+export default function Footer() {
+  return (
+    <footer className="border-t border-line bg-brand-900 text-white">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
+        <div>
+          <p className="text-lg font-bold">{hospitalInfo.centerName}</p>
+          <p className="mt-2 text-sm font-semibold uppercase text-brand-100">
+            {hospitalInfo.englishName}
+          </p>
+          <p className="mt-5 max-w-xl text-base leading-8 text-brand-100">
+            {hospitalInfo.commonNotice}
+          </p>
+          <p className="mt-3 max-w-xl text-base leading-8 text-brand-100">
+            {hospitalInfo.officialRelationship}
+          </p>
+          <p className="mt-4 text-sm leading-7 text-brand-100">
+            진료와 치료 방향은 환자 상태와 검사 결과에 따라 달라질 수 있습니다.
+          </p>
+        </div>
+
+        <div>
+          <p className="text-base font-bold">진료 안내</p>
+          <ul className="mt-4 grid gap-2 text-sm text-brand-100">
+            <li>{hospitalInfo.hospitalName}</li>
+            <li>{hospitalInfo.address}</li>
+            <li>
+              대표전화{" "}
+              <Link href={hospitalInfo.consultationPhoneHref} className="hover:text-white">
+                {hospitalInfo.phone}
+              </Link>
+            </li>
+            <li>진료시간: {hospitalInfo.hours}</li>
+            <li>
+              공식 홈페이지{" "}
+              <Link
+                href={hospitalInfo.officialWebsiteUrl}
+                className="hover:text-white"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {hospitalInfo.officialWebsiteUrl}
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p className="text-base font-bold">바로가기</p>
+          <nav aria-label="푸터 메뉴" className="mt-4 grid grid-cols-2 gap-2 text-sm">
+            {navItems.map((item) => (
+              <Link key={item.href} href={item.href} className="text-brand-100 hover:text-white">
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+      <div className="border-t border-white/10 px-4 py-5 text-center text-xs text-brand-100">
+        © {new Date().getFullYear()} {hospitalInfo.hospitalName}. All rights reserved.
+      </div>
+    </footer>
+  );
+}

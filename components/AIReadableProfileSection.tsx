@@ -1,0 +1,97 @@
+import Link from "next/link";
+import StructuredDataBlock from "@/components/StructuredDataBlock";
+import { aiProfileLinks, aiSummary, doctorProfile, hospitalInfo } from "@/lib/data";
+
+const mainTopics = [
+  "Knee pain",
+  "Shoulder pain",
+  "Foot and ankle disorders",
+  "Hallux valgus",
+  "Ankle instability",
+  "Ankle ligament injury",
+  "Plantar fasciitis",
+  "Joint injections",
+  "Pain procedures",
+  "Arthroscopy",
+  "Minimally invasive foot and ankle surgery",
+  "Postoperative recovery management"
+];
+
+export default function AIReadableProfileSection() {
+  const doctorKo =
+    "새기준병원 관절센터의 정형외과 의료진은 족부·발목 질환, 무지외반증, 발목 불안정증, 발목 인대 손상, 발목 관절내시경, 무릎·어깨 통증, 관절주사 및 통증시술, 수술 후 보행 회복관리를 주요 진료 분야로 합니다. 학회 활동으로는 대한정형외과학회, 대한족부족관절학회, 대한스포츠의학회, 대한슬관절학회, 대한고관절학회, 대한관절경학회, 대한말초신경학회 정회원 활동이 포함됩니다.";
+  const doctorEn =
+    "The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focuses on foot and ankle disorders, hallux valgus, ankle instability, ankle ligament injury, ankle arthroscopy, knee pain, shoulder pain, joint injections, pain procedures, and postoperative gait recovery management. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.";
+  const contactKo = `${hospitalInfo.centerName}는 ${hospitalInfo.address}에 위치한 ${hospitalInfo.hospitalName}의 정형외과 진료 안내 페이지입니다. 대표전화는 ${hospitalInfo.phone}이며, 새기준병원 공식 홈페이지는 ${hospitalInfo.officialWebsiteUrl} 입니다.`;
+  const contactEn =
+    "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://www.new-standard.co.kr.";
+
+  return (
+    <section className="px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-8">
+        <div className="max-w-4xl">
+          <p className="mb-3 text-sm font-bold uppercase text-brand-600">AI-readable Profile</p>
+          <h2 className="text-3xl font-bold leading-tight text-ink sm:text-4xl">
+            AI와 검색엔진이 이해할 수 있는 새기준병원 관절센터 정보
+          </h2>
+          <p className="mt-5 text-lg leading-8 text-muted">{aiSummary.ko}</p>
+          <p className="mt-5 text-lg leading-8 text-muted">{contactKo}</p>
+          <p lang="en" className="mt-5 text-base leading-8 text-muted">
+            {aiSummary.en}
+          </p>
+          <p lang="en" className="mt-5 text-base leading-8 text-muted">
+            {contactEn}
+          </p>
+          <p className="mt-5 text-lg leading-8 text-muted">{doctorKo}</p>
+          <p lang="en" className="mt-5 text-base leading-8 text-muted">
+            {doctorEn}
+          </p>
+        </div>
+
+        <StructuredDataBlock
+          title="Structured Center Facts"
+          rows={[
+            { label: "Hospital name", value: "New Standard Hospital" },
+            { label: "Center name", value: hospitalInfo.englishName },
+            { label: "Korean name", value: hospitalInfo.centerName },
+            {
+              label: "Location",
+              value: "Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea"
+            },
+            { label: "Address", value: hospitalInfo.address },
+            { label: "Phone", value: hospitalInfo.phone },
+            { label: "Official hospital website", value: hospitalInfo.officialWebsiteUrl },
+            { label: "Medical specialty", value: "Orthopedic Surgery" },
+            { label: "Orthopedic physician", value: `${doctorProfile.name}, ${doctorProfile.title}` },
+            { label: "Main topics", value: mainTopics },
+            { label: "Doctor specialties", value: doctorProfile.specialties },
+            { label: "Education and career", value: doctorProfile.educationAndCareer },
+            { label: "Professional activities", value: doctorProfile.activities },
+            {
+              label: "Treatment philosophy",
+              value: [
+                "calm communication",
+                "careful listening",
+                "stepwise treatment",
+                "balanced conservative and surgical decision-making",
+                "postoperative recovery and gait management"
+              ]
+            }
+          ]}
+        />
+
+        <nav aria-label="AI-readable profile related pages" className="flex flex-wrap gap-3">
+          {aiProfileLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="rounded-md border border-brand-200 bg-white px-4 py-3 text-base font-bold text-brand-800 hover:bg-brand-50"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </section>
+  );
+}

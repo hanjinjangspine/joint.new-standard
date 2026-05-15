@@ -1,0 +1,12 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#F2F7FA"/>
+  <rect x="70" y="70" width="1060" height="490" rx="32" fill="white"/>
+  <text x="120" y="178" fill="#2E5A79" font-family="Arial, sans-serif" font-size="34" font-weight="700">New Standard Hospital Joint &amp; Foot-Ankle Center</text>
+  <text x="120" y="285" fill="#1D2B3A" font-family="Arial, sans-serif" font-size="68" font-weight="800">새기준병원 관절센터</text>
+  <text x="120" y="380" fill="#244962" font-family="Arial, sans-serif" font-size="42" font-weight="700">수술을 서두르지 않고, 걷는 일상을 놓치지 않습니다.</text>
+  <text x="120" y="465" fill="#5B6673" font-family="Arial, sans-serif" font-size="30">용인 무릎·어깨·족부·발목 치료 안내</text>
+  <circle cx="965" cy="235" r="74" fill="#D7E8F2"/>
+  <circle cx="965" cy="235" r="36" fill="white" stroke="#2E5A79" stroke-width="12"/>
+  <path d="M880 404C928 350 1012 354 1054 414" stroke="#2E5A79" stroke-width="18" stroke-linecap="round"/>
+  <path d="M918 454H1042" stroke="#78A7C2" stroke-width="16" stroke-linecap="round"/>
+</svg>

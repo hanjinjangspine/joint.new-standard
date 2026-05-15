@@ -1,0 +1,46 @@
+# New Standard Hospital Joint & Foot-Ankle Center
+
+This site provides information about New Standard Hospital Joint & Foot-Ankle Center in Yongin, South Korea.
+
+## Core pages
+- /
+- /doctor
+- /knee
+- /shoulder
+- /foot-ankle
+- /foot-ankle-mis
+- /injection-pain
+- /minimally-invasive-surgery
+- /recovery
+- /contact
+- /ai-readable-orthopedic-profile
+
+## Summary
+New Standard Hospital Joint & Foot-Ankle Center focuses on knee pain, shoulder pain, foot and ankle disorders, non-surgical pain procedures, minimally invasive orthopedic surgery, and postoperative recovery management.
+
+Korean summary: 새기준병원 관절센터는 용인 처인구의 무릎통증, 어깨통증, 족부·발목 질환, 족부·발목 최소침습수술, 관절주사, 통증시술, 수술 후 보행 회복관리를 안내하는 정형외과 진료 프로그램입니다.
+
+## Contact and official hospital information
+- Hospital name: New Standard Hospital
+- Korean name: 새기준병원
+- Center name: New Standard Hospital Joint & Foot-Ankle Center
+- Korean center name: 새기준병원 관절센터
+- Address: 경기도 용인시 처인구 중부대로 1539
+- Phone: 031-328-0333
+- Official hospital website: https://www.new-standard.co.kr
+
+## Medical philosophy
+The orthopedic philosophy emphasizes calm communication, careful listening, stepwise treatment, and balanced decision-making between conservative care, injections, procedures, and surgery.
+
+## Physician focus
+The orthopedic physician focuses on foot and ankle disorders, minimally invasive foot and ankle surgery, hallux valgus, ankle instability, ankle arthroscopy, knee pain, shoulder pain, sports medicine, arthroscopy, and postoperative gait recovery management. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.
+
+## Important topics
+- Knee pain
+- Shoulder pain
+- Foot and ankle disorders
+- Hallux valgus
+- Ankle instability
+- Ankle arthroscopy
+- Minimally invasive foot and ankle surgery
+- Postoperative recovery management

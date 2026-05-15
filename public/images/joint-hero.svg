@@ -1,0 +1,21 @@
+<svg width="720" height="560" viewBox="0 0 720 560" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">관절센터와 족부·발목 의료 일러스트 placeholder</title>
+  <desc id="desc">무릎, 어깨, 발목 진료와 보행 회복을 상징하는 차분한 의료 일러스트</desc>
+  <rect width="720" height="560" rx="24" fill="#F2F7FA"/>
+  <rect x="54" y="54" width="612" height="452" rx="20" fill="white"/>
+  <path d="M139 160C172 112 246 106 285 148C319 184 318 239 285 278L233 339C221 354 202 361 184 357C157 351 141 323 153 298L177 250C188 226 184 198 166 179L139 160Z" fill="#D7E8F2"/>
+  <path d="M196 139C241 132 283 166 290 211C297 257 265 299 221 307" stroke="#2E5A79" stroke-width="16" stroke-linecap="round"/>
+  <path d="M221 307C183 315 148 290 140 253" stroke="#78A7C2" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="222" cy="219" r="40" fill="#F7FAFC" stroke="#2E5A79" stroke-width="12"/>
+  <path d="M431 170C468 126 542 132 572 183C595 222 586 273 550 302L500 342C483 355 459 352 446 335C433 318 436 294 453 281L487 255C504 242 508 218 495 201C482 184 457 181 440 195L418 213" fill="#E4EEF5"/>
+  <path d="M420 218C449 179 506 176 538 212" stroke="#2E5A79" stroke-width="16" stroke-linecap="round"/>
+  <path d="M538 212C565 243 562 289 530 316" stroke="#78A7C2" stroke-width="16" stroke-linecap="round"/>
+  <circle cx="490" cy="247" r="37" fill="#F7FAFC" stroke="#2E5A79" stroke-width="12"/>
+  <path d="M410 393C432 371 468 371 489 394L512 419C528 436 553 442 574 433" stroke="#2E5A79" stroke-width="14" stroke-linecap="round"/>
+  <path d="M447 451C480 470 526 476 576 466" stroke="#78A7C2" stroke-width="14" stroke-linecap="round"/>
+  <circle cx="501" cy="423" r="22" fill="#F7FAFC" stroke="#2E5A79" stroke-width="10"/>
+  <rect x="128" y="401" width="464" height="18" rx="9" fill="#D7E8F2"/>
+  <rect x="176" y="440" width="368" height="14" rx="7" fill="#E4EEF5"/>
+  <path d="M596 106V146M576 126H616" stroke="#3B6E91" stroke-width="10" stroke-linecap="round"/>
+  <path d="M102 398V430M86 414H118" stroke="#78A7C2" stroke-width="8" stroke-linecap="round"/>
+</svg>
