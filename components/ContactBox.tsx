@@ -1,8 +1,16 @@
 import Link from "next/link";
 import { CalendarCheck, Clock, ExternalLink, MapPin, Phone, Youtube } from "lucide-react";
+import GoogleMapEmbed from "@/components/GoogleMapEmbed";
 import { hospitalInfo } from "@/lib/data";
 
 export default function ContactBox() {
+  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
+  const googleMapEmbedSrc = googleMapsApiKey
+    ? `https://www.google.com/maps/embed/v1/place?key=${googleMapsApiKey}&q=${encodeURIComponent(
+        hospitalInfo.googleMapEmbedQuery
+      )}&language=ko&region=KR`
+    : undefined;
+
   const rows = [
     { icon: MapPin, label: "병원명", value: hospitalInfo.hospitalName },
     { icon: MapPin, label: "센터명", value: hospitalInfo.centerName },
@@ -72,7 +80,7 @@ export default function ContactBox() {
             </Link>
             <Link
               href="#contact-map"
-              aria-label="새기준병원 관절센터 오시는 길 지도 영역으로 이동"
+              aria-label="새기준병원 관절센터 위치 안내로 이동"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50 sm:col-span-2"
             >
               <MapPin aria-hidden="true" size={19} />
@@ -80,27 +88,20 @@ export default function ContactBox() {
             </Link>
           </div>
           <div className="mt-5 rounded-lg bg-brand-50 p-4 text-sm leading-7 text-muted">
-            <p>네이버 예약 링크: {hospitalInfo.naverReservationUrl}</p>
+            <p>네이버 예약 버튼을 통해 진료 예약 페이지로 이동할 수 있습니다.</p>
             <p>
               유튜브: 새기준병원 유튜브 채널에서 병원 소식과 건강 정보를 확인하실 수 있습니다.
             </p>
-            <p>유튜브 링크: {hospitalInfo.youtubeUrl}</p>
-            <p>공식 홈페이지 링크: {hospitalInfo.officialWebsiteUrl}</p>
+            <p>진료시간은 네이버 예약 또는 대표전화로 확인해 주세요.</p>
           </div>
         </div>
 
         <div id="contact-map" className="rounded-lg border border-line bg-brand-50 p-6">
           <h2 className="text-2xl font-bold text-ink">오시는 길</h2>
-          <div className="mt-6 flex min-h-[320px] items-center justify-center rounded-lg border border-dashed border-brand-200 bg-white p-8 text-center">
-            <div>
-              <MapPin aria-hidden="true" className="mx-auto text-brand-700" size={38} />
-              <p className="mt-4 text-xl font-bold text-ink">지도 영역</p>
-              <p className="mt-3 text-base leading-7 text-muted">
-                주소를 기준으로 위치를 확인해 주세요.
-              </p>
-              <p className="mt-2 text-base font-semibold text-brand-800">{hospitalInfo.address}</p>
-            </div>
-          </div>
+          <p className="mt-3 text-base leading-7 text-muted">
+            {hospitalInfo.address}
+          </p>
+          <GoogleMapEmbed src={googleMapEmbedSrc} />
         </div>
       </div>
     </section>

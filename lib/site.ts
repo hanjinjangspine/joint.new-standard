@@ -1,7 +1,8 @@
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://joint.new-standard.co.kr";
+  process.env.NEXT_PUBLIC_SITE_URL || "https://joint-new-standard.vercel.app";
 
 export const BASE_URL_CANDIDATES = [
+  "https://joint-new-standard.vercel.app",
   "https://joint.new-standard.co.kr",
   "https://ortho.new-standard.co.kr",
   "https://newstandard-joint.com"
@@ -18,5 +19,9 @@ export const siteConfig = {
   naverReservationUrl:
     "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
   youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
+  naverMapUrl: "https://map.naver.com/p/search/새기준병원",
+  googleMapUrl:
+    "https://www.google.com/maps/search/?api=1&query=새기준병원%20경기도%20용인시%20처인구%20중부대로%201539",
+  googleMapEmbedQuery: "새기준병원,경기도 용인시 처인구 중부대로 1539",
   baseUrl: BASE_URL
 };

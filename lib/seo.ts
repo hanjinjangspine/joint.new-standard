@@ -96,17 +96,29 @@ export function siteJsonLd() {
         name: hospitalInfo.centerName,
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
-        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
+        sameAs: [
+          hospitalInfo.officialWebsiteUrl,
+          hospitalInfo.youtubeUrl,
+          hospitalInfo.naverReservationUrl
+        ],
+        hasMap: hospitalInfo.googleMapUrl,
         parentOrganization: { "@id": hospitalId },
-        medicalSpecialty: {
-          "@type": "MedicalSpecialty",
-          name: "Orthopedic Surgery"
-        },
+        medicalSpecialty: ["Orthopedic", "PainMedicine", "PhysicalTherapy", "SportsMedicine"],
+        availableService: [
+          "무릎 통증 진료",
+          "어깨 통증 진료",
+          "족부·발목 질환 진료",
+          "관절 비수술 치료",
+          "관절 수술 치료",
+          "초음파 유도 주사치료",
+          "족부·발목 최소침습수술",
+          "수술 후 보행 회복관리"
+        ],
         address: {
           "@type": "PostalAddress",
-          streetAddress: hospitalInfo.address,
-          addressLocality: "용인시 처인구",
-          addressRegion: "경기도",
+          streetAddress: "중부대로 1539",
+          addressLocality: "처인구",
+          addressRegion: "용인시 경기도",
           addressCountry: "KR"
         },
         areaServed: ["Yongin", "Cheoin-gu", "Gyeonggi-do"],
@@ -148,9 +160,9 @@ export function siteJsonLd() {
         telephone: hospitalInfo.phone,
         address: {
           "@type": "PostalAddress",
-          streetAddress: hospitalInfo.address,
-          addressLocality: "용인시 처인구",
-          addressRegion: "경기도",
+          streetAddress: "중부대로 1539",
+          addressLocality: "처인구",
+          addressRegion: "용인시 경기도",
           addressCountry: "KR"
         }
       },
