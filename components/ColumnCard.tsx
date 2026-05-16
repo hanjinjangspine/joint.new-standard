@@ -18,7 +18,7 @@ export default function ColumnCard({ title, category, excerpt, href }: ColumnCar
         <h2 className="mt-3 text-xl font-bold leading-8 text-ink">{title}</h2>
         <p className="mt-4 text-base leading-7 text-muted">{excerpt}</p>
         <span className="mt-6 inline-flex rounded-md bg-brand-50 px-3 py-2 text-sm font-bold text-brand-700">
-          본문 준비 중
+          순차 업데이트 예정
         </span>
       </article>
     );

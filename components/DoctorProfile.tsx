@@ -1,5 +1,5 @@
 import CTAButtons from "@/components/CTAButtons";
-import { doctorProfile } from "@/lib/data";
+import { clinicHoursSummary, doctorProfile } from "@/lib/data";
 
 export default function DoctorProfile() {
   return (
@@ -55,6 +55,17 @@ export default function DoctorProfile() {
           <div className="mt-8 rounded-lg border border-line bg-white p-6">
             <h3 className="text-xl font-bold text-ink">진료 철학</h3>
             <p className="mt-4 text-lg leading-8 text-muted">{doctorProfile.philosophy}</p>
+          </div>
+
+          <div className="mt-8 rounded-lg border border-brand-100 bg-brand-50 p-6">
+            <h3 className="text-xl font-bold text-ink">김동희 원장 진료시간</h3>
+            <p className="mt-4 text-lg font-bold leading-8 text-brand-900">
+              {clinicHoursSummary.orthopedicDoctor}
+            </p>
+            <p className="mt-3 text-base leading-7 text-muted">
+              진료 일정은 병원 상황에 따라 변경될 수 있으므로 내원 전 대표전화
+              031-328-0333으로 확인해 주세요.
+            </p>
           </div>
           <CTAButtons className="mt-8" />
         </div>

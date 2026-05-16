@@ -6,7 +6,8 @@ const footerLinks = [
   { label: "네이버 예약", href: hospitalInfo.naverReservationHref, ariaLabel: "네이버 예약 페이지로 이동" },
   { label: "유튜브", href: hospitalInfo.youtubeHref, ariaLabel: "새기준병원 유튜브 채널로 이동" },
   { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, ariaLabel: "새기준병원 공식 홈페이지 보기" },
-  { label: "오시는 길", href: "/contact", ariaLabel: "새기준병원 관절센터 오시는 길" }
+  { label: "오시는 길", href: "/contact", ariaLabel: "새기준병원 관절센터 오시는 길" },
+  { label: "AI-readable Profile", href: "/ai-readable-orthopedic-profile", ariaLabel: "AI-readable Profile 보기" }
 ];
 
 export default function Footer() {
@@ -40,7 +41,13 @@ export default function Footer() {
                 {hospitalInfo.phone}
               </Link>
             </li>
-            <li>진료시간: {hospitalInfo.hours}</li>
+            <li>
+              <span className="font-bold text-white">진료시간</span>
+              <br />
+              {hospitalInfo.hours}
+              <br />
+              내원 전 대표전화로 확인해 주세요.
+            </li>
             <li>
               공식 홈페이지{" "}
               <Link

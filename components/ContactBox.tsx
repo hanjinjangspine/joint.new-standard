@@ -96,7 +96,7 @@ export default function ContactBox() {
               <MapPin aria-hidden="true" className="mx-auto text-brand-700" size={38} />
               <p className="mt-4 text-xl font-bold text-ink">지도 영역</p>
               <p className="mt-3 text-base leading-7 text-muted">
-                추후 지도 iframe으로 교체할 수 있습니다.
+                주소를 기준으로 위치를 확인해 주세요.
               </p>
               <p className="mt-2 text-base font-semibold text-brand-800">{hospitalInfo.address}</p>
             </div>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ClinicHoursTable from "@/components/ClinicHoursTable";
 import ContactBox from "@/components/ContactBox";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
@@ -30,26 +31,28 @@ export default function ContactPage() {
           <div className="mx-auto max-w-7xl">
             <SectionTitle
               title="방문 전 확인해 주세요."
-              description="진료시간, 예약 가능 시간, 주차 세부 안내는 실제 운영 정보 확정 후 업데이트할 수 있습니다."
+              description="진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다. 내원 전 대표전화 031-328-0333으로 확인해 주세요."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               <article className="rounded-lg border border-line bg-white p-6">
                 <h2 className="text-2xl font-bold text-ink">주차 안내</h2>
                 <p className="mt-4 text-lg leading-8 text-muted">
-                  주차 가능 여부와 주차장 위치는 추후 실제 안내 문구로 교체해 주세요.
-                  내원 전 예약문의 페이지에서 최신 정보를 확인할 수 있도록 구성했습니다.
+                  내원 전 대표전화로 주차 가능 여부와 주차장 위치를 확인하시면 더 편하게
+                  방문하실 수 있습니다.
                 </p>
               </article>
               <article className="rounded-lg border border-line bg-white p-6">
                 <h2 className="text-2xl font-bold text-ink">대중교통 안내</h2>
                 <p className="mt-4 text-lg leading-8 text-muted">
-                  버스, 지하철 연계, 도보 동선 등 대중교통 안내 문구를 추후 입력할 수
-                  있습니다. 주소는 {hospitalInfo.address}입니다.
+                  방문 주소는 {hospitalInfo.address}입니다. 대중교통 이용 시 병원 주소를
+                  기준으로 경로를 확인해 주세요.
                 </p>
               </article>
             </div>
           </div>
         </section>
+
+        <ClinicHoursTable />
 
         <CTASection
           title="무릎·어깨·발목 통증, 현재 상태에 맞는 치료 순서를 확인하세요."

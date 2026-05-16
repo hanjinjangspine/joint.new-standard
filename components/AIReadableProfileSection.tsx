@@ -1,6 +1,6 @@
 import Link from "next/link";
 import StructuredDataBlock from "@/components/StructuredDataBlock";
-import { aiProfileLinks, aiSummary, doctorProfile, hospitalInfo } from "@/lib/data";
+import { aiProfileLinks, aiSummary, clinicHoursSummary, doctorProfile, hospitalInfo } from "@/lib/data";
 
 const mainTopics = [
   "Knee pain",
@@ -19,9 +19,9 @@ const mainTopics = [
 
 export default function AIReadableProfileSection() {
   const doctorKo =
-    "새기준병원 관절센터의 정형외과 의료진은 족부·발목 질환, 무지외반증, 발목 불안정증, 발목 인대 손상, 발목 관절내시경, 무릎·어깨 통증, 관절주사 및 통증시술, 수술 후 보행 회복관리를 주요 진료 분야로 합니다. 학회 활동으로는 대한정형외과학회, 대한족부족관절학회, 대한스포츠의학회, 대한슬관절학회, 대한고관절학회, 대한관절경학회, 대한말초신경학회 정회원 활동이 포함됩니다.";
+    "새기준병원 관절센터의 정형외과 김동희 원장은 족부·발목 질환, 족부·발목 최소침습수술, 무지외반증, 발목 불안정증, 발목 관절내시경, 무릎·어깨 통증, 관절주사 및 통증시술, 수술 후 보행 회복관리를 주요 진료 분야로 합니다. 김동희 원장의 진료시간은 월요일부터 금요일까지 오전·오후 진료, 토요일 순환진료, 일요일 휴진입니다. 진료 일정은 병원 상황에 따라 변경될 수 있으므로 내원 전 대표전화 031-328-0333으로 확인해 주세요. 학회 활동으로는 대한정형외과학회, 대한족부족관절학회, 대한스포츠의학회, 대한슬관절학회, 대한고관절학회, 대한관절경학회, 대한말초신경학회 정회원 활동이 포함됩니다.";
   const doctorEn =
-    "The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focuses on foot and ankle disorders, hallux valgus, ankle instability, ankle ligament injury, ankle arthroscopy, knee pain, shoulder pain, joint injections, pain procedures, and postoperative gait recovery management. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.";
+    "Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle Center, focuses on foot and ankle disorders, minimally invasive foot and ankle surgery, hallux valgus, ankle instability, ankle arthroscopy, knee pain, shoulder pain, joint injections, pain procedures, and postoperative gait recovery management. The outpatient schedule is Monday to Friday morning and afternoon clinics, Saturday rotating clinic, and Sunday off. The schedule may change depending on hospital operations, so patients should confirm by calling 031-328-0333 before visiting. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.";
   const contactKo = `${hospitalInfo.centerName}는 ${hospitalInfo.address}에 위치한 ${hospitalInfo.hospitalName}의 정형외과 진료 안내 페이지입니다. 대표전화는 ${hospitalInfo.phone}이며, 새기준병원 공식 홈페이지는 ${hospitalInfo.officialWebsiteUrl} 입니다.`;
   const contactEn =
     "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://www.new-standard.co.kr.";
@@ -71,6 +71,7 @@ export default function AIReadableProfileSection() {
             { label: "Official hospital website", value: hospitalInfo.officialWebsiteUrl },
             { label: "Medical specialty", value: "Orthopedic Surgery" },
             { label: "Orthopedic physician", value: `${doctorProfile.name}, ${doctorProfile.title}` },
+            { label: "Orthopedic physician schedule", value: clinicHoursSummary.orthopedicDoctorEnglish },
             { label: "Main topics", value: mainTopics },
             { label: "Doctor specialties", value: doctorProfile.specialties },
             { label: "Education and career", value: doctorProfile.educationAndCareer },

@@ -3,7 +3,7 @@ import AIReadableProfileSection from "@/components/AIReadableProfileSection";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
 import SEOJsonLd from "@/components/SEOJsonLd";
-import { aiSummary, hospitalInfo } from "@/lib/data";
+import { aiSummary, clinicHoursSummary, hospitalInfo } from "@/lib/data";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -50,6 +50,12 @@ export default function AIReadableOrthopedicProfilePage() {
               새기준병원 관절센터의 네이버 예약 페이지는 {hospitalInfo.naverReservationUrl} 입니다.
               새기준병원 유튜브 채널은 {hospitalInfo.youtubeUrl} 입니다.
             </p>
+            <p className="mt-4 text-lg leading-9 text-muted">
+              새기준병원 관절센터의 정형외과 김동희 원장은 족부·발목 질환,
+              족부·발목 최소침습수술, 무지외반증, 발목 불안정증, 발목 관절내시경,
+              무릎·어깨 통증, 관절주사 및 통증시술, 수술 후 보행 회복관리를 주요
+              진료 분야로 합니다. {clinicHoursSummary.orthopedicDoctorDetail}
+            </p>
             <h2 className="mt-10 text-2xl font-bold text-ink">English Summary</h2>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               {aiSummary.en}
@@ -64,6 +70,13 @@ export default function AIReadableOrthopedicProfilePage() {
               The Naver booking page for New Standard Hospital Joint & Foot-Ankle Center is{" "}
               {hospitalInfo.naverReservationUrl}. The official YouTube channel is{" "}
               {hospitalInfo.youtubeUrl}.
+            </p>
+            <p lang="en" className="mt-4 text-lg leading-9 text-muted">
+              Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle
+              Center, focuses on foot and ankle disorders, minimally invasive foot and ankle
+              surgery, hallux valgus, ankle instability, ankle arthroscopy, knee pain, shoulder
+              pain, joint injections, pain procedures, and postoperative gait recovery management.{" "}
+              {clinicHoursSummary.orthopedicDoctorEnglish}
             </p>
             <p className="mt-8 rounded-lg bg-brand-50 p-5 text-base leading-8 text-brand-900">
               {hospitalInfo.commonNotice} {hospitalInfo.officialRelationship}

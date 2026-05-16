@@ -1,6 +1,6 @@
 <svg width="560" height="680" viewBox="0 0 560 680" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-  <title id="title">의료진 사진 placeholder</title>
-  <desc id="desc">실제 의료진 사진으로 교체 가능한 placeholder 이미지</desc>
+  <title id="title">의료진 프로필 이미지</title>
+  <desc id="desc">새기준병원 관절센터 의료진을 나타내는 기본 이미지</desc>
   <rect width="560" height="680" rx="20" fill="#F2F7FA"/>
   <rect x="64" y="72" width="432" height="536" rx="20" fill="white"/>
   <circle cx="280" cy="208" r="76" fill="#D7E8F2"/>

@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import CTASection from "@/components/CTASection";
-import AIReadableProfileSection from "@/components/AIReadableProfileSection";
 import DoctorIntroSection from "@/components/DoctorIntroSection";
 import FAQSection from "@/components/FAQSection";
 import FootAnkleFeature from "@/components/FootAnkleFeature";
 import HeroSection from "@/components/HeroSection";
+import HomeAIReadableSummary from "@/components/HomeAIReadableSummary";
 import SectionTitle from "@/components/SectionTitle";
 import SpecialtyGrid from "@/components/SpecialtyGrid";
 import TreatmentFlow from "@/components/TreatmentFlow";
@@ -44,7 +44,7 @@ export default function HomePage() {
 
       <TreatmentFlow />
       <FootAnkleFeature />
-      <AIReadableProfileSection />
+      <HomeAIReadableSummary />
       <FAQSection />
 
       <CTASection

@@ -4,6 +4,7 @@ import {
   defaultKeywords,
   doctorProfile,
   faqItems,
+  clinicHoursSummary,
   hospitalInfo,
   SITE_URL
 } from "@/lib/data";
@@ -122,6 +123,18 @@ export function siteJsonLd() {
           target: hospitalInfo.naverReservationUrl,
           name: "Naver Booking"
         },
+        additionalProperty: [
+          {
+            "@type": "PropertyValue",
+            name: "Schedule note",
+            value: "Medical schedules vary by physician. Please call 031-328-0333 before visiting."
+          },
+          {
+            "@type": "PropertyValue",
+            name: "Dr. Donghee Kim schedule summary",
+            value: "Monday to Friday: morning and afternoon clinic; Saturday: rotating clinic; Sunday: off."
+          }
+        ],
         description:
           "Provides information about knee pain, shoulder pain, foot and ankle disorders, non-surgical pain procedures, arthroscopy, minimally invasive foot and ankle surgery, and postoperative recovery management.",
         knowsAbout: mainTopics
@@ -150,6 +163,11 @@ export function siteJsonLd() {
         affiliation: { "@id": hospitalId },
         worksFor: { "@id": clinicId },
         jobTitle: doctorProfile.title,
+        additionalProperty: {
+          "@type": "PropertyValue",
+          name: "Outpatient schedule",
+          value: clinicHoursSummary.orthopedicDoctorEnglish
+        },
         knowsAbout: [
           "Foot and ankle disorders",
           "Minimally invasive foot and ankle surgery",

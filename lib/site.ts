@@ -18,6 +18,5 @@ export const siteConfig = {
   naverReservationUrl:
     "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
   youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
-  kakaoUrl: "",
   baseUrl: BASE_URL
 };

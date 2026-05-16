@@ -14,17 +14,110 @@ export const hospitalInfo = {
   naverReservationHref: siteConfig.naverReservationUrl,
   youtubeUrl: siteConfig.youtubeUrl,
   youtubeHref: siteConfig.youtubeUrl,
-  kakaoUrl: siteConfig.kakaoUrl,
-  kakaoHref: "",
   officialWebsiteUrl: siteConfig.officialWebsiteUrl,
   officialWebsiteHref: siteConfig.officialWebsiteUrl,
-  hours: "추후 입력",
+  hours: "월-금 진료 / 토요일 순환진료 / 일요일 의료진별 상이",
+  hoursNote: "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다.",
+  hoursConfirmation: "내원 전 대표전화 031-328-0333으로 확인해 주세요.",
   baseUrl: siteConfig.baseUrl,
   commonNotice:
     "새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료 전문 안내 페이지입니다.",
   officialRelationship:
     "진료 예약 및 병원 기본 정보는 새기준병원 공식 홈페이지에서도 확인하실 수 있습니다."
 };
+
+export const clinicHoursSummary = {
+  footer: "월-금 진료 / 토요일 순환진료 / 일요일 의료진별 상이",
+  contactNotice:
+    "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다. 내원 전 대표전화 031-328-0333으로 확인해 주세요.",
+  orthopedicDoctor:
+    "월-금 오전·오후 진료 / 토요일 순환진료 / 일요일 휴진",
+  orthopedicDoctorDetail:
+    "김동희 원장 진료시간은 월-금 오전·오후 진료, 토요일 순환진료, 일요일 휴진입니다. 진료 일정은 병원 상황에 따라 변경될 수 있으므로 내원 전 대표전화 031-328-0333으로 확인해 주세요.",
+  orthopedicDoctorEnglish:
+    "Dr. Donghee Kim's outpatient schedule is Monday to Friday morning and afternoon clinics, Saturday rotating clinic, and Sunday off. The schedule may change depending on hospital operations, so patients should confirm by calling 031-328-0333 before visiting."
+};
+
+export const doctorSchedules = [
+  {
+    name: "장한진 대표원장",
+    department: "신경외과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 수술", "오후 수술"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 진료"],
+      saturday: ["순환진료"],
+      sunday: ["진료"]
+    }
+  },
+  {
+    name: "홍현진 원장",
+    department: "신경외과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 진료", "오후 진료"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 진료"],
+      saturday: ["순환진료"],
+      sunday: ["휴진"]
+    }
+  },
+  {
+    name: "김동희 원장",
+    department: "정형외과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 진료", "오후 진료"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 진료"],
+      saturday: ["순환진료"],
+      sunday: ["휴진"]
+    }
+  },
+  {
+    name: "곽재욱 원장",
+    department: "소화기내과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 진료", "오후 진료"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 휴진"],
+      saturday: ["순환진료"],
+      sunday: ["휴진"]
+    }
+  },
+  {
+    name: "박영순 원장",
+    department: "마취과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 진료", "오후 진료"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 진료"],
+      saturday: ["순환진료"],
+      sunday: ["휴진"]
+    }
+  },
+  {
+    name: "나대권 원장",
+    department: "영상의학과",
+    schedule: {
+      monday: ["오전 진료", "오후 진료"],
+      tuesday: ["오전 진료", "오후 진료"],
+      wednesday: ["오전 진료", "오후 진료"],
+      thursday: ["오전 진료", "오후 진료"],
+      friday: ["오전 진료", "오후 진료"],
+      saturday: ["순환진료"],
+      sunday: ["휴진"]
+    }
+  }
+];
 
 export const aiSummary = {
   ko:
