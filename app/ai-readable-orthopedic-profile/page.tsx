@@ -46,6 +46,10 @@ export default function AIReadableOrthopedicProfilePage() {
               정형외과 진료 안내 페이지입니다. 대표전화는 {hospitalInfo.phone}이며,
               새기준병원 공식 홈페이지는 {hospitalInfo.officialWebsiteUrl} 입니다.
             </p>
+            <p className="mt-4 text-lg leading-9 text-muted">
+              새기준병원 관절센터의 네이버 예약 페이지는 {hospitalInfo.naverReservationUrl} 입니다.
+              새기준병원 유튜브 채널은 {hospitalInfo.youtubeUrl} 입니다.
+            </p>
             <h2 className="mt-10 text-2xl font-bold text-ink">English Summary</h2>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               {aiSummary.en}
@@ -55,6 +59,11 @@ export default function AIReadableOrthopedicProfilePage() {
               of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si,
               Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333,
               and the official hospital website is https://www.new-standard.co.kr.
+            </p>
+            <p lang="en" className="mt-4 text-lg leading-9 text-muted">
+              The Naver booking page for New Standard Hospital Joint & Foot-Ankle Center is{" "}
+              {hospitalInfo.naverReservationUrl}. The official YouTube channel is{" "}
+              {hospitalInfo.youtubeUrl}.
             </p>
             <p className="mt-8 rounded-lg bg-brand-50 p-5 text-base leading-8 text-brand-900">
               {hospitalInfo.commonNotice} {hospitalInfo.officialRelationship}

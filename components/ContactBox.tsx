@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CalendarCheck, Clock, ExternalLink, MapPin, MessageCircle, Phone } from "lucide-react";
+import { CalendarCheck, Clock, ExternalLink, MapPin, Phone, Youtube } from "lucide-react";
 import { hospitalInfo } from "@/lib/data";
 
 export default function ContactBox() {
@@ -41,6 +41,26 @@ export default function ContactBox() {
               전화 상담
             </Link>
             <Link
+              href={hospitalInfo.naverReservationHref}
+              aria-label="네이버 예약 페이지로 이동"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <CalendarCheck aria-hidden="true" size={19} />
+              네이버 예약
+            </Link>
+            <Link
+              href={hospitalInfo.youtubeHref}
+              aria-label="새기준병원 유튜브 채널로 이동"
+              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Youtube aria-hidden="true" size={19} />
+              유튜브
+            </Link>
+            <Link
               href={hospitalInfo.officialWebsiteUrl}
               aria-label="새기준병원 공식 홈페이지 보기"
               className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50"
@@ -48,23 +68,7 @@ export default function ContactBox() {
               rel="noopener noreferrer"
             >
               <ExternalLink aria-hidden="true" size={19} />
-              공식 홈페이지 보기
-            </Link>
-            <Link
-              href={hospitalInfo.naverReservationHref}
-              aria-label="네이버 예약 placeholder 링크"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50"
-            >
-              <CalendarCheck aria-hidden="true" size={19} />
-              네이버 예약
-            </Link>
-            <Link
-              href={hospitalInfo.kakaoHref}
-              aria-label="카카오 문의 placeholder 링크"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 px-4 py-3 font-bold text-brand-800 hover:bg-brand-50"
-            >
-              <MessageCircle aria-hidden="true" size={19} />
-              카카오 문의
+              공식 홈페이지
             </Link>
             <Link
               href="#contact-map"
@@ -77,7 +81,10 @@ export default function ContactBox() {
           </div>
           <div className="mt-5 rounded-lg bg-brand-50 p-4 text-sm leading-7 text-muted">
             <p>네이버 예약 링크: {hospitalInfo.naverReservationUrl}</p>
-            <p>카카오 문의 링크: {hospitalInfo.kakaoUrl}</p>
+            <p>
+              유튜브: 새기준병원 유튜브 채널에서 병원 소식과 건강 정보를 확인하실 수 있습니다.
+            </p>
+            <p>유튜브 링크: {hospitalInfo.youtubeUrl}</p>
             <p>공식 홈페이지 링크: {hospitalInfo.officialWebsiteUrl}</p>
           </div>
         </div>
@@ -89,7 +96,7 @@ export default function ContactBox() {
               <MapPin aria-hidden="true" className="mx-auto text-brand-700" size={38} />
               <p className="mt-4 text-xl font-bold text-ink">지도 영역</p>
               <p className="mt-3 text-base leading-7 text-muted">
-                추후 네이버 지도 또는 카카오맵 iframe으로 교체할 수 있습니다.
+                추후 지도 iframe으로 교체할 수 있습니다.
               </p>
               <p className="mt-2 text-base font-semibold text-brand-800">{hospitalInfo.address}</p>
             </div>

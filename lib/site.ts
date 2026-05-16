@@ -15,7 +15,9 @@ export const siteConfig = {
   phone: "031-328-0333",
   phoneHref: "tel:031-328-0333",
   officialWebsiteUrl: "https://www.new-standard.co.kr",
-  naverReservationUrl: "추후 입력",
-  kakaoUrl: "추후 입력",
+  naverReservationUrl:
+    "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
+  youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
+  kakaoUrl: "",
   baseUrl: BASE_URL
 };

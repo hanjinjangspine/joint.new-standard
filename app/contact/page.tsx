@@ -9,7 +9,7 @@ import { createMetadata } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "오시는 길·예약문의 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터 오시는 길, 주소, 대표전화 031-328-0333, 공식 홈페이지, 네이버 예약, 카카오 문의, 주차 및 대중교통 안내.",
+    "새기준병원 관절센터 오시는 길, 주소, 대표전화 031-328-0333, 공식 홈페이지, 네이버 예약, 유튜브, 주차 및 대중교통 안내.",
   path: "/contact",
   keywords: ["새기준병원 위치", "용인 처인구 정형외과 예약", "새기준병원 예약"]
 });

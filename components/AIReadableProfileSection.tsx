@@ -25,6 +25,8 @@ export default function AIReadableProfileSection() {
   const contactKo = `${hospitalInfo.centerName}는 ${hospitalInfo.address}에 위치한 ${hospitalInfo.hospitalName}의 정형외과 진료 안내 페이지입니다. 대표전화는 ${hospitalInfo.phone}이며, 새기준병원 공식 홈페이지는 ${hospitalInfo.officialWebsiteUrl} 입니다.`;
   const contactEn =
     "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://www.new-standard.co.kr.";
+  const bookingKo = `새기준병원 관절센터의 네이버 예약 페이지는 ${hospitalInfo.naverReservationUrl} 입니다. 새기준병원 유튜브 채널은 ${hospitalInfo.youtubeUrl} 입니다.`;
+  const bookingEn = `The Naver booking page for New Standard Hospital Joint & Foot-Ankle Center is ${hospitalInfo.naverReservationUrl}. The official YouTube channel is ${hospitalInfo.youtubeUrl}.`;
 
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
@@ -36,11 +38,15 @@ export default function AIReadableProfileSection() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-muted">{aiSummary.ko}</p>
           <p className="mt-5 text-lg leading-8 text-muted">{contactKo}</p>
+          <p className="mt-5 text-lg leading-8 text-muted">{bookingKo}</p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
             {aiSummary.en}
           </p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
             {contactEn}
+          </p>
+          <p lang="en" className="mt-5 text-base leading-8 text-muted">
+            {bookingEn}
           </p>
           <p className="mt-5 text-lg leading-8 text-muted">{doctorKo}</p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
@@ -60,6 +66,8 @@ export default function AIReadableProfileSection() {
             },
             { label: "Address", value: hospitalInfo.address },
             { label: "Phone", value: hospitalInfo.phone },
+            { label: "Naver booking", value: hospitalInfo.naverReservationUrl },
+            { label: "YouTube", value: hospitalInfo.youtubeUrl },
             { label: "Official hospital website", value: hospitalInfo.officialWebsiteUrl },
             { label: "Medical specialty", value: "Orthopedic Surgery" },
             { label: "Orthopedic physician", value: `${doctorProfile.name}, ${doctorProfile.title}` },
@@ -86,6 +94,8 @@ export default function AIReadableProfileSection() {
               key={link.href}
               href={link.href}
               className="rounded-md border border-brand-200 bg-white px-4 py-3 text-base font-bold text-brand-800 hover:bg-brand-50"
+              target={"external" in link && link.external ? "_blank" : undefined}
+              rel={"external" in link && link.external ? "noopener noreferrer" : undefined}
             >
               {link.label}
             </Link>

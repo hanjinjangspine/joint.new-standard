@@ -11,9 +11,11 @@ export const hospitalInfo = {
   phone: siteConfig.phone,
   consultationPhoneHref: siteConfig.phoneHref,
   naverReservationUrl: siteConfig.naverReservationUrl,
-  naverReservationHref: "/contact",
+  naverReservationHref: siteConfig.naverReservationUrl,
+  youtubeUrl: siteConfig.youtubeUrl,
+  youtubeHref: siteConfig.youtubeUrl,
   kakaoUrl: siteConfig.kakaoUrl,
-  kakaoHref: "/contact",
+  kakaoHref: "",
   officialWebsiteUrl: siteConfig.officialWebsiteUrl,
   officialWebsiteHref: siteConfig.officialWebsiteUrl,
   hours: "추후 입력",
@@ -113,12 +115,12 @@ export const ctaActions = [
   {
     label: "네이버 예약",
     href: hospitalInfo.naverReservationHref,
-    ariaLabel: "새기준병원 관절센터 네이버 예약 안내로 이동"
+    ariaLabel: "네이버 예약 페이지로 이동"
   },
   {
-    label: "카카오 문의",
-    href: hospitalInfo.kakaoHref,
-    ariaLabel: "새기준병원 관절센터 카카오 문의 안내로 이동"
+    label: "유튜브",
+    href: hospitalInfo.youtubeHref,
+    ariaLabel: "새기준병원 유튜브 채널로 이동"
   },
   {
     label: "오시는 길",
@@ -715,7 +717,10 @@ export const aiProfileLinks = [
   { label: "어깨통증", href: "/shoulder" },
   { label: "족부·발목", href: "/foot-ankle" },
   { label: "족부·발목 최소침습수술", href: "/foot-ankle-mis" },
-  { label: "예약문의", href: "/contact" }
+  { label: "예약문의", href: "/contact" },
+  { label: "네이버 예약", href: hospitalInfo.naverReservationHref, external: true },
+  { label: "유튜브", href: hospitalInfo.youtubeHref, external: true },
+  { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, external: true }
 ];
 
 export const allStaticPaths = [

@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { CalendarCheck, MapPin, MessageCircle, Phone } from "lucide-react";
+import { CalendarCheck, MapPin, Phone, Youtube } from "lucide-react";
 import { ctaActions } from "@/lib/data";
 
 const iconMap = {
   "전화 상담": Phone,
   "네이버 예약": CalendarCheck,
-  "카카오 문의": MessageCircle,
+  "유튜브": Youtube,
   "오시는 길": MapPin
 };
 

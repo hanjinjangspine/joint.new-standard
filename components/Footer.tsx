@@ -1,5 +1,13 @@
 import Link from "next/link";
-import { hospitalInfo, navItems } from "@/lib/data";
+import { hospitalInfo } from "@/lib/data";
+
+const footerLinks = [
+  { label: "전화 상담", href: hospitalInfo.consultationPhoneHref, ariaLabel: "새기준병원 관절센터 전화 상담" },
+  { label: "네이버 예약", href: hospitalInfo.naverReservationHref, ariaLabel: "네이버 예약 페이지로 이동" },
+  { label: "유튜브", href: hospitalInfo.youtubeHref, ariaLabel: "새기준병원 유튜브 채널로 이동" },
+  { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, ariaLabel: "새기준병원 공식 홈페이지 보기" },
+  { label: "오시는 길", href: "/contact", ariaLabel: "새기준병원 관절센터 오시는 길" }
+];
 
 export default function Footer() {
   return (
@@ -50,11 +58,21 @@ export default function Footer() {
         <div>
           <p className="text-base font-bold">바로가기</p>
           <nav aria-label="푸터 메뉴" className="mt-4 grid grid-cols-2 gap-2 text-sm">
-            {navItems.map((item) => (
-              <Link key={item.href} href={item.href} className="text-brand-100 hover:text-white">
-                {item.label}
-              </Link>
-            ))}
+            {footerLinks.map((item) => {
+              const isExternal = item.href.startsWith("http");
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  aria-label={item.ariaLabel}
+                  className="text-brand-100 hover:text-white"
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </nav>
         </div>
       </div>

@@ -95,7 +95,7 @@ export function siteJsonLd() {
         name: hospitalInfo.centerName,
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
-        sameAs: [hospitalInfo.officialWebsiteUrl],
+        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
         parentOrganization: { "@id": hospitalId },
         medicalSpecialty: {
           "@type": "MedicalSpecialty",
@@ -117,6 +117,11 @@ export function siteJsonLd() {
           areaServed: "KR",
           availableLanguage: ["ko"]
         },
+        potentialAction: {
+          "@type": "ReserveAction",
+          target: hospitalInfo.naverReservationUrl,
+          name: "Naver Booking"
+        },
         description:
           "Provides information about knee pain, shoulder pain, foot and ankle disorders, non-surgical pain procedures, arthroscopy, minimally invasive foot and ankle surgery, and postoperative recovery management.",
         knowsAbout: mainTopics
@@ -126,7 +131,7 @@ export function siteJsonLd() {
         "@id": hospitalId,
         name: hospitalInfo.hospitalName,
         url: hospitalInfo.officialWebsiteUrl,
-        sameAs: [hospitalInfo.officialWebsiteUrl],
+        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
         telephone: hospitalInfo.phone,
         address: {
           "@type": "PostalAddress",

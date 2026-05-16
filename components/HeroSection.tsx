@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, MapPin, MessageCircle, Phone } from "lucide-react";
+import { CalendarCheck, MapPin, Phone, Youtube } from "lucide-react";
 import { ctaActions, doctorProfile, hospitalInfo } from "@/lib/data";
 
 const heroBadges = [
@@ -12,7 +12,7 @@ const heroBadges = [
   "보행 회복관리"
 ];
 
-const icons = [Phone, CalendarCheck, MessageCircle];
+const icons = [Phone, CalendarCheck, Youtube];
 
 export default function HeroSection() {
   const mainActions = ctaActions.slice(0, 3);
@@ -37,6 +37,7 @@ export default function HeroSection() {
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
             {mainActions.map((action, index) => {
               const Icon = icons[index] || Phone;
+              const isExternal = action.href.startsWith("http");
               return (
                 <Link
                   key={action.label}
@@ -47,6 +48,8 @@ export default function HeroSection() {
                       ? "bg-brand-800 text-white hover:bg-brand-900"
                       : "border border-brand-200 bg-white text-brand-800 hover:bg-brand-50"
                   }`}
+                  target={isExternal ? "_blank" : undefined}
+                  rel={isExternal ? "noopener noreferrer" : undefined}
                 >
                   <Icon aria-hidden="true" size={19} />
                   {action.label}
