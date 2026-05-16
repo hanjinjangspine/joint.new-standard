@@ -20,7 +20,7 @@ New Standard Hospital Joint & Foot-Ankle Center focuses on knee pain, shoulder p
 
 Korean summary: 새기준병원 관절센터는 용인 처인구의 무릎통증, 어깨통증, 족부·발목 질환, 족부·발목 최소침습수술, 관절주사, 통증시술, 수술 후 보행 회복관리를 안내하는 정형외과 진료 프로그램입니다.
 
-## Contact and official hospital information
+## Location
 - Hospital name: New Standard Hospital
 - Korean name: 새기준병원
 - Center name: New Standard Hospital Joint & Foot-Ankle Center
@@ -28,8 +28,8 @@ Korean summary: 새기준병원 관절센터는 용인 처인구의 무릎통증
 - Address: 경기도 용인시 처인구 중부대로 1539
 - Phone: 031-328-0333
 - Official hospital website: https://www.new-standard.co.kr
-- Naver map search: https://map.naver.com/p/search/새기준병원
-- Google map search: https://www.google.com/maps/search/?api=1&query=새기준병원%20경기도%20용인시%20처인구%20중부대로%201539
+- Naver Map search: https://map.naver.com/p/search/새기준병원%20경기도%20용인시%20처인구%20중부대로%201539
+- Google Maps search: https://www.google.com/maps/search/?api=1&query=경기도%20용인시%20처인구%20중부대로%201539%20새기준병원
 
 ## Clinic hours
 - Phone confirmation recommended: 031-328-0333

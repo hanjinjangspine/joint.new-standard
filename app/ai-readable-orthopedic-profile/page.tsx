@@ -47,6 +47,13 @@ export default function AIReadableOrthopedicProfilePage() {
               새기준병원 공식 홈페이지는 {hospitalInfo.officialWebsiteUrl} 입니다.
             </p>
             <p className="mt-4 text-lg leading-9 text-muted">
+              새기준병원 관절센터의 주소는 경기도 용인시 처인구 중부대로 1539입니다.
+              대표전화는 031-328-0333입니다. 환자는 네이버 지도 또는 Google 지도에서
+              “새기준병원” 또는 해당 주소를 검색하여 위치를 확인할 수 있습니다.
+              새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료
+              전문 안내 페이지입니다.
+            </p>
+            <p className="mt-4 text-lg leading-9 text-muted">
               새기준병원 관절센터의 네이버 예약 페이지는 {hospitalInfo.naverReservationUrl} 입니다.
               새기준병원 유튜브 채널은 {hospitalInfo.youtubeUrl} 입니다.
             </p>
@@ -65,6 +72,14 @@ export default function AIReadableOrthopedicProfilePage() {
               of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si,
               Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333,
               and the official hospital website is https://www.new-standard.co.kr.
+            </p>
+            <p lang="en" className="mt-4 text-lg leading-9 text-muted">
+              The address of New Standard Hospital Joint & Foot-Ankle Center is 1539
+              Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main
+              phone number is +82-31-328-0333. Patients can find the hospital location by
+              searching for New Standard Hospital or the address in Naver Map or Google Maps.
+              New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care information
+              page operated by New Standard Hospital.
             </p>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               The Naver booking page for New Standard Hospital Joint & Foot-Ankle Center is{" "}

@@ -1,16 +1,9 @@
 import Link from "next/link";
 import { CalendarCheck, Clock, ExternalLink, MapPin, Phone, Youtube } from "lucide-react";
-import GoogleMapEmbed from "@/components/GoogleMapEmbed";
+import LocationGuideCard from "@/components/LocationGuideCard";
 import { hospitalInfo } from "@/lib/data";
 
 export default function ContactBox() {
-  const googleMapsApiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_EMBED_API_KEY;
-  const googleMapEmbedSrc = googleMapsApiKey
-    ? `https://www.google.com/maps/embed/v1/place?key=${googleMapsApiKey}&q=${encodeURIComponent(
-        hospitalInfo.googleMapEmbedQuery
-      )}&language=ko&region=KR`
-    : undefined;
-
   const rows = [
     { icon: MapPin, label: "병원명", value: hospitalInfo.hospitalName },
     { icon: MapPin, label: "센터명", value: hospitalInfo.centerName },
@@ -101,7 +94,7 @@ export default function ContactBox() {
           <p className="mt-3 text-base leading-7 text-muted">
             {hospitalInfo.address}
           </p>
-          <GoogleMapEmbed src={googleMapEmbedSrc} />
+          <LocationGuideCard />
         </div>
       </div>
     </section>

@@ -91,19 +91,45 @@ export function siteJsonLd() {
         publisher: { "@id": hospitalId }
       },
       {
-        "@type": ["MedicalClinic", "LocalBusiness"],
+        "@type": "WebPage",
+        "@id": `${SITE_URL}#home-page`,
+        name: "새기준병원 관절센터",
+        url: SITE_URL,
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: mainTopics
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "새기준병원 관절센터",
+            item: SITE_URL
+          }
+        ]
+      },
+      {
+        "@type": ["MedicalClinic", "LocalBusiness", "MedicalOrganization"],
         "@id": clinicId,
         name: hospitalInfo.centerName,
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
-        sameAs: [
-          hospitalInfo.officialWebsiteUrl,
-          hospitalInfo.youtubeUrl,
-          hospitalInfo.naverReservationUrl
-        ],
+        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
         hasMap: hospitalInfo.googleMapUrl,
-        parentOrganization: { "@id": hospitalId },
-        medicalSpecialty: ["Orthopedic", "PainMedicine", "PhysicalTherapy", "SportsMedicine"],
+        parentOrganization: {
+          "@type": "Hospital",
+          "@id": hospitalId,
+          name: hospitalInfo.hospitalName,
+          url: hospitalInfo.officialWebsiteUrl
+        },
+        medicalSpecialty: [
+          "Orthopedic Surgery",
+          "Foot and Ankle Surgery",
+          "Sports Medicine",
+          "Arthroscopy"
+        ],
         availableService: [
           "무릎 통증 진료",
           "어깨 통증 진료",
@@ -117,11 +143,11 @@ export function siteJsonLd() {
         address: {
           "@type": "PostalAddress",
           streetAddress: "중부대로 1539",
-          addressLocality: "처인구",
-          addressRegion: "용인시 경기도",
+          addressLocality: "처인구, 용인시",
+          addressRegion: "경기도",
           addressCountry: "KR"
         },
-        areaServed: ["Yongin", "Cheoin-gu", "Gyeonggi-do"],
+        areaServed: ["용인시", "처인구", "경기도"],
         telephone: hospitalInfo.phone,
         contactPoint: {
           "@type": "ContactPoint",
@@ -139,7 +165,8 @@ export function siteJsonLd() {
           {
             "@type": "PropertyValue",
             name: "Schedule note",
-            value: "Medical schedules vary by physician. Please call 031-328-0333 before visiting."
+            value:
+              "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있으므로 내원 전 대표전화 031-328-0333으로 확인해 주세요."
           },
           {
             "@type": "PropertyValue",
@@ -161,8 +188,8 @@ export function siteJsonLd() {
         address: {
           "@type": "PostalAddress",
           streetAddress: "중부대로 1539",
-          addressLocality: "처인구",
-          addressRegion: "용인시 경기도",
+          addressLocality: "처인구, 용인시",
+          addressRegion: "경기도",
           addressCountry: "KR"
         }
       },
@@ -233,13 +260,36 @@ export function webPageJsonLd({
   description: string;
   path: string;
 }) {
+  const url = new URL(path, SITE_URL).toString();
+
   return {
     "@context": "https://schema.org",
-    "@type": "WebPage",
-    name: title,
-    description,
-    url: new URL(path, SITE_URL).toString(),
-    isPartOf: { "@id": `${SITE_URL}#website` },
-    about: mainTopics
+    "@graph": [
+      {
+        "@type": "WebPage",
+        name: title,
+        description,
+        url,
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: mainTopics
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "새기준병원 관절센터",
+            item: SITE_URL
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: title,
+            item: url
+          }
+        ]
+      }
+    ]
   };
 }

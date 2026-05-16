@@ -16,7 +16,6 @@ export const hospitalInfo = {
   youtubeHref: siteConfig.youtubeUrl,
   naverMapUrl: siteConfig.naverMapUrl,
   googleMapUrl: siteConfig.googleMapUrl,
-  googleMapEmbedQuery: siteConfig.googleMapEmbedQuery,
   officialWebsiteUrl: siteConfig.officialWebsiteUrl,
   officialWebsiteHref: siteConfig.officialWebsiteUrl,
   hours: "월-금 진료 / 토요일 순환진료 / 일요일 의료진별 상이",
@@ -814,6 +813,9 @@ export const aiProfileLinks = [
   { label: "족부·발목", href: "/foot-ankle" },
   { label: "족부·발목 최소침습수술", href: "/foot-ankle-mis" },
   { label: "예약문의", href: "/contact" },
+  { label: "전화 상담", href: hospitalInfo.consultationPhoneHref },
+  { label: "네이버 지도에서 보기", href: hospitalInfo.naverMapUrl, external: true },
+  { label: "Google 지도에서 보기", href: hospitalInfo.googleMapUrl, external: true },
   { label: "네이버 예약", href: hospitalInfo.naverReservationHref, external: true },
   { label: "유튜브", href: hospitalInfo.youtubeHref, external: true },
   { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, external: true }

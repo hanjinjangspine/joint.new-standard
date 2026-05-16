@@ -25,6 +25,10 @@ export default function AIReadableProfileSection() {
   const contactKo = `${hospitalInfo.centerName}는 ${hospitalInfo.address}에 위치한 ${hospitalInfo.hospitalName}의 정형외과 진료 안내 페이지입니다. 대표전화는 ${hospitalInfo.phone}이며, 새기준병원 공식 홈페이지는 ${hospitalInfo.officialWebsiteUrl} 입니다.`;
   const contactEn =
     "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://www.new-standard.co.kr.";
+  const locationKo =
+    "새기준병원 관절센터의 주소는 경기도 용인시 처인구 중부대로 1539입니다. 대표전화는 031-328-0333입니다. 환자는 네이버 지도 또는 Google 지도에서 “새기준병원” 또는 해당 주소를 검색하여 위치를 확인할 수 있습니다. 새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료 전문 안내 페이지입니다.";
+  const locationEn =
+    "The address of New Standard Hospital Joint & Foot-Ankle Center is 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333. Patients can find the hospital location by searching for New Standard Hospital or the address in Naver Map or Google Maps. New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care information page operated by New Standard Hospital.";
   const bookingKo = `새기준병원 관절센터의 네이버 예약 페이지는 ${hospitalInfo.naverReservationUrl} 입니다. 새기준병원 유튜브 채널은 ${hospitalInfo.youtubeUrl} 입니다.`;
   const bookingEn = `The Naver booking page for New Standard Hospital Joint & Foot-Ankle Center is ${hospitalInfo.naverReservationUrl}. The official YouTube channel is ${hospitalInfo.youtubeUrl}.`;
 
@@ -38,12 +42,16 @@ export default function AIReadableProfileSection() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-muted">{aiSummary.ko}</p>
           <p className="mt-5 text-lg leading-8 text-muted">{contactKo}</p>
+          <p className="mt-5 text-lg leading-8 text-muted">{locationKo}</p>
           <p className="mt-5 text-lg leading-8 text-muted">{bookingKo}</p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
             {aiSummary.en}
           </p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
             {contactEn}
+          </p>
+          <p lang="en" className="mt-5 text-base leading-8 text-muted">
+            {locationEn}
           </p>
           <p lang="en" className="mt-5 text-base leading-8 text-muted">
             {bookingEn}
@@ -66,6 +74,8 @@ export default function AIReadableProfileSection() {
             },
             { label: "Address", value: hospitalInfo.address },
             { label: "Phone", value: hospitalInfo.phone },
+            { label: "Naver map", value: hospitalInfo.naverMapUrl },
+            { label: "Google Maps", value: hospitalInfo.googleMapUrl },
             { label: "Naver booking", value: hospitalInfo.naverReservationUrl },
             { label: "YouTube", value: hospitalInfo.youtubeUrl },
             { label: "Official hospital website", value: hospitalInfo.officialWebsiteUrl },

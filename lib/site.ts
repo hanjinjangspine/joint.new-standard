@@ -19,9 +19,9 @@ export const siteConfig = {
   naverReservationUrl:
     "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
   youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
-  naverMapUrl: "https://map.naver.com/p/search/새기준병원",
+  naverMapUrl:
+    "https://map.naver.com/p/search/새기준병원%20경기도%20용인시%20처인구%20중부대로%201539",
   googleMapUrl:
-    "https://www.google.com/maps/search/?api=1&query=새기준병원%20경기도%20용인시%20처인구%20중부대로%201539",
-  googleMapEmbedQuery: "새기준병원,경기도 용인시 처인구 중부대로 1539",
+    "https://www.google.com/maps/search/?api=1&query=경기도%20용인시%20처인구%20중부대로%201539%20새기준병원",
   baseUrl: BASE_URL
 };
