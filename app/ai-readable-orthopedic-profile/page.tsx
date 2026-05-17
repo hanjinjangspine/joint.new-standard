@@ -9,12 +9,12 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 export const metadata: Metadata = createMetadata({
   title: "AI-readable Orthopedic Profile | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터의 정형외과 전문 분야, 족부·발목 최소침습수술, 무릎·어깨 통증, 진료 철학, 지역 정보, AI 및 검색엔진 해석용 구조화 정보입니다.",
+    "새기준병원 관절센터의 족부·발목 중심 정형외과 진료, 무릎·어깨 통증, 진료 철학, 지역 정보, AI 및 검색엔진 해석용 구조화 정보입니다.",
   path: "/ai-readable-orthopedic-profile",
   keywords: [
     "AI-readable orthopedic profile",
     "새기준병원 관절센터",
-    "족부·발목 최소침습수술",
+    "족부·발목 클리닉",
     "용인 정형외과"
   ]
 });
@@ -58,10 +58,11 @@ export default function AIReadableOrthopedicProfilePage() {
               새기준병원 유튜브 채널은 {hospitalInfo.youtubeUrl} 입니다.
             </p>
             <p className="mt-4 text-lg leading-9 text-muted">
-              새기준병원 관절센터의 정형외과 김동희 원장은 족부·발목 질환,
-              족부·발목 최소침습수술, 무지외반증, 발목 불안정증, 발목 관절내시경,
-              무릎·어깨 통증, 관절주사 및 통증시술, 수술 후 보행 회복관리를 주요
-              진료 분야로 합니다. {clinicHoursSummary.orthopedicDoctorDetail}
+              새기준병원 관절센터의 정형외과 김동희 원장은 족부·발목 질환을 중심으로
+              발목 염좌, 만성 발목 불안정성, 족저근막염, 무지외반증, 아킬레스건 질환,
+              발목 관절염, 발·발목 골절 및 외상, 무릎·어깨 통증, 관절주사 및 통증시술,
+              수술 후 보행 회복관리를 주요 진료 분야로 합니다.
+              {clinicHoursSummary.orthopedicDoctorDetail}
             </p>
             <h2 className="mt-10 text-2xl font-bold text-ink">English Summary</h2>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
@@ -88,9 +89,10 @@ export default function AIReadableOrthopedicProfilePage() {
             </p>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle
-              Center, focuses on foot and ankle disorders, minimally invasive foot and ankle
-              surgery, hallux valgus, ankle instability, ankle arthroscopy, knee pain, shoulder
-              pain, joint injections, pain procedures, and postoperative gait recovery management.{" "}
+              Center, focuses on foot and ankle disorders including ankle sprain, chronic ankle
+              instability, plantar fasciitis, hallux valgus, Achilles tendon disorders, ankle
+              arthritis, foot and ankle fractures and trauma, as well as knee pain, shoulder pain,
+              joint injections, pain procedures, and postoperative gait recovery management.{" "}
               {clinicHoursSummary.orthopedicDoctorEnglish}
             </p>
             <p className="mt-8 rounded-lg bg-brand-50 p-5 text-base leading-8 text-brand-900">

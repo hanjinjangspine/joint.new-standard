@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Activity, ArrowRight, CircleDot, Footprints, RefreshCw, Syringe } from "lucide-react";
+import { Activity, ArrowRight, CircleDot, ClipboardCheck, Footprints, RefreshCw, Syringe } from "lucide-react";
 
 type SpecialtyCardProps = {
   title: string;
@@ -15,6 +15,7 @@ const iconMap = {
   knee: CircleDot,
   shoulder: Activity,
   injection: Syringe,
+  surgery: ClipboardCheck,
   recovery: RefreshCw
 };
 

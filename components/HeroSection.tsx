@@ -4,12 +4,12 @@ import { CalendarCheck, MapPin, Phone, Youtube } from "lucide-react";
 import { ctaActions, doctorProfile, hospitalInfo } from "@/lib/data";
 
 const heroBadges = [
-  "족부·발목",
-  "최소침습수술",
-  "스포츠의학",
-  "관절경",
+  "족부·발목 클리닉",
+  "발목 불안정성",
+  "족저근막염",
+  "무지외반증",
   "무릎·어깨 통증",
-  "보행 회복관리"
+  "보행 상태 확인"
 ];
 
 const icons = [Phone, CalendarCheck, Youtube];
@@ -25,13 +25,14 @@ export default function HeroSection() {
             New Standard Hospital Joint & Foot-Ankle Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            수술을 서두르지 않고,
+            족부·발목을 중심으로,
             <br />
-            걷는 일상을 놓치지 않습니다.
+            무릎·어깨 관절 통증까지 봅니다.
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
-            무릎·어깨 통증부터 족부·발목 최소침습수술까지,
-            환자의 증상과 보행 상태, 영상검사, 치료 반응을 함께 살펴 치료 순서를 정합니다.
+            새기준병원 관절센터는 족부·발목 질환을 중심으로 무릎, 어깨, 관절 통증까지
+            진료합니다. 증상, 영상검사, 보행 상태, 생활 기능을 종합해 비수술 치료부터
+            필요한 경우 수술 치료까지 단계적으로 판단합니다.
           </p>
 
           <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">

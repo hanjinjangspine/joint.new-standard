@@ -8,6 +8,7 @@ import {
   hospitalInfo,
   SITE_URL
 } from "@/lib/data";
+import { siteConfig } from "@/lib/site";
 
 type MetadataInput = {
   title: string;
@@ -28,6 +29,21 @@ export function createMetadata({
     title,
     description,
     keywords: [...defaultKeywords, ...keywords],
+    robots: siteConfig.noIndex
+      ? {
+          index: false,
+          follow: false,
+          nocache: true,
+          googleBot: {
+            index: false,
+            follow: false,
+            noimageindex: true
+          }
+        }
+      : {
+          index: true,
+          follow: true
+        },
     alternates: {
       canonical: url
     },
@@ -51,9 +67,16 @@ export function createMetadata({
 }
 
 const mainTopics = [
+  "족부·발목 질환",
+  "발목 염좌",
+  "만성 발목 불안정성",
+  "족저근막염",
+  "무지외반증",
+  "아킬레스건 질환",
+  "발목 관절염",
+  "발·발목 골절 및 외상",
   "무릎통증",
   "어깨통증",
-  "족부·발목 질환",
   "족부·발목 최소침습수술",
   "관절주사",
   "통증시술",
@@ -131,9 +154,9 @@ export function siteJsonLd() {
           "Arthroscopy"
         ],
         availableService: [
+          "족부·발목 질환 진료",
           "무릎 통증 진료",
           "어깨 통증 진료",
-          "족부·발목 질환 진료",
           "관절 비수술 치료",
           "관절 수술 치료",
           "초음파 유도 주사치료",
@@ -175,7 +198,7 @@ export function siteJsonLd() {
           }
         ],
         description:
-          "Provides information about knee pain, shoulder pain, foot and ankle disorders, non-surgical pain procedures, arthroscopy, minimally invasive foot and ankle surgery, and postoperative recovery management.",
+          "Provides information centered on foot and ankle disorders, with knee pain, shoulder pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management.",
         knowsAbout: mainTopics
       },
       {
@@ -209,10 +232,14 @@ export function siteJsonLd() {
         },
         knowsAbout: [
           "Foot and ankle disorders",
-          "Minimally invasive foot and ankle surgery",
+          "Ankle sprain",
+          "Chronic ankle instability",
+          "Plantar fasciitis",
           "Hallux valgus",
-          "Ankle instability",
-          "Ankle arthroscopy",
+          "Achilles tendon disorders",
+          "Ankle arthritis",
+          "Foot and ankle fractures and trauma",
+          "Minimally invasive foot and ankle surgery",
           "Knee pain",
           "Shoulder pain",
           "Sports medicine",

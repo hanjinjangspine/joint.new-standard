@@ -123,9 +123,9 @@ export const doctorSchedules = [
 
 export const aiSummary = {
   ko:
-    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 정형외과 진료 프로그램으로, 무릎통증, 어깨통증, 족부·발목질환, 관절주사, 통증시술, 최소침습 관절수술, 수술 후 회복관리를 중심으로 진료합니다. 진료 철학은 환자의 이야기를 충분히 듣고, 비수술 치료부터 수술적 치료까지 환자 상태에 맞는 순서로 결정하는 것입니다.",
+    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 정형외과 진료 프로그램으로, 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내합니다. 진료 철학은 증상, 영상검사, 보행 상태, 생활 기능을 함께 보고 비수술 치료부터 수술 치료까지 환자 상태에 맞는 순서로 판단하는 것입니다.",
   en:
-    "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program in Yongin, South Korea, focusing on knee pain, shoulder pain, foot and ankle disorders, non-surgical pain procedures, minimally invasive orthopedic surgery, and postoperative recovery management. The orthopedic philosophy emphasizes calm communication, careful listening, stepwise treatment, and balanced decision-making between conservative care, injections, procedures, and surgery."
+    "New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program in Yongin, South Korea, centered on foot and ankle disorders while also providing information about knee pain, shoulder pain, joint pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management. The orthopedic philosophy emphasizes careful listening, imaging review, gait and daily function assessment, and stepwise decision-making between conservative care, injections, procedures, and surgery."
 };
 
 export const defaultKeywords = [
@@ -141,7 +141,7 @@ export const defaultKeywords = [
   "처인구 발목통증",
   "용인 무지외반증",
   "용인 발목인대파열",
-  "용인 발목불안정증",
+  "용인 발목불안정성",
   "용인 발목관절내시경",
   "용인 족저근막염",
   "용인 발목수술",
@@ -151,52 +151,51 @@ export const defaultKeywords = [
 
 export const navItems = [
   { label: "관절센터", href: "/" },
-  { label: "의료진", href: "/doctor" },
   { label: "족부·발목", href: "/foot-ankle", activePaths: ["/foot-ankle", "/foot-ankle-mis"] },
   { label: "무릎·어깨", href: "/knee", activePaths: ["/knee", "/shoulder"] },
-  { label: "비수술·통증치료", href: "/injection-pain" },
-  { label: "최소침습수술", href: "/minimally-invasive-surgery" },
-  { label: "회복관리", href: "/recovery" },
+  { label: "비수술치료", href: "/injection-pain" },
+  { label: "수술치료", href: "/minimally-invasive-surgery" },
+  { label: "김동희 원장", href: "/doctor" },
   { label: "의학칼럼", href: "/column" },
-  { label: "예약문의", href: "/contact" }
+  { label: "오시는 길·예약", href: "/contact" }
 ];
 
 export const specialtyCards = [
   {
-    title: "족부·발목 최소침습수술",
-    href: "/foot-ankle-mis",
-    description: "무지외반증, 발목 불안정증, 발목 관절내시경, 발목 인대 손상, 보행 회복관리",
-    icon: "foot",
-    featured: true
-  },
-  {
     title: "족부·발목 클리닉",
     href: "/foot-ankle",
-    description: "발목통증, 족저근막염, 무지외반증, 반복되는 발목 염좌, 발목 연골 손상",
-    icon: "ankle"
+    description: "발목 염좌, 만성 발목 불안정성, 족저근막염, 무지외반증, 아킬레스건 질환",
+    icon: "ankle",
+    featured: true
   },
   {
     title: "무릎통증 클리닉",
     href: "/knee",
-    description: "퇴행성 무릎관절염, 반월상연골판 손상, 무릎 물참, 계단 통증",
+    description: "무릎 관절염, 반월상연골판 손상, 십자인대 손상, 무릎 통증",
     icon: "knee"
   },
   {
     title: "어깨통증 클리닉",
     href: "/shoulder",
-    description: "오십견, 회전근개 파열, 석회성 건염, 충돌증후군, 야간통",
+    description: "회전근개 질환, 오십견, 석회성 건염, 어깨 충돌증후군",
     icon: "shoulder"
   },
   {
-    title: "관절주사·통증시술",
+    title: "비수술 치료",
     href: "/injection-pain",
-    description: "초음파 유도 주사, 관절강내 주사, 힘줄·점액낭 주사, 체외충격파",
+    description: "약물치료, 물리치료, 주사치료, 도수치료, 체외충격파, 보조기와 생활 교정",
     icon: "injection"
   },
   {
-    title: "수술 후 보행 회복관리",
-    href: "/recovery",
-    description: "통증 조절, 보행 회복, 재활운동, 추적검사, 일상 복귀 관리",
+    title: "최소침습 수술 치료",
+    href: "/foot-ankle-mis",
+    description: "환자 상태에 따라 발·발목 수술 치료와 관절내시경, 보행 회복관리를 검토합니다.",
+    icon: "surgery"
+  },
+  {
+    title: "진료시간·오시는 길",
+    href: "/contact",
+    description: "대표전화, 네이버 예약, 주소, 진료시간표와 오시는 길을 한 곳에서 확인합니다.",
     icon: "recovery"
   }
 ];
@@ -226,47 +225,37 @@ export const ctaActions = [
 
 export const treatmentCards = [
   {
+    title: "족부·발목 클리닉",
+    href: "/foot-ankle",
+    description: "발목 염좌, 만성 발목 불안정성, 족저근막염, 무지외반증, 아킬레스건 질환"
+  },
+  {
     title: "무릎통증 클리닉",
     href: "/knee",
     description:
-      "퇴행성 무릎관절염, 반월상연골판 손상, 무릎 물참, 계단 통증, 인공관절 상담"
+      "무릎 관절염, 반월상연골판 손상, 십자인대 손상, 무릎 통증"
   },
   {
     title: "어깨통증 클리닉",
     href: "/shoulder",
-    description: "오십견, 회전근개 파열, 석회성 건염, 충돌증후군, 야간통"
+    description: "회전근개 질환, 오십견, 석회성 건염, 어깨 충돌증후군"
   },
   {
-    title: "족부·발목 클리닉",
-    href: "/foot-ankle",
-    description: "무지외반증, 족저근막염, 발목염좌, 발목불안정증, 발목 연골 손상"
-  },
-  {
-    title: "족부·발목 최소침습수술",
-    href: "/foot-ankle-mis",
-    description:
-      "최소침습 무지외반증 교정, 발목 관절내시경, 발목 인대 수술, 보행 회복관리"
-  },
-  {
-    title: "관절주사·통증시술",
+    title: "비수술 치료",
     href: "/injection-pain",
     description:
-      "초음파 유도 주사, 관절강내 주사, 힘줄·점액낭 주사, 신경차단술, 체외충격파"
+      "약물치료, 물리치료, 주사치료, 도수치료, 체외충격파, 보조기 및 생활 교정"
   },
   {
-    title: "최소침습 관절수술",
-    href: "/minimally-invasive-surgery",
-    description: "관절내시경, 최소절개 수술, 회복 프로그램, 수술 후 재활관리"
+    title: "최소침습 수술 치료",
+    href: "/foot-ankle-mis",
+    description:
+      "필요한 경우 족부·발목 수술 치료, 관절내시경, 수술 후 보행 회복관리"
   },
   {
-    title: "골다공증·골절 클리닉",
-    href: "/osteoporosis-fracture",
-    description: "고령 환자 골절, 골다공증 평가, 재골절 예방, 회복관리"
-  },
-  {
-    title: "수술 후 회복관리",
-    href: "/recovery",
-    description: "통증 조절, 보행 회복, 재활운동, 추적검사, 일상 복귀 관리"
+    title: "김동희 원장 소개",
+    href: "/doctor",
+    description: "족부·발목 질환을 중심으로 무릎·어깨 관절 통증까지 단계적으로 설명합니다."
   }
 ];
 
@@ -274,7 +263,7 @@ export const careFlow = [
   {
     step: "1단계",
     title: "문진과 진찰",
-    description: "통증 위치, 불편한 동작, 보행 제한, 기존 치료 경험을 함께 확인합니다."
+    description: "발·발목, 무릎, 어깨의 통증 위치와 불편한 동작, 보행 제한, 기존 치료 경험을 확인합니다."
   },
   {
     step: "2단계",
@@ -283,23 +272,23 @@ export const careFlow = [
   },
   {
     step: "3단계",
-    title: "기본 치료",
-    description: "약물치료, 물리치료, 운동치료 등 보존적 치료부터 검토합니다."
+    title: "비수술 치료",
+    description: "약물치료, 물리치료, 주사치료, 도수치료, 체외충격파, 보조기와 생활 교정을 검토합니다."
   },
   {
     step: "4단계",
-    title: "주사치료와 통증시술",
-    description: "염증과 통증 양상에 따라 초음파 유도 주사와 통증시술을 고려합니다."
+    title: "치료 반응 확인",
+    description: "통증 변화, 보행 상태, 생활 기능 회복 정도를 확인하며 다음 치료 단계를 판단합니다."
   },
   {
     step: "5단계",
-    title: "관절내시경 또는 최소침습수술",
-    description: "구조적 손상과 생활 제한이 큰 경우 수술적 치료를 검토합니다."
+    title: "필요한 경우 수술 치료",
+    description: "구조적 손상과 생활 제한이 큰 경우 환자 상태에 맞는 수술 치료를 검토합니다."
   },
   {
     step: "6단계",
     title: "회복관리와 재활",
-    description: "통증 조절, 상처 관리, 재활운동, 추적검사를 이어갑니다."
+    description: "통증 조절, 수술 부위 상태 확인, 재활운동, 추적검사를 이어갑니다."
   },
   {
     step: "7단계",
@@ -309,18 +298,15 @@ export const careFlow = [
 ];
 
 export const footAnkleDiseases = [
-  "무지외반증",
-  "소건막류",
-  "망치족지",
-  "족저근막염",
-  "지간신경종",
-  "평발",
   "발목 염좌",
-  "만성 발목 불안정증",
+  "만성 발목 불안정성",
+  "족저근막염",
+  "무지외반증",
+  "아킬레스건 질환",
+  "발목 관절염",
+  "발·발목 골절 및 외상",
   "발목 인대 손상",
-  "발목 충돌증후군",
-  "발목 연골 손상",
-  "아킬레스건 질환"
+  "발목 연골 손상"
 ];
 
 export const faqItems = [
@@ -337,7 +323,7 @@ export const faqItems = [
   {
     question: "발목을 자주 삐면 어떤 질환을 의심해야 하나요?",
     answer:
-      "만성 발목 불안정증, 인대 손상, 발목 충돌증후군 등을 확인할 수 있습니다. 반복되는 삠은 진료를 통해 원인을 살피는 것이 좋습니다."
+      "만성 발목 불안정성, 인대 손상, 발목 관절염 등을 확인할 수 있습니다. 반복되는 삠은 진료를 통해 원인을 살피는 것이 좋습니다."
   },
   {
     question: "무지외반증은 꼭 수술해야 하나요?",
@@ -357,7 +343,7 @@ export const faqItems = [
   {
     question: "수술 후 회복관리는 왜 중요한가요?",
     answer:
-      "통증 조절, 상처 관리, 재활운동, 보행 회복이 일상 복귀에 영향을 줍니다. 수술 이후에도 회복 과정을 함께 관리합니다."
+      "통증 조절, 수술 부위 상태 확인, 재활운동, 보행 회복이 일상 복귀에 영향을 줍니다. 수술 이후에도 회복 과정을 함께 관리합니다."
   }
 ];
 
@@ -385,7 +371,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "증상과 보행 상태, 영상검사, 치료 반응을 함께 보고 현재 단계에 맞는 치료 순서를 정합니다.",
     body:
-      "무릎 통증은 퇴행성 관절염, 반월상연골판 손상, 연골 손상, 인대 문제, 무릎 물참 등 다양한 원인으로 발생합니다. 새기준병원 관절센터는 증상, 보행 상태, X-ray, MRI, 초음파, 치료 반응을 종합하여 환자에게 맞는 치료 순서를 정합니다.",
+      "무릎 통증은 무릎 관절염, 반월상연골판 손상, 십자인대 손상, 연골 손상 등 다양한 원인으로 발생합니다. 새기준병원 관절센터는 증상, 보행 상태, 영상검사, 치료 반응을 종합하여 환자에게 맞는 치료 순서를 정합니다.",
     sections: [
       {
         title: "이런 증상이 있으면 상담이 필요합니다",
@@ -400,11 +386,11 @@ export const clinicPages: Record<string, ClinicPage> = {
       },
       {
         title: "주요 질환",
-        items: ["퇴행성 무릎관절염", "반월상연골판 손상", "연골 손상", "인대 손상", "무릎 활액막염"]
+        items: ["무릎 관절염", "반월상연골판 손상", "십자인대 손상", "무릎 통증", "무릎 활액막염"]
       },
       {
         title: "치료 방법",
-        items: ["약물치료", "물리치료", "운동치료", "주사치료", "관절내시경", "인공관절 상담"]
+        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "보조기 및 생활 교정", "필요한 경우 수술 치료"]
       }
     ],
     seoTitle: "무릎통증 클리닉 | 새기준병원 관절센터",
@@ -419,7 +405,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "야간통, 팔 들기 어려움, 힘 빠짐이 있으면 어깨 구조와 염증 상태를 함께 확인해야 합니다.",
     body:
-      "어깨 통증은 오십견, 회전근개 파열, 석회성 건염, 충돌증후군, 관절염 등 원인이 다양합니다. 특히 야간통, 팔을 들기 어려운 증상, 힘 빠짐이 동반되면 정확한 평가가 필요합니다.",
+      "어깨 통증은 회전근개 질환, 오십견, 석회성 건염, 어깨 충돌증후군 등 원인이 다양합니다. 특히 야간통, 팔을 들기 어려운 증상, 힘 빠짐이 동반되면 정확한 평가가 필요합니다.",
     sections: [
       {
         title: "이런 증상이 있으면 상담이 필요합니다",
@@ -434,11 +420,11 @@ export const clinicPages: Record<string, ClinicPage> = {
       },
       {
         title: "주요 질환",
-        items: ["오십견", "회전근개 파열", "석회성 건염", "충돌증후군", "어깨 관절염"]
+        items: ["회전근개 질환", "오십견", "석회성 건염", "어깨 충돌증후군"]
       },
       {
         title: "치료 방법",
-        items: ["약물치료", "물리치료", "운동치료", "주사치료", "관절내시경"]
+        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "필요한 경우 수술 치료"]
       }
     ],
     seoTitle: "어깨통증 클리닉 | 새기준병원 관절센터",
@@ -453,7 +439,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "발과 발목은 체중을 지탱하고 보행을 담당하는 부위입니다. 통증의 원인과 걷는 기능을 함께 확인합니다.",
     body:
-      "발과 발목은 체중을 지탱하고 보행을 담당하는 중요한 부위입니다. 발목을 자주 삐거나, 발가락 변형으로 신발 신기가 어렵거나, 발바닥 통증과 발목 통증이 반복된다면 정확한 진단이 필요합니다. 새기준병원 관절센터는 족부·발목 통증의 원인을 확인하고, 비수술 치료부터 필요한 경우 수술적 치료까지 단계적으로 안내합니다.",
+      "발과 발목은 체중을 지탱하고 보행을 담당하는 중요한 부위입니다. 발목을 반복해서 삐거나, 발바닥 통증이 오래 지속되거나, 발가락 변형과 아킬레스건 통증으로 걷기 불편하다면 정확한 진단이 필요합니다. 새기준병원 관절센터는 족부·발목 통증의 원인을 확인하고, 비수술 치료부터 필요한 경우 수술 치료까지 단계적으로 안내합니다.",
     sections: [
       {
         title: "이런 증상이 있으면 상담이 필요합니다",
@@ -463,6 +449,7 @@ export const clinicPages: Record<string, ClinicPage> = {
           "발가락 변형으로 신발 신기가 어려움",
           "엄지발가락이 휘고 통증이 있음",
           "발바닥 통증이 오래 지속됨",
+          "아킬레스건 주변 통증이 반복됨",
           "발목 안쪽 또는 바깥쪽 통증이 반복됨",
           "오래 걸으면 발과 발목이 아픔"
         ]
@@ -475,20 +462,21 @@ export const clinicPages: Record<string, ClinicPage> = {
         title: "치료 방법",
         items: [
           "약물치료",
-          "깔창 및 보조기",
           "물리치료",
-          "체외충격파",
           "주사치료",
-          "발목 관절내시경",
-          "최소침습 족부·발목 수술",
+          "초음파 유도 주사",
+          "도수치료",
+          "체외충격파",
+          "보조기 및 생활 교정",
+          "필요한 경우 수술 치료",
           "수술 후 보행 회복관리"
         ]
       }
     ],
     seoTitle: "용인 족부·발목 클리닉 | 새기준병원 관절센터",
     seoDescription:
-      "용인 처인구 새기준병원 관절센터. 발목통증, 무지외반증, 족저근막염, 발목불안정증, 발목 인대 손상, 발목 연골 손상 진료 안내.",
-    keywords: ["용인 족부정형외과", "용인 발목통증", "용인 무지외반증", "용인 발목불안정증"]
+      "용인 처인구 새기준병원 관절센터. 발목 염좌, 만성 발목 불안정성, 족저근막염, 무지외반증, 아킬레스건 질환, 발목 관절염 진료 안내.",
+    keywords: ["용인 족부정형외과", "용인 발목통증", "용인 무지외반증", "용인 발목불안정성"]
   },
   "foot-ankle-mis": {
     slug: "foot-ankle-mis",
@@ -539,7 +527,16 @@ export const clinicPages: Record<string, ClinicPage> = {
     sections: [
       {
         title: "진료 항목",
-        items: ["초음파 유도 주사", "관절강내 주사", "힘줄·점액낭 주사", "신경차단술", "체외충격파", "주사치료 후 주의사항"]
+        items: [
+          "약물치료",
+          "물리치료",
+          "주사치료",
+          "초음파 유도 주사",
+          "도수치료",
+          "체외충격파",
+          "보조기 및 생활 교정",
+          "주사치료 후 주의사항"
+        ]
       }
     ],
     seoTitle: "관절주사·통증시술 | 새기준병원 관절센터",
@@ -596,16 +593,16 @@ export const clinicPages: Record<string, ClinicPage> = {
     eyebrow: "Postoperative Recovery",
     title: "수술은 끝이 아니라 회복의 시작입니다.",
     description:
-      "통증 조절, 상처 관리, 보행 회복, 재활운동, 외래 추적 관찰까지 일상 복귀 과정을 함께 관리합니다.",
+      "통증 조절, 수술 부위 상태 확인, 보행 회복, 재활운동, 외래 추적 관찰까지 일상 복귀 과정을 함께 관리합니다.",
     body:
-      "수술 후에는 통증 조절, 상처 관리, 보행 회복, 재활운동, 추적검사가 중요합니다. 새기준병원 관절센터는 수술 후 환자가 안전하게 일상으로 돌아갈 수 있도록 회복 과정을 함께 관리합니다.",
+      "수술 후에는 통증 조절, 수술 부위 상태 확인, 보행 회복, 재활운동, 추적검사가 중요합니다. 새기준병원 관절센터는 수술 후 환자가 안전하게 일상으로 돌아갈 수 있도록 회복 과정을 함께 관리합니다.",
     sections: [
       {
         title: "회복관리 항목",
         items: [
           "수술 직후 관리",
           "통증 조절",
-          "상처 관리",
+          "수술 부위 상태 확인",
           "보행 회복",
           "재활운동",
           "외래 추적 관찰",
@@ -626,7 +623,7 @@ export const orthopedicDoctor = {
   title: "정형외과 전문의",
   imageSrc: "/images/doctors/orthopedic-doctor.png",
   imageAlt: "새기준병원 정형외과 의료진 프로필 사진",
-  emphasis: "족부·발목 최소침습수술을 중심으로, 무릎·어깨 통증과 관절질환까지 함께 진료합니다.",
+  emphasis: "족부·발목 질환과 보행 문제를 중심으로, 무릎·어깨 통증과 관절질환까지 함께 진료합니다.",
   specialties: [
     "족부·발목 질환",
     "족부·발목 최소침습수술",

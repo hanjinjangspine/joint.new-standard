@@ -19,16 +19,16 @@ export default function DoctorIntroSection() {
         <div>
           <p className="text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-ink sm:text-4xl">
-            족부·발목 최소침습수술을 중심으로 보는 정형외과 진료
+            김동희 원장 소개
           </h2>
           <div className="mt-5">
             <p className="text-2xl font-extrabold text-ink">{doctorProfile.name}</p>
             <p className="mt-1 text-lg font-bold text-brand-700">{doctorProfile.title}</p>
           </div>
           <p className="mt-5 text-lg leading-8 text-muted sm:text-xl">
-            새기준병원 관절센터는 무릎·어깨 통증뿐 아니라 족부·발목 질환과 보행
-            문제까지 함께 살펴봅니다. 정형외과 의료진은 환자의 이야기를 충분히
-            듣고, 비수술 치료부터 필요한 경우 최소침습수술까지 단계적으로 안내합니다.
+            새기준병원 관절센터는 족부·발목 질환을 중심으로 무릎·어깨 통증과
+            관절질환까지 함께 살펴봅니다. 정형외과 의료진은 환자의 이야기를 충분히
+            듣고, 비수술 치료부터 필요한 경우 수술 치료까지 단계적으로 안내합니다.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {doctorProfile.specialties.slice(0, 10).map(

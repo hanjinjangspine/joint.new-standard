@@ -23,5 +23,6 @@ export const siteConfig = {
     "https://map.naver.com/p/search/새기준병원%20경기도%20용인시%20처인구%20중부대로%201539",
   googleMapUrl:
     "https://www.google.com/maps/search/?api=1&query=경기도%20용인시%20처인구%20중부대로%201539%20새기준병원",
+  noIndex: true,
   baseUrl: BASE_URL
 };

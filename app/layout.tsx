@@ -5,24 +5,40 @@ import MobileBottomCTA from "@/components/MobileBottomCTA";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { hospitalInfo, SITE_URL } from "@/lib/data";
 import { siteJsonLd } from "@/lib/seo";
+import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "새기준병원 관절센터 | 용인 무릎·어깨·족부·발목 치료",
+    default: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
     template: "%s"
   },
   description:
-    "용인 처인구 새기준병원 관절센터. 무릎통증, 어깨통증, 족부·발목 질환, 무지외반증, 발목불안정증, 관절주사, 통증시술, 최소침습수술, 수술 후 회복관리 안내.",
+    "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
   applicationName: hospitalInfo.centerName,
+  robots: siteConfig.noIndex
+    ? {
+        index: false,
+        follow: false,
+        nocache: true,
+        googleBot: {
+          index: false,
+          follow: false,
+          noimageindex: true
+        }
+      }
+    : {
+        index: true,
+        follow: true
+      },
   icons: {
     icon: "/favicon.ico"
   },
   openGraph: {
-    title: "새기준병원 관절센터 | 용인 무릎·어깨·족부·발목 치료",
+    title: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
     description:
-      "용인 처인구 새기준병원 관절센터. 무릎통증, 어깨통증, 족부·발목 질환, 무지외반증, 발목불안정증, 관절주사, 통증시술, 최소침습수술, 수술 후 회복관리 안내.",
+      "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
     url: SITE_URL,
     siteName: hospitalInfo.centerName,
     locale: "ko_KR",
