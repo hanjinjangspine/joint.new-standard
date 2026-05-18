@@ -21,18 +21,18 @@ export default function Header() {
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2.5 sm:min-w-[250px]"
+          className="flex min-w-0 items-center gap-3 sm:min-w-[270px]"
           aria-label="새기준병원 관절센터 메인으로 이동"
           onClick={() => setIsOpen(false)}
         >
-          <span className="flex h-10 w-[126px] shrink-0 items-center justify-start rounded-md bg-white sm:h-11 sm:w-[156px]">
+          <span className="flex h-10 w-[134px] shrink-0 items-center justify-start rounded-md bg-white sm:h-12 sm:w-[172px]">
             <Image
               src={hospitalInfo.logoPath}
               alt={hospitalInfo.logoAlt}
               width={1200}
               height={368}
               priority
-              className="h-auto max-h-9 w-full object-contain"
+              className="h-auto max-h-8 w-full object-contain sm:max-h-10"
             />
           </span>
           <span className="flex min-w-0 flex-col">

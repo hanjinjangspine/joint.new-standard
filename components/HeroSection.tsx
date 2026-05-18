@@ -25,9 +25,9 @@ export default function HeroSection() {
             New Standard Hospital Joint & Foot-Ankle Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            족부·발목을 중심으로,
+            족부·발목을 중심으로
             <br />
-            무릎·어깨 관절 통증까지 봅니다.
+            무릎·어깨 관절 통증까지 단계적으로 진료합니다.
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
             새기준병원 관절센터는 족부·발목 질환을 중심으로 무릎, 어깨, 관절 통증까지
@@ -89,7 +89,7 @@ export default function HeroSection() {
               {heroBadges.map((badge) => (
                 <span
                   key={badge}
-                  className="rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-center text-xs font-extrabold text-brand-800 sm:text-sm"
+                  className="whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-center text-xs font-extrabold text-brand-800 sm:text-sm"
                 >
                   {badge}
                 </span>

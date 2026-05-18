@@ -35,7 +35,7 @@ export default function DoctorIntroSection() {
               (item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-bold text-brand-800"
+                  className="whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-bold text-brand-800"
                 >
                   {item}
                 </span>
