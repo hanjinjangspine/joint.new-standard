@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { CalendarCheck, Clock, ExternalLink, MapPin, Phone, Youtube } from "lucide-react";
 import LocationGuideCard from "@/components/LocationGuideCard";
@@ -17,6 +18,15 @@ export default function ContactBox() {
     <section id="contact-info" className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="rounded-lg border border-line bg-white p-6 shadow-sm">
+          <div className="mb-5 inline-flex rounded-lg border border-brand-100 bg-white p-2">
+            <Image
+              src={hospitalInfo.logoPath}
+              alt={hospitalInfo.logoAlt}
+              width={1200}
+              height={368}
+              className="h-auto w-[176px] object-contain"
+            />
+          </div>
           <h2 className="text-2xl font-bold text-ink">예약문의</h2>
           <div className="mt-6 grid gap-4">
             {rows.map((row) => {

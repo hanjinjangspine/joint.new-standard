@@ -18,6 +18,8 @@ export const hospitalInfo = {
   googleMapUrl: siteConfig.googleMapUrl,
   officialWebsiteUrl: siteConfig.officialWebsiteUrl,
   officialWebsiteHref: siteConfig.officialWebsiteUrl,
+  logoPath: siteConfig.logoPath,
+  logoAlt: siteConfig.logoAlt,
   hours: "월-금 진료 / 토요일 순환진료 / 일요일 의료진별 상이",
   hoursNote: "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다.",
   hoursConfirmation: "내원 전 대표전화 031-328-0333으로 확인해 주세요.",

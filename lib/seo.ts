@@ -99,6 +99,7 @@ const mainTopics = [
 export function siteJsonLd() {
   const clinicId = `${SITE_URL}#joint-foot-ankle-center`;
   const hospitalId = `${SITE_URL}#new-standard-hospital`;
+  const logoUrl = new URL(hospitalInfo.logoPath, SITE_URL).toString();
 
   return {
     "@context": "https://schema.org",
@@ -139,6 +140,7 @@ export function siteJsonLd() {
         name: hospitalInfo.centerName,
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
+        logo: logoUrl,
         sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
         hasMap: hospitalInfo.googleMapUrl,
         parentOrganization: {
@@ -206,6 +208,7 @@ export function siteJsonLd() {
         "@id": hospitalId,
         name: hospitalInfo.hospitalName,
         url: hospitalInfo.officialWebsiteUrl,
+        logo: logoUrl,
         sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
         telephone: hospitalInfo.phone,
         address: {

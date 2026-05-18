@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { hospitalInfo } from "@/lib/data";
 
@@ -15,7 +16,16 @@ export default function Footer() {
     <footer className="border-t border-line bg-brand-900 text-white">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-6 lg:grid-cols-[1.3fr_1fr_1fr] lg:px-8">
         <div>
-          <p className="text-lg font-bold">{hospitalInfo.centerName}</p>
+          <div className="inline-flex rounded-lg bg-white p-2">
+            <Image
+              src={hospitalInfo.logoPath}
+              alt={hospitalInfo.logoAlt}
+              width={1200}
+              height={368}
+              className="h-auto w-[164px] object-contain"
+            />
+          </div>
+          <p className="mt-5 text-lg font-bold">{hospitalInfo.centerName}</p>
           <p className="mt-2 text-sm font-semibold uppercase text-brand-100">
             {hospitalInfo.englishName}
           </p>

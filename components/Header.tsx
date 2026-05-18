@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, X } from "lucide-react";
@@ -20,17 +21,27 @@ export default function Header() {
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex min-w-[180px] flex-col sm:min-w-[220px]"
+          className="flex min-w-0 items-center gap-2.5 sm:min-w-[250px]"
           aria-label="새기준병원 관절센터 메인으로 이동"
           onClick={() => setIsOpen(false)}
         >
-          <span className="text-lg font-extrabold tracking-[-0.01em] text-ink sm:text-xl">
-            {hospitalInfo.centerName}
+          <span className="flex h-10 w-[126px] shrink-0 items-center justify-start rounded-md bg-white sm:h-11 sm:w-[156px]">
+            <Image
+              src={hospitalInfo.logoPath}
+              alt={hospitalInfo.logoAlt}
+              width={1200}
+              height={368}
+              priority
+              className="h-auto max-h-9 w-full object-contain"
+            />
           </span>
-          <span className="hidden text-[10px] font-bold uppercase leading-[1.25] tracking-[0.08em] text-brand-600 sm:block">
-            NEW STANDARD HOSPITAL
-            <br />
-            JOINT & FOOT-ANKLE CENTER
+          <span className="flex min-w-0 flex-col">
+            <span className="whitespace-nowrap text-sm font-extrabold tracking-[-0.01em] text-ink sm:text-base">
+              관절센터
+            </span>
+            <span className="hidden text-[9px] font-bold uppercase leading-[1.25] tracking-[0.08em] text-brand-600 sm:block">
+              JOINT & FOOT-ANKLE CENTER
+            </span>
           </span>
         </Link>
 
