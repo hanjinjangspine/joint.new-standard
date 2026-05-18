@@ -12,10 +12,16 @@ const heroBadges = [
   "보행 상태 확인"
 ];
 
-const icons = [Phone, CalendarCheck, Youtube];
+const iconMap = {
+  "전화 상담": Phone,
+  "네이버 예약": CalendarCheck,
+  "유튜브": Youtube,
+  "오시는 길": MapPin
+};
 
 export default function HeroSection() {
-  const mainActions = ctaActions.slice(0, 3);
+  const primaryActions = ctaActions.slice(0, 2);
+  const supportActions = ctaActions.slice(2);
 
   return (
     <section className="overflow-hidden bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
@@ -25,7 +31,7 @@ export default function HeroSection() {
             New Standard Hospital Joint & Foot-Ankle Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            족부·발목을 중심으로
+            족부·발목을 중심으로{" "}
             <br />
             무릎·어깨 관절 통증까지 단계적으로 진료합니다.
           </h1>
@@ -35,9 +41,9 @@ export default function HeroSection() {
             필요한 경우 수술 치료까지 단계적으로 판단합니다.
           </p>
 
-          <div className="mt-7 grid gap-3 sm:flex sm:flex-wrap">
-            {mainActions.map((action, index) => {
-              const Icon = icons[index] || Phone;
+          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+            {primaryActions.map((action, index) => {
+              const Icon = iconMap[action.label as keyof typeof iconMap] || Phone;
               const isExternal = action.href.startsWith("http");
               return (
                 <Link
@@ -57,14 +63,25 @@ export default function HeroSection() {
                 </Link>
               );
             })}
-            <Link
-              href="/contact"
-              className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-2 py-3 text-base font-extrabold text-brand-800 hover:text-brand-900"
-              aria-label="새기준병원 관절센터 오시는 길 보기"
-            >
-              <MapPin aria-hidden="true" size={19} />
-              오시는 길 보기
-            </Link>
+            <div className="flex flex-wrap items-center gap-3 sm:pl-1">
+              {supportActions.map((action) => {
+                const Icon = iconMap[action.label as keyof typeof iconMap] || MapPin;
+                const isExternal = action.href.startsWith("http");
+                return (
+                  <Link
+                    key={action.label}
+                    href={action.href}
+                    className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-2 py-2 text-sm font-extrabold text-brand-700 hover:text-brand-900"
+                    aria-label={action.ariaLabel}
+                    target={isExternal ? "_blank" : undefined}
+                    rel={isExternal ? "noopener noreferrer" : undefined}
+                  >
+                    <Icon aria-hidden="true" size={17} />
+                    {action.label}
+                  </Link>
+                );
+              })}
+            </div>
           </div>
         </div>
 

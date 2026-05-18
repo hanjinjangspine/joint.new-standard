@@ -30,7 +30,7 @@ export default function PageHero({ eyebrow, title, description, breadcrumb, high
         <CTAButtons className="mt-7" />
         </div>
         <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
-          <p className="text-sm font-extrabold uppercase tracking-[0.08em] text-brand-600">
+          <p className="text-sm font-extrabold text-brand-600">
             진료 핵심
           </p>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -40,7 +40,7 @@ export default function PageHero({ eyebrow, title, description, breadcrumb, high
             ).map((item) => (
               <span
                 key={item}
-                className="rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-sm font-bold text-brand-800"
+                className="whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-sm font-bold text-brand-800"
               >
                 {item}
               </span>

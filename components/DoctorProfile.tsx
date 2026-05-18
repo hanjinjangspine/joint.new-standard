@@ -19,7 +19,7 @@ export default function DoctorProfile() {
               {doctorProfile.specialties.map((field) => (
                 <span
                   key={field}
-                  className="rounded-md border border-brand-100 bg-white px-4 py-2 text-base font-semibold text-brand-800"
+                  className="whitespace-nowrap rounded-md border border-brand-100 bg-white px-4 py-2 text-base font-semibold text-brand-800"
                 >
                   {field}
                 </span>

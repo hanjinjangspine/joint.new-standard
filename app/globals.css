@@ -18,7 +18,11 @@ body {
   color: var(--foreground);
   letter-spacing: -0.01em;
   font-family:
+    "Pretendard Variable",
+    "Pretendard",
+    "Noto Sans KR",
     var(--font-sans),
+    system-ui,
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",

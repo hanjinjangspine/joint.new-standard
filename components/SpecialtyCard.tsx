@@ -33,12 +33,17 @@ export default function SpecialtyCard({
       href={href}
       className={`group flex min-h-[220px] flex-col justify-between rounded-2xl border p-6 transition duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 ${
         featured
-          ? "border-brand-700 bg-brand-800 text-white shadow-card hover:-translate-y-1 hover:bg-brand-900"
+          ? "border-brand-700 bg-brand-800 text-white shadow-card hover:-translate-y-1 hover:bg-brand-900 md:col-span-2"
           : "border-line bg-white text-ink shadow-sm hover:-translate-y-1 hover:border-brand-200 hover:shadow-card"
       }`}
       aria-label={`${title} 페이지로 이동`}
     >
       <div>
+        {featured ? (
+          <span className="mb-4 inline-flex rounded-full bg-white/12 px-3 py-1 text-xs font-extrabold text-brand-50">
+            중심 진료
+          </span>
+        ) : null}
         <div
           className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${
             featured ? "bg-white/12 text-white" : "bg-brand-50 text-brand-700"
