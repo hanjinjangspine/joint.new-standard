@@ -3,23 +3,23 @@ import { ArrowRight, ClipboardCheck, Footprints, MapPinned, Stethoscope } from "
 
 const introItems = [
   {
-    title: "중심 진료",
-    body: "족부·발목 질환을 중심으로 발목 염좌, 만성 발목 불안정성, 족저근막염, 무지외반증, 아킬레스건 질환을 살핍니다.",
+    title: "정확한 진단",
+    body: "통증 위치, 움직임 제한, 보행, 근력, 진찰 소견을 함께 확인합니다.",
     icon: Footprints
   },
   {
-    title: "함께 보는 관절 통증",
-    body: "무릎 관절염, 반월상연골판 손상, 십자인대 손상, 회전근개 질환, 오십견, 석회성 건염을 함께 안내합니다.",
+    title: "영상검사 확인",
+    body: "X-ray, MRI 등 영상 소견과 실제 증상이 일치하는지 살펴봅니다.",
     icon: Stethoscope
   },
   {
-    title: "치료 판단 기준",
-    body: "증상, 영상검사, 보행 상태, 생활 기능을 종합해 약물·물리·주사·도수치료부터 필요한 경우 수술 치료까지 단계적으로 판단합니다.",
+    title: "단계적 치료 상담",
+    body: "약물·주사·재활치료부터 관절내시경·인공관절 등 수술적 치료 가능성까지 환자 상태에 따라 상담합니다.",
     icon: ClipboardCheck
   },
   {
-    title: "예약과 내원",
-    body: "진료시간, 대표전화, 네이버 예약, 오시는 길은 한 곳에서 확인할 수 있도록 정리했습니다.",
+    title: "재활 연계",
+    body: "수술 전후 통증, 보행, 근력, 일상 복귀 과정을 함께 확인합니다.",
     icon: MapPinned
   }
 ];
@@ -31,15 +31,19 @@ export default function CenterIntroSection() {
         <div className="grid gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-700">
-              Joint & Foot-Ankle Center
+              Joint Care Principle
             </p>
             <h2 className="mt-3 break-keep text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-              새기준병원 관절센터 소개
+              수술부터 결정하지 않습니다
             </h2>
             <p className="mt-5 text-lg leading-8 text-muted sm:text-xl">
-              새기준병원 관절센터는 족부·발목 클리닉을 중심에 두고
-              무릎·어깨·관절 통증 진료 정보를 함께 안내합니다. 환자의 통증 부위와
-              생활 기능, 보행 상태를 함께 확인하는 흐름으로 구성했습니다.
+              관절 통증은 같은 부위라도 원인이 다를 수 있습니다. 새기준병원 관절센터는
+              통증 위치, 움직임 제한, 근력, 보행, 영상 소견을 함께 확인해 비수술 치료와
+              수술적 치료 가능성을 단계적으로 상담합니다.
+            </p>
+            <p className="mt-4 text-base leading-7 text-muted">
+              수술 여부는 진료와 검사 결과를 종합해 결정됩니다. 모든 환자에게 같은 치료가
+              적용되지는 않습니다.
             </p>
             <Link
               href="/contact"

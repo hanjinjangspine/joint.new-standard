@@ -1,28 +1,38 @@
 import Image from "next/image";
 import Link from "next/link";
-import { CalendarCheck, MapPin, Phone, Youtube } from "lucide-react";
-import { ctaActions, doctorProfile, hospitalInfo } from "@/lib/data";
+import { CalendarCheck, ExternalLink, MapPin } from "lucide-react";
+import { doctorProfile } from "@/lib/data";
 
 const heroBadges = [
-  "족부·발목 클리닉",
-  "발목 불안정성",
-  "족저근막염",
-  "무지외반증",
-  "무릎·어깨 통증",
-  "보행 상태 확인"
+  "족부·발목 진료",
+  "무릎 통증",
+  "어깨 통증",
+  "손·손목 통증",
+  "관절내시경",
+  "인공관절",
+  "재활 연계"
 ];
 
-const iconMap = {
-  "전화 상담": Phone,
-  "네이버 예약": CalendarCheck,
-  "유튜브": Youtube,
-  "오시는 길": MapPin
-};
+const heroActions = [
+  {
+    label: "진료 상담 문의",
+    href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
+    icon: CalendarCheck,
+    primary: true
+  },
+  {
+    label: "오시는 길·진료시간",
+    href: "https://new-standard.co.kr/sub/r10/s1040.php",
+    icon: MapPin
+  },
+  {
+    label: "본원 홈페이지",
+    href: "https://new-standard.co.kr",
+    icon: ExternalLink
+  }
+];
 
 export default function HeroSection() {
-  const primaryActions = ctaActions.slice(0, 2);
-  const supportActions = ctaActions.slice(2);
-
   return (
     <section className="overflow-hidden bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
       <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.06fr_0.94fr]">
@@ -31,57 +41,38 @@ export default function HeroSection() {
             New Standard Hospital Joint & Foot-Ankle Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            족부·발목을 중심으로{" "}
-            <br />
-            무릎·어깨 관절 통증까지 단계적으로 진료합니다.
+            새기준병원 관절센터
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
-            새기준병원 관절센터는 족부·발목 질환을 중심으로 무릎, 어깨, 관절 통증까지
-            진료합니다. 증상, 영상검사, 보행 상태, 생활 기능을 종합해 비수술 치료부터
-            필요한 경우 수술 치료까지 단계적으로 판단합니다.
+            족부·발목부터 무릎·어깨·손목 통증까지, 정확한 진단 후 치료 방향을 상담합니다.
+          </p>
+          <p className="mt-4 max-w-2xl break-keep text-base leading-8 text-muted sm:text-lg">
+            새기준병원 관절센터는 정형외과 전문의가 진찰과 영상검사를 함께 확인하여
+            관절 통증의 원인을 평가합니다. 환자 상태에 따라 약물치료, 주사치료,
+            재활치료, 관절내시경, 인공관절 등 치료 방향을 상담합니다.
           </p>
 
           <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
-            {primaryActions.map((action, index) => {
-              const Icon = iconMap[action.label as keyof typeof iconMap] || Phone;
-              const isExternal = action.href.startsWith("http");
+            {heroActions.map((action) => {
+              const Icon = action.icon;
               return (
                 <Link
                   key={action.label}
                   href={action.href}
-                  aria-label={action.ariaLabel}
+                  aria-label={`${action.label} 새 창으로 이동`}
                   className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-base font-extrabold transition focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 ${
-                    index === 0
+                    action.primary
                       ? "bg-brand-800 text-white hover:bg-brand-900"
                       : "border border-brand-200 bg-white text-brand-800 hover:bg-brand-50"
                   }`}
-                  target={isExternal ? "_blank" : undefined}
-                  rel={isExternal ? "noopener noreferrer" : undefined}
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   <Icon aria-hidden="true" size={19} />
                   {action.label}
                 </Link>
               );
             })}
-            <div className="flex flex-wrap items-center gap-3 sm:pl-1">
-              {supportActions.map((action) => {
-                const Icon = iconMap[action.label as keyof typeof iconMap] || MapPin;
-                const isExternal = action.href.startsWith("http");
-                return (
-                  <Link
-                    key={action.label}
-                    href={action.href}
-                    className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md px-2 py-2 text-sm font-extrabold text-brand-700 hover:text-brand-900"
-                    aria-label={action.ariaLabel}
-                    target={isExternal ? "_blank" : undefined}
-                    rel={isExternal ? "noopener noreferrer" : undefined}
-                  >
-                    <Icon aria-hidden="true" size={17} />
-                    {action.label}
-                  </Link>
-                );
-              })}
-            </div>
           </div>
         </div>
 
