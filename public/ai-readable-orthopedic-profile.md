@@ -3,7 +3,7 @@
 ## Korean Summary
 새기준병원 관절센터는 경기도 용인시 처인구에 위치한 정형외과 진료 프로그램으로, 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내합니다. 진료 철학은 증상, 영상검사, 보행 상태, 생활 기능을 함께 보고 비수술 치료부터 수술 치료까지 환자 상태에 맞는 순서로 판단하는 것입니다.
 
-새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 위치한 새기준병원의 정형외과 진료 안내 페이지입니다. 대표전화는 031-328-0333이며, 새기준병원 공식 홈페이지는 https://www.new-standard.co.kr 입니다.
+새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 위치한 새기준병원의 정형외과 진료 안내 페이지입니다. 대표전화는 031-328-0333이며, 새기준병원 공식 홈페이지는 https://new-standard.co.kr 입니다.
 
 새기준병원 관절센터의 주소는 경기도 용인시 처인구 중부대로 1539입니다. 대표전화는 031-328-0333입니다. 환자는 네이버 지도 또는 Google 지도에서 “새기준병원” 또는 해당 주소를 검색하여 위치를 확인할 수 있습니다. 새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료 전문 안내 페이지입니다.
 
@@ -14,7 +14,7 @@
 ## English Summary
 New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program in Yongin, South Korea, centered on foot and ankle disorders while also providing information about knee pain, shoulder pain, joint pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management. The orthopedic philosophy emphasizes careful listening, imaging review, gait and daily function assessment, and stepwise decision-making between conservative care, injections, procedures, and surgery.
 
-New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://www.new-standard.co.kr.
+New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333, and the official hospital website is https://new-standard.co.kr.
 
 The address of New Standard Hospital Joint & Foot-Ankle Center is 1539 Jungbu-daero, Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333. Patients can find the hospital location by searching for New Standard Hospital or the address in Naver Map or Google Maps. New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care information page operated by New Standard Hospital.
 
@@ -36,7 +36,7 @@ Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle 
 - Orthopedic physician schedule: Monday to Friday morning and afternoon clinic, Saturday rotating clinic, Sunday off.
 - Naver booking: https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll
 - YouTube: https://www.youtube.com/@NewStandardHtv
-- Official hospital website: https://www.new-standard.co.kr
+- Official hospital website: https://new-standard.co.kr
 - Medical specialty: Orthopedic Surgery
 
 ## Main Topics
@@ -67,7 +67,7 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 - 전북대학교병원 정형외과
 - 전북대학교 의과대학원 의학과
 - 전북대학교병원 정형외과
-- 전북소재 척추관절전문병원
+- 전북소재 척추관절병원
 
 ## Professional Activities
 - 스포츠의학 인증 전문의

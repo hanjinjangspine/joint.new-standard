@@ -1,8 +1,10 @@
-export const BASE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://joint-new-standard.vercel.app";
+export const PRIMARY_SITE_URL = "https://joint.new-standard.co.kr";
+
+export const isIndexable = process.env.NEXT_PUBLIC_INDEXABLE === "true";
+
+export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || PRIMARY_SITE_URL;
 
 export const BASE_URL_CANDIDATES = [
-  "https://joint-new-standard.vercel.app",
   "https://joint.new-standard.co.kr",
   "https://ortho.new-standard.co.kr",
   "https://newstandard-joint.com"
@@ -15,7 +17,7 @@ export const siteConfig = {
   address: "경기도 용인시 처인구 중부대로 1539",
   phone: "031-328-0333",
   phoneHref: "tel:031-328-0333",
-  officialWebsiteUrl: "https://www.new-standard.co.kr",
+  officialWebsiteUrl: "https://new-standard.co.kr",
   naverReservationUrl:
     "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
   youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
@@ -25,6 +27,7 @@ export const siteConfig = {
     "https://www.google.com/maps/search/?api=1&query=경기도%20용인시%20처인구%20중부대로%201539%20새기준병원",
   logoPath: "/brand/newstandard-logo-horizontal.png",
   logoAlt: "새기준병원 공식 로고",
-  noIndex: true,
+  // Set NEXT_PUBLIC_INDEXABLE=true after the remodel is ready for search indexing.
+  noIndex: !isIndexable,
   baseUrl: BASE_URL
 };

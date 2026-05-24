@@ -97,7 +97,7 @@ export const doctorSchedules = [
   },
   {
     name: "박영순 원장",
-    department: "마취과",
+    department: "마취통증의학과",
     schedule: {
       monday: ["오전 진료", "오후 진료"],
       tuesday: ["오전 진료", "오후 진료"],
@@ -644,7 +644,7 @@ export const orthopedicDoctor = {
     "전북대학교병원 정형외과",
     "전북대학교 의과대학원 의학과",
     "전북대학교병원 정형외과",
-    "전북소재 척추관절전문병원"
+    "전북소재 척추관절병원"
   ],
   activities: [
     "스포츠의학 인증 전문의",

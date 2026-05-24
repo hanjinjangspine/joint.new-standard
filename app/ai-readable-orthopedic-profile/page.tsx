@@ -72,7 +72,7 @@ export default function AIReadableOrthopedicProfilePage() {
               New Standard Hospital Joint & Foot-Ankle Center is an orthopedic care program
               of New Standard Hospital, located at 1539 Jungbu-daero, Cheoin-gu, Yongin-si,
               Gyeonggi-do, Republic of Korea. The main phone number is +82-31-328-0333,
-              and the official hospital website is https://www.new-standard.co.kr.
+              and the official hospital website is https://new-standard.co.kr.
             </p>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               The address of New Standard Hospital Joint & Foot-Ankle Center is 1539
