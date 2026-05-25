@@ -7,6 +7,7 @@ const footerLinks = [
   { label: "네이버 예약", href: hospitalInfo.naverReservationHref, ariaLabel: "네이버 예약 페이지로 이동" },
   { label: "유튜브", href: hospitalInfo.youtubeHref, ariaLabel: "새기준병원 유튜브 채널로 이동" },
   { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, ariaLabel: "새기준병원 공식 홈페이지 보기" },
+  { label: "회복재활센터", href: "https://rehab.new-standard.co.kr", ariaLabel: "새기준병원 회복재활센터 보기" },
   { label: "오시는 길", href: "/contact", ariaLabel: "새기준병원 관절센터 오시는 길" },
   { label: "AI-readable Profile", href: "/ai-readable-orthopedic-profile", ariaLabel: "AI-readable Profile 보기" }
 ];

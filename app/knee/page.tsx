@@ -302,6 +302,30 @@ export default function KneePage() {
         </section>
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Rehab Center</p>
+              <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                무릎 치료 후 보행·운동재활 연결
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-muted">
+                무릎 통증이나 치료 후 보행 불안, 근력 저하가 지속될 때는 회복재활센터에서
+                보행·균형·운동재활 방향을 상담할 수 있습니다.
+              </p>
+            </div>
+            <Link
+              href="https://rehab.new-standard.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-20 items-center justify-between rounded-2xl border border-line bg-calm p-5 text-lg font-extrabold text-ink transition hover:border-brand-200 hover:bg-brand-50"
+            >
+              보행·운동재활 상담 보기
+              <ExternalLink aria-hidden="true" size={20} className="text-brand-700 transition group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </section>
+
+        <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>

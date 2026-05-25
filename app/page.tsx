@@ -48,6 +48,38 @@ export default function HomePage() {
       <SpecialtyGrid />
       <TreatmentFlow />
 
+      <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+            <SectionTitle
+              eyebrow="Recovery Rehab Center"
+              title="관절 치료 후 회복관리까지 연결됩니다"
+              description="관절 통증 치료 이후에도 보행, 운동 범위, 근력, 일상 복귀 과정은 환자마다 다를 수 있습니다. 새기준병원 회복재활센터에서는 진찰 소견과 치료 반응을 함께 확인해 물리치료·도수치료·운동재활 방향을 상담합니다."
+            />
+            <Link
+              href="https://rehab.new-standard.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group rounded-2xl border border-brand-100 bg-calm p-6 transition hover:-translate-y-1 hover:border-brand-200 hover:bg-brand-50 hover:shadow-card"
+            >
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+                New Standard Hospital
+              </p>
+              <h3 className="mt-3 text-2xl font-extrabold leading-tight text-ink">
+                새기준병원 회복재활센터
+              </h3>
+              <p className="mt-4 text-base leading-8 text-muted">
+                생활 통증, 보행 회복, 운동재활, 척추·관절 치료 후 기능 회복 방향을 본원 진료 흐름과 함께 확인할 수 있습니다.
+              </p>
+              <span className="mt-6 inline-flex items-center gap-2 text-base font-extrabold text-brand-700">
+                회복재활센터 보기
+                <ExternalLink aria-hidden="true" size={18} className="transition group-hover:translate-x-1" />
+              </span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
           <SectionTitle

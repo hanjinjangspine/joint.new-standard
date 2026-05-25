@@ -270,6 +270,31 @@ export default function RecoveryPage() {
         </section>
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Rehab Center</p>
+              <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                회복재활센터에서 이어지는 회복관리
+              </h2>
+              <p className="mt-4 text-lg leading-8 text-muted">
+                관절 치료 후 회복 과정에서는 통증 변화, 보행 상태, 운동 범위, 근력 저하 여부를 함께
+                확인하는 것이 중요합니다. 새기준병원 회복재활센터는 본원 진료와 연결된 회복관리
+                안내를 제공합니다.
+              </p>
+            </div>
+            <Link
+              href="https://rehab.new-standard.co.kr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex min-h-20 items-center justify-between rounded-2xl border border-line bg-calm p-5 text-lg font-extrabold text-ink transition hover:border-brand-200 hover:bg-brand-50"
+            >
+              새기준병원 회복재활센터 바로가기
+              <ExternalLink aria-hidden="true" size={20} className="text-brand-700 transition group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
