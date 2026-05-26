@@ -7,11 +7,11 @@ import { columnList } from "@/lib/data";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "블로그형 의학칼럼 | 새기준병원 관절센터",
+  title: "새기준병원 관절칼럼 | 무릎·어깨·족부·발목 치료정보",
   description:
-    "무릎통증, 어깨통증, 족부·발목질환, 무지외반증, 발목불안정증, 관절주사, 관절내시경 등 새기준병원 관절센터 의학칼럼.",
+    "새기준병원 관절칼럼은 무릎, 어깨, 족부·발목 질환과 관절 통증, 수술 후 회복관리 정보를 환자분들이 이해하기 쉽게 정리한 공식 콘텐츠입니다.",
   path: "/column",
-  keywords: ["용인 무릎통증 칼럼", "용인 어깨통증 칼럼", "용인 발목통증 칼럼", "관절 의학칼럼"]
+  keywords: ["용인 무릎통증 칼럼", "용인 어깨통증 칼럼", "용인 발목통증 칼럼", "관절칼럼"]
 });
 
 export default function ColumnPage() {
@@ -22,10 +22,10 @@ export default function ColumnPage() {
   return (
     <>
       <PageHero
-        eyebrow="Medical Column"
-        title="블로그형 의학칼럼"
+        eyebrow="Joint Column"
+        title="새기준병원 관절칼럼"
         description="무릎·어깨·족부·발목 통증을 이해하고 상담 전 확인하면 좋은 내용을 과장 없이 정리합니다."
-        breadcrumb={[{ label: "의학칼럼" }]}
+        breadcrumb={[{ label: "관절칼럼" }]}
       />
       <main>
         <section className="px-4 py-16 sm:px-6 lg:px-8">

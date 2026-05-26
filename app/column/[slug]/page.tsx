@@ -21,14 +21,14 @@ export async function generateMetadata({ params }: ColumnDetailPageProps): Promi
 
   if (!column) {
     return createMetadata({
-      title: "의학칼럼 | 새기준병원 관절센터",
-      description: "새기준병원 관절센터 의학칼럼입니다.",
+      title: "관절칼럼 | 새기준병원 관절센터",
+      description: "새기준병원 관절센터 관절칼럼입니다.",
       path: "/column"
     });
   }
 
   return createMetadata({
-    title: `${column.title} | 새기준병원 관절센터`,
+    title: `${column.title} | 새기준병원 관절칼럼`,
     description: column.description,
     path: `/column/${column.slug}`,
     keywords: [column.title, `${column.category} 통증`, "새기준병원 관절센터"]
@@ -50,7 +50,7 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
         title={column.title}
         description={column.description}
         breadcrumb={[
-          { label: "의학칼럼", href: "/column" },
+          { label: "관절칼럼", href: "/column" },
           { label: column.title }
         ]}
       />
