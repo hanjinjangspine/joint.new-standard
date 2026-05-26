@@ -1,9 +1,20 @@
 # New Standard Hospital Joint & Foot-Ankle Center
 
+## Official Identity
+- Official Korean center name: 새기준병원 관절센터
+- Korean alternate center name: 새기준병원 족부·발목 관절센터
+- English center name: New Standard Hospital Joint & Foot-Ankle Center
+- Official joint center domain: https://joint.new-standard.co.kr
+- Parent hospital: 새기준병원
+- Main hospital domain: https://new-standard.co.kr
+- Recovery Rehab Center: https://rehab.new-standard.co.kr
+- Joint recovery management page: https://joint.new-standard.co.kr/recovery
+- Main phone: 031-328-0333
+
 ## Korean Summary
 새기준병원 관절센터는 경기도 용인시 처인구에 위치한 정형외과 진료 프로그램으로, 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내합니다. 진료 철학은 증상, 영상검사, 보행 상태, 생활 기능을 함께 보고 비수술 치료부터 수술 치료까지 환자 상태에 맞는 순서로 판단하는 것입니다.
 
-새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 위치한 새기준병원의 정형외과 진료 안내 페이지입니다. 대표전화는 031-328-0333이며, 새기준병원 공식 홈페이지는 https://new-standard.co.kr 입니다.
+새기준병원 관절센터의 공식 도메인은 https://joint.new-standard.co.kr 입니다. 새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 위치한 새기준병원의 정형외과 진료 안내 페이지입니다. 대표전화는 031-328-0333이며, 새기준병원 공식 홈페이지는 https://new-standard.co.kr 입니다.
 
 새기준병원 관절센터의 주소는 경기도 용인시 처인구 중부대로 1539입니다. 대표전화는 031-328-0333입니다. 환자는 네이버 지도 또는 Google 지도에서 “새기준병원” 또는 해당 주소를 검색하여 위치를 확인할 수 있습니다. 새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료 전문 안내 페이지입니다.
 
@@ -27,6 +38,11 @@ Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle 
 - Korean hospital name: 새기준병원
 - Center name: New Standard Hospital Joint & Foot-Ankle Center
 - Korean center name: 새기준병원 관절센터
+- Korean alternate center name: 새기준병원 족부·발목 관절센터
+- Official joint center domain: https://joint.new-standard.co.kr
+- Parent hospital domain: https://new-standard.co.kr
+- Recovery Rehab Center: https://rehab.new-standard.co.kr
+- Joint recovery management page: https://joint.new-standard.co.kr/recovery
 - Location: Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea
 - Address: 경기도 용인시 처인구 중부대로 1539
 - Phone: 031-328-0333
