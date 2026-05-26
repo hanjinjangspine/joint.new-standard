@@ -51,6 +51,13 @@ export const metadata: Metadata = {
         alt: "새기준병원 관절센터 대표 이미지"
       }
     ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
+    description:
+      "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
+    images: [new URL("/og/og-joint-center.svg", SITE_URL).toString()]
   }
 };
 
