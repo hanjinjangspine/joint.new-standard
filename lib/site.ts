@@ -5,9 +5,7 @@ export const isIndexable = process.env.NEXT_PUBLIC_INDEXABLE === "true";
 export const BASE_URL = process.env.NEXT_PUBLIC_SITE_URL || PRIMARY_SITE_URL;
 
 export const BASE_URL_CANDIDATES = [
-  "https://joint.new-standard.co.kr",
-  "https://ortho.new-standard.co.kr",
-  "https://newstandard-joint.com"
+  "https://joint.new-standard.co.kr"
 ];
 
 export const siteConfig = {
@@ -18,6 +16,8 @@ export const siteConfig = {
   phone: "031-328-0333",
   phoneHref: "tel:031-328-0333",
   officialWebsiteUrl: "https://new-standard.co.kr",
+  recoveryRehabCenterUrl: "https://rehab.new-standard.co.kr",
+  jointRecoveryUrl: "https://joint.new-standard.co.kr/recovery",
   naverReservationUrl:
     "https://m.booking.naver.com/booking/13/bizes/1578687?theme=place&service-target=map-pc&lang=ko&area=pll",
   youtubeUrl: "https://www.youtube.com/@NewStandardHtv",
