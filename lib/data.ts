@@ -158,7 +158,7 @@ export const navItems = [
   { label: "비수술치료", href: "/injection-pain" },
   { label: "수술치료", href: "/minimally-invasive-surgery" },
   { label: "김동희 원장", href: "/doctor" },
-  { label: "의학칼럼", href: "/column" },
+  { label: "관절칼럼", href: "/column" },
   { label: "오시는 길·예약", href: "/contact" }
 ];
 
