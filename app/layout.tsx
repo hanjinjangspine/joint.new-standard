@@ -33,7 +33,12 @@ export const metadata: Metadata = {
         follow: true
       },
   icons: {
-    icon: "/favicon.ico"
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/favicon-16x16.png", type: "image/png", sizes: "16x16" }
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
   },
   openGraph: {
     title: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
