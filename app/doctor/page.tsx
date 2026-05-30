@@ -10,6 +10,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import { officialPatientLinks } from "@/lib/data";
 import { createMetadata } from "@/lib/seo";
 
 const heroActions = [
@@ -87,6 +88,8 @@ const careLinks = [
 const hospitalLinks = [
   { label: "새기준병원 본원", href: "https://new-standard.co.kr" },
   { label: "본원 의료진 소개", href: "https://new-standard.co.kr/sub/r10/s1020.php" },
+  { label: "본원 무릎 통증 안내", href: "https://new-standard.co.kr/sub/r50/knee-pain.php" },
+  { label: "본원 족부·발목 클리닉", href: "https://new-standard.co.kr/sub/r50/foot-ankle-clinic.php" },
   { label: "오시는 길·진료시간", href: "https://new-standard.co.kr/sub/r10/s1040.php" },
   { label: "온라인 상담", href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel" }
 ];

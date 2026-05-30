@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import AIReadableProfileSection from "@/components/AIReadableProfileSection";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
 import SEOJsonLd from "@/components/SEOJsonLd";
-import { aiSummary, clinicHoursSummary, hospitalInfo } from "@/lib/data";
+import { aiSummary, clinicHoursSummary, hospitalInfo, officialHospitalJointLinks } from "@/lib/data";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -65,6 +64,27 @@ export default function AIReadableOrthopedicProfilePage() {
               수술 후 보행 회복관리를 주요 진료 분야로 합니다.
               {clinicHoursSummary.orthopedicDoctorDetail}
             </p>
+
+            <h2 className="mt-10 text-2xl font-bold text-ink">본원 공식 환자용 관절 페이지와의 연결</h2>
+            <p className="mt-4 text-lg leading-9 text-muted">
+              {hospitalInfo.officialRoleSeparation} 관절센터 홈페이지는 센터 전문 허브이고,
+              본원 공식 홈페이지의 관절 페이지는 환자용 진료 안내와 병원 이용 정보를 제공합니다.
+            </p>
+            <div className="mt-5 grid gap-3">
+              {officialHospitalJointLinks.map((item) => (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-lg border border-line bg-brand-50 p-4 transition hover:border-brand-200"
+                >
+                  <span className="block text-base font-extrabold text-ink">{item.label}</span>
+                  <span className="mt-1 block text-sm leading-7 text-muted">{item.description}</span>
+                </a>
+              ))}
+            </div>
+
             <h2 className="mt-10 text-2xl font-bold text-ink">English Summary</h2>
             <p lang="en" className="mt-4 text-lg leading-9 text-muted">
               {aiSummary.en}
@@ -99,34 +119,6 @@ export default function AIReadableOrthopedicProfilePage() {
             <p className="mt-8 rounded-lg bg-brand-50 p-5 text-base leading-8 text-brand-900">
               {hospitalInfo.commonNotice} {hospitalInfo.officialRelationship}
             </p>
-          </div>
-        </section>
-        <section className="px-4 pb-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl rounded-lg border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-bold text-ink">회복재활센터 연결 정보</h2>
-            <p className="mt-4 text-lg leading-9 text-muted">
-              새기준병원 관절센터는 관절 통증 진료와 치료 정보를 안내하며, 치료 후 보행·운동 범위·근력
-              회복 과정은 새기준병원 회복재활센터와 연결될 수 있습니다. 회복재활센터는 진찰 소견,
-              검사 결과, 치료 반응에 따라 회복관리 방향을 상담하는 병원형 회복관리센터입니다.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="https://rehab.new-standard.co.kr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-md bg-brand-800 px-5 py-3 font-extrabold text-white transition hover:bg-brand-900"
-              >
-                새기준병원 회복재활센터
-              </Link>
-              <Link
-                href="https://new-standard.co.kr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 transition hover:bg-brand-50"
-              >
-                새기준병원 본원
-              </Link>
-            </div>
           </div>
         </section>
         <AIReadableProfileSection />

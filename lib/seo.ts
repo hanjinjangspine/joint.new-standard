@@ -8,7 +8,7 @@ import {
   hospitalInfo,
   SITE_URL
 } from "@/lib/data";
-import { siteConfig } from "@/lib/site";
+import { officialHospitalPages, siteConfig } from "@/lib/site";
 
 type MetadataInput = {
   title: string;
@@ -24,7 +24,6 @@ export function createMetadata({
   keywords = []
 }: MetadataInput): Metadata {
   const url = new URL(path, SITE_URL).toString();
-  const ogImageUrl = new URL("/og/og-joint-center.svg", SITE_URL).toString();
 
   return {
     title,
@@ -57,21 +56,26 @@ export function createMetadata({
       type: "website",
       images: [
         {
-          url: ogImageUrl,
+          url: new URL("/og/og-joint-center.svg", SITE_URL).toString(),
           width: 1200,
           height: 630,
           alt: "새기준병원 관절센터 대표 이미지"
         }
       ]
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [ogImageUrl]
     }
   };
 }
+
+const officialEntityUrls = Array.from(new Set([
+  hospitalInfo.officialWebsiteUrl,
+  officialHospitalPages.medicalStaff,
+  officialHospitalPages.jointPages.knee,
+  officialHospitalPages.jointPages.shoulder,
+  officialHospitalPages.jointPages.footAnkle,
+  officialHospitalPages.jointPages.handWrist,
+  officialHospitalPages.jointPages.persistentPostoperativePain,
+  officialHospitalPages.physicalRehab
+]));
 
 const mainTopics = [
   "족부·발목 질환",
@@ -107,6 +111,16 @@ export function siteJsonLd() {
   const clinicId = `${SITE_URL}#joint-foot-ankle-center`;
   const hospitalId = `${SITE_URL}#new-standard-hospital`;
   const logoUrl = new URL(hospitalInfo.logoPath, SITE_URL).toString();
+  const officialSameAs = [
+    hospitalInfo.officialWebsiteUrl,
+    hospitalInfo.officialHospitalPages.jointPages.knee,
+    hospitalInfo.officialHospitalPages.jointPages.shoulder,
+    hospitalInfo.officialHospitalPages.jointPages.footAnkle,
+    hospitalInfo.officialHospitalPages.jointPages.nonSurgicalJointCare,
+    hospitalInfo.officialHospitalPages.jointPages.persistentPostoperativePain,
+    hospitalInfo.officialHospitalPages.rehabCenter,
+    hospitalInfo.youtubeUrl
+  ];
 
   return {
     "@context": "https://schema.org",
@@ -119,7 +133,8 @@ export function siteJsonLd() {
         alternateName: hospitalInfo.englishName,
         inLanguage: "ko-KR",
         description: aiSummary.ko,
-        publisher: { "@id": hospitalId }
+        publisher: { "@id": hospitalId },
+        sameAs: officialSameAs
       },
       {
         "@type": "WebPage",
@@ -127,7 +142,8 @@ export function siteJsonLd() {
         name: "새기준병원 관절센터",
         url: SITE_URL,
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: mainTopics
+        about: mainTopics,
+        relatedLink: officialSameAs
       },
       {
         "@type": "BreadcrumbList",
@@ -148,7 +164,7 @@ export function siteJsonLd() {
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
         logo: logoUrl,
-        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
+        sameAs: officialSameAs,
         hasMap: hospitalInfo.googleMapUrl,
         parentOrganization: {
           "@type": "Hospital",
@@ -208,7 +224,11 @@ export function siteJsonLd() {
         ],
         description:
           "Provides information centered on foot and ankle disorders, with knee pain, shoulder pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management.",
-        knowsAbout: mainTopics
+        knowsAbout: mainTopics,
+        subjectOf: officialEntityUrls.map((url) => ({
+          "@type": "WebPage",
+          url
+        }))
       },
       {
         "@type": "Hospital",
@@ -216,7 +236,7 @@ export function siteJsonLd() {
         name: hospitalInfo.hospitalName,
         url: hospitalInfo.officialWebsiteUrl,
         logo: logoUrl,
-        sameAs: [hospitalInfo.officialWebsiteUrl, hospitalInfo.youtubeUrl],
+        sameAs: officialSameAs,
         telephone: hospitalInfo.phone,
         address: {
           "@type": "PostalAddress",
