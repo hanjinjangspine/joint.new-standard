@@ -113,15 +113,15 @@ const treatmentCards = [
 const recoveryLinks = [
   { label: "회복관리", href: "/recovery" },
   { label: "관절 비수술 치료", href: "/injection-pain" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" }
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" }
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: "최소침습 족부·발목 수술 | 새기준병원 관절센터",
+  title: "최소침습 족부·발목 수술 판단 | 새기준병원 관절센터",
   description:
     "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염 등 족부·발목 질환에서 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
   path: "/foot-ankle-mis",
-  keywords: ["용인 최소침습 발목수술", "용인 발목관절내시경", "발목 인대 손상", "무지외반", "아킬레스건"]
+  keywords: ["용인 발목 수술 판단", "용인 발목관절내시경", "발목 인대 손상", "무지외반", "아킬레스건"]
 });
 
 export default function FootAnkleMisPage() {
@@ -130,12 +130,12 @@ export default function FootAnkleMisPage() {
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>
-            <Breadcrumb items={[{ label: "최소침습 족부·발목 수술" }]} />
+            <Breadcrumb items={[{ label: "최소침습 족부·발목 수술 판단" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Foot & Ankle Surgery Decision
             </p>
             <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
-              최소침습 족부·발목 수술
+              최소침습 족부·발목 수술 판단
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-8 text-brand-800 sm:text-2xl">
               수술이 필요한 경우에도 병변 위치와 회복 계획을 함께 확인합니다
@@ -241,7 +241,7 @@ export default function FootAnkleMisPage() {
             <div>
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Procedures</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                대표적으로 상담할 수 있는 족부·발목 수술
+                대표적으로 함께 검토하는 족부·발목 수술적 치료
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
                 실제 수술 방법과 범위는 진료와 검사 결과를 종합해 상담합니다. 모든 환자에게 같은 치료가 적용되지는 않습니다.
@@ -327,7 +327,7 @@ export default function FootAnkleMisPage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 족부·발목 수술 상담 안내
+                용인·처인구 인근 족부·발목 수술 판단 안내
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
                 새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를

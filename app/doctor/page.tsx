@@ -77,11 +77,11 @@ const assessmentCards = [
 
 const careLinks = [
   { label: "족부·발목 통증 진료", href: "/foot-ankle" },
-  { label: "최소침습 족부·발목 수술", href: "/foot-ankle-mis" },
+  { label: "최소침습 족부·발목 수술 판단", href: "/foot-ankle-mis" },
   { label: "무릎 통증 진료", href: "/knee" },
   { label: "어깨 통증 진료", href: "/shoulder" },
   { label: "관절 비수술 치료", href: "/injection-pain" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" },
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" },
   { label: "회복관리", href: "/recovery" }
 ];
 
@@ -120,8 +120,7 @@ export default function DoctorPage() {
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
               김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
-              진찰 소견, X-ray·MRI 등 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료
-              방향을 상담합니다.
+              진찰 소견, X-ray·MRI 등 영상검사 결과를 함께 확인해 치료 방향을 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {heroActions.map((action, index) => (
@@ -221,8 +220,8 @@ export default function DoctorPage() {
             </h2>
             <p className="mt-4 max-w-5xl text-lg leading-8 text-muted">
               관절 통증은 같은 부위라도 원인이 다를 수 있습니다. 김동희 원장은 진찰과 영상검사를 함께
-              확인해 약물치료, 주사치료, 체외충격파, 재활치료 등 비수술 치료 가능성과 관절내시경,
-              인공관절 등 수술적 치료 가능성을 환자 상태에 따라 상담합니다.
+              확인해 약물치료, 주사치료, 체외충격파, 재활치료 등 비수술 치료 가능성과 필요한 경우의
+              수술적 치료 가능성을 환자 상태에 따라 상담합니다.
             </p>
           </div>
         </section>

@@ -162,7 +162,7 @@ export const doctorSchedules = [
 
 export const aiSummary = {
   ko:
-    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 새기준병원 산하 관절센터 공식 홈페이지로, 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내합니다. 본원 new-standard.co.kr은 병원 전체 공식 허브이고, joint.new-standard.co.kr은 관절센터 전문 센터 자산으로 운영됩니다. 진료 철학은 증상, 영상검사, 보행 상태, 생활 기능을 함께 보고 비수술 치료부터 수술 치료까지 환자 상태에 맞는 순서로 판단하는 것입니다.",
+    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 새기준병원 산하 관절센터 공식 홈페이지로, 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술적 치료 가능성과 치료 후 보행·기능 회복관리 방향을 상담합니다. 본원 new-standard.co.kr은 병원 전체 공식 허브이고, joint.new-standard.co.kr은 관절센터 공식 센터 자산으로 운영됩니다. 진료 철학은 증상, 영상검사, 보행 상태, 생활 기능을 함께 보고 비수술 치료부터 수술적 치료 판단까지 환자 상태에 맞는 순서로 상담하는 것입니다.",
   en:
     "New Standard Hospital Joint & Foot-Ankle Center is the official joint center website operated by New Standard Hospital in Yongin, South Korea. It is centered on foot and ankle disorders while also providing information about knee pain, shoulder pain, joint pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management. The main hospital website at new-standard.co.kr functions as the official hospital hub, while joint.new-standard.co.kr functions as the specialized joint center asset."
 };
@@ -183,8 +183,8 @@ export const defaultKeywords = [
   "용인 발목불안정성",
   "용인 발목관절내시경",
   "용인 족저근막염",
-  "용인 발목수술",
-  "용인 최소침습 발목수술",
+  "용인 발목 수술 판단",
+  "용인 최소침습 발목 치료",
   "새기준병원 관절센터"
 ];
 
@@ -193,7 +193,7 @@ export const navItems = [
   { label: "족부·발목", href: "/foot-ankle", activePaths: ["/foot-ankle", "/foot-ankle-mis"] },
   { label: "무릎·어깨", href: "/knee", activePaths: ["/knee", "/shoulder"] },
   { label: "비수술치료", href: "/injection-pain" },
-  { label: "수술치료", href: "/minimally-invasive-surgery" },
+  { label: "수술 판단", href: "/minimally-invasive-surgery" },
   { label: "김동희 원장", href: "/doctor" },
   { label: "의학칼럼", href: "/column" },
   { label: "오시는 길·예약", href: "/contact" }
@@ -226,9 +226,9 @@ export const specialtyCards = [
     icon: "injection"
   },
   {
-    title: "최소침습 수술 치료",
+    title: "최소침습 수술 판단",
     href: "/foot-ankle-mis",
-    description: "환자 상태에 따라 발·발목 수술 치료와 관절내시경, 보행 회복관리를 검토합니다.",
+    description: "환자 상태에 따라 발·발목 수술적 치료 가능성과 관절내시경, 보행 회복관리를 검토합니다.",
     icon: "surgery"
   },
   {
@@ -319,10 +319,10 @@ export const treatmentCards = [
       "약물치료, 물리치료, 주사치료, 도수치료, 체외충격파, 보조기 및 생활 교정"
   },
   {
-    title: "최소침습 수술 치료",
+    title: "최소침습 수술 판단",
     href: "/foot-ankle-mis",
     description:
-      "필요한 경우 족부·발목 수술 치료, 관절내시경, 수술 후 보행 회복관리"
+      "필요한 경우 족부·발목 수술적 치료 가능성, 관절내시경, 치료 후 보행 회복관리"
   },
   {
     title: "김동희 원장 소개",
@@ -354,8 +354,8 @@ export const careFlow = [
   },
   {
     step: "5단계",
-    title: "필요한 경우 수술 치료",
-    description: "구조적 손상과 생활 제한이 큰 경우 환자 상태에 맞는 수술 치료를 검토합니다."
+    title: "필요한 경우 수술적 치료 판단",
+    description: "구조적 손상과 생활 제한이 큰 경우 환자 상태에 맞는 수술적 치료 가능성을 검토합니다."
   },
   {
     step: "6단계",
@@ -415,7 +415,7 @@ export const faqItems = [
   {
     question: "수술 후 회복관리는 왜 중요한가요?",
     answer:
-      "통증 조절, 수술 부위 상태 확인, 재활운동, 보행 회복이 일상 복귀에 영향을 줍니다. 수술 이후에도 회복 과정을 함께 관리합니다."
+      "통증 조절, 치료 부위 상태 확인, 재활운동, 보행 회복이 일상 복귀에 영향을 줍니다. 치료 이후에도 회복 과정을 함께 관리합니다."
   }
 ];
 
@@ -462,7 +462,7 @@ export const clinicPages: Record<string, ClinicPage> = {
       },
       {
         title: "치료 방법",
-        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "보조기 및 생활 교정", "필요한 경우 수술 치료"]
+        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "보조기 및 생활 교정", "필요한 경우 수술적 치료 판단"]
       }
     ],
     seoTitle: "무릎통증 클리닉 | 새기준병원 관절센터",
@@ -496,7 +496,7 @@ export const clinicPages: Record<string, ClinicPage> = {
       },
       {
         title: "치료 방법",
-        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "필요한 경우 수술 치료"]
+        items: ["약물치료", "물리치료", "주사치료", "도수치료", "체외충격파", "필요한 경우 수술적 치료 판단"]
       }
     ],
     seoTitle: "어깨통증 클리닉 | 새기준병원 관절센터",
@@ -511,7 +511,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "발과 발목은 체중을 지탱하고 보행을 담당하는 부위입니다. 통증의 원인과 걷는 기능을 함께 확인합니다.",
     body:
-      "발과 발목은 체중을 지탱하고 보행을 담당하는 중요한 부위입니다. 발목을 반복해서 삐거나, 발바닥 통증이 오래 지속되거나, 발가락 변형과 아킬레스건 통증으로 걷기 불편하다면 정확한 진단이 필요합니다. 새기준병원 관절센터는 족부·발목 통증의 원인을 확인하고, 비수술 치료부터 필요한 경우 수술 치료까지 단계적으로 안내합니다.",
+      "발과 발목은 체중을 지탱하고 보행을 담당하는 중요한 부위입니다. 발목을 반복해서 삐거나, 발바닥 통증이 오래 지속되거나, 발가락 변형과 아킬레스건 통증으로 걷기 불편하다면 정확한 진단이 필요합니다. 새기준병원 관절센터는 족부·발목 통증의 원인을 확인하고, 비수술 치료부터 필요한 경우 수술적 치료 가능성까지 단계적으로 상담합니다.",
     sections: [
       {
         title: "이런 증상이 있으면 상담이 필요합니다",
@@ -540,8 +540,8 @@ export const clinicPages: Record<string, ClinicPage> = {
           "도수치료",
           "체외충격파",
           "보조기 및 생활 교정",
-          "필요한 경우 수술 치료",
-          "수술 후 보행 회복관리"
+          "필요한 경우 수술적 치료 판단",
+          "치료 후 보행 회복관리"
         ]
       }
     ],
@@ -553,11 +553,11 @@ export const clinicPages: Record<string, ClinicPage> = {
   "foot-ankle-mis": {
     slug: "foot-ankle-mis",
     eyebrow: "Foot & Ankle MIS",
-    title: "족부·발목 최소침습수술, 작은 절개로 보행 회복을 고려합니다.",
+    title: "족부·발목 최소침습수술은 환자 상태를 먼저 확인합니다.",
     description:
       "변형, 반복적인 발목 불안정성, 연골 손상, 지속되는 통증은 정확한 진단 후 치료 순서를 정해야 합니다.",
     body:
-      "모든 족부·발목 질환이 수술이 필요한 것은 아닙니다. 하지만 변형이 진행되거나, 반복적인 발목 불안정성, 연골 손상, 보존적 치료에도 지속되는 통증이 있다면 수술적 치료가 필요할 수 있습니다. 새기준병원 관절센터는 환자 상태에 따라 가능한 경우 최소침습적 접근을 고려하고, 수술 후 회복관리까지 함께 안내합니다.",
+      "모든 족부·발목 질환이 수술이 필요한 것은 아닙니다. 변형 진행, 반복적인 발목 불안정성, 연골 손상, 보존적 치료 반응을 함께 확인한 뒤 환자 상태에 따라 수술적 치료 가능성을 검토할 수 있습니다. 새기준병원 관절센터는 가능한 경우 최소침습적 접근 여부와 치료 후 회복관리까지 함께 상담합니다.",
     sections: [
       {
         title: "강조할 수술과 치료",
@@ -568,7 +568,7 @@ export const clinicPages: Record<string, ClinicPage> = {
           "발목 충돌증후군 수술",
           "발목 연골 손상 치료",
           "족부 변형 교정",
-          "수술 후 보행 회복관리"
+          "치료 후 보행 회복관리"
         ]
       },
       {
@@ -582,10 +582,10 @@ export const clinicPages: Record<string, ClinicPage> = {
         ]
       }
     ],
-    seoTitle: "족부·발목 최소침습수술 | 새기준병원 관절센터",
+    seoTitle: "족부·발목 최소침습수술 판단 | 새기준병원 관절센터",
     seoDescription:
       "무지외반증, 발목불안정증, 발목 관절내시경, 발목 인대 손상, 족부·발목 변형 질환에 대해 환자 상태에 맞는 최소침습적 치료를 고려합니다.",
-    keywords: ["용인 최소침습 발목수술", "용인 발목관절내시경", "용인 무지외반증", "족부·발목 최소침습수술"],
+    keywords: ["용인 발목 수술 판단", "용인 발목관절내시경", "용인 무지외반증", "족부·발목 최소침습수술 판단"],
     ctaTitle: "발과 발목 통증이 반복된다면 정확한 진단과 치료 순서를 먼저 확인하세요."
   },
   "injection-pain": {
@@ -623,24 +623,24 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "보존적 치료 반응과 구조적 손상, 생활 제한 정도를 확인해 필요한 경우 수술적 치료를 검토합니다.",
     body:
-      "모든 관절질환이 수술이 필요한 것은 아닙니다. 하지만 보존적 치료에도 통증이 지속되거나, 구조적 손상이 뚜렷하거나, 일상생활 제한이 심한 경우에는 수술적 치료가 필요할 수 있습니다. 새기준병원 관절센터는 가능한 경우 관절내시경, 최소절개 수술, 족부·발목 최소침습수술, 회복관리 프로그램을 통해 환자의 일상 복귀를 돕습니다.",
+      "모든 관절질환이 수술이 필요한 것은 아닙니다. 보존적 치료에도 통증이 지속되거나, 구조적 손상이 뚜렷하거나, 일상생활 제한이 큰 경우에는 수술적 치료 가능성을 환자 상태에 따라 검토할 수 있습니다. 새기준병원 관절센터는 관절내시경, 최소절개 수술, 족부·발목 최소침습수술 가능성과 회복관리 방향을 진찰 소견과 영상검사 결과를 바탕으로 상담합니다.",
     sections: [
       {
         title: "확인할 내용",
         items: [
           "관절내시경이란?",
           "최소침습 수술의 장점",
-          "수술이 필요한 경우",
+          "수술 여부 판단",
           "수술 전 확인할 것",
           "수술 후 회복관리",
-          "족부·발목 최소침습수술과 보행 회복"
+          "족부·발목 최소침습수술 판단과 보행 회복"
         ]
       }
     ],
-    seoTitle: "최소침습 관절수술 | 새기준병원 관절센터",
+    seoTitle: "최소침습 관절수술 판단 | 새기준병원 관절센터",
     seoDescription:
-      "관절내시경, 최소절개 수술, 족부·발목 최소침습수술, 수술 후 회복관리까지 단계적으로 안내하는 새기준병원 관절센터.",
-    keywords: ["용인 관절내시경", "최소침습 관절수술", "용인 발목수술"]
+      "관절내시경, 최소절개 수술, 족부·발목 최소침습수술 가능성과 치료 후 회복관리까지 단계적으로 상담하는 새기준병원 관절센터.",
+    keywords: ["용인 관절내시경", "최소침습 관절수술 판단", "용인 발목 수술 판단"]
   },
   "osteoporosis-fracture": {
     slug: "osteoporosis-fracture",
@@ -667,7 +667,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     description:
       "통증 조절, 수술 부위 상태 확인, 보행 회복, 재활운동, 외래 추적 관찰까지 일상 복귀 과정을 함께 관리합니다.",
     body:
-      "수술 후에는 통증 조절, 수술 부위 상태 확인, 보행 회복, 재활운동, 추적검사가 중요합니다. 새기준병원 관절센터는 수술 후 환자가 안전하게 일상으로 돌아갈 수 있도록 회복 과정을 함께 관리합니다.",
+      "수술 후에는 통증 조절, 수술 부위 상태 확인, 보행 회복, 재활운동, 추적검사가 중요합니다. 새기준병원 관절센터는 치료 범위와 환자 상태에 맞춰 회복 과정을 함께 관리합니다.",
     sections: [
       {
         title: "회복관리 항목",
@@ -679,14 +679,14 @@ export const clinicPages: Record<string, ClinicPage> = {
           "재활운동",
           "외래 추적 관찰",
           "일상 복귀 안내",
-          "족부·발목 수술 후 보행 회복관리"
+      "족부·발목 치료 후 보행 회복관리"
         ]
       }
     ],
     seoTitle: "수술 후 회복관리 | 새기준병원 관절센터",
     seoDescription:
-      "관절수술과 족부·발목 수술 후 통증 조절, 보행 회복, 재활운동, 추적검사와 일상 복귀 관리 안내.",
-    keywords: ["관절수술 회복", "수술 후 재활", "보행 회복관리"]
+      "관절 치료와 족부·발목 치료 후 통증 조절, 보행 회복, 재활운동, 추적검사와 일상 복귀 관리 안내.",
+    keywords: ["관절 치료 후 회복", "수술 후 재활", "보행 회복관리"]
   }
 };
 
@@ -698,7 +698,7 @@ export const orthopedicDoctor = {
   emphasis: "족부·발목 질환과 보행 문제를 중심으로, 무릎·어깨 통증과 관절질환까지 함께 진료합니다.",
   specialties: [
     "족부·발목 질환",
-    "족부·발목 최소침습수술",
+    "족부·발목 수술 판단",
     "무지외반증",
     "발목 불안정증",
     "발목 인대 손상",
@@ -706,7 +706,7 @@ export const orthopedicDoctor = {
     "무릎 통증",
     "어깨 통증",
     "관절주사 및 통증시술",
-    "수술 후 보행 회복관리"
+    "치료 후 보행 회복관리"
   ],
   educationAndCareer: [
     "전북대학교 의학전문대학원 의학과",
@@ -727,7 +727,7 @@ export const orthopedicDoctor = {
     "대한말초신경학회 정회원"
   ],
   philosophy:
-    "영상검사 결과만으로 치료 방향을 정하기보다 환자가 실제로 겪는 통증, 보행 제한, 생활 목표를 함께 확인하고, 비수술 치료부터 수술적 치료까지 단계적으로 설명합니다."
+    "영상검사 결과만으로 치료 방향을 정하기보다 환자가 실제로 겪는 통증, 보행 제한, 생활 목표를 함께 확인하고, 비수술 치료부터 수술적 치료 가능성까지 단계적으로 설명합니다."
 };
 
 export const doctorProfile = {
@@ -766,8 +766,8 @@ export const columnList = [
   { title: "발목 인대파열, 보존치료와 수술치료의 기준", category: "족부·발목", href: pending, excerpt: "인대 손상 정도와 불안정성에 따라 치료 계획이 달라질 수 있습니다." },
   { title: "발가락 변형 때문에 신발 신기가 힘들 때", category: "족부·발목", href: pending, excerpt: "무지외반증, 소건막류, 망치족지 등 변형 질환을 안내합니다." },
   { title: "발목 연골 손상은 왜 오래 아플까요?", category: "족부·발목", href: pending, excerpt: "연골 손상과 만성 통증의 관계를 쉽게 설명합니다." },
-  { title: "족부·발목 최소침습수술이란 무엇인가요?", category: "족부·발목", href: "/column/foot-ankle-mis", excerpt: "가능한 경우 작은 절개와 보행 회복을 고려하는 치료 접근을 설명합니다." },
-  { title: "수술 후 보행 회복관리는 왜 중요할까요?", category: "족부·발목", href: pending, excerpt: "발과 발목 수술 후 통증 조절, 재활, 보행 회복관리의 의미를 안내합니다." }
+  { title: "족부·발목 최소침습수술이란 무엇인가요?", category: "족부·발목", href: "/column/foot-ankle-mis", excerpt: "가능한 경우 작은 절개와 회복 과정을 함께 고려하는 치료 접근을 설명합니다." },
+  { title: "수술 후 보행 회복관리는 왜 중요할까요?", category: "족부·발목", href: pending, excerpt: "발과 발목 치료 후 통증 조절, 재활, 보행 회복관리의 의미를 안내합니다." }
 ];
 
 export type ColumnDetail = {
@@ -832,7 +832,7 @@ export const columnDetails: Record<string, ColumnDetail> = {
     slug: "arthroscopy-timing",
     title: "관절내시경 수술은 언제 필요할까요?",
     description: "관절내시경 수술을 검토하는 상황과 수술 전 확인해야 할 기준을 안내합니다.",
-    category: "관절수술",
+    category: "수술 판단",
     readingTime: "약 3분",
     sections: [
       { title: "수술 결정은 증상과 손상 정도를 함께 봅니다", body: ["관절내시경은 작은 절개를 통해 관절 안을 확인하고 필요한 치료를 시행하는 방법입니다.", "모든 관절 통증에 필요한 것은 아니며, 보존적 치료에도 통증이 지속되거나 구조적 손상이 뚜렷한 경우에 검토합니다."] },
@@ -864,12 +864,12 @@ export const columnDetails: Record<string, ColumnDetail> = {
   "foot-ankle-mis": {
     slug: "foot-ankle-mis",
     title: "족부·발목 최소침습수술이란 무엇인가요?",
-    description: "족부·발목 질환에서 가능한 경우 최소침습적 접근과 보행 회복관리를 함께 고려하는 이유를 설명합니다.",
+    description: "족부·발목 질환에서 가능한 경우 최소침습적 접근과 회복관리 방향을 함께 고려하는 이유를 설명합니다.",
     category: "족부·발목",
     readingTime: "약 3분",
     sections: [
-      { title: "작은 절개만이 목적은 아닙니다", body: ["족부·발목 최소침습수술은 가능한 경우 조직 손상을 줄이고 회복 과정을 고려하는 수술 접근입니다.", "다만 모든 질환과 모든 환자에게 적용되는 것은 아니며, 변형 정도와 영상검사 결과, 전신 상태를 함께 확인해야 합니다."] },
-      { title: "보행 회복을 함께 봅니다", body: ["발과 발목은 걷는 기능과 직접 연결되어 있어 수술 후 통증 조절, 보행 훈련, 재활 계획이 중요합니다.", "새기준병원 관절센터는 치료 전 설명부터 수술 후 회복관리까지 환자 상태에 맞게 안내합니다."] }
+      { title: "작은 절개만이 목적은 아닙니다", body: ["족부·발목 최소침습수술은 가능한 경우 조직 부담과 회복 과정을 함께 고려하는 수술 접근입니다.", "다만 모든 질환과 모든 환자에게 적용되는 것은 아니며, 변형 정도와 영상검사 결과, 전신 상태를 함께 확인해야 합니다."] },
+      { title: "보행 회복을 함께 봅니다", body: ["발과 발목은 걷는 기능과 직접 연결되어 있어 치료 후 통증 조절, 보행 훈련, 재활 계획이 중요합니다.", "새기준병원 관절센터는 치료 전 설명부터 회복관리까지 환자 상태에 맞게 안내합니다."] }
     ]
   }
 };
@@ -880,7 +880,7 @@ export const aiProfileLinks = [
   { label: "무릎통증", href: "/knee" },
   { label: "어깨통증", href: "/shoulder" },
   { label: "족부·발목", href: "/foot-ankle" },
-  { label: "족부·발목 최소침습수술", href: "/foot-ankle-mis" },
+  { label: "족부·발목 최소침습수술 판단", href: "/foot-ankle-mis" },
   { label: "예약문의", href: "/contact" },
   { label: "전화 상담", href: hospitalInfo.consultationPhoneHref },
   { label: "네이버 지도에서 보기", href: hospitalInfo.naverMapUrl, external: true },

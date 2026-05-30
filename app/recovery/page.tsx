@@ -73,7 +73,7 @@ const recoverySteps = [
 
 const surgeryRecoveryLinks = [
   { label: "최소침습 족부·발목 수술", href: "/foot-ankle-mis" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" }
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" }
 ];
 
 const bodyPartLinks = [
@@ -81,7 +81,7 @@ const bodyPartLinks = [
   { label: "무릎 통증 진료", href: "/knee" },
   { label: "어깨 통증 진료", href: "/shoulder" },
   { label: "관절 비수술 치료", href: "/injection-pain" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" }
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" }
 ];
 
 export const metadata: Metadata = createMetadata({

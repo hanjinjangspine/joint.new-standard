@@ -99,7 +99,7 @@ const diagnosisCards = [
 ];
 
 const surgeryLinks = [
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" },
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" },
   { label: "회복관리", href: "/recovery" },
   { label: "무릎 통증 진료", href: "/knee" },
   { label: "어깨 통증 진료", href: "/shoulder" },

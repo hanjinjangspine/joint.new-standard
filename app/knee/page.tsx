@@ -106,7 +106,7 @@ const treatmentCards = [
 ];
 
 const surgeryLinks = [
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" },
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" },
   { label: "회복관리", href: "/recovery" },
   { label: "관절 비수술 치료", href: "/injection-pain" }
 ];

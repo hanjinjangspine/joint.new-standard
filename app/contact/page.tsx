@@ -65,7 +65,7 @@ const symptomLinks = [
   { label: "무릎 통증", href: "/knee" },
   { label: "어깨 통증", href: "/shoulder" },
   { label: "관절 비수술 치료", href: "/injection-pain" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" },
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" },
   { label: "회복관리", href: "/recovery" },
   { label: "김동희 원장 소개", href: "/doctor" }
 ];

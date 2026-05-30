@@ -116,11 +116,11 @@ const bodyPartLinks = [
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: "최소침습 관절수술 | 새기준병원 관절센터",
+  title: "최소침습 관절수술 판단 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 무릎·어깨·발목·손목 질환에서 관절내시경, 최소침습 수술, 인공관절 등 수술적 치료 가능성을 진찰과 영상검사를 함께 확인해 상담합니다.",
+    "새기준병원 관절센터는 무릎·어깨·발목·손목 질환에서 수술 여부와 치료 방법을 진찰 소견과 영상검사 결과를 함께 확인해 상담합니다.",
   path: "/minimally-invasive-surgery",
-  keywords: ["용인 관절수술", "최소침습 관절수술", "관절내시경", "인공관절", "회전근개 봉합"]
+  keywords: ["용인 관절 치료 판단", "최소침습 관절수술 판단", "관절내시경", "인공관절", "회전근개 봉합"]
 });
 
 export default function MinimallyInvasiveSurgeryPage() {
@@ -207,7 +207,7 @@ export default function MinimallyInvasiveSurgeryPage() {
             <div className="max-w-4xl">
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Assessment</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                최소침습 관절수술에서 확인하는 요소
+                최소침습 관절수술 판단에서 확인하는 요소
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
                 수술 방법만 먼저 정하지 않고 통증 위치, 관절 운동범위, 손상 정도, 영상검사,
@@ -237,7 +237,7 @@ export default function MinimallyInvasiveSurgeryPage() {
               <div>
                 <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgery Scope</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                  대표적으로 상담할 수 있는 관절수술
+                  대표적으로 함께 검토하는 수술적 치료 주제
                 </h2>
                 <p className="mt-4 text-lg leading-8 text-muted">
                   실제 수술 방법과 범위는 진료와 검사 결과를 종합해 상담합니다. 모든 환자에게 같은 치료가 적용되지는 않습니다.
@@ -282,10 +282,10 @@ export default function MinimallyInvasiveSurgeryPage() {
             <div>
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Related Care</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                부위별 수술 상담 연결
+                부위별 치료 판단 연결
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                관절수술 상담은 통증 부위와 손상 구조에 따라 달라질 수 있습니다. 관련 진료 페이지에서
+                수술적 치료 가능성은 통증 부위와 손상 구조에 따라 달라질 수 있습니다. 관련 진료 페이지에서
                 무릎, 어깨, 족부·발목, 비수술 치료와 회복관리 정보를 함께 확인할 수 있습니다.
               </p>
             </div>
@@ -328,7 +328,7 @@ export default function MinimallyInvasiveSurgeryPage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 관절수술 상담 안내
+                용인·처인구 인근 관절 치료 판단 안내
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
                 새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
@@ -344,7 +344,7 @@ export default function MinimallyInvasiveSurgeryPage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-8 rounded-[28px] border border-white/10 bg-white/5 p-6 lg:flex-row lg:items-center lg:justify-between lg:p-8">
             <div className="max-w-3xl">
               <h2 className="text-3xl font-extrabold leading-tight sm:text-4xl">
-                관절수술 여부는 정확한 평가 후 상담합니다
+                수술 여부와 치료 방법은 평가 후 상담합니다
               </h2>
               <p className="mt-5 text-lg leading-8 text-brand-50">
                 통증 위치, 관절 상태, 영상검사 결과, 기존 치료 반응, 회복 계획을 함께 확인해

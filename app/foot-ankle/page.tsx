@@ -107,9 +107,9 @@ const treatmentCards = [
 ];
 
 const surgeryLinks = [
-  { label: "최소침습 족부·발목 수술", href: "/foot-ankle-mis" },
+  { label: "최소침습 족부·발목 수술 판단", href: "/foot-ankle-mis" },
   { label: "회복관리", href: "/recovery" },
-  { label: "최소침습 관절수술", href: "/minimally-invasive-surgery" }
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" }
 ];
 
 export const metadata: Metadata = createMetadata({
@@ -282,12 +282,12 @@ export default function FootAnklePage() {
             <div>
               <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgery & Recovery</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                수술이 필요한 경우에도 범위와 회복 계획을 함께 상담합니다
+                수술 여부는 범위와 회복 계획까지 함께 상담합니다
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
                 족부·발목 수술은 병변 위치, 손상 정도, 발 구조, 보행 상태, 전신 상태에
                 따라 치료 방향이 달라질 수 있습니다. 새기준병원 관절센터는 검사 결과를
-                바탕으로 수술 필요성과 회복관리 방향을 상담합니다.
+                바탕으로 수술적 치료 가능성과 회복관리 방향을 상담합니다.
               </p>
             </div>
             <div className="grid gap-3 sm:grid-cols-3 lg:grid-cols-1">
