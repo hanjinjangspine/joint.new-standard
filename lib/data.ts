@@ -738,6 +738,7 @@ export const doctorProfile = {
 const pending = "#";
 
 export const columnList = [
+  { title: "손목 골절, 깁스만 해도 될까요? 요골 원위부 골절의 보존치료와 수술 판단", category: "손·손목", href: "/wrist/distal-radius-fracture", excerpt: "손목 골절에서 X-ray와 CT, 부목·석고 고정, 수술적 고정 판단 기준을 설명합니다." },
   { title: "용인 무릎통증, 꼭 수술해야 하나요?", category: "무릎", href: "/column/knee-pain-yongin", excerpt: "무릎 통증의 원인과 치료 순서를 먼저 확인해야 하는 이유를 설명합니다." },
   { title: "계단 내려갈 때 무릎이 아픈 이유", category: "무릎", href: "/column/stair-descent-knee-pain", excerpt: "계단 통증에서 확인해야 할 관절염, 연골, 근력 문제를 정리합니다." },
   { title: "무릎에 물이 찼다는 말은 무슨 뜻일까요?", category: "무릎", href: "/column/knee-joint-effusion", excerpt: "무릎 붓기와 활액막염, 염증 반응을 쉽게 설명합니다." },
@@ -1081,6 +1082,7 @@ export const allStaticPaths = [
   "/recovery",
   "/contact",
   "/column",
+  "/wrist/distal-radius-fracture",
   "/ai-readable-orthopedic-profile",
   ...Object.keys(columnDetails).map((slug) => `/column/${slug}`)
 ];
