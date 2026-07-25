@@ -10,7 +10,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -126,6 +127,14 @@ export const metadata: Metadata = createMetadata({
 export default function MinimallyInvasiveSurgeryPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "최소침습 관절수술 판단 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 무릎·어깨·발목·손목 질환에서 수술 여부와 치료 방법을 진찰 소견과 영상검사 결과를 함께 확인해 상담합니다.",
+          path: "/minimally-invasive-surgery"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

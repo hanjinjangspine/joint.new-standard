@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import SEOJsonLd from "@/components/SEOJsonLd";
 import { columnDetails } from "@/lib/data";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 type ColumnDetailPageProps = {
   params: Promise<{
@@ -45,6 +46,13 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
 
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: `${column.title} | 새기준병원 관절칼럼`,
+          description: column.description,
+          path: `/column/${column.slug}`
+        })}
+      />
       <PageHero
         eyebrow={`${column.category} 칼럼 · ${column.readingTime}`}
         title={column.title}

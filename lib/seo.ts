@@ -77,6 +77,17 @@ const officialEntityUrls = Array.from(new Set([
   officialHospitalPages.physicalRehab
 ]));
 
+const officialSameAs = [
+  hospitalInfo.officialWebsiteUrl,
+  hospitalInfo.officialHospitalPages.jointPages.knee,
+  hospitalInfo.officialHospitalPages.jointPages.shoulder,
+  hospitalInfo.officialHospitalPages.jointPages.footAnkle,
+  hospitalInfo.officialHospitalPages.jointPages.nonSurgicalJointCare,
+  hospitalInfo.officialHospitalPages.jointPages.persistentPostoperativePain,
+  hospitalInfo.officialHospitalPages.rehabCenter,
+  hospitalInfo.youtubeUrl
+];
+
 const mainTopics = [
   "족부·발목 질환",
   "발목 염좌",
@@ -107,20 +118,10 @@ const mainTopics = [
   "Postoperative Recovery Management"
 ];
 
-export function siteJsonLd() {
+export function entityGraphJsonLd() {
   const clinicId = `${SITE_URL}#joint-foot-ankle-center`;
   const hospitalId = `${SITE_URL}#new-standard-hospital`;
   const logoUrl = new URL(hospitalInfo.logoPath, SITE_URL).toString();
-  const officialSameAs = [
-    hospitalInfo.officialWebsiteUrl,
-    hospitalInfo.officialHospitalPages.jointPages.knee,
-    hospitalInfo.officialHospitalPages.jointPages.shoulder,
-    hospitalInfo.officialHospitalPages.jointPages.footAnkle,
-    hospitalInfo.officialHospitalPages.jointPages.nonSurgicalJointCare,
-    hospitalInfo.officialHospitalPages.jointPages.persistentPostoperativePain,
-    hospitalInfo.officialHospitalPages.rehabCenter,
-    hospitalInfo.youtubeUrl
-  ];
 
   return {
     "@context": "https://schema.org",
@@ -135,27 +136,6 @@ export function siteJsonLd() {
         description: aiSummary.ko,
         publisher: { "@id": hospitalId },
         sameAs: officialSameAs
-      },
-      {
-        "@type": "WebPage",
-        "@id": `${SITE_URL}#home-page`,
-        name: "새기준병원 관절센터",
-        url: SITE_URL,
-        isPartOf: { "@id": `${SITE_URL}#website` },
-        about: mainTopics,
-        relatedLink: officialSameAs
-      },
-      {
-        "@type": "BreadcrumbList",
-        "@id": `${SITE_URL}#breadcrumb`,
-        itemListElement: [
-          {
-            "@type": "ListItem",
-            position: 1,
-            name: "새기준병원 관절센터",
-            item: SITE_URL
-          }
-        ]
       },
       {
         "@type": ["MedicalClinic", "LocalBusiness", "MedicalOrganization"],
@@ -291,6 +271,35 @@ export function siteJsonLd() {
         bodyLocation: "Foot and ankle",
         description:
           "Considers minimally invasive treatment when appropriate after diagnosis, imaging review, symptom assessment, and patient condition evaluation."
+      }
+    ]
+  };
+}
+
+export function homeJsonLd() {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${SITE_URL}#home-page`,
+        name: "새기준병원 관절센터",
+        url: SITE_URL,
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: mainTopics,
+        relatedLink: officialSameAs
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${SITE_URL}#breadcrumb`,
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "새기준병원 관절센터",
+            item: SITE_URL
+          }
+        ]
       },
       {
         "@type": "FAQPage",
@@ -324,6 +333,7 @@ export function webPageJsonLd({
     "@graph": [
       {
         "@type": "WebPage",
+        "@id": `${url}#webpage`,
         name: title,
         description,
         url,
@@ -332,6 +342,7 @@ export function webPageJsonLd({
       },
       {
         "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
         itemListElement: [
           {
             "@type": "ListItem",

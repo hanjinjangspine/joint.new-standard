@@ -11,7 +11,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -127,6 +128,14 @@ export const metadata: Metadata = createMetadata({
 export default function FootAnkleMisPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "최소침습 족부·발목 수술 판단 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염 등 족부·발목 질환에서 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+          path: "/foot-ankle-mis"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

@@ -10,7 +10,8 @@ import {
   Syringe
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -117,6 +118,14 @@ export const metadata: Metadata = createMetadata({
 export default function InjectionPainPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "관절 비수술 치료 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 무릎·어깨·발목·손목 통증에서 약물치료, 주사치료, 체외충격파, 재활치료 등 비수술 치료 가능성을 진찰과 영상검사를 함께 확인해 상담합니다.",
+          path: "/injection-pain"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

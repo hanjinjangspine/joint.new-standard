@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import ColumnCard from "@/components/ColumnCard";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
 import { columnList } from "@/lib/data";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
   title: "새기준병원 관절칼럼 | 무릎·어깨·족부·발목 치료정보",
@@ -28,6 +29,14 @@ export default function ColumnPage() {
 
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "새기준병원 관절칼럼 | 무릎·어깨·족부·발목 치료정보",
+          description:
+            "새기준병원 관절칼럼은 무릎, 어깨, 족부·발목 질환과 관절 통증, 수술 후 회복관리 정보를 환자분들이 이해하기 쉽게 정리한 공식 콘텐츠입니다.",
+          path: "/column"
+        })}
+      />
       <PageHero
         eyebrow="Joint Column"
         title="새기준병원 관절칼럼"

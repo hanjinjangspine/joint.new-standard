@@ -9,7 +9,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -118,6 +119,14 @@ export const metadata: Metadata = createMetadata({
 export default function ContactPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "관절센터 진료 상담·오시는 길 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 용인시 처인구에서 족부·발목, 무릎, 어깨, 손·손목 통증에 대해 진찰과 영상검사를 함께 확인해 치료 방향을 상담합니다. 온라인 상담과 오시는 길을 안내합니다.",
+          path: "/contact"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

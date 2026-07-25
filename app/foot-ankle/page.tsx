@@ -10,7 +10,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -123,6 +124,14 @@ export const metadata: Metadata = createMetadata({
 export default function FootAnklePage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "족부·발목 통증 진료 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+          path: "/foot-ankle"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

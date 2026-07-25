@@ -10,7 +10,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -95,6 +96,14 @@ export const metadata: Metadata = createMetadata({
 export default function RecoveryPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "관절 회복관리 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 관절 치료 후 통증 관리, 관절 운동범위, 보행 회복, 근력 회복, 재활 계획을 환자 상태와 치료 범위에 따라 상담합니다.",
+          path: "/recovery"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

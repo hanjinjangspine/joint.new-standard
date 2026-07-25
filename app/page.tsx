@@ -8,11 +8,12 @@ import FAQSection from "@/components/FAQSection";
 import FootAnkleFeature from "@/components/FootAnkleFeature";
 import HeroSection from "@/components/HeroSection";
 import HomeAIReadableSummary from "@/components/HomeAIReadableSummary";
+import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
 import SpecialtyGrid from "@/components/SpecialtyGrid";
 import TreatmentFlow from "@/components/TreatmentFlow";
 import { officialPatientLinks } from "@/lib/data";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, homeJsonLd } from "@/lib/seo";
 
 const officialLinks = [
   {
@@ -60,6 +61,7 @@ export const metadata: Metadata = createMetadata({
 export default function HomePage() {
   return (
     <main>
+      <SEOJsonLd data={homeJsonLd()} />
       <HeroSection />
       <CenterIntroSection />
       <SpecialtyGrid />

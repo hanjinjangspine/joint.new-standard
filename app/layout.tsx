@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { hospitalInfo, SITE_URL } from "@/lib/data";
-import { siteJsonLd } from "@/lib/seo";
+import { entityGraphJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -76,7 +76,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="ko">
       <body>
-        <SEOJsonLd data={siteJsonLd()} />
+        <SEOJsonLd data={entityGraphJsonLd()} />
         <Header />
         {children}
         <Footer />

@@ -10,7 +10,8 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { createMetadata } from "@/lib/seo";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -122,6 +123,14 @@ export const metadata: Metadata = createMetadata({
 export default function ShoulderPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "어깨 통증 진료 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터는 어깨 통증, 오십견, 회전근개 파열, 충돌증후군, 석회성 건염을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+          path: "/shoulder"
+        })}
+      />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
           <div>

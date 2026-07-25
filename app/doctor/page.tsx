@@ -12,7 +12,7 @@ import {
 import Breadcrumb from "@/components/Breadcrumb";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { officialPatientLinks, SITE_URL } from "@/lib/data";
-import { createMetadata } from "@/lib/seo";
+import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
@@ -165,6 +165,14 @@ function faqJsonLd() {
 export default function DoctorPage() {
   return (
     <>
+      <SEOJsonLd
+        data={webPageJsonLd({
+          title: "김동희 원장 | 새기준병원 관절센터",
+          description:
+            "새기준병원 관절센터 김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+          path: "/doctor"
+        })}
+      />
       <SEOJsonLd data={faqJsonLd()} />
       <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
