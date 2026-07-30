@@ -208,13 +208,6 @@ export default function ShoulderPage() {
           </div>
         </section>
 
-        <PatientGuideSection
-          guideIds={["08", "21", "22", "24"]}
-          title="어깨 질환과 수술 설명을 다시 확인하세요"
-          description="석회화 건염, 회전근개 파열, 반복 탈구, 견봉 쇄골 관절 탈구 환자안내를 한곳에 모았습니다."
-          tone="white"
-        />
-
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -237,6 +230,13 @@ export default function ShoulderPage() {
             </div>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["08", "21", "22", "24"]}
+          title="어깨 질환별 판단 기준을 자세히 확인하세요"
+          description="석회화 건염, 회전근개 파열, 반복 탈구와 견봉 쇄골 관절 탈구의 증상·검사·치료·회복 내용을 HTML로 제공합니다."
+          tone="white"
+        />
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">

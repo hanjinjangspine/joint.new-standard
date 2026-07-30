@@ -221,9 +221,9 @@ export default function DistalRadiusFracturePage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["15", "09"]}
-          title="손·손목과 골절 환자안내를 함께 확인하세요"
-          description="골절의 정복·내고정술과 수근관 증후군 환자안내를 진료 후에도 다시 확인할 수 있습니다."
+          guideIds={["15"]}
+          title="골절 치료 판단과 회복 과정을 확인하세요"
+          description="골절의 정복·내고정술을 고려하는 기준, 치료 과정, 회복과 주의 신호를 HTML로 확인할 수 있습니다."
           tone="white"
         />
 

@@ -208,13 +208,6 @@ export default function KneePage() {
           </div>
         </section>
 
-        <PatientGuideSection
-          guideIds={["11", "12", "13", "14", "23"]}
-          title="무릎 질환과 수술 설명을 다시 확인하세요"
-          description="반월상 연골판, 전방 십자 인대, 연골 결손, 인공 무릎 관절 치환술, O자 다리 교정술 환자안내를 한곳에 모았습니다."
-          tone="white"
-        />
-
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -235,6 +228,39 @@ export default function KneePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+        <PatientGuideSection
+          guideIds={["11", "12", "13", "14", "23"]}
+          title="무릎 질환별 판단 기준을 자세히 확인하세요"
+          description="반월상 연골판, 전방 십자 인대, 연골 결손, 인공 무릎 관절 치환술과 O자 다리 교정술의 증상·검사·치료·회복 내용을 HTML로 제공합니다."
+          tone="white"
+        />
+
+        <section className="bg-white px-4 pb-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
+            <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Different goals</p>
+            <h2 className="mt-3 text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
+              인공 관절 치환술과 O자 다리 교정술은 적용 대상과 목표가 다릅니다
+            </h2>
+            <div className="mt-6 grid gap-5 md:grid-cols-2">
+              <article className="rounded-xl border border-line bg-white p-5">
+                <h3 className="text-xl font-extrabold text-ink">인공 무릎 관절 치환술</h3>
+                <p className="mt-3 leading-7 text-muted">
+                  관절 손상이 진행되고 통증과 보행·수면·일상생활 제한이 비수술 치료에도 지속될 때 손상된 관절면을 치환하는 치료를 검토할 수 있습니다.
+                </p>
+              </article>
+              <article className="rounded-xl border border-line bg-white p-5">
+                <h3 className="text-xl font-extrabold text-ink">근위 경골 절골술(HTO)</h3>
+                <p className="mt-3 leading-7 text-muted">
+                  안쪽 관절염과 O자 정렬이 있고 반대편 관절면·운동범위·인대 기능이 비교적 보존된 선택 환자에서 본인의 관절을 보존하는 방향으로 검토할 수 있습니다.
+                </p>
+              </article>
+            </div>
+            <p className="mt-5 text-sm leading-6 text-muted">
+              두 치료는 단순한 대체 관계가 아니며 체중부하 X-ray, 관절염 범위, 정렬, 인대와 전신 상태를 함께 확인해 판단합니다.
+            </p>
           </div>
         </section>
 

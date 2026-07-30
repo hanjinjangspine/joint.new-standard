@@ -11,6 +11,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -265,6 +266,13 @@ export default function FootAnkleMisPage() {
             </div>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["10", "20"]}
+          title="발목 불안정성과 무지외반증의 판단 기준을 확인하세요"
+          description="발목 외측 인대 손상과 무지외반증에서 먼저 고려하는 치료, 수술을 검토하는 기준, 회복과 위험을 HTML로 안내합니다."
+          tone="calm"
+        />
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
