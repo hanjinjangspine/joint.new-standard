@@ -10,6 +10,7 @@ import HeroSection from "@/components/HeroSection";
 import HomeAIReadableSummary from "@/components/HomeAIReadableSummary";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
+import ShoulderBraceVideoSection from "@/components/ShoulderBraceVideoSection";
 import SpecialtyGrid from "@/components/SpecialtyGrid";
 import TreatmentFlow from "@/components/TreatmentFlow";
 import { officialPatientLinks } from "@/lib/data";
@@ -129,6 +130,7 @@ export default function HomePage() {
       </section>
 
       <DoctorIntroSection />
+      <ShoulderBraceVideoSection />
 
       <section className="px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
