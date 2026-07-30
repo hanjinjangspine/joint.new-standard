@@ -10,6 +10,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -208,6 +209,13 @@ export default function FootAnklePage() {
             </div>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["10", "20"]}
+          title="족부·발목 질환과 수술 설명을 다시 확인하세요"
+          description="발목 외측 인대 손상과 무지외반증·MICA 환자안내를 진료 후에도 다시 확인할 수 있습니다."
+          tone="white"
+        />
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">

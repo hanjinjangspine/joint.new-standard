@@ -8,6 +8,7 @@ import FAQSection from "@/components/FAQSection";
 import FootAnkleFeature from "@/components/FootAnkleFeature";
 import HeroSection from "@/components/HeroSection";
 import HomeAIReadableSummary from "@/components/HomeAIReadableSummary";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
 import ShoulderBraceVideoSection from "@/components/ShoulderBraceVideoSection";
@@ -67,6 +68,13 @@ export default function HomePage() {
       <CenterIntroSection />
       <SpecialtyGrid />
       <TreatmentFlow />
+
+      <PatientGuideSection
+        guideIds={["20", "11", "21", "09", "03", "15"]}
+        title="검수된 환자안내로 진료 내용을 다시 확인하세요"
+        description="무릎·어깨·족부·발목·손·팔꿈치·골절 환자안내 14종 가운데 주요 자료를 먼저 보여드립니다. 전체 자료는 환자안내 페이지에서 질환별로 확인할 수 있습니다."
+        tone="white"
+      />
 
       <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">

@@ -1,6 +1,7 @@
 import CTASection from "@/components/CTASection";
 import FootAnkleFeature from "@/components/FootAnkleFeature";
 import PageHero from "@/components/PageHero";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SectionTitle from "@/components/SectionTitle";
 import type { ClinicPage } from "@/lib/data";
 
@@ -65,6 +66,15 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
             </div>
           </div>
         </section>
+
+        {page.patientGuideIds ? (
+          <PatientGuideSection
+            guideIds={page.patientGuideIds}
+            title="골절 치료 설명을 다시 확인하세요"
+            description="골절의 검사와 치료 선택, 정복 및 내고정술 판단과 회복 과정을 정리한 환자안내입니다."
+            tone="white"
+          />
+        ) : null}
 
         <CTASection title={page.ctaTitle} />
       </main>

@@ -10,6 +10,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -206,6 +207,13 @@ export default function KneePage() {
             </div>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["11", "12", "13", "14", "23"]}
+          title="무릎 질환과 수술 설명을 다시 확인하세요"
+          description="반월상 연골판, 전방 십자 인대, 연골 결손, 인공 무릎 관절 치환술, O자 다리 교정술 환자안내를 한곳에 모았습니다."
+          tone="white"
+        />
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">

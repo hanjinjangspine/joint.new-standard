@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import PatientGuideSection from "@/components/PatientGuideSection";
 import SectionTitle from "@/components/SectionTitle";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { hospitalInfo, SITE_URL } from "@/lib/data";
@@ -218,6 +219,13 @@ export default function DistalRadiusFracturePage() {
             </aside>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["15", "09"]}
+          title="손·손목과 골절 환자안내를 함께 확인하세요"
+          description="골절의 정복·내고정술과 수근관 증후군 환자안내를 진료 후에도 다시 확인할 수 있습니다."
+          tone="white"
+        />
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">

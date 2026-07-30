@@ -12,6 +12,7 @@ This site provides information about New Standard Hospital Joint & Foot-Ankle Ce
 - /injection-pain
 - /minimally-invasive-surgery
 - /recovery
+- /patient-guides
 - /contact
 - /ai-readable-orthopedic-profile
 
@@ -69,3 +70,8 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - Non-surgical care
 - Surgery when appropriate
 - Postoperative recovery management
+
+## Patient education library
+- /patient-guides provides 14 reviewed Korean patient guides as two-page PDF files.
+- Guide topics cover knee, shoulder, foot and ankle, hand and elbow, and fracture care.
+- Searchable HTML titles and summaries accompany the PDFs; the PDF files are supplemental education materials and do not replace an individual diagnosis.
