@@ -1,0 +1,264 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  AlertTriangle,
+  ArrowRight,
+  CheckCircle2,
+  ClipboardCheck,
+  HeartPulse,
+  Stethoscope
+} from "lucide-react";
+import { notFound } from "next/navigation";
+import Breadcrumb from "@/components/Breadcrumb";
+import SEOJsonLd from "@/components/SEOJsonLd";
+import { SITE_URL } from "@/lib/data";
+import { getPatientGuide, patientGuides } from "@/lib/patient-guides";
+import { createMetadata } from "@/lib/seo";
+
+type PageProps = { params: Promise<{ slug: string }> };
+
+export function generateStaticParams() {
+  return patientGuides.map((guide) => ({ slug: guide.slug }));
+}
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const guide = getPatientGuide((await params).slug);
+  if (!guide) return {};
+  return createMetadata({
+    title: `${guide.title} 환자안내 | 새기준병원 관절센터`,
+    description: guide.description,
+    path: `/patient-guides/${guide.slug}`,
+    keywords: guide.keywords
+  });
+}
+
+function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
+  const url = new URL(`/patient-guides/${guide.slug}`, SITE_URL).toString();
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["MedicalWebPage", "WebPage"],
+        "@id": `${url}#webpage`,
+        url,
+        name: `${guide.title} 환자안내`,
+        description: guide.description,
+        inLanguage: "ko-KR",
+        audience: { "@type": "Patient" },
+        isPartOf: { "@id": `${SITE_URL}#website` },
+        about: guide.keywords.map((name) => ({ "@type": "MedicalCondition", name }))
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${url}#breadcrumb`,
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "새기준병원 관절센터", item: SITE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "환자안내",
+            item: new URL("/patient-guides", SITE_URL).toString()
+          },
+          { "@type": "ListItem", position: 3, name: guide.title, item: url }
+        ]
+      }
+    ]
+  };
+}
+
+function BulletList({ items }: { items: string[] }) {
+  return (
+    <ul className="mt-6 grid gap-3">
+      {items.map((item) => (
+        <li key={item} className="flex gap-3 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+          <CheckCircle2 aria-hidden="true" className="mt-1 shrink-0 text-brand-600" size={20} />
+          <span>{item}</span>
+        </li>
+      ))}
+    </ul>
+  );
+}
+
+export default async function PatientGuideDetailPage({ params }: PageProps) {
+  const guide = getPatientGuide((await params).slug);
+  if (!guide) notFound();
+
+  return (
+    <>
+      <SEOJsonLd data={guideJsonLd(guide)} />
+      <main>
+        <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <div className="mx-auto max-w-7xl">
+            <Breadcrumb items={[{ label: "환자안내", href: "/patient-guides" }, { label: guide.title }]} />
+            <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+              Patient Guide · {guide.category}
+            </p>
+            <h1 className="mt-3 max-w-5xl text-3xl font-extrabold leading-[1.2] text-ink sm:text-4xl lg:text-5xl">
+              {guide.title}
+            </h1>
+            <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+              <Link
+                href="#decision"
+                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-5 py-3 font-extrabold text-white hover:bg-brand-900"
+              >
+                결정 전 확인사항 <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <Link
+                href={guide.clinicPath}
+                className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
+              >
+                관련 진료 안내
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        <section id="decision" className="px-4 py-14 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Before deciding</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                치료를 결정하기 전에 확인하세요
+              </h2>
+              <p className="mt-5 text-lg leading-8 text-muted">
+                수술을 권유받았더라도 현재 상태와 선택 가능한 치료를 다시 확인하고 질문할 수 있습니다.
+              </p>
+            </div>
+            <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
+              <BulletList items={guide.decisionChecks} />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+            <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <HeartPulse aria-hidden="true" className="text-brand-600" size={28} />
+              <h2 className="mt-4 text-2xl font-extrabold text-ink">주요 증상</h2>
+              <BulletList items={guide.symptoms} />
+            </article>
+            <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <Stethoscope aria-hidden="true" className="text-brand-600" size={28} />
+              <h2 className="mt-4 text-2xl font-extrabold text-ink">진찰과 검사</h2>
+              <BulletList items={guide.diagnosis} />
+            </article>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+            <article className="rounded-2xl border border-line bg-white p-6 sm:p-8">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">First line</p>
+              <h2 className="mt-3 text-2xl font-extrabold text-ink">먼저 고려하는 비수술 치료</h2>
+              <BulletList items={guide.firstTreatments} />
+            </article>
+            <article className="rounded-2xl border border-brand-200 bg-brand-900 p-6 text-white sm:p-8">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-100">Surgery decision</p>
+              <h2 className="mt-3 text-2xl font-extrabold">수술을 함께 검토할 수 있는 경우</h2>
+              <ul className="mt-6 grid gap-3">
+                {guide.surgeryConsiderations.map((item) => (
+                  <li key={item} className="flex gap-3 text-base leading-7 text-brand-50 sm:text-lg sm:leading-8">
+                    <CheckCircle2 aria-hidden="true" className="mt-1 shrink-0 text-brand-200" size={20} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          </div>
+        </section>
+
+        <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Procedure & recovery</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">치료 과정과 회복 단계</h2>
+              <p className="mt-4 text-lg leading-8 text-muted">
+                아래 내용은 일반적인 설명이며 실제 범위와 순서는 검사 결과와 수술 중 소견에 따라 달라질 수 있습니다.
+              </p>
+            </div>
+            <article className="mt-9 rounded-2xl border border-line bg-white p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <ClipboardCheck aria-hidden="true" className="text-brand-600" size={26} />
+                <h3 className="text-2xl font-extrabold text-ink">치료 과정</h3>
+              </div>
+              <BulletList items={guide.procedure} />
+            </article>
+            <div className="mt-6 grid gap-5 md:grid-cols-3">
+              {guide.recovery.map((phase, index) => (
+                <article key={phase.label} className="rounded-2xl border border-line bg-white p-6 shadow-sm">
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-800 text-sm font-extrabold text-white">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-4 text-xl font-extrabold text-ink">{phase.label}</h3>
+                  <p className="mt-3 text-base leading-7 text-muted">{phase.body}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+            <article className="rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <AlertTriangle aria-hidden="true" className="text-amber-700" size={26} />
+                <h2 className="text-2xl font-extrabold text-ink">알아두어야 할 위험과 한계</h2>
+              </div>
+              <p className="mt-4 text-base leading-7 text-muted">
+                치료 전 개인별 위험을 의료진과 확인해야 합니다. 가능한 합병증에는 다음 항목이 포함될 수 있습니다.
+              </p>
+              <BulletList items={guide.risks} />
+            </article>
+            <article className="rounded-2xl border border-red-200 bg-red-50 p-6 sm:p-8">
+              <div className="flex items-center gap-3">
+                <AlertTriangle aria-hidden="true" className="text-red-700" size={26} />
+                <h2 className="text-2xl font-extrabold text-ink">빠른 진료가 필요한 신호</h2>
+              </div>
+              <BulletList items={guide.urgentSigns} />
+              <p className="mt-6 text-sm leading-6 text-muted">
+                응급 증상이 의심되면 홈페이지 안내만으로 판단하지 말고 가까운 응급의료기관을 이용하세요.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section className="border-t border-line bg-white px-4 py-14 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+            <div>
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Before your visit</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">진료 전 준비하면 좋은 내용</h2>
+            </div>
+            <div className="rounded-2xl border border-line bg-calm p-6 sm:p-8">
+              <BulletList
+                items={[
+                  "최근 촬영한 X-ray·초음파·MRI·CT 영상과 판독 결과",
+                  "이전에 받은 약물·주사·재활·수술 치료의 시기와 반응",
+                  "현재 복용 중인 약, 알레르기와 치료에 영향을 줄 수 있는 질환",
+                  "가장 불편한 동작과 치료 후 회복하고 싶은 일상·업무·운동 목표"
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-brand-900 px-4 py-12 text-white sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <h2 className="text-2xl font-extrabold sm:text-3xl">이 안내의 이용 범위</h2>
+            <p className="mt-4 max-w-5xl text-base leading-7 text-brand-50 sm:text-lg sm:leading-8">
+              이 페이지는 김동희 원장의 환자안내 자료를 웹에서 읽을 수 있도록 재구성한 일반 교육 정보이며 개인별 진단이나 치료 지시를 대신하지 않습니다. 실제 치료 방법, 수술 범위와 회복 기간은 증상, 진찰, 영상검사, 전신 상태와 생활 목표에 따라 달라질 수 있습니다.
+            </p>
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+              <Link href={guide.clinicPath} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-extrabold text-brand-900">
+                관련 진료 안내 <ArrowRight aria-hidden="true" size={18} />
+              </Link>
+              <Link href="/patient-guides" className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-5 py-3 font-extrabold text-white hover:bg-white/10">
+                전체 환자안내
+              </Link>
+            </div>
+          </div>
+        </section>
+      </main>
+    </>
+  );
+}

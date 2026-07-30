@@ -10,7 +10,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const title = "관절·골절 환자안내 자료";
 const description =
-  "새기준병원 관절센터의 무릎, 어깨, 족부·발목, 손·팔꿈치, 골절 환자안내 PDF를 질환별로 확인할 수 있습니다.";
+  "새기준병원 관절센터의 무릎, 어깨, 족부·발목, 손·팔꿈치, 골절 환자안내를 증상·검사·치료·회복 단계별 HTML로 확인할 수 있습니다.";
 
 export const metadata: Metadata = createMetadata({
   title: `${title} | 새기준병원 관절센터`,
@@ -47,8 +47,8 @@ export default function PatientGuidesPage() {
             </h1>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">
               진료실에서 들은 질환과 치료 설명을 다시 확인할 수 있도록 김동희 원장의 환자안내
-              정본 14종을 진료 부위별로 정리했습니다. 제목과 설명은 검색 가능한 HTML로 제공하고,
-              검수된 2면 PDF 원본은 보기·저장용으로 연결합니다.
+              정본 14종의 전체 내용을 진료 부위별로 해체해 실제 HTML로 정리했습니다. 증상과 검사,
+              비수술 치료, 수술을 고려하는 기준, 회복, 위험과 주의 신호를 각 질환 페이지에서 확인할 수 있습니다.
             </p>
           </div>
         </section>

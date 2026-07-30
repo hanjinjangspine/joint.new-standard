@@ -210,13 +210,6 @@ export default function FootAnklePage() {
           </div>
         </section>
 
-        <PatientGuideSection
-          guideIds={["10", "20"]}
-          title="족부·발목 질환과 수술 설명을 다시 확인하세요"
-          description="발목 외측 인대 손상과 무지외반증·MICA 환자안내를 진료 후에도 다시 확인할 수 있습니다."
-          tone="white"
-        />
-
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
@@ -239,6 +232,13 @@ export default function FootAnklePage() {
             </div>
           </div>
         </section>
+
+        <PatientGuideSection
+          guideIds={["10", "20"]}
+          title="족부·발목 질환별 판단 기준을 자세히 확인하세요"
+          description="발목 외측 인대 손상과 무지외반증의 증상·검사·비수술 치료·수술 판단·회복 내용을 HTML로 제공합니다."
+          tone="white"
+        />
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
