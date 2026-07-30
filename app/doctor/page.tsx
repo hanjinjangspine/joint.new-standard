@@ -36,7 +36,7 @@ const specialtyItems = [
   "족부·발목 질환",
   "무릎 통증",
   "어깨 통증",
-  "손·손목 질환",
+  "손·손목·팔꿈치 질환",
   "하지정렬·보행균형",
   "관절내시경",
   "인공관절",
@@ -139,7 +139,7 @@ const surgeryDecisionFaq = [
 export const metadata: Metadata = createMetadata({
   title: "김동희 원장 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터 김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+    "새기준병원 관절센터 김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 비수술 치료부터 수술까지 상담합니다.",
   path: "/doctor",
   keywords: ["김동희 원장", "새기준병원 관절센터", "용인 정형외과", "족부 발목", "무릎 어깨 손목 통증"]
 });
@@ -169,7 +169,7 @@ export default function DoctorPage() {
         data={webPageJsonLd({
           title: "김동희 원장 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터 김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+            "새기준병원 관절센터 김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 비수술 치료부터 수술까지 상담합니다.",
           path: "/doctor"
         })}
       />
@@ -185,10 +185,10 @@ export default function DoctorPage() {
               정형외과 전문의 김동희 원장
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-8 text-brand-800 sm:text-2xl">
-              족부·발목부터 무릎·어깨·손·손목 통증까지 진료합니다
+              족부·발목부터 무릎·어깨·손·손목·팔꿈치 통증까지 진료합니다
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
+              김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과
               진찰 소견, X-ray·MRI 등 영상검사 결과를 함께 확인해 치료 방향을 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -210,10 +210,10 @@ export default function DoctorPage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 분야</p>
             <div className="mt-4 flex flex-wrap gap-2">
-              {["족부·발목", "무릎", "어깨", "손·손목", "하지정렬", "관절 치료"].map((item) => (
+              {["족부·발목", "무릎", "어깨", "손·손목·팔꿈치", "하지 정렬", "관절 치료"].map((item) => (
                 <span
                   key={item}
                   className="whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-3 py-2 text-sm font-bold text-brand-800"
@@ -431,13 +431,11 @@ export default function DoctorPage() {
               <MapPin aria-hidden="true" size={24} />
             </div>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-              용인·처인구 인근 관절 진료 안내
+              방문 전 위치와 진료시간을 확인하세요
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted">
-              새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
-              수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 족부·발목, 무릎, 어깨, 손·손목
-              통증으로 내원하는 환자의 진료 상담을 받을 수 있습니다. 새기준병원이 해당 지역에 위치한 것은
-              아니며, 환자 상태와 검사 결과에 따라 치료 방향을 상담합니다.
+              새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+              진료 전 위치와 진료시간을 확인해 주세요.
             </p>
           </div>
         </section>

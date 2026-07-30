@@ -22,7 +22,7 @@ export default function ColumnPage() {
     "족부·발목",
     "무릎",
     "어깨",
-    "손·손목",
+    "손·손목·팔꿈치",
     "관절주사·비수술치료",
     "수술 후 회복관리"
   ];
@@ -49,7 +49,7 @@ export default function ColumnPage() {
             <SectionTitle
               eyebrow="Joint Article Hub"
               title="새기준병원 관절칼럼 모아보기"
-              description="족부·발목, 무릎, 어깨, 손·손목 통증과 수술 후 회복관리 정보를 환자분들이 이해하기 쉽게 정리합니다."
+              description="족부·발목, 무릎, 어깨, 손·손목·팔꿈치 통증과 수술 후 회복 정보를 이해하기 쉽게 정리합니다."
             />
             <p className="mt-6 max-w-4xl text-base leading-7 text-muted">
               관절 통증은 부위와 원인에 따라 치료 방향이 달라질 수 있습니다.

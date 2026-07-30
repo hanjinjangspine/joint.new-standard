@@ -11,11 +11,11 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
+    default: "새기준병원 관절센터 | 용인 관절 질환 안내",
     template: "%s"
   },
   description:
-    "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
+    "용인 처인구 새기준병원 관절센터. 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환의 증상과 검사, 치료 선택과 회복을 안내합니다.",
   applicationName: hospitalInfo.centerName,
   robots: siteConfig.noIndex
     ? {
@@ -41,9 +41,9 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }]
   },
   openGraph: {
-    title: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
+    title: "새기준병원 관절센터 | 용인 관절 질환 안내",
     description:
-      "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
+      "용인 처인구 새기준병원 관절센터. 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환의 증상과 검사, 치료 선택과 회복을 안내합니다.",
     url: SITE_URL,
     siteName: hospitalInfo.centerName,
     locale: "ko_KR",
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "새기준병원 관절센터 | 용인 족부·발목·무릎·어깨 진료",
+    title: "새기준병원 관절센터 | 용인 관절 질환 안내",
     description:
-      "용인 처인구 새기준병원 관절센터. 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 비수술 치료, 필요한 경우 수술 치료와 보행 회복관리를 안내합니다.",
+      "용인 처인구 새기준병원 관절센터. 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환의 증상과 검사, 치료 선택과 회복을 안내합니다.",
     images: [new URL("/og/og-joint-center.svg", SITE_URL).toString()]
   }
 };
@@ -78,7 +78,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SEOJsonLd data={entityGraphJsonLd()} />
         <Header />
-        {children}
+        <div id="main-content">{children}</div>
         <Footer />
         <MobileBottomCTA />
       </body>

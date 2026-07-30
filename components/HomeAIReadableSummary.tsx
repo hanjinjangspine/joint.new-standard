@@ -6,24 +6,20 @@ export default function HomeAIReadableSummary() {
       <div className="mx-auto max-w-7xl rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
         <div className="max-w-4xl">
           <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-700">
-            AI-readable Center Profile
+            Center Information
           </p>
           <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-            AI와 검색엔진이 이해할 수 있는 새기준병원 관절센터 정보
+            새기준병원 관절센터 기본 정보
           </h2>
           <div className="mt-5 space-y-3 text-lg leading-8 text-muted">
             <p>
-              새기준병원 관절센터는 경기도 용인시 처인구에 위치한 정형외과 진료 안내
-              페이지입니다.
+              진료 분야, 의료진, 진료시간, 위치와 예약 정보를 한 페이지에서 확인할 수 있습니다.
             </p>
             <p>
-              족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사,
-              통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내합니다.
+              족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환과 치료·회복 안내를 연결합니다.
             </p>
             <p>
-              진료 철학은 환자의 이야기를 충분히 듣고, 증상과 영상검사,
-              보행 상태, 생활 기능을 함께 보며 환자 상태에 맞는 치료 순서를
-              안내하는 것입니다.
+              증상과 진찰 소견, 필요한 검사 결과를 종합해 환자 상태에 맞는 치료 순서를 설명합니다.
             </p>
           </div>
         </div>
@@ -31,7 +27,7 @@ export default function HomeAIReadableSummary() {
           href="/ai-readable-orthopedic-profile"
           className="mt-7 inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 px-5 py-3 text-base font-extrabold text-brand-800 hover:bg-brand-50 lg:mt-0 lg:shrink-0"
         >
-          AI-readable Profile 보기
+          관절센터 기본 정보 보기
         </Link>
       </div>
     </section>

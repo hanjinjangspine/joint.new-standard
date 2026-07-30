@@ -121,7 +121,7 @@ const recoveryLinks = [
 export const metadata: Metadata = createMetadata({
   title: "최소침습 족부·발목 수술 판단 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염 등 족부·발목 질환에서 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+    "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
   path: "/foot-ankle-mis",
   keywords: ["용인 발목 수술 판단", "용인 발목관절내시경", "발목 인대 손상", "무지외반", "아킬레스건"]
 });
@@ -133,7 +133,7 @@ export default function FootAnkleMisPage() {
         data={webPageJsonLd({
           title: "최소침습 족부·발목 수술 판단 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염 등 족부·발목 질환에서 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+            "새기준병원 관절센터는 발목 불안정성, 발목 인대 손상, 무지외반, 아킬레스건, 발목 관절염의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
           path: "/foot-ankle-mis"
         })}
       />
@@ -174,7 +174,7 @@ export default function FootAnkleMisPage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">판단 기준</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["병변 위치", "손상 정도", "발목 안정성", "하지정렬", "영상검사", "회복 계획"].map((item) => (
@@ -270,7 +270,7 @@ export default function FootAnkleMisPage() {
         <PatientGuideSection
           guideIds={["10", "20"]}
           title="발목 불안정성과 무지외반증의 판단 기준을 확인하세요"
-          description="발목 외측 인대 손상과 무지외반증에서 먼저 고려하는 치료, 수술을 검토하는 기준, 회복과 위험을 HTML로 안내합니다."
+          description="발목 외측 인대 손상과 무지외반증에서 먼저 고려하는 치료, 수술을 검토하는 기준, 회복과 위험을 안내합니다."
           tone="calm"
         />
 
@@ -328,7 +328,7 @@ export default function FootAnkleMisPage() {
                 정형외과 전문의 김동희 원장
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
+                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과
                 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
               </p>
               <Link
@@ -344,14 +344,11 @@ export default function FootAnkleMisPage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 족부·발목 수술 판단 안내
+                방문 전 위치와 진료시간을 확인하세요
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를
-                비롯해 수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 발목 불안정성,
-                무지외반, 아킬레스건 통증, 발목 관절염 등으로 내원하는 환자의 진료 상담을
-                받을 수 있습니다. 새기준병원이 해당 지역에 위치한 것은 아니며, 환자 상태와
-                검사 결과에 따라 치료 방향을 상담합니다.
+                새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+                진료 전 위치와 진료시간을 확인해 주세요.
               </p>
             </div>
           </div>

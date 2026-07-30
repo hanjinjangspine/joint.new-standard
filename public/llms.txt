@@ -7,6 +7,7 @@ This site provides information about New Standard Hospital Joint & Foot-Ankle Ce
 - /doctor
 - /knee
 - /shoulder
+- /hand-wrist-elbow
 - /foot-ankle
 - /foot-ankle-mis
 - /injection-pain
@@ -72,6 +73,20 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - Postoperative recovery management
 
 ## Patient education library
-- /patient-guides provides 14 reviewed Korean patient guides as two-page PDF files.
-- Guide topics cover knee, shoulder, foot and ankle, hand and elbow, and fracture care.
-- Searchable HTML titles and summaries accompany the PDFs; the PDF files are supplemental education materials and do not replace an individual diagnosis.
+- /patient-guides provides 14 reviewed Korean condition guides as crawlable HTML pages.
+- Guide topics cover knee, shoulder, foot and ankle, hand, wrist and elbow, and fracture care.
+- Each guide includes symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
+- /patient-guides/tennis-elbow
+- /patient-guides/calcific-tendinitis
+- /patient-guides/carpal-tunnel-syndrome
+- /patient-guides/lateral-ankle-ligament-injury
+- /patient-guides/meniscus-tear
+- /patient-guides/acl-tear
+- /patient-guides/knee-cartilage-defect
+- /patient-guides/knee-osteoarthritis-replacement
+- /patient-guides/fracture-fixation
+- /patient-guides/hallux-valgus-mica
+- /patient-guides/rotator-cuff-tear
+- /patient-guides/shoulder-dislocation-bankart
+- /patient-guides/knee-osteotomy-hto
+- /patient-guides/ac-joint-dislocation

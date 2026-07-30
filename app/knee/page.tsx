@@ -116,7 +116,7 @@ const surgeryLinks = [
 export const metadata: Metadata = createMetadata({
   title: "무릎 통증 진료 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 하지정렬 문제를 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+    "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상 연골판 손상, 십자 인대 손상, 하지 정렬 문제의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
   path: "/knee",
   keywords: ["용인 무릎 통증", "무릎 관절염", "반월상연골판 손상", "십자인대 손상", "하지정렬"]
 });
@@ -128,7 +128,7 @@ export default function KneePage() {
         data={webPageJsonLd({
           title: "무릎 통증 진료 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 하지정렬 문제를 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+            "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상 연골판 손상, 십자 인대 손상, 하지 정렬 문제의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
           path: "/knee"
         })}
       />
@@ -148,7 +148,7 @@ export default function KneePage() {
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
               무릎 통증은 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 연골 손상,
               하지정렬 문제 등 다양한 원인으로 발생할 수 있습니다. 새기준병원 관절센터는
-              진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
+              증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {heroActions.map((action, index) => (
@@ -169,7 +169,7 @@ export default function KneePage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["무릎 통증", "관절염", "연골판", "십자인대", "하지정렬", "보행 평가"].map((item) => (
@@ -234,7 +234,7 @@ export default function KneePage() {
         <PatientGuideSection
           guideIds={["11", "12", "13", "14", "23"]}
           title="무릎 질환별 판단 기준을 자세히 확인하세요"
-          description="반월상 연골판, 전방 십자 인대, 연골 결손, 인공 무릎 관절 치환술과 O자 다리 교정술의 증상·검사·치료·회복 내용을 HTML로 제공합니다."
+          description="반월상 연골판, 전방 십자 인대, 연골 결손, 무릎 관절염과 O자 다리의 증상·검사·치료·회복 내용을 확인할 수 있습니다."
           tone="white"
         />
 
@@ -376,7 +376,7 @@ export default function KneePage() {
                 정형외과 전문의 김동희 원장
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
+                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과
                 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
               </p>
               <Link
@@ -392,13 +392,11 @@ export default function KneePage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 무릎 통증 진료 안내
+                방문 전 위치와 진료시간을 확인하세요
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
-                수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 무릎 통증, 무릎 관절염,
-                반월상연골판 손상, 십자인대 손상 등으로 내원하는 환자의 진료 상담을 받을 수 있습니다.
-                새기준병원이 해당 지역에 위치한 것은 아니며, 환자 상태와 검사 결과에 따라 치료 방향을 상담합니다.
+                새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+                진료 전 위치와 진료시간을 확인해 주세요.
               </p>
             </div>
           </div>

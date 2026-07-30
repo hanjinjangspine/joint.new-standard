@@ -107,6 +107,7 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 - /doctor
 - /knee
 - /shoulder
+- /hand-wrist-elbow
 - /foot-ankle
 - /foot-ankle-mis
 - /injection-pain
@@ -114,3 +115,21 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 - /recovery
 - /contact
 - /ai-readable-orthopedic-profile
+
+## Patient Condition Guides
+- Guide hub: https://joint.new-standard.co.kr/patient-guides
+- The site provides 14 reviewed, crawlable HTML guides covering symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
+- https://joint.new-standard.co.kr/patient-guides/tennis-elbow
+- https://joint.new-standard.co.kr/patient-guides/calcific-tendinitis
+- https://joint.new-standard.co.kr/patient-guides/carpal-tunnel-syndrome
+- https://joint.new-standard.co.kr/patient-guides/lateral-ankle-ligament-injury
+- https://joint.new-standard.co.kr/patient-guides/meniscus-tear
+- https://joint.new-standard.co.kr/patient-guides/acl-tear
+- https://joint.new-standard.co.kr/patient-guides/knee-cartilage-defect
+- https://joint.new-standard.co.kr/patient-guides/knee-osteoarthritis-replacement
+- https://joint.new-standard.co.kr/patient-guides/fracture-fixation
+- https://joint.new-standard.co.kr/patient-guides/hallux-valgus-mica
+- https://joint.new-standard.co.kr/patient-guides/rotator-cuff-tear
+- https://joint.new-standard.co.kr/patient-guides/shoulder-dislocation-bankart
+- https://joint.new-standard.co.kr/patient-guides/knee-osteotomy-hto
+- https://joint.new-standard.co.kr/patient-guides/ac-joint-dislocation

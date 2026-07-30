@@ -7,7 +7,7 @@ const heroBadges = [
   "족부·발목 진료",
   "무릎 통증",
   "어깨 통증",
-  "손·손목 통증",
+  "손·손목·팔꿈치",
   "관절내시경",
   "인공관절",
   "재활 연계"
@@ -34,25 +34,24 @@ const heroActions = [
 
 export default function HeroSection() {
   return (
-    <section className="overflow-hidden bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-6 sm:px-6 lg:px-8 lg:py-8">
+    <section className="overflow-hidden bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
       <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.06fr_0.94fr]">
         <div className="max-w-3xl">
           <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-700">
-            New Standard Hospital Joint & Foot-Ankle Center
+            New Standard Hospital · Joint Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
             새기준병원 관절센터
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
-            족부·발목부터 무릎·어깨·손목 통증까지, 정확한 진단 후 치료 방향을 상담합니다.
+            아픈 부위와 생활의 불편을 먼저 듣고, 필요한 검사와 치료 순서를 함께 정합니다.
           </p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-8 text-muted sm:text-lg">
-            새기준병원 관절센터는 정형외과 전문의가 진찰과 영상검사를 함께 확인하여
-            관절 통증의 원인을 평가합니다. 환자 상태에 따라 약물치료, 주사치료,
-            재활치료, 관절내시경, 인공관절 등 치료 방향을 상담합니다.
+            족부·발목, 무릎, 어깨, 손·손목·팔꿈치의 증상과 진찰 소견,
+            필요한 영상검사 결과를 종합해 비수술 치료부터 수술과 회복까지 설명합니다.
           </p>
 
-          <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center">
+          <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">
             {heroActions.map((action) => {
               const Icon = action.icon;
               return (
@@ -60,9 +59,9 @@ export default function HeroSection() {
                   key={action.label}
                   href={action.href}
                   aria-label={`${action.label} 새 창으로 이동`}
-                  className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-base font-extrabold transition focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 ${
+                  className={`inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-3 py-3 text-sm font-extrabold transition focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 sm:px-5 sm:text-base ${
                     action.primary
-                      ? "bg-brand-800 text-white hover:bg-brand-900"
+                      ? "col-span-2 bg-brand-800 text-white hover:bg-brand-900 sm:col-span-1"
                       : "border border-brand-200 bg-white text-brand-800 hover:bg-brand-50"
                   }`}
                   target="_blank"
@@ -76,7 +75,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[440px] lg:ml-auto">
+        <div className="relative mx-auto hidden w-full max-w-[440px] sm:block lg:ml-auto">
           <div className="rounded-[26px] border border-brand-100 bg-white p-4 shadow-card sm:p-5">
             <div className="relative overflow-hidden rounded-2xl bg-brand-50">
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white to-transparent" />

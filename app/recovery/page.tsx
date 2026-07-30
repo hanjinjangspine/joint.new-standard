@@ -141,7 +141,7 @@ export default function RecoveryPage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">회복관리 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["통증 관리", "부종 관리", "운동범위", "근력 회복", "보행 회복", "재활 계획"].map((item) => (
@@ -311,7 +311,7 @@ export default function RecoveryPage() {
                 정형외과 전문의 김동희 원장
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
+                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과
                 영상검사 결과를 함께 확인해 치료 후 회복관리와 재활 방향을 상담합니다.
               </p>
               <Link
@@ -327,13 +327,11 @@ export default function RecoveryPage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 관절 회복관리 안내
+                방문 전 위치와 진료시간을 확인하세요
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
-                수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 관절 통증 치료 후 회복관리와
-                재활 상담이 필요한 환자의 진료 상담을 받을 수 있습니다. 새기준병원이 해당 지역에
-                위치한 것은 아니며, 환자 상태와 검사 결과에 따라 치료 방향을 상담합니다.
+                새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+                진료 전 위치와 진료시간을 확인해 주세요.
               </p>
             </div>
           </div>

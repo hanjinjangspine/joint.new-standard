@@ -26,16 +26,16 @@ export default function DoctorIntroSection() {
             <p className="mt-1 text-lg font-bold text-brand-700">{doctorProfile.title}</p>
           </div>
           <p className="mt-5 text-lg leading-8 text-muted sm:text-xl">
-            족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과 영상검사
-            결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
+            족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과 진찰 소견,
+            필요한 영상검사 결과를 종합해 비수술 치료부터 수술까지 상담합니다.
           </p>
           <div className="mt-6 flex flex-wrap gap-2">
             {[
               "족부·발목 질환",
               "무릎 통증",
               "어깨 통증",
-              "손·손목 질환",
-              "하지정렬·보행균형",
+              "손·손목·팔꿈치 질환",
+              "하지 정렬·보행 균형",
               "관절내시경",
               "인공관절"
             ].map(

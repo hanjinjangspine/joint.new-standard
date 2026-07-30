@@ -223,7 +223,7 @@ export default function DistalRadiusFracturePage() {
         <PatientGuideSection
           guideIds={["15"]}
           title="골절 치료 판단과 회복 과정을 확인하세요"
-          description="골절의 정복·내고정술을 고려하는 기준, 치료 과정, 회복과 주의 신호를 HTML로 확인할 수 있습니다."
+          description="어긋난 골절을 맞추고 고정하는 치료를 고려하는 기준, 치료 과정, 회복과 주의 신호를 확인할 수 있습니다."
           tone="white"
         />
 
