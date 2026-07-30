@@ -1,18 +1,28 @@
 import Link from "next/link";
-import { CalendarCheck, MapPin, Phone, Youtube } from "lucide-react";
+import { BookOpenText, CalendarCheck, MapPin, Phone } from "lucide-react";
 import { ctaActions } from "@/lib/data";
 
-const icons = [Phone, CalendarCheck, Youtube, MapPin];
-const shortLabels = ["전화", "예약", "유튜브", "길찾기"];
+const mobileActions = [
+  ctaActions[0],
+  ctaActions[1],
+  {
+    label: "질환별 안내",
+    href: "/patient-guides",
+    ariaLabel: "관절 질환별 안내 보기"
+  },
+  ctaActions[3]
+];
+const icons = [Phone, CalendarCheck, BookOpenText, MapPin];
+const shortLabels = ["전화", "예약", "질환찾기", "길찾기"];
 
 export default function MobileBottomCTA() {
   return (
     <nav
       aria-label="모바일 빠른 상담 메뉴"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-white shadow-soft md:hidden"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-line bg-white pb-[env(safe-area-inset-bottom)] shadow-soft md:hidden"
     >
       <div className="grid grid-cols-4">
-        {ctaActions.map((action, index) => {
+        {mobileActions.map((action, index) => {
           const Icon = icons[index] || Phone;
           const isExternal = action.href.startsWith("http");
           return (

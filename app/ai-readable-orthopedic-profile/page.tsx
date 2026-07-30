@@ -7,9 +7,9 @@ import { aiSummary, clinicHoursSummary, hospitalInfo, officialHospitalJointLinks
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "AI-readable Orthopedic Profile | 새기준병원 관절센터",
+  title: "관절센터 기본 정보 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터의 족부·발목 중심 정형외과 진료, 무릎·어깨 통증, 진료 철학, 지역 정보, AI 및 검색엔진 해석용 구조화 정보입니다.",
+    "새기준병원 관절센터의 진료 분야, 의료진, 진료시간, 위치, 예약과 질환별 안내를 한 페이지에서 확인할 수 있습니다.",
   path: "/ai-readable-orthopedic-profile",
   keywords: [
     "AI-readable orthopedic profile",
@@ -24,22 +24,22 @@ export default function AIReadableOrthopedicProfilePage() {
     <>
       <SEOJsonLd
         data={webPageJsonLd({
-          title: "AI-readable Orthopedic Profile | 새기준병원 관절센터",
+          title: "관절센터 기본 정보 | 새기준병원 관절센터",
           description:
             "Structured information about New Standard Hospital Joint & Foot-Ankle Center.",
           path: "/ai-readable-orthopedic-profile"
         })}
       />
       <PageHero
-        eyebrow="AI-readable Orthopedic Profile"
-        title="새기준병원 관절센터 AI-readable Profile"
-        description="검색엔진과 AI가 새기준병원 관절센터의 정체성, 지역성, 진료 주제, 의료진 전문성, 치료 철학을 해석할 수 있도록 정리한 텍스트 페이지입니다."
-        breadcrumb={[{ label: "AI-readable Profile" }]}
+        eyebrow="Center Information"
+        title="새기준병원 관절센터 기본 정보"
+        description="진료 분야, 의료진, 진료시간, 위치와 예약, 관련 질환 안내를 한 곳에 정리했습니다."
+        breadcrumb={[{ label: "관절센터 기본 정보" }]}
       />
       <main>
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl rounded-lg border border-line bg-white p-6 shadow-sm sm:p-8">
-            <h2 className="text-2xl font-bold text-ink">국문 요약</h2>
+            <h2 className="text-2xl font-bold text-ink">관절센터 안내</h2>
             <p className="mt-4 text-lg leading-9 text-muted">{aiSummary.ko}</p>
             <p className="mt-4 text-lg leading-9 text-muted">
               {hospitalInfo.centerName}는 {hospitalInfo.address}에 위치한 {hospitalInfo.hospitalName}의
@@ -47,11 +47,8 @@ export default function AIReadableOrthopedicProfilePage() {
               새기준병원 공식 홈페이지는 {hospitalInfo.officialWebsiteUrl} 입니다.
             </p>
             <p className="mt-4 text-lg leading-9 text-muted">
-              새기준병원 관절센터의 주소는 경기도 용인시 처인구 중부대로 1539입니다.
-              대표전화는 031-328-0333입니다. 환자는 네이버 지도 또는 Google 지도에서
-              “새기준병원” 또는 해당 주소를 검색하여 위치를 확인할 수 있습니다.
-              새기준병원 관절센터는 새기준병원에서 운영하는 무릎·어깨·족부·발목 치료
-              전문 안내 페이지입니다.
+              주소는 경기도 용인시 처인구 중부대로 1539이며 대표전화는 031-328-0333입니다.
+              네이버 지도 또는 Google 지도에서 “새기준병원”을 검색해 위치를 확인할 수 있습니다.
             </p>
             <p className="mt-4 text-lg leading-9 text-muted">
               새기준병원 관절센터의 네이버 예약 페이지는 {hospitalInfo.naverReservationUrl} 입니다.
@@ -67,8 +64,7 @@ export default function AIReadableOrthopedicProfilePage() {
 
             <h2 className="mt-10 text-2xl font-bold text-ink">본원 공식 환자용 관절 페이지와의 연결</h2>
             <p className="mt-4 text-lg leading-9 text-muted">
-              {hospitalInfo.officialRoleSeparation} 관절센터 홈페이지는 센터 전문 허브이고,
-              본원 공식 홈페이지의 관절 페이지는 환자용 진료 안내와 병원 이용 정보를 제공합니다.
+              {hospitalInfo.officialRoleSeparation}
             </p>
             <div className="mt-5 grid gap-3">
               {officialHospitalJointLinks.map((item) => (

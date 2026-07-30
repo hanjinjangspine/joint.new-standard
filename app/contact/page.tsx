@@ -111,7 +111,7 @@ const bottomActions = [
 export const metadata: Metadata = createMetadata({
   title: "관절센터 진료 상담·오시는 길 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 용인시 처인구에서 족부·발목, 무릎, 어깨, 손·손목 통증에 대해 진찰과 영상검사를 함께 확인해 치료 방향을 상담합니다. 온라인 상담과 오시는 길을 안내합니다.",
+    "새기준병원 관절센터는 용인시 처인구에서 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다. 온라인 상담과 오시는 길을 안내합니다.",
   path: "/contact",
   keywords: ["새기준병원 관절센터 상담", "용인 관절 진료", "새기준병원 오시는 길", "관절 통증 상담"]
 });
@@ -123,7 +123,7 @@ export default function ContactPage() {
         data={webPageJsonLd({
           title: "관절센터 진료 상담·오시는 길 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터는 용인시 처인구에서 족부·발목, 무릎, 어깨, 손·손목 통증에 대해 진찰과 영상검사를 함께 확인해 치료 방향을 상담합니다. 온라인 상담과 오시는 길을 안내합니다.",
+            "새기준병원 관절센터는 용인시 처인구에서 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다. 온라인 상담과 오시는 길을 안내합니다.",
           path: "/contact"
         })}
       />
@@ -163,7 +163,7 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">대표 정보</p>
             <div className="mt-4 space-y-4 text-base leading-7 text-muted">
               <p>
@@ -270,13 +270,11 @@ export default function ContactPage() {
               <MapPin aria-hidden="true" size={24} />
             </div>
             <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-              용인·처인구 인근 관절 진료 안내
+              방문 전 위치와 진료시간을 확인하세요
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted">
-              새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
-              수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 족부·발목, 무릎, 어깨, 손·손목
-              통증으로 내원하는 환자의 진료 상담을 받을 수 있습니다. 새기준병원이 해당 지역에 위치한 것은
-              아니며, 환자 상태와 검사 결과에 따라 치료 방향을 상담합니다.
+              새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+              진료 전 위치와 진료시간을 확인해 주세요.
             </p>
           </div>
         </section>

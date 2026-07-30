@@ -110,7 +110,7 @@ const surgeryLinks = [
 export const metadata: Metadata = createMetadata({
   title: "관절 비수술 치료 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 무릎·어깨·발목·손목 통증에서 약물치료, 주사치료, 체외충격파, 재활치료 등 비수술 치료 가능성을 진찰과 영상검사를 함께 확인해 상담합니다.",
+    "새기준병원 관절센터는 무릎·어깨·발목·손목 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 약물·주사·체외충격파·재활치료 등 비수술 치료를 상담합니다.",
   path: "/injection-pain",
   keywords: ["용인 관절 비수술 치료", "관절 주사치료", "체외충격파", "재활치료", "무릎 어깨 발목 손목 통증"]
 });
@@ -122,7 +122,7 @@ export default function InjectionPainPage() {
         data={webPageJsonLd({
           title: "관절 비수술 치료 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터는 무릎·어깨·발목·손목 통증에서 약물치료, 주사치료, 체외충격파, 재활치료 등 비수술 치료 가능성을 진찰과 영상검사를 함께 확인해 상담합니다.",
+            "새기준병원 관절센터는 무릎·어깨·발목·손목 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 약물·주사·체외충격파·재활치료 등 비수술 치료를 상담합니다.",
           path: "/injection-pain"
         })}
       />
@@ -141,7 +141,7 @@ export default function InjectionPainPage() {
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
               관절 통증은 원인과 손상 정도에 따라 치료 방향이 달라질 수 있습니다.
-              새기준병원 관절센터는 진찰과 영상검사를 함께 확인해 약물치료, 주사치료,
+              새기준병원 관절센터는 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 약물치료, 주사치료,
               체외충격파, 재활치료 등 비수술 치료 가능성을 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -163,7 +163,7 @@ export default function InjectionPainPage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["약물치료", "주사치료", "체외충격파", "재활치료", "운동치료", "치료 단계"].map((item) => (
@@ -313,7 +313,7 @@ export default function InjectionPainPage() {
                 정형외과 전문의 김동희 원장
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의 증상과
+                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의 증상과
                 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
               </p>
               <Link
@@ -329,13 +329,11 @@ export default function InjectionPainPage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 관절 비수술 치료 안내
+                방문 전 위치와 진료시간을 확인하세요
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를 비롯해
-                수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 무릎·어깨·발목·손목 통증으로
-                내원하는 환자의 진료 상담을 받을 수 있습니다. 새기준병원이 해당 지역에 위치한 것은
-                아니며, 환자 상태와 검사 결과에 따라 치료 방향을 상담합니다.
+                새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+                진료 전 위치와 진료시간을 확인해 주세요.
               </p>
             </div>
           </div>

@@ -73,15 +73,11 @@ export default function LocationGuideCard() {
       <div className="mt-6 space-y-3 text-base leading-8 text-muted">
         <p>
           {hospitalInfo.centerName}는 {hospitalInfo.hospitalName}에서 운영하는
-          무릎·어깨·족부·발목 치료 전문 안내 페이지입니다.
+          족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환 안내 페이지입니다.
         </p>
         <p>
           네이버 지도 또는 Google 지도에서 새기준병원 위치를 확인하실 수 있습니다.
           내원 전 진료 일정은 대표전화 {hospitalInfo.phone}으로 확인해 주세요.
-        </p>
-        <p className="font-semibold text-brand-900">
-          용인 정형외과, 처인구 정형외과, 용인 족부·발목, 용인 무릎통증,
-          용인 어깨통증, 족부·발목 최소침습수술, 수술 후 보행 회복관리 안내
         </p>
       </div>
 

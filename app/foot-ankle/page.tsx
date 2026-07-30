@@ -117,7 +117,7 @@ const surgeryLinks = [
 export const metadata: Metadata = createMetadata({
   title: "족부·발목 통증 진료 | 새기준병원 관절센터",
   description:
-    "새기준병원 관절센터는 발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+    "새기준병원 관절센터는 발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
   path: "/foot-ankle",
   keywords: ["용인 족부발목", "용인 발목통증", "발목 불안정성", "무지외반", "족저근막염"]
 });
@@ -129,7 +129,7 @@ export default function FootAnklePage() {
         data={webPageJsonLd({
           title: "족부·발목 통증 진료 | 새기준병원 관절센터",
           description:
-            "새기준병원 관절센터는 발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증을 진찰과 영상검사를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.",
+            "새기준병원 관절센터는 발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
           path: "/foot-ankle"
         })}
       />
@@ -149,7 +149,7 @@ export default function FootAnklePage() {
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
               발목 염좌 후 통증, 발목 불안정성, 아킬레스건 통증, 무지외반, 발바닥
               통증은 단순히 한 부위의 문제가 아니라 보행, 하지정렬, 무릎·고관절 부담과도
-              관련될 수 있습니다. 새기준병원 관절센터는 진찰과 영상검사를 함께 확인해
+              관련될 수 있습니다. 새기준병원 관절센터는 증상과 진찰 소견, 필요한 영상검사 결과를 종합해
               환자 상태에 맞는 치료 방향을 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
@@ -171,7 +171,7 @@ export default function FootAnklePage() {
               ))}
             </div>
           </div>
-          <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["발목 불안정성", "아킬레스건", "무지외반", "족저근막염", "보행 평가", "재활 연계"].map((item) => (
@@ -236,7 +236,7 @@ export default function FootAnklePage() {
         <PatientGuideSection
           guideIds={["10", "20"]}
           title="족부·발목 질환별 판단 기준을 자세히 확인하세요"
-          description="발목 외측 인대 손상과 무지외반증의 증상·검사·비수술 치료·수술 판단·회복 내용을 HTML로 제공합니다."
+          description="발목 외측 인대 손상과 무지외반증의 증상·검사·비수술 치료·수술 판단·회복 내용을 확인할 수 있습니다."
           tone="white"
         />
 
@@ -355,7 +355,7 @@ export default function FootAnklePage() {
                 정형외과 전문의 김동희 원장
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목 질환을 진료하며, 환자의
+                김동희 원장은 족부·발목, 무릎, 어깨, 손·손목·팔꿈치 질환을 진료하며, 환자의
                 증상과 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
               </p>
               <Link
@@ -371,14 +371,11 @@ export default function FootAnklePage() {
                 <MapPin aria-hidden="true" size={24} />
               </div>
               <h2 className="mt-5 text-3xl font-extrabold leading-tight text-ink">
-                용인·처인구 인근 족부·발목 통증 진료 안내
+                방문 전 위치와 진료시간을 확인하세요
               </h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                새기준병원 관절센터는 경기도 용인시 처인구에 위치해 있으며, 용인·처인구를
-                비롯해 수원, 오산, 이천, 안성, 경기 광주 등 인근 지역에서 발목 통증,
-                발바닥 통증, 무지외반, 아킬레스건 통증으로 내원하는 환자의 진료 상담을
-                받을 수 있습니다. 새기준병원이 해당 지역에 위치한 것은 아니며, 환자 상태와
-                검사 결과에 따라 치료 방향을 상담합니다.
+                새기준병원 관절센터는 경기도 용인시 처인구 중부대로 1539에 있습니다.
+                진료 전 위치와 진료시간을 확인해 주세요.
               </p>
             </div>
           </div>

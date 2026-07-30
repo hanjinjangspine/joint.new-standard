@@ -17,13 +17,16 @@ export function PatientGuideCard({ guide }: { guide: PatientGuide }) {
       </div>
       <h3 className="mt-5 text-xl font-extrabold leading-8 text-ink">{guide.title}</h3>
       <p className="mt-3 flex-1 text-base leading-7 text-muted">{guide.description}</p>
-      <p className="mt-5 text-sm font-semibold text-muted">증상 · 검사 · 치료 선택 · 회복 · 주의 신호</p>
+      <div className="mt-5 rounded-xl bg-calm px-4 py-3">
+        <p className="text-xs font-extrabold text-brand-700">이런 증상을 확인하세요</p>
+        <p className="mt-1 text-sm leading-6 text-muted">{guide.symptoms.slice(0, 2).join(" · ")}</p>
+      </div>
       <Link
         href={patientGuideHref(guide)}
         className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-4 py-3 text-sm font-extrabold text-white transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-        aria-label={`${guide.title} 환자안내 자세히 보기`}
+        aria-label={`${guide.title} 질환 안내 보기`}
       >
-        환자안내 자세히 보기
+        {guide.title} 안내 보기
         <ArrowRight aria-hidden="true" size={17} />
       </Link>
     </article>
@@ -40,8 +43,8 @@ type PatientGuideSectionProps = {
 
 export default function PatientGuideSection({
   guideIds,
-  title = "진료실 설명을 다시 확인하는 환자안내",
-  description = "질환의 증상부터 검사, 치료 선택, 회복과 주의 신호까지 실제 텍스트로 차분히 확인할 수 있습니다.",
+  title = "진료실 설명을 다시 확인하는 질환별 안내",
+  description = "질환의 증상부터 검사, 치료 선택, 회복과 주의 신호까지 차분히 확인할 수 있습니다.",
   showAllLink = true,
   tone = "calm"
 }: PatientGuideSectionProps) {
@@ -63,7 +66,7 @@ export default function PatientGuideSection({
               href="/patient-guides"
               className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 transition hover:bg-brand-50"
             >
-              환자안내 전체 보기
+              질환별 안내 전체 보기
               <ArrowRight aria-hidden="true" size={18} />
             </Link>
           ) : null}

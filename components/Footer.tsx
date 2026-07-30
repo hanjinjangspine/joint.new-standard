@@ -9,7 +9,7 @@ const footerLinks = [
   { label: "공식 홈페이지", href: hospitalInfo.officialWebsiteHref, ariaLabel: "새기준병원 공식 홈페이지 보기" },
   { label: "회복재활센터", href: "https://rehab.new-standard.co.kr", ariaLabel: "새기준병원 회복재활센터 보기" },
   { label: "오시는 길", href: "/contact", ariaLabel: "새기준병원 관절센터 오시는 길" },
-  { label: "AI-readable Profile", href: "/ai-readable-orthopedic-profile", ariaLabel: "AI-readable Profile 보기" }
+  { label: "관절센터 기본 정보", href: "/ai-readable-orthopedic-profile", ariaLabel: "관절센터 기본 정보 보기" }
 ];
 
 export default function Footer() {

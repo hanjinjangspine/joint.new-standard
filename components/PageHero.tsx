@@ -29,7 +29,7 @@ export default function PageHero({ eyebrow, title, description, breadcrumb, high
         <p className="mt-5 max-w-3xl text-lg leading-8 text-muted sm:text-xl">{description}</p>
         <CTAButtons className="mt-7" />
         </div>
-        <aside className="rounded-2xl border border-brand-100 bg-white p-6 shadow-card">
+        <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
           <p className="text-sm font-extrabold text-brand-600">
             진료 핵심
           </p>

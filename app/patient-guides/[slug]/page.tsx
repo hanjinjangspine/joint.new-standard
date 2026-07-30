@@ -6,6 +6,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
+  ExternalLink,
   HeartPulse,
   Stethoscope
 } from "lucide-react";
@@ -63,7 +64,17 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         inLanguage: "ko-KR",
         audience: { "@type": "Patient" },
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: guide.keywords.map((name) => ({ "@type": "MedicalCondition", name })),
+        about: [{ "@type": "MedicalCondition", name: guide.title }],
+        reviewedBy: {
+          "@type": "Physician",
+          name: "김동희",
+          medicalSpecialty: "Orthopedic"
+        },
+        lastReviewed: "2026-07-30",
+        relatedLink: [
+          new URL(guide.clinicPath, SITE_URL).toString(),
+          new URL("/patient-guides", SITE_URL).toString()
+        ],
         image: imageObjects,
         associatedMedia: imageObjects,
         ...(primaryImage ? { primaryImageOfPage: primaryImage } : {})
@@ -76,7 +87,7 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
           {
             "@type": "ListItem",
             position: 2,
-            name: "환자안내",
+            name: "질환별 안내",
             item: new URL("/patient-guides", SITE_URL).toString()
           },
           { "@type": "ListItem", position: 3, name: guide.title, item: url }
@@ -110,7 +121,7 @@ function IllustrationGallery({
 
   return (
     <>
-      <div className={illustrations.length > 1 ? "grid gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
+      <div className={illustrations.length > 1 ? "grid items-start gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
         {illustrations.map((illustration) => (
           <figure
             key={illustration.src}
@@ -133,6 +144,16 @@ function IllustrationGallery({
               {illustration.note ? (
                 <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
               ) : null}
+              <Link
+                href={illustration.src}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-700"
+                aria-label={`${illustration.caption} 원본 이미지 새 창에서 보기`}
+              >
+                원본 크게 보기
+                <ExternalLink aria-hidden="true" size={15} />
+              </Link>
             </figcaption>
           </figure>
         ))}
@@ -161,14 +182,17 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
       <main>
         <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
           <div className="mx-auto max-w-7xl">
-            <Breadcrumb items={[{ label: "환자안내", href: "/patient-guides" }, { label: guide.title }]} />
+            <Breadcrumb items={[{ label: "질환별 안내", href: "/patient-guides" }, { label: guide.title }]} />
             <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-              Patient Guide · {guide.category}
+              질환별 안내 · {guide.category}
             </p>
             <h1 className="mt-3 max-w-5xl text-3xl font-extrabold leading-[1.2] text-ink sm:text-4xl lg:text-5xl">
               {guide.title}
             </h1>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
+            <p className="mt-4 text-sm font-semibold text-brand-800">
+              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: 2026년 7월 30일
+            </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
                 href="#decision"
@@ -186,10 +210,31 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section id="decision" className="px-4 py-14 sm:px-6 lg:px-8">
+        <nav aria-label="이 질환 안내 목차" className="border-b border-line bg-white px-4 py-3 sm:px-6 lg:px-8">
+          <div className="mx-auto flex max-w-7xl gap-2 overflow-x-auto pb-1">
+            {[
+              ["#decision", "치료 결정 전"],
+              ["#symptoms-tests", "증상·검사"],
+              ["#treatment", "치료 선택"],
+              ["#procedure", "수술·회복"],
+              ["#risks", "위험·주의 신호"],
+              ["#visit", "내원 전 준비"]
+            ].map(([href, label]) => (
+              <Link
+                key={href}
+                href={href}
+                className="whitespace-nowrap rounded-full border border-brand-100 bg-brand-50 px-4 py-2 text-sm font-extrabold text-brand-800"
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+
+        <section id="decision" className="scroll-mt-36 px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Before deciding</p>
+              <p className="text-sm font-extrabold text-brand-600">치료 결정 전</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 치료를 결정하기 전에 확인하세요
               </h2>
@@ -203,7 +248,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
+        <section id="symptoms-tests" className="scroll-mt-36 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-6 lg:grid-cols-2">
               <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
@@ -231,15 +276,15 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <section id="treatment" className="scroll-mt-36 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
             <article className="rounded-2xl border border-line bg-white p-6 sm:p-8">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">First line</p>
+              <p className="text-sm font-extrabold text-brand-600">먼저 살펴보는 치료</p>
               <h2 className="mt-3 text-2xl font-extrabold text-ink">먼저 고려하는 비수술 치료</h2>
               <BulletList items={guide.firstTreatments} />
             </article>
             <article className="rounded-2xl border border-brand-200 bg-brand-900 p-6 text-white sm:p-8">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-100">Surgery decision</p>
+              <p className="text-sm font-extrabold text-brand-100">수술 판단</p>
               <h2 className="mt-3 text-2xl font-extrabold">수술을 함께 검토할 수 있는 경우</h2>
               <ul className="mt-6 grid gap-3">
                 {guide.surgeryConsiderations.map((item) => (
@@ -256,16 +301,16 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         <section id="procedure" className="scroll-mt-24 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Procedure & recovery</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">치료 과정과 회복 단계</h2>
+              <p className="text-sm font-extrabold text-brand-600">수술과 회복</p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">수술을 선택한 경우의 과정과 회복</h2>
               <p className="mt-4 text-lg leading-8 text-muted">
-                아래 내용은 일반적인 설명이며 실제 범위와 순서는 검사 결과와 수술 중 소견에 따라 달라질 수 있습니다.
+                아래 내용은 수술을 선택한 경우의 일반적인 설명입니다. 실제 범위와 순서는 검사 결과와 수술 중 소견에 따라 달라질 수 있습니다.
               </p>
             </div>
             <article className="mt-9 rounded-2xl border border-line bg-white p-6 sm:p-8">
               <div className="flex items-center gap-3">
                 <ClipboardCheck aria-hidden="true" className="text-brand-600" size={26} />
-                <h3 className="text-2xl font-extrabold text-ink">치료 과정</h3>
+                <h3 className="text-2xl font-extrabold text-ink">수술 과정</h3>
               </div>
               <BulletList items={guide.procedure} />
               {procedureIllustrations.length > 0 ? (
@@ -288,7 +333,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="px-4 py-16 sm:px-6 lg:px-8">
+        <section id="risks" className="scroll-mt-36 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
             <article className="rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
               <div className="flex items-center gap-3">
@@ -313,10 +358,10 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="border-t border-line bg-white px-4 py-14 sm:px-6 lg:px-8">
+        <section id="visit" className="scroll-mt-36 border-t border-line bg-white px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Before your visit</p>
+              <p className="text-sm font-extrabold text-brand-600">내원 전 준비</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">진료 전 준비하면 좋은 내용</h2>
             </div>
             <div className="rounded-2xl border border-line bg-calm p-6 sm:p-8">
@@ -343,7 +388,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 관련 진료 안내 <ArrowRight aria-hidden="true" size={18} />
               </Link>
               <Link href="/patient-guides" className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-5 py-3 font-extrabold text-white hover:bg-white/10">
-                전체 환자안내
+                전체 질환별 안내
               </Link>
             </div>
           </div>

@@ -12,8 +12,15 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
+    <a
+      href="#main-content"
+      className="sr-only z-50 rounded-md bg-brand-900 px-4 py-3 text-white focus:not-sr-only focus:fixed focus:left-4 focus:top-4"
+    >
+      본문으로 바로가기
+    </a>
     <header className="sticky top-0 z-40 border-b border-line bg-white/95 backdrop-blur">
-      <div className="border-b border-brand-100 bg-brand-50">
+      <div className="hidden border-b border-brand-100 bg-brand-50 sm:block">
         <div className="mx-auto flex max-w-7xl items-center justify-center px-4 py-1.5 text-center text-xs font-semibold leading-5 text-brand-800 sm:px-6 sm:text-sm">
           {hospitalInfo.commonNotice}
         </div>
@@ -57,6 +64,7 @@ export default function Header() {
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive ? "page" : undefined}
                 className={`whitespace-nowrap rounded-md px-2 py-2 text-[13px] font-bold transition 2xl:px-2.5 ${
                   isActive ? "bg-brand-50 text-brand-800" : "text-muted hover:bg-brand-50"
                 }`}
@@ -103,6 +111,7 @@ export default function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
+                  aria-current={isActive ? "page" : undefined}
                   onClick={() => setIsOpen(false)}
                   className={`rounded-md px-4 py-3 text-base font-semibold ${
                     isActive ? "bg-brand-50 text-brand-800" : "text-ink hover:bg-brand-50"
@@ -116,5 +125,6 @@ export default function Header() {
         </div>
       ) : null}
     </header>
+    </>
   );
 }
