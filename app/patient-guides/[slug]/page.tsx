@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -12,6 +13,10 @@ import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { SITE_URL } from "@/lib/data";
+import {
+  getPatientGuideIllustrations,
+  type PatientGuideIllustration
+} from "@/lib/patient-guide-illustrations";
 import { getPatientGuide, patientGuides } from "@/lib/patient-guides";
 import { createMetadata } from "@/lib/seo";
 
@@ -34,6 +39,18 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
   const url = new URL(`/patient-guides/${guide.slug}`, SITE_URL).toString();
+  const imageObjects = getPatientGuideIllustrations(guide.slug).map((illustration) => ({
+    "@type": "ImageObject",
+    contentUrl: new URL(illustration.src, SITE_URL).toString(),
+    caption: illustration.caption,
+    description: illustration.alt,
+    encodingFormat: "image/png",
+    width: illustration.width,
+    height: illustration.height,
+    representativeOfPage: illustration.placement === "overview"
+  }));
+  const primaryImage = imageObjects.find((image) => image.representativeOfPage);
+
   return {
     "@context": "https://schema.org",
     "@graph": [
@@ -46,7 +63,10 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         inLanguage: "ko-KR",
         audience: { "@type": "Patient" },
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: guide.keywords.map((name) => ({ "@type": "MedicalCondition", name }))
+        about: guide.keywords.map((name) => ({ "@type": "MedicalCondition", name })),
+        image: imageObjects,
+        associatedMedia: imageObjects,
+        ...(primaryImage ? { primaryImageOfPage: primaryImage } : {})
       },
       {
         "@type": "BreadcrumbList",
@@ -79,9 +99,61 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
+function IllustrationGallery({
+  illustrations,
+  showDisclosure = false
+}: {
+  illustrations: PatientGuideIllustration[];
+  showDisclosure?: boolean;
+}) {
+  if (illustrations.length === 0) return null;
+
+  return (
+    <>
+      <div className={illustrations.length > 1 ? "grid gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
+        {illustrations.map((illustration) => (
+          <figure
+            key={illustration.src}
+            className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
+          >
+            <div className="flex min-h-0 items-center justify-center bg-white p-3 sm:p-5">
+              <Image
+                src={illustration.src}
+                width={illustration.width}
+                height={illustration.height}
+                alt={illustration.alt}
+                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
+                loading="lazy"
+                decoding="async"
+                className="h-auto max-h-[720px] w-full object-contain"
+              />
+            </div>
+            <figcaption className="border-t border-line px-5 py-4 sm:px-6">
+              <p className="text-base font-extrabold leading-7 text-ink">{illustration.caption}</p>
+              {illustration.note ? (
+                <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
+              ) : null}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+      {showDisclosure ? (
+        <p className="mt-4 text-sm leading-6 text-muted">
+          치료 이해를 돕기 위한 AI 기반 3D 의료 일러스트입니다. 실제 환자의 치료 전·후 사진이 아니며,
+          치료 방법·과정·회복은 환자 상태와 의료진의 판단에 따라 달라질 수 있습니다.
+        </p>
+      ) : null}
+    </>
+  );
+}
+
 export default async function PatientGuideDetailPage({ params }: PageProps) {
   const guide = getPatientGuide((await params).slug);
   if (!guide) notFound();
+  const clinicalIllustrations = getPatientGuideIllustrations(guide.slug).filter(
+    (illustration) => illustration.placement !== "procedure"
+  );
+  const procedureIllustrations = getPatientGuideIllustrations(guide.slug, "procedure");
 
   return (
     <>
@@ -132,17 +204,30 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         </section>
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-            <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-              <HeartPulse aria-hidden="true" className="text-brand-600" size={28} />
-              <h2 className="mt-4 text-2xl font-extrabold text-ink">주요 증상</h2>
-              <BulletList items={guide.symptoms} />
-            </article>
-            <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-              <Stethoscope aria-hidden="true" className="text-brand-600" size={28} />
-              <h2 className="mt-4 text-2xl font-extrabold text-ink">진찰과 검사</h2>
-              <BulletList items={guide.diagnosis} />
-            </article>
+          <div className="mx-auto max-w-7xl">
+            <div className="grid gap-6 lg:grid-cols-2">
+              <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+                <HeartPulse aria-hidden="true" className="text-brand-600" size={28} />
+                <h2 className="mt-4 text-2xl font-extrabold text-ink">주요 증상</h2>
+                <BulletList items={guide.symptoms} />
+              </article>
+              <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+                <Stethoscope aria-hidden="true" className="text-brand-600" size={28} />
+                <h2 className="mt-4 text-2xl font-extrabold text-ink">진찰과 검사</h2>
+                <BulletList items={guide.diagnosis} />
+              </article>
+            </div>
+            <div id="illustrations" className="scroll-mt-24 pt-12">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+                3D Medical Illustration
+              </p>
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                질환의 위치와 구조를 살펴보세요
+              </h2>
+              <div className="mt-7">
+                <IllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -168,7 +253,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </div>
         </section>
 
-        <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
+        <section id="procedure" className="scroll-mt-24 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Procedure & recovery</p>
@@ -183,6 +268,11 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 <h3 className="text-2xl font-extrabold text-ink">치료 과정</h3>
               </div>
               <BulletList items={guide.procedure} />
+              {procedureIllustrations.length > 0 ? (
+                <div className="mt-8 border-t border-line pt-8">
+                  <IllustrationGallery illustrations={procedureIllustrations} />
+                </div>
+              ) : null}
             </article>
             <div className="mt-6 grid gap-5 md:grid-cols-3">
               {guide.recovery.map((phase, index) => (
