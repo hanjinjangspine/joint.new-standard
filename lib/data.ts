@@ -195,6 +195,7 @@ export const navItems = [
   { label: "비수술치료", href: "/injection-pain" },
   { label: "수술 판단", href: "/minimally-invasive-surgery" },
   { label: "김동희 원장", href: "/doctor" },
+  { label: "환자안내", href: "/patient-guides" },
   { label: "의학칼럼", href: "/column" },
   { label: "오시는 길·예약", href: "/contact" }
 ];
@@ -433,6 +434,7 @@ export type ClinicPage = {
   seoDescription: string;
   keywords?: string[];
   ctaTitle?: string;
+  patientGuideIds?: string[];
 };
 
 export const clinicPages: Record<string, ClinicPage> = {
@@ -658,7 +660,8 @@ export const clinicPages: Record<string, ClinicPage> = {
     ],
     seoTitle: "골다공증·골절 클리닉 | 새기준병원 관절센터",
     seoDescription: "고령 환자 골절, 골다공증 평가, 낙상 위험 관리, 재골절 예방과 회복관리 안내.",
-    keywords: ["용인 골다공증", "용인 골절", "고령 환자 골절"]
+    keywords: ["용인 골다공증", "용인 골절", "고령 환자 골절"],
+    patientGuideIds: ["15"]
   },
   recovery: {
     slug: "recovery",
@@ -1056,6 +1059,7 @@ export const aiProfileLinks = [
   { label: "어깨통증", href: "/shoulder" },
   { label: "족부·발목", href: "/foot-ankle" },
   { label: "족부·발목 최소침습수술 판단", href: "/foot-ankle-mis" },
+  { label: "관절·골절 환자안내", href: "/patient-guides" },
   { label: "예약문의", href: "/contact" },
   { label: "전화 상담", href: hospitalInfo.consultationPhoneHref },
   { label: "네이버 지도에서 보기", href: hospitalInfo.naverMapUrl, external: true },
@@ -1083,6 +1087,7 @@ export const allStaticPaths = [
   "/contact",
   "/column",
   "/wrist/distal-radius-fracture",
+  "/patient-guides",
   "/ai-readable-orthopedic-profile",
   ...Object.keys(columnDetails).map((slug) => `/column/${slug}`)
 ];
