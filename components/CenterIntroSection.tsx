@@ -55,10 +55,16 @@ export default function CenterIntroSection() {
             </Link>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
-            {introItems.map((item) => {
+            {introItems.map((item, index) => {
               const Icon = item.icon;
+              const surface = [
+                "bg-surface-info",
+                "bg-surface-note",
+                "bg-surface-decision",
+                "bg-surface-recovery"
+              ][index % 4];
               return (
-                <article key={item.title} className="rounded-2xl border border-line bg-calm p-5">
+                <article key={item.title} className={`rounded-2xl border border-line p-5 ${surface}`}>
                   <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-brand-700">
                     <Icon aria-hidden="true" size={22} />
                   </div>

@@ -10,8 +10,14 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#1F2933",
-        muted: "#5C6B73",
+        muted: "#4F5F68",
         line: "#D9E2E7",
+        surface: {
+          info: "#F1F6F8",
+          decision: "#F3F7F4",
+          recovery: "#FAF7F2",
+          note: "#F6F5F8"
+        },
         brand: {
           50: "#EEF4F7",
           100: "#DDE9EF",
@@ -22,6 +28,7 @@ const config: Config = {
           800: "#123247",
           900: "#0B2435"
         },
+        interactive: "#6F8FA0",
         calm: "#F8FAFB"
       },
       boxShadow: {

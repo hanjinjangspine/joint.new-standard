@@ -7,6 +7,12 @@ export type PatientGuideIllustration = {
   alt: string;
   caption: string;
   note?: string;
+  displayCrop?: {
+    top?: number;
+    right?: number;
+    bottom?: number;
+    left?: number;
+  };
   placement: PatientGuideIllustrationPlacement;
 };
 
@@ -20,6 +26,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "팔꿈치 외측상과 힘줄 병변을 나타낸 3D 의료 일러스트",
       caption: "팔꿈치 바깥쪽 힘줄과 외측상과염이 생기는 위치",
+      displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
     }
   ],
@@ -40,6 +47,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "손목 수근관에서 정중신경이 눌리는 구조를 나타낸 3D 의료 일러스트",
       caption: "수근관 안에서 정중신경이 압박되는 위치",
+      displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
     },
     {
@@ -58,6 +66,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "발목 외측 인대 손상 부위를 나타낸 3D 의료 일러스트",
       caption: "발목 바깥쪽 인대의 위치와 손상 부위",
+      displayCrop: { top: 54, bottom: 73 },
       placement: "overview"
     },
     {
@@ -76,7 +85,19 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "무릎 반월상 연골판 파열 위치를 나타낸 3D 의료 일러스트",
       caption: "무릎 관절 안의 반월상 연골판과 파열 부위",
+      displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/meniscus-tear/procedure.png`,
+      width: 1536,
+      height: 1024,
+      alt: "관절경으로 반월상 연골판의 불안정한 손상 조직을 필요한 범위만 정리하는 과정과 봉합 가능한 파열을 봉합하는 과정을 각각 나타낸 3D 의료 일러스트",
+      caption:
+        "파열의 위치·모양·혈류·조직 상태에 따라 봉합 가능한 연골판은 보존해 봉합하고, 봉합이 어려운 불안정 조직은 필요한 범위만 정리합니다.",
+      note:
+        "환자교육을 위한 AI 기반 3D 의료 일러스트이며 실제 수술 사진이나 치료 전·후 사례가 아닙니다. 실제 치료 방법과 절제·봉합 범위, 재활 일정은 진찰·영상검사와 관절경 소견에 따라 달라질 수 있습니다.",
+      placement: "procedure"
     }
   ],
   "acl-tear": [
@@ -86,6 +107,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 645,
       alt: "무릎 전방 십자 인대 파열을 나타낸 3D 의료 일러스트",
       caption: "무릎 안쪽 전방 십자 인대의 위치와 파열",
+      displayCrop: { top: 133 },
       placement: "overview"
     },
     {
@@ -104,6 +126,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "무릎 관절 연골의 국소 결손 부위를 나타낸 3D 의료 일러스트",
       caption: "무릎 관절면의 국소 연골 결손 부위",
+      displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
     },
     {
@@ -149,6 +172,7 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       height: 700,
       alt: "뼈의 골절선과 어긋난 골편을 나타낸 3D 의료 일러스트",
       caption: "골절선과 어긋난 골편의 구조",
+      displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
     },
     {

@@ -14,8 +14,13 @@ export default function FAQSection() {
           </p>
         </div>
         <div className="mt-10 grid gap-4 lg:grid-cols-2">
-          {faqItems.map((item) => (
-            <article key={item.question} className="rounded-lg border border-line bg-white p-6">
+          {faqItems.map((item, index) => (
+            <article
+              key={item.question}
+              className={`rounded-lg border border-line p-6 ${
+                ["bg-surface-info", "bg-surface-decision", "bg-surface-recovery", "bg-surface-note"][index % 4]
+              }`}
+            >
               <h3 className="text-xl font-bold leading-8 text-ink">{item.question}</h3>
               <p className="mt-3 text-base leading-7 text-muted">{item.answer}</p>
             </article>

@@ -122,41 +122,76 @@ function IllustrationGallery({
   return (
     <>
       <div className={illustrations.length > 1 ? "grid items-start gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
-        {illustrations.map((illustration) => (
-          <figure
-            key={illustration.src}
-            className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
-          >
-            <div className="flex min-h-0 items-center justify-center bg-white p-3 sm:p-5">
-              <Image
-                src={illustration.src}
-                width={illustration.width}
-                height={illustration.height}
-                alt={illustration.alt}
-                sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
-                loading="lazy"
-                decoding="async"
-                className="h-auto max-h-[720px] w-full object-contain"
-              />
-            </div>
-            <figcaption className="border-t border-line px-5 py-4 sm:px-6">
-              <p className="text-base font-extrabold leading-7 text-ink">{illustration.caption}</p>
-              {illustration.note ? (
-                <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
-              ) : null}
-              <Link
-                href={illustration.src}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-700"
-                aria-label={`${illustration.caption} 원본 이미지 새 창에서 보기`}
-              >
-                원본 크게 보기
-                <ExternalLink aria-hidden="true" size={15} />
-              </Link>
-            </figcaption>
-          </figure>
-        ))}
+        {illustrations.map((illustration) => {
+          const crop = illustration.displayCrop;
+          const cropTop = crop?.top ?? 0;
+          const cropRight = crop?.right ?? 0;
+          const cropBottom = crop?.bottom ?? 0;
+          const cropLeft = crop?.left ?? 0;
+          const visibleWidth = illustration.width - cropLeft - cropRight;
+          const visibleHeight = illustration.height - cropTop - cropBottom;
+
+          return (
+            <figure
+              key={illustration.src}
+              className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
+            >
+              <div className="relative flex min-h-0 items-center justify-center overflow-hidden bg-[#F4F7F8]">
+                {crop ? (
+                  <div
+                    className="relative w-full overflow-hidden"
+                    style={{ aspectRatio: `${visibleWidth} / ${visibleHeight}` }}
+                  >
+                    <Image
+                      src={illustration.src}
+                      width={illustration.width}
+                      height={illustration.height}
+                      alt={illustration.alt}
+                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
+                      loading="lazy"
+                      decoding="async"
+                      className="absolute h-auto max-w-none object-contain"
+                      style={{
+                        width: `${(illustration.width / visibleWidth) * 100}%`,
+                        left: `${-(cropLeft / visibleWidth) * 100}%`,
+                        top: `${-(cropTop / visibleHeight) * 100}%`
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="flex w-full items-center justify-center p-2 sm:p-3">
+                    <Image
+                      src={illustration.src}
+                      width={illustration.width}
+                      height={illustration.height}
+                      alt={illustration.alt}
+                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
+                      loading="lazy"
+                      decoding="async"
+                      className="h-auto w-auto max-h-[720px] max-w-full rounded-xl object-contain"
+                    />
+                  </div>
+                )}
+              </div>
+              <figcaption className="border-t border-line bg-white px-5 py-4 sm:px-6">
+                <p className="text-base font-extrabold leading-7 text-ink">{illustration.caption}</p>
+                {illustration.note ? (
+                  <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
+                ) : null}
+                <Link
+                  href={illustration.src}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-700"
+                  aria-label={`${illustration.caption} 원본 이미지 새 창에서 보기`}
+                >
+                  원본 크게 보기
+                  <ExternalLink aria-hidden="true" size={15} />
+                </Link>
+              </figcaption>
+            </figure>
+          );
+        })}
       </div>
       {showDisclosure ? (
         <p className="mt-4 text-sm leading-6 text-muted">
@@ -242,7 +277,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 수술을 권유받았더라도 현재 상태와 선택 가능한 치료를 다시 확인하고 질문할 수 있습니다.
               </p>
             </div>
-            <div className="rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
+            <div className="rounded-2xl border border-brand-100 bg-surface-decision p-6 sm:p-8">
               <BulletList items={guide.decisionChecks} />
             </div>
           </div>
@@ -251,12 +286,12 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         <section id="symptoms-tests" className="scroll-mt-36 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-6 lg:grid-cols-2">
-              <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <article className="rounded-2xl border border-line bg-surface-info p-6 shadow-sm sm:p-8">
                 <HeartPulse aria-hidden="true" className="text-brand-600" size={28} />
                 <h2 className="mt-4 text-2xl font-extrabold text-ink">주요 증상</h2>
                 <BulletList items={guide.symptoms} />
               </article>
-              <article className="rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
+              <article className="rounded-2xl border border-line bg-surface-note p-6 shadow-sm sm:p-8">
                 <Stethoscope aria-hidden="true" className="text-brand-600" size={28} />
                 <h2 className="mt-4 text-2xl font-extrabold text-ink">진찰과 검사</h2>
                 <BulletList items={guide.diagnosis} />
@@ -278,7 +313,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
 
         <section id="treatment" className="scroll-mt-36 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
-            <article className="rounded-2xl border border-line bg-white p-6 sm:p-8">
+            <article className="rounded-2xl border border-line bg-surface-decision p-6 sm:p-8">
               <p className="text-sm font-extrabold text-brand-600">먼저 살펴보는 치료</p>
               <h2 className="mt-3 text-2xl font-extrabold text-ink">먼저 고려하는 비수술 치료</h2>
               <BulletList items={guide.firstTreatments} />
@@ -307,7 +342,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 아래 내용은 수술을 선택한 경우의 일반적인 설명입니다. 실제 범위와 순서는 검사 결과와 수술 중 소견에 따라 달라질 수 있습니다.
               </p>
             </div>
-            <article className="mt-9 rounded-2xl border border-line bg-white p-6 sm:p-8">
+            <article className="mt-9 rounded-2xl border border-line bg-surface-recovery p-6 sm:p-8">
               <div className="flex items-center gap-3">
                 <ClipboardCheck aria-hidden="true" className="text-brand-600" size={26} />
                 <h3 className="text-2xl font-extrabold text-ink">수술 과정</h3>
@@ -321,7 +356,12 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             </article>
             <div className="mt-6 grid gap-5 md:grid-cols-3">
               {guide.recovery.map((phase, index) => (
-                <article key={phase.label} className="rounded-2xl border border-line bg-white p-6 shadow-sm">
+                <article
+                  key={phase.label}
+                  className={`rounded-2xl border border-line p-6 shadow-sm ${
+                    ["bg-surface-info", "bg-surface-decision", "bg-surface-note"][index % 3]
+                  }`}
+                >
                   <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-800 text-sm font-extrabold text-white">
                     {index + 1}
                   </span>

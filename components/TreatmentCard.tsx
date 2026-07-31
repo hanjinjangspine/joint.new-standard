@@ -11,7 +11,7 @@ export default function TreatmentCard({ title, description, href }: TreatmentCar
   return (
     <Link
       href={href}
-      className="group flex min-h-[190px] flex-col justify-between rounded-lg border border-line bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+      className="group flex min-h-[190px] flex-col justify-between rounded-lg border border-[#D7E4DA] bg-surface-decision p-6 shadow-sm transition hover:-translate-y-1 hover:border-interactive hover:shadow-soft focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
       aria-label={`${title} 페이지로 이동`}
     >
       <div>
