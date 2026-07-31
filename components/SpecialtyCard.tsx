@@ -7,6 +7,14 @@ type SpecialtyCardProps = {
   href: string;
   icon: string;
   featured?: boolean;
+  tone?: "info" | "decision" | "recovery" | "note";
+};
+
+const toneClasses = {
+  info: "border-[#D5E3E8] bg-surface-info",
+  decision: "border-[#D7E4DA] bg-surface-decision",
+  recovery: "border-[#E7DED3] bg-surface-recovery",
+  note: "border-[#E1DEE6] bg-surface-note"
 };
 
 const iconMap = {
@@ -24,7 +32,8 @@ export default function SpecialtyCard({
   description,
   href,
   icon,
-  featured = false
+  featured = false,
+  tone = "info"
 }: SpecialtyCardProps) {
   const Icon = iconMap[icon as keyof typeof iconMap] || Activity;
 
@@ -34,7 +43,7 @@ export default function SpecialtyCard({
       className={`group flex min-h-[220px] flex-col justify-between rounded-2xl border p-6 transition duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2 ${
         featured
           ? "border-brand-700 bg-brand-800 text-white shadow-card hover:-translate-y-1 hover:bg-brand-900 md:col-span-2"
-          : "border-line bg-white text-ink shadow-sm hover:-translate-y-1 hover:border-brand-200 hover:shadow-card"
+          : `${toneClasses[tone]} text-ink shadow-sm hover:-translate-y-1 hover:border-interactive hover:shadow-card`
       }`}
       aria-label={`${title} 페이지로 이동`}
     >
@@ -46,7 +55,7 @@ export default function SpecialtyCard({
         ) : null}
         <div
           className={`mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl ${
-            featured ? "bg-white/12 text-white" : "bg-brand-50 text-brand-700"
+            featured ? "bg-white/12 text-white" : "bg-white/75 text-brand-700"
           }`}
         >
           <Icon aria-hidden="true" size={24} strokeWidth={2.1} />

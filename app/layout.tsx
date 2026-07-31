@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
@@ -7,6 +8,14 @@ import { hospitalInfo, SITE_URL } from "@/lib/data";
 import { entityGraphJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+
+const suit = localFont({
+  src: "./fonts/SUIT-Variable.woff2",
+  variable: "--font-suit",
+  weight: "100 900",
+  display: "swap",
+  preload: true
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -74,7 +83,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={suit.variable}>
       <body>
         <SEOJsonLd data={entityGraphJsonLd()} />
         <Header />

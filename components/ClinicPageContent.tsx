@@ -27,8 +27,13 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
             </div>
 
             <div className="mt-10 grid gap-5 lg:grid-cols-3">
-              {page.sections.map((section) => (
-                <article key={section.title} className="rounded-2xl border border-line bg-calm p-6 shadow-sm">
+              {page.sections.map((section, index) => (
+                <article
+                  key={section.title}
+                  className={`rounded-2xl border border-line p-6 shadow-sm ${
+                    ["bg-surface-info", "bg-surface-decision", "bg-surface-note"][index % 3]
+                  }`}
+                >
                   <h2 className="text-2xl font-extrabold leading-8 text-ink">{section.title}</h2>
                   <ul className="mt-6 grid gap-3">
                     {section.items.map((item) => (
@@ -54,8 +59,13 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
               description="현재 상태에서 먼저 시도할 수 있는 치료와 치료 시기를 놓치지 않기 위해 확인해야 할 점을 함께 안내합니다."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {["정확한 진단", "충분한 설명", "회복 과정 관리"].map((item) => (
-                <div key={item} className="rounded-lg border border-line bg-white p-6">
+              {["정확한 진단", "충분한 설명", "회복 과정 관리"].map((item, index) => (
+                <div
+                  key={item}
+                  className={`rounded-lg border border-line p-6 ${
+                    ["bg-surface-info", "bg-surface-decision", "bg-surface-recovery"][index]
+                  }`}
+                >
                   <h3 className="text-xl font-bold text-ink">{item}</h3>
                   <p className="mt-3 text-base leading-7 text-muted">
                     환자 상태에 맞는 치료 계획을 세우고, 검사 결과와 치료 반응을

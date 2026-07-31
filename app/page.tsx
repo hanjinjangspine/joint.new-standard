@@ -50,13 +50,15 @@ export default function HomePage() {
               description="관절 질환별 설명은 이 사이트에서, 병원 전체 진료시간·의료진·이용 정보는 본원 홈페이지에서 확인할 수 있습니다."
             />
             <div className="grid gap-3 sm:grid-cols-2">
-              {officialPatientLinks.map((item) => (
+              {officialPatientLinks.map((item, index) => (
                 <Link
                   key={item.href}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group rounded-2xl border border-line bg-calm p-5 transition hover:border-brand-200 hover:bg-brand-50"
+                  className={`group rounded-2xl border border-line p-5 transition hover:border-interactive ${
+                    ["bg-surface-info", "bg-surface-decision", "bg-surface-recovery", "bg-surface-note"][index % 4]
+                  }`}
                 >
                   <strong className="block text-base font-extrabold text-ink">{item.label}</strong>
                   <span className="mt-3 block text-sm leading-7 text-muted">{item.description}</span>

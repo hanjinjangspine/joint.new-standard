@@ -7,8 +7,16 @@ import {
 } from "@/lib/patient-guides";
 
 export function PatientGuideCard({ guide }: { guide: PatientGuide }) {
+  const cardTones = [
+    "border-[#D5E3E8] bg-surface-info",
+    "border-[#D7E4DA] bg-surface-decision",
+    "border-[#E7DED3] bg-surface-recovery",
+    "border-[#E1DEE6] bg-surface-note"
+  ];
+  const toneIndex = Number.parseInt(guide.id, 10) % cardTones.length;
+
   return (
-    <article className="flex h-full flex-col rounded-2xl border border-line bg-white p-6 shadow-sm transition hover:border-brand-200 hover:shadow-card">
+    <article className={`flex h-full flex-col rounded-2xl border p-6 shadow-sm transition hover:border-interactive hover:shadow-card ${cardTones[toneIndex]}`}>
       <div className="flex items-start justify-between gap-4">
         <span className="rounded-full bg-brand-50 px-3 py-1.5 text-xs font-extrabold text-brand-700">
           {guide.category}
@@ -17,7 +25,7 @@ export function PatientGuideCard({ guide }: { guide: PatientGuide }) {
       </div>
       <h3 className="mt-5 text-xl font-extrabold leading-8 text-ink">{guide.title}</h3>
       <p className="mt-3 flex-1 text-base leading-7 text-muted">{guide.description}</p>
-      <div className="mt-5 rounded-xl bg-calm px-4 py-3">
+      <div className="mt-5 rounded-xl bg-white/75 px-4 py-3">
         <p className="text-xs font-extrabold text-brand-700">이런 증상을 확인하세요</p>
         <p className="mt-1 text-sm leading-6 text-muted">{guide.symptoms.slice(0, 2).join(" · ")}</p>
       </div>
