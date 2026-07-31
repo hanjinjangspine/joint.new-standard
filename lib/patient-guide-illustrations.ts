@@ -28,6 +28,17 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       caption: "팔꿈치 바깥쪽 힘줄과 외측상과염이 생기는 위치",
       displayCrop: { top: 70, bottom: 57 },
       placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/tennis-elbow/procedure.png`,
+      width: 724,
+      height: 724,
+      alt: "팔꿈치 바깥쪽 힘줄 병변을 관절경으로 확인하고 필요한 범위에서 정리하는 과정을 나타낸 AI 기반 3D 의학 일러스트",
+      caption: "관절경으로 병변을 확인하고 필요한 범위의 변성 조직을 정리하는 과정",
+      note:
+        "AI 기반 3D 의료 일러스트이며 실제 환자, 실제 수술 장면 또는 치료 전후 사진이 아닙니다. 병변 정리 범위와 봉합 여부는 증상, 진찰·영상검사와 수술 중 소견에 따라 달라질 수 있습니다.",
+      displayCrop: { top: 34, right: 24, bottom: 33, left: 24 },
+      placement: "procedure"
     }
   ],
   "calcific-tendinitis": [
@@ -38,6 +49,17 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       alt: "어깨 회전근개 힘줄의 석회 침착을 나타낸 3D 의료 일러스트",
       caption: "회전근개 힘줄 안에 석회가 침착되는 위치",
       placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/calcific-tendinitis/procedure.png`,
+      width: 724,
+      height: 724,
+      alt: "회전근개 힘줄의 석회 침착 위치를 확인하고 관절경으로 필요한 범위에서 제거하는 과정을 나타낸 AI 기반 3D 의학 일러스트",
+      caption: "관절경으로 석회 위치를 확인하고 필요한 범위에서 제거하는 과정",
+      note:
+        "AI 기반 3D 의료 일러스트이며 실제 환자, 실제 수술 장면 또는 치료 전후 사진이 아닙니다. 석회 위치·제거 범위와 남은 회전근개 힘줄의 봉합 여부는 증상, 진찰·영상검사와 수술 중 소견에 따라 달라질 수 있습니다.",
+      displayCrop: { top: 34, right: 24, bottom: 33, left: 24 },
+      placement: "procedure"
     }
   ],
   "carpal-tunnel-syndrome": [
