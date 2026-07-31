@@ -12,16 +12,25 @@ import {
 } from "lucide-react";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
+import PatientGuideIllustrationGallery from "@/components/PatientGuideIllustrationGallery";
 import PatientGuideSection from "@/components/PatientGuideSection";
 import SectionTitle from "@/components/SectionTitle";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { hospitalInfo, SITE_URL } from "@/lib/data";
+import { getPatientGuideIllustrations } from "@/lib/patient-guide-illustrations";
 import { createMetadata } from "@/lib/seo";
 
 const pagePath = "/wrist/distal-radius-fracture";
 const pageTitle = "손목 골절, 깁스만 해도 될까요? 요골 원위부 골절의 보존치료와 수술 판단";
 const pageDescription =
   "요골 원위부 골절에서 전위, 관절면 침범, 손목 정렬, 동반 손상, 힘줄 자극 가능성을 함께 확인해 보존치료와 수술 방향을 상담하는 기준을 안내합니다.";
+const distalRadiusIllustrations = getPatientGuideIllustrations("distal-radius-fracture");
+const distalRadiusClinicalIllustrations = distalRadiusIllustrations.filter(
+  (illustration) => illustration.placement !== "procedure"
+);
+const distalRadiusProcedureIllustrations = distalRadiusIllustrations.filter(
+  (illustration) => illustration.placement === "procedure"
+);
 
 const checkItems = [
   {
@@ -114,6 +123,16 @@ export const metadata: Metadata = createMetadata({
 
 function pageJsonLd() {
   const url = new URL(pagePath, SITE_URL).toString();
+  const imageObjects = distalRadiusIllustrations.map((illustration) => ({
+    "@type": "ImageObject",
+    contentUrl: new URL(illustration.src, SITE_URL).toString(),
+    caption: illustration.caption,
+    description: illustration.alt,
+    encodingFormat: "image/png",
+    width: illustration.width,
+    height: illustration.height,
+    representativeOfPage: illustration.placement === "overview"
+  }));
 
   return {
     "@context": "https://schema.org",
@@ -127,6 +146,9 @@ function pageJsonLd() {
         inLanguage: "ko-KR",
         isPartOf: { "@id": `${SITE_URL}#website` },
         about: ["손목 골절", "요골 원위부 골절", "보존치료", "수술적 고정", "손목 골절 CT"],
+        lastReviewed: "2026-07-31",
+        image: imageObjects,
+        associatedMedia: imageObjects,
         reviewedBy: {
           "@type": "MedicalOrganization",
           name: hospitalInfo.centerName,
@@ -217,6 +239,22 @@ export default function DistalRadiusFracturePage() {
                 이 페이지에는 환자 식별 가능성이 있는 영상 자료를 게시하지 않습니다.
               </p>
             </aside>
+          </div>
+        </section>
+
+        <section id="fracture-pattern" className="scroll-mt-24 bg-calm px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl">
+            <SectionTitle
+              eyebrow="Fracture Pattern"
+              title="콜레스 골절은 요골 원위부 골절의 한 유형입니다"
+              description="콜레스 골절은 손목 가까운 요골 골절편이 손등 쪽으로 기울거나 이동한 대표적인 형태입니다. 모든 요골 원위부 골절을 콜레스 골절이라고 부르지는 않으며, 안정형·분쇄형·관절면 침범 여부에 따라 치료 판단이 달라집니다."
+            />
+            <div className="mt-8">
+              <PatientGuideIllustrationGallery
+                illustrations={distalRadiusClinicalIllustrations}
+                showDisclosure
+              />
+            </div>
           </div>
         </section>
 
@@ -311,6 +349,51 @@ export default function DistalRadiusFracturePage() {
               수술적 고정은 모든 손목 골절에 동일하게 적용되는 치료가 아닙니다. 환자의 나이, 활동성, 골질,
               동반 손상, 평소 손 사용 정도, 기존 치료 반응을 종합해 치료 방향을 상담합니다.
             </p>
+            <div className="mt-10 rounded-2xl border border-line bg-surface-recovery p-6 sm:p-8">
+              <h2 className="text-2xl font-extrabold leading-8 text-ink">수장측 금속판 고정술을 선택한 경우</h2>
+              <p className="mt-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+                절개를 통해 골절 부위를 확인하고 어긋난 골편과 관절면 정렬을 맞춘 뒤, 손바닥 쪽 금속판과
+                나사로 고정할 수 있습니다. 실제 정복·고정 범위와 수술 접근은 골절 형태, 골질, 동반 손상과
+                수술 중 소견에 따라 달라집니다.
+              </p>
+              <div className="mt-8 border-t border-line pt-8">
+                <PatientGuideIllustrationGallery illustrations={distalRadiusProcedureIllustrations} />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 sm:px-6 lg:px-8">
+          <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
+            <article className="rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
+              <h2 className="text-2xl font-extrabold leading-8 text-ink">치료 전에 확인할 위험과 한계</h2>
+              <ul className="mt-5 grid gap-3 text-base leading-7 text-muted">
+                {[
+                  "감염, 출혈, 신경 또는 혈관 손상",
+                  "정중신경 압박이나 수근관 증상",
+                  "힘줄 자극·손상 또는 금속판 불편",
+                  "손목 강직과 지속되는 통증",
+                  "부정유합·불유합 또는 외상 후 관절염",
+                  "고정물 제거를 포함한 추가 치료 가능성"
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <ShieldCheck aria-hidden="true" className="mt-1 shrink-0 text-amber-700" size={18} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </article>
+            <article className="rounded-2xl border border-brand-100 bg-surface-info p-6 sm:p-8">
+              <h2 className="text-2xl font-extrabold leading-8 text-ink">넘어져 생긴 골절이라면 뼈 건강도 살펴봅니다</h2>
+              <p className="mt-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
+                비교적 가벼운 낙상으로 손목이 골절됐다면 골다공증과 추가 골절 위험 평가가 필요할 수 있습니다.
+                연령, 골절 양상, 과거 골절과 복용 약을 확인하고 필요한 경우 골밀도 검사와 예방 치료를 상담합니다.
+              </p>
+              <p className="mt-5 rounded-xl bg-white px-4 py-3 text-sm leading-6 text-muted">
+                손가락 감각이 빠르게 떨어지거나 손이 창백하고 차가워지는 경우, 변형과 통증이 심해지는 경우에는
+                홈페이지 안내만으로 판단하지 말고 빠르게 진료를 받으세요.
+              </p>
+            </article>
           </div>
         </section>
 

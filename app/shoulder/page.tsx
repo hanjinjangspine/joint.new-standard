@@ -232,9 +232,9 @@ export default function ShoulderPage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["08", "21", "22", "24"]}
+          guideIds={["08", "21", "22", "24", "29"]}
           title="어깨 질환별 판단 기준을 자세히 확인하세요"
-          description="석회화 건염, 회전근개 파열, 반복 탈구와 어깨 위쪽 관절 탈구의 증상·검사·치료·회복 내용을 확인할 수 있습니다."
+          description="석회화 건염, 회전근개 파열, 반복 탈구, 어깨 위쪽 관절 탈구와 어깨 인공관절 치환술의 증상·검사·치료·회복 내용을 확인할 수 있습니다."
           tone="white"
         />
 

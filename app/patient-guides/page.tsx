@@ -11,10 +11,11 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const title = "관절·골절 질환별 안내";
 const description =
-  "무릎, 어깨, 족부·발목, 손·손목·팔꿈치와 골절 질환을 증상·검사·치료·회복 순서로 확인할 수 있습니다.";
+  "무릎, 고관절, 어깨, 족부·발목, 손·손목·팔꿈치와 골절 질환을 증상·검사·치료·회복 순서로 확인할 수 있습니다.";
 
 const categoryDetails: Record<PatientGuideCategory, { id: string; hint: string }> = {
   "무릎": { id: "knee", hint: "붓기, 잠김, 불안정감, O자 정렬" },
+  "고관절": { id: "hip", hint: "사타구니·엉덩이 통증, 보행 불편" },
   "어깨": { id: "shoulder", hint: "야간통, 팔 들기 어려움, 탈구" },
   "족부·발목": { id: "foot-ankle", hint: "반복되는 접질림, 엄지발가락 변형" },
   "손·손목·팔꿈치": { id: "hand-wrist-elbow", hint: "손 저림, 팔꿈치 통증" },
@@ -29,6 +30,7 @@ export const metadata: Metadata = createMetadata({
     "새기준병원 환자안내",
     "관절 질환 안내",
     "무릎 수술 안내",
+    "고관절 질환 안내",
     "어깨 수술 안내",
     "족부 발목 수술 안내"
   ]

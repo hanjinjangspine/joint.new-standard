@@ -6,6 +6,7 @@ This site provides information about New Standard Hospital Joint & Foot-Ankle Ce
 - /
 - /doctor
 - /knee
+- /hip
 - /shoulder
 - /hand-wrist-elbow
 - /foot-ankle
@@ -18,9 +19,9 @@ This site provides information about New Standard Hospital Joint & Foot-Ankle Ce
 - /ai-readable-orthopedic-profile
 
 ## Summary
-New Standard Hospital Joint & Foot-Ankle Center is centered on foot and ankle disorders while also providing information about knee pain, shoulder pain, joint pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management.
+New Standard Hospital Joint & Foot-Ankle Center is centered on foot and ankle disorders while also providing information about knee, hip, shoulder, hand, wrist and elbow conditions, non-surgical care, surgery when appropriate, and postoperative recovery management.
 
-Korean summary: 새기준병원 관절센터는 용인 처인구의 족부·발목 질환을 중심으로 무릎통증, 어깨통증, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 보행 회복관리를 안내하는 정형외과 진료 프로그램입니다.
+Korean summary: 새기준병원 관절센터는 용인 처인구의 족부·발목 질환을 중심으로 무릎·고관절·어깨·손·손목·팔꿈치 질환, 관절주사, 통증시술, 필요한 경우 수술 치료와 수술 후 회복관리를 안내하는 정형외과 진료 프로그램입니다.
 
 ## Location
 - Hospital name: New Standard Hospital
@@ -55,7 +56,7 @@ The orthopedic philosophy emphasizes calm communication, careful listening, step
 새기준병원 관절센터는 관절 통증 진료와 치료 정보를 안내하며, 치료 후 보행·운동 범위·근력 회복 과정은 새기준병원 회복재활센터와 연결될 수 있습니다.
 
 ## Physician focus
-The orthopedic physician focuses on foot and ankle disorders including ankle sprain, chronic ankle instability, plantar fasciitis, hallux valgus, Achilles tendon disorders, ankle arthritis, foot and ankle fractures and trauma, as well as knee pain, shoulder pain, joint injections, pain procedures, and postoperative gait recovery management. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.
+The orthopedic physician focuses on foot and ankle disorders including ankle sprain, chronic ankle instability, plantar fasciitis, hallux valgus, Achilles tendon disorders, ankle arthritis, foot and ankle fractures and trauma, as well as knee, hip and shoulder conditions, joint injections, pain procedures, and postoperative recovery management. Professional society memberships include the Korean Orthopaedic Association, Korean Foot and Ankle Society, Korean Society of Sports Medicine, Korean Knee Society, Korean Hip Society, Korean Arthroscopy Society, and Korean Peripheral Nerve Society.
 
 ## Important topics
 - Foot and ankle disorders
@@ -67,14 +68,15 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - Ankle arthritis
 - Foot and ankle fractures and trauma
 - Knee pain
+- Hip conditions
 - Shoulder pain
 - Non-surgical care
 - Surgery when appropriate
 - Postoperative recovery management
 
 ## Patient education library
-- /patient-guides provides 14 reviewed Korean condition guides as crawlable HTML pages.
-- Guide topics cover knee, shoulder, foot and ankle, hand, wrist and elbow, and fracture care.
+- /patient-guides provides 21 reviewed Korean condition guides as crawlable HTML pages.
+- Guide topics cover knee, hip, shoulder, foot and ankle, hand, wrist and elbow, and fracture care.
 - Each guide includes symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
 - /patient-guides/tennis-elbow
 - /patient-guides/calcific-tendinitis
@@ -90,3 +92,10 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - /patient-guides/shoulder-dislocation-bankart
 - /patient-guides/knee-osteotomy-hto
 - /patient-guides/ac-joint-dislocation
+- /patient-guides/trigger-finger
+- /patient-guides/femoral-head-osteonecrosis
+- /patient-guides/mcl-injury
+- /patient-guides/pcl-tear
+- /patient-guides/shoulder-arthroplasty
+- /patient-guides/trimalleolar-ankle-fracture
+- /patient-guides/tibial-shaft-fracture
