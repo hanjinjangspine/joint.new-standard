@@ -1,0 +1,93 @@
+name: Notify IndexNow after production deploy
+
+on:
+  deployment_status:
+  workflow_dispatch:
+    inputs:
+      submit_all:
+        description: Submit every canonical sitemap URL
+        required: true
+        type: boolean
+        default: true
+      dry_run:
+        description: Validate without sending the IndexNow request
+        required: true
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: indexnow-production-${{ github.event.deployment.sha || github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  notify-indexnow:
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.deployment_status.state == 'success' &&
+       github.event.deployment.environment == 'Production' &&
+       github.event.deployment.creator.login == 'vercel[bot]')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out deployed revision
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.deployment.sha || github.sha }}
+          fetch-depth: 2
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Confirm production revision
+        id: production
+        shell: bash
+        env:
+          DEPLOY_SHA: ${{ github.event.deployment.sha || github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [[ "$EVENT_NAME" == "workflow_dispatch" ]]; then
+            echo "should_submit=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          git fetch --no-tags --depth=50 origin main:refs/remotes/origin/main
+          if [[ "$DEPLOY_SHA" == "$(git rev-parse origin/main)" ]]; then
+            echo "should_submit=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_submit=false" >> "$GITHUB_OUTPUT"
+            echo "The successful deployment is not the current main revision; IndexNow was skipped."
+          fi
+
+      - name: Validate notification logic
+        if: steps.production.outputs.should_submit == 'true'
+        run: node --test scripts/indexnow.test.mjs
+
+      - name: Notify IndexNow
+        if: steps.production.outputs.should_submit == 'true'
+        shell: bash
+        env:
+          DEPLOY_SHA: ${{ github.event.deployment.sha || github.sha }}
+          EVENT_NAME: ${{ github.event_name }}
+          SUBMIT_ALL: ${{ inputs.submit_all || false }}
+          DRY_RUN: ${{ inputs.dry_run || false }}
+        run: |
+          args=(--head "$DEPLOY_SHA")
+
+          if base_sha=$(git rev-parse "${DEPLOY_SHA}^1" 2>/dev/null); then
+            args+=(--base "$base_sha")
+          fi
+
+          if [[ "$EVENT_NAME" == "workflow_dispatch" && "$SUBMIT_ALL" == "true" ]]; then
+            args+=(--all)
+          fi
+
+          if [[ "$EVENT_NAME" == "workflow_dispatch" && "$DRY_RUN" == "true" ]]; then
+            args+=(--dry-run)
+          fi
+
+          node scripts/indexnow.mjs "${args[@]}"
