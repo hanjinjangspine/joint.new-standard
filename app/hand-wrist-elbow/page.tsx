@@ -88,7 +88,7 @@ export default function HandWristElbowPage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["03", "09"]}
+          guideIds={["03", "09", "25"]}
           title="손·손목·팔꿈치 질환별 안내"
           description="증상과 검사, 먼저 살펴보는 치료, 수술을 고려하는 경우와 회복 과정을 확인할 수 있습니다."
           showAllLink

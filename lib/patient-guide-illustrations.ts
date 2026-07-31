@@ -17,6 +17,8 @@ export type PatientGuideIllustration = {
 };
 
 const illustrationRoot = "/patient-guides/illustrations";
+const aiMedicalIllustrationNote =
+  "AI 기반 3D 의료 일러스트이며 실제 환자, 실제 수술 장면 또는 치료 전후 사진이 아닙니다. 그림의 해부 구조와 치료 범위는 이해를 돕기 위한 예시로, 실제 치료는 환자 상태와 진찰·영상검사·수술 중 소견에 따라 달라질 수 있습니다.";
 
 export const patientGuideIllustrations: Record<string, PatientGuideIllustration[]> = {
   "tennis-elbow": [
@@ -316,26 +318,261 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
   "ac-joint-dislocation": [
     {
       src: `${illustrationRoot}/ac-joint-dislocation/overview.png`,
-      width: 1672,
-      height: 941,
-      alt: "견봉 쇄골 관절 탈구와 오구 쇄골 인대 손상을 나타낸 3D 의료 일러스트",
-      caption: "견봉 쇄골 관절 탈구와 오구 쇄골 인대 손상",
+      width: 1536,
+      height: 1024,
+      alt: "견봉 쇄골 관절 탈구와 오구 쇄골 인대 손상 위치를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "견봉 쇄골 관절 탈구와 오구 쇄골 인대가 손상되는 위치",
+      note: aiMedicalIllustrationNote,
       placement: "overview"
     },
     {
       src: `${illustrationRoot}/ac-joint-dislocation/comparison.png`,
       width: 1774,
       height: 887,
-      alt: "정상 견봉 쇄골 관절과 탈구된 관절 구조를 비교한 3D 의료 일러스트",
-      caption: "정상 견봉 쇄골 관절과 탈구된 관절의 정렬 비교",
+      alt: "정상 견봉 쇄골 관절과 오구 쇄골 인대 손상으로 어긋난 관절을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 견봉 쇄골 관절과 손상 뒤 달라진 정렬 비교",
+      note: aiMedicalIllustrationNote,
       placement: "comparison"
     },
     {
       src: `${illustrationRoot}/ac-joint-dislocation/procedure.png`,
-      width: 1858,
+      width: 1983,
+      height: 793,
+      alt: "급성 견봉 쇄골 관절 손상의 고정과 만성 오구 쇄골 인대 재건 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "손상 시기와 조직 상태에 따라 고려하는 급성기 고정과 만성기 인대 재건 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "trigger-finger": [
+    {
+      src: `${illustrationRoot}/trigger-finger/overview.png`,
+      width: 1586,
+      height: 992,
+      alt: "손가락 굽힘 힘줄이 A1 활차 부위에서 걸리는 방아쇠수지를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "굽힘 힘줄이 좁아진 A1 활차를 통과하며 걸리는 위치",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/trigger-finger/comparison.png`,
+      width: 1536,
+      height: 1024,
+      alt: "정상 손가락 힘줄과 방아쇠수지의 좁아진 A1 활차를 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 A1 활차와 굽힘 힘줄 통로가 좁아진 방아쇠수지 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/trigger-finger/procedure.png`,
+      width: 1923,
+      height: 817,
+      alt: "손가락 신경과 힘줄을 보호하며 A1 활차를 유리하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "주변 신경·혈관과 힘줄을 보호하며 좁아진 A1 활차를 유리하는 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "femoral-head-osteonecrosis": [
+    {
+      src: `${illustrationRoot}/femoral-head-osteonecrosis/overview.png`,
+      width: 1586,
+      height: 992,
+      alt: "대퇴 골두의 혈액 공급 저하와 무혈성 괴사 부위를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "대퇴 골두에서 혈액 공급이 줄어 뼈가 약해지는 부위",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/femoral-head-osteonecrosis/comparison.png`,
+      width: 1860,
       height: 846,
-      alt: "오구 쇄골 인대를 재건하고 관절을 안정화하는 과정을 나타낸 3D 의료 일러스트",
-      caption: "오구 쇄골 인대 재건과 관절 안정화 과정",
+      alt: "정상 대퇴 골두와 무혈성 괴사로 함몰이 진행된 대퇴 골두를 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 대퇴 골두와 무혈성 괴사·함몰이 진행된 구조 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/femoral-head-osteonecrosis/procedure.png`,
+      width: 1774,
+      height: 887,
+      alt: "대퇴 골두와 비구를 인공 삽입물로 치환하는 고관절 수술 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "손상 범위와 관절 상태에 따라 고려하는 고관절 전치환 또는 반치환 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "mcl-injury": [
+    {
+      src: `${illustrationRoot}/mcl-injury/overview.png`,
+      width: 1536,
+      height: 1024,
+      alt: "무릎 안쪽 내측 측부 인대의 위치와 손상을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "무릎 안쪽을 지지하는 내측 측부 인대와 손상 부위",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/mcl-injury/comparison.png`,
+      width: 1693,
+      height: 929,
+      alt: "정상 무릎 내측 측부 인대와 손상된 인대를 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 내측 측부 인대와 손상 뒤 달라진 구조 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/mcl-injury/procedure.png`,
+      width: 1774,
+      height: 887,
+      alt: "무릎 내측 측부 인대를 봉합하거나 이식건으로 재건하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "손상 시기와 조직 상태에 따라 고려하는 내측 측부 인대 봉합·재건 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "pcl-tear": [
+    {
+      src: `${illustrationRoot}/pcl-tear/overview.png`,
+      width: 1536,
+      height: 1024,
+      alt: "무릎 후방 십자 인대 파열과 정강이뼈의 뒤쪽 처짐을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "정강이뼈가 뒤로 밀리는 것을 제어하는 후방 십자 인대의 파열",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/pcl-tear/comparison.png`,
+      width: 1731,
+      height: 909,
+      alt: "정상 후방 십자 인대와 파열된 후방 십자 인대를 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 후방 십자 인대와 파열 뒤 정강이뼈가 처진 구조 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/pcl-tear/procedure.png`,
+      width: 1693,
+      height: 929,
+      alt: "뼈 통로를 만들고 이식건으로 후방 십자 인대를 재건하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "대퇴골·경골의 뼈 통로에 이식건을 통과시켜 후방 십자 인대를 재건하는 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "shoulder-arthroplasty": [
+    {
+      src: `${illustrationRoot}/shoulder-arthroplasty/overview.png`,
+      width: 1672,
+      height: 941,
+      alt: "어깨 관절염과 회전근개 기능 저하로 손상된 관절 구조를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "관절염·회전근개 기능과 골절 양상에 따라 달라지는 어깨 관절 구조",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/shoulder-arthroplasty/comparison.png`,
+      width: 1774,
+      height: 887,
+      alt: "해부학적 어깨 전치환술과 역행성 어깨 전치환술의 삽입물 구조를 비교한 AI 기반 3D 의료 일러스트",
+      caption: "회전근개 상태 등에 따라 고려하는 해부학적·역행성 어깨 인공 관절 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/shoulder-arthroplasty/procedure.png`,
+      width: 1693,
+      height: 929,
+      alt: "손상된 어깨 관절면을 정리하고 인공 관절 삽입물을 고정하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "손상된 관절면을 정리하고 선택한 방식의 어깨 인공 관절을 삽입하는 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "distal-radius-fracture": [
+    {
+      src: `${illustrationRoot}/distal-radius-fracture/overview.png`,
+      width: 1659,
+      height: 948,
+      alt: "손목 가까운 요골의 골절과 손등 쪽 전위를 보이는 콜레스 골절을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "손목 가까운 요골에서 생긴 원위 요골 골절과 콜레스형 변형",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/distal-radius-fracture/comparison.png`,
+      width: 1693,
+      height: 929,
+      alt: "안정형 원위 요골 골절, 콜레스형 골절과 분쇄된 관절면 골절을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "안정형·콜레스형·분쇄 관절면형 원위 요골 골절 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/distal-radius-fracture/procedure.png`,
+      width: 1855,
+      height: 848,
+      alt: "원위 요골 골절을 맞추고 손바닥 쪽 금속판과 나사로 고정하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "골절과 관절면 정렬을 맞춘 뒤 수장측 금속판과 나사로 고정하는 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "trimalleolar-ankle-fracture": [
+    {
+      src: `${illustrationRoot}/trimalleolar-ankle-fracture/overview.png`,
+      width: 1024,
+      height: 1536,
+      alt: "발목 안쪽·바깥쪽·뒤쪽 복사뼈가 함께 손상된 삼과 골절을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "안쪽·바깥쪽·뒤쪽 복사뼈가 함께 다친 발목 삼과 골절",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/trimalleolar-ankle-fracture/comparison.png`,
+      width: 1834,
+      height: 858,
+      alt: "정상 발목 관절과 삼과 골절로 정렬이 어긋난 발목을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 발목 관절과 삼과 골절 뒤 어긋난 관절 정렬 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/trimalleolar-ankle-fracture/procedure.png`,
+      width: 1897,
+      height: 829,
+      alt: "발목 삼과 골절을 맞추고 금속판과 나사로 고정하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "발목 관절의 정렬과 안정성을 회복하도록 골절을 맞추고 고정하는 과정",
+      note: aiMedicalIllustrationNote,
+      placement: "procedure"
+    }
+  ],
+  "tibial-shaft-fracture": [
+    {
+      src: `${illustrationRoot}/tibial-shaft-fracture/overview.png`,
+      width: 972,
+      height: 1619,
+      alt: "정강이뼈 몸통 부위의 경골 간부 골절을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "무릎과 발목 사이 경골 몸통 부위의 골절",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/tibial-shaft-fracture/comparison.png`,
+      width: 1672,
+      height: 941,
+      alt: "정상 경골과 어긋난 경골 간부 골절을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 경골 정렬과 간부 골절 뒤 어긋난 정렬 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/tibial-shaft-fracture/procedure.png`,
+      width: 1915,
+      height: 821,
+      alt: "경골 골수강에 금속정을 삽입하고 잠금 나사로 고정하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "경골 정렬을 맞춘 뒤 골수강 내 금속정과 잠금 나사로 고정하는 과정",
+      note: aiMedicalIllustrationNote,
       placement: "procedure"
     }
   ]

@@ -234,9 +234,9 @@ export default function FootAnklePage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["10", "20"]}
+          guideIds={["10", "20", "32"]}
           title="족부·발목 질환별 판단 기준을 자세히 확인하세요"
-          description="발목 외측 인대 손상과 무지외반증의 증상·검사·비수술 치료·수술 판단·회복 내용을 확인할 수 있습니다."
+          description="발목 외측 인대 손상, 무지외반증과 발목 삼과 골절의 증상·검사·비수술 치료·수술 판단·회복 내용을 확인할 수 있습니다."
           tone="white"
         />
 

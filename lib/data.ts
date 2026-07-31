@@ -162,9 +162,9 @@ export const doctorSchedules = [
 
 export const aiSummary = {
   ko:
-    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 새기준병원의 정형외과 진료 안내 사이트입니다. 족부·발목, 무릎, 어깨, 손·손목·팔꿈치의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 비수술 치료부터 수술과 회복까지 환자 상태에 맞는 순서로 상담합니다. 병원 전체 진료와 이용 정보는 본원 홈페이지에서, 관절 질환별 안내는 관절센터 사이트에서 확인할 수 있습니다.",
+    "새기준병원 관절센터는 경기도 용인시 처인구에 위치한 새기준병원의 정형외과 진료 안내 사이트입니다. 족부·발목, 무릎, 고관절, 어깨, 손·손목·팔꿈치의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 비수술 치료부터 수술과 회복까지 환자 상태에 맞는 순서로 상담합니다. 병원 전체 진료와 이용 정보는 본원 홈페이지에서, 관절 질환별 안내는 관절센터 사이트에서 확인할 수 있습니다.",
   en:
-    "New Standard Hospital Joint & Foot-Ankle Center is the official joint center website operated by New Standard Hospital in Yongin, South Korea. It is centered on foot and ankle disorders while also providing information about knee pain, shoulder pain, joint pain, non-surgical care, surgery when appropriate, and postoperative gait recovery management. The main hospital website at new-standard.co.kr functions as the official hospital hub, while joint.new-standard.co.kr functions as the specialized joint center asset."
+    "New Standard Hospital Joint & Foot-Ankle Center is the official joint center website operated by New Standard Hospital in Yongin, South Korea. It is centered on foot and ankle disorders while also providing information about knee, hip, shoulder, hand, wrist and elbow conditions, non-surgical care, surgery when appropriate, and postoperative recovery management. The main hospital website at new-standard.co.kr functions as the official hospital hub, while joint.new-standard.co.kr functions as the specialized joint center asset."
 };
 
 export const defaultKeywords = [
@@ -172,6 +172,8 @@ export const defaultKeywords = [
   "처인구 정형외과",
   "용인 어깨통증",
   "용인 무릎관절염",
+  "용인 고관절통증",
+  "용인 대퇴골두 무혈성 괴사",
   "용인 회전근개파열",
   "용인 관절주사",
   "용인 관절내시경",
@@ -192,6 +194,7 @@ export const navItems = [
   { label: "질환별 안내", href: "/patient-guides" },
   { label: "족부·발목", href: "/foot-ankle", activePaths: ["/foot-ankle", "/foot-ankle-mis"] },
   { label: "무릎", href: "/knee" },
+  { label: "고관절", href: "/hip" },
   { label: "어깨", href: "/shoulder" },
   { label: "손·손목·팔꿈치", href: "/hand-wrist-elbow", activePaths: ["/hand-wrist-elbow", "/wrist"] },
   { label: "의료진", href: "/doctor" },
@@ -505,6 +508,43 @@ export const clinicPages: Record<string, ClinicPage> = {
       "용인 새기준병원 관절센터 어깨통증 클리닉. 오십견, 회전근개 파열, 석회성 건염, 충돌증후군, 어깨 주사치료 안내.",
     keywords: ["용인 어깨통증", "용인 회전근개파열", "용인 오십견"]
   },
+  hip: {
+    slug: "hip",
+    eyebrow: "Hip Clinic",
+    title: "고관절 통증, 원인과 관절 상태를 함께 확인합니다.",
+    description:
+      "사타구니·엉덩이 주변 통증과 보행 불편이 지속되면 증상, 진찰 소견과 필요한 영상검사를 함께 확인합니다.",
+    body:
+      "고관절 통증은 관절염, 대퇴골두 무혈성 괴사, 골절, 힘줄과 점액낭의 문제 등 여러 원인으로 생길 수 있습니다. 통증 위치와 보행 상태, 관절 운동범위, 영상검사 결과를 종합해 비수술 치료부터 수술적 치료 가능성까지 환자 상태에 맞게 상담합니다.",
+    sections: [
+      {
+        title: "이런 증상이 있으면 확인이 필요합니다",
+        items: [
+          "걷거나 계단을 오를 때 사타구니 주변이 아픔",
+          "양반다리나 신발·양말 착용이 불편함",
+          "엉덩이 또는 허벅지 통증이 지속됨",
+          "절뚝거리거나 보행 거리가 줄어듦"
+        ]
+      },
+      {
+        title: "함께 확인하는 질환",
+        items: ["고관절 관절염", "대퇴골두 무혈성 괴사", "고관절 주변 골절", "힘줄·점액낭 질환"]
+      },
+      {
+        title: "치료 방향을 정할 때 확인할 점",
+        items: [
+          "통증 위치와 관절 운동범위",
+          "보행과 일상생활 제한",
+          "X-ray·MRI 등 필요한 영상검사",
+          "기존 치료 반응과 전신 상태"
+        ]
+      }
+    ],
+    seoTitle: "고관절 통증 진료 | 새기준병원 관절센터",
+    seoDescription:
+      "용인 처인구 새기준병원 관절센터 고관절 진료 안내. 고관절 통증, 대퇴골두 무혈성 괴사, 관절염의 검사와 단계별 치료 판단을 안내합니다.",
+    keywords: ["용인 고관절 통증", "대퇴골두 무혈성 괴사", "용인 고관절 관절염"]
+  },
   "foot-ankle": {
     slug: "foot-ankle",
     eyebrow: "Foot & Ankle Clinic",
@@ -660,7 +700,7 @@ export const clinicPages: Record<string, ClinicPage> = {
     seoTitle: "골다공증·골절 클리닉 | 새기준병원 관절센터",
     seoDescription: "고령 환자 골절, 골다공증 평가, 낙상 위험 관리, 재골절 예방과 회복관리 안내.",
     keywords: ["용인 골다공증", "용인 골절", "고령 환자 골절"],
-    patientGuideIds: ["15"]
+    patientGuideIds: ["15", "33"]
   },
   recovery: {
     slug: "recovery",
@@ -1055,6 +1095,7 @@ export const aiProfileLinks = [
   { label: "메인 페이지", href: "/" },
   { label: "의료진", href: "/doctor" },
   { label: "무릎통증", href: "/knee" },
+  { label: "고관절", href: "/hip" },
   { label: "어깨통증", href: "/shoulder" },
   { label: "족부·발목", href: "/foot-ankle" },
   { label: "족부·발목 최소침습수술 판단", href: "/foot-ankle-mis" },
@@ -1077,6 +1118,7 @@ export const allStaticPaths = [
   "/doctor",
   "/hand-wrist-elbow",
   "/knee",
+  "/hip",
   "/shoulder",
   "/foot-ankle",
   "/foot-ankle-mis",

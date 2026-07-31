@@ -232,9 +232,9 @@ export default function KneePage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["11", "12", "13", "14", "23"]}
+          guideIds={["11", "12", "13", "14", "23", "27", "28"]}
           title="무릎 질환별 판단 기준을 자세히 확인하세요"
-          description="반월상 연골판, 전방 십자 인대, 연골 결손, 무릎 관절염과 O자 다리의 증상·검사·치료·회복 내용을 확인할 수 있습니다."
+          description="반월상 연골판, 전·후방 십자 인대, 내측 측부 인대, 연골 결손, 무릎 관절염과 O자 다리의 증상·검사·치료·회복 내용을 확인할 수 있습니다."
           tone="white"
         />
 

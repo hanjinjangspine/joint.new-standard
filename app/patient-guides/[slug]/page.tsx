@@ -1,23 +1,19 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import {
   AlertTriangle,
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
-  ExternalLink,
   HeartPulse,
   Stethoscope
 } from "lucide-react";
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
+import PatientGuideIllustrationGallery from "@/components/PatientGuideIllustrationGallery";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { SITE_URL } from "@/lib/data";
-import {
-  getPatientGuideIllustrations,
-  type PatientGuideIllustration
-} from "@/lib/patient-guide-illustrations";
+import { getPatientGuideIllustrations } from "@/lib/patient-guide-illustrations";
 import { getPatientGuide, patientGuides } from "@/lib/patient-guides";
 import { createMetadata } from "@/lib/seo";
 
@@ -70,7 +66,7 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
           name: "김동희",
           medicalSpecialty: "Orthopedic"
         },
-        lastReviewed: "2026-07-30",
+        lastReviewed: "2026-07-31",
         relatedLink: [
           new URL(guide.clinicPath, SITE_URL).toString(),
           new URL("/patient-guides", SITE_URL).toString()
@@ -110,99 +106,6 @@ function BulletList({ items }: { items: string[] }) {
   );
 }
 
-function IllustrationGallery({
-  illustrations,
-  showDisclosure = false
-}: {
-  illustrations: PatientGuideIllustration[];
-  showDisclosure?: boolean;
-}) {
-  if (illustrations.length === 0) return null;
-
-  return (
-    <>
-      <div className={illustrations.length > 1 ? "grid items-start gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
-        {illustrations.map((illustration) => {
-          const crop = illustration.displayCrop;
-          const cropTop = crop?.top ?? 0;
-          const cropRight = crop?.right ?? 0;
-          const cropBottom = crop?.bottom ?? 0;
-          const cropLeft = crop?.left ?? 0;
-          const visibleWidth = illustration.width - cropLeft - cropRight;
-          const visibleHeight = illustration.height - cropTop - cropBottom;
-
-          return (
-            <figure
-              key={illustration.src}
-              className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
-            >
-              <div className="relative flex min-h-0 items-center justify-center overflow-hidden bg-[#F4F7F8]">
-                {crop ? (
-                  <div
-                    className="relative w-full overflow-hidden"
-                    style={{ aspectRatio: `${visibleWidth} / ${visibleHeight}` }}
-                  >
-                    <Image
-                      src={illustration.src}
-                      width={illustration.width}
-                      height={illustration.height}
-                      alt={illustration.alt}
-                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute h-auto max-w-none object-contain"
-                      style={{
-                        width: `${(illustration.width / visibleWidth) * 100}%`,
-                        left: `${-(cropLeft / visibleWidth) * 100}%`,
-                        top: `${-(cropTop / visibleHeight) * 100}%`
-                      }}
-                    />
-                  </div>
-                ) : (
-                  <div className="flex w-full items-center justify-center p-2 sm:p-3">
-                    <Image
-                      src={illustration.src}
-                      width={illustration.width}
-                      height={illustration.height}
-                      alt={illustration.alt}
-                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
-                      loading="lazy"
-                      decoding="async"
-                      className="h-auto w-auto max-h-[720px] max-w-full rounded-xl object-contain"
-                    />
-                  </div>
-                )}
-              </div>
-              <figcaption className="border-t border-line bg-white px-5 py-4 sm:px-6">
-                <p className="text-base font-extrabold leading-7 text-ink">{illustration.caption}</p>
-                {illustration.note ? (
-                  <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
-                ) : null}
-                <Link
-                  href={illustration.src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-700"
-                  aria-label={`${illustration.caption} 원본 이미지 새 창에서 보기`}
-                >
-                  원본 크게 보기
-                  <ExternalLink aria-hidden="true" size={15} />
-                </Link>
-              </figcaption>
-            </figure>
-          );
-        })}
-      </div>
-      {showDisclosure ? (
-        <p className="mt-4 text-sm leading-6 text-muted">
-          치료 이해를 돕기 위한 AI 기반 3D 의료 일러스트입니다. 실제 환자의 치료 전·후 사진이 아니며,
-          치료 방법·과정·회복은 환자 상태와 의료진의 판단에 따라 달라질 수 있습니다.
-        </p>
-      ) : null}
-    </>
-  );
-}
-
 export default async function PatientGuideDetailPage({ params }: PageProps) {
   const guide = getPatientGuide((await params).slug);
   if (!guide) notFound();
@@ -226,7 +129,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             </h1>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
             <p className="mt-4 text-sm font-semibold text-brand-800">
-              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: 2026년 7월 30일
+              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: 2026년 7월 31일
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
@@ -305,7 +208,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 질환의 위치와 구조를 살펴보세요
               </h2>
               <div className="mt-7">
-                <IllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
+                <PatientGuideIllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
               </div>
             </div>
           </div>
@@ -350,7 +253,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
               <BulletList items={guide.procedure} />
               {procedureIllustrations.length > 0 ? (
                 <div className="mt-8 border-t border-line pt-8">
-                  <IllustrationGallery illustrations={procedureIllustrations} />
+                  <PatientGuideIllustrationGallery illustrations={procedureIllustrations} />
                 </div>
               ) : null}
             </article>
