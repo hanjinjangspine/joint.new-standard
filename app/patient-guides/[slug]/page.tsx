@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
   const url = new URL(`/patient-guides/${guide.slug}`, SITE_URL).toString();
+  const lastReviewed = guide.reviewedAt ?? "2026-07-31";
   const imageObjects = getPatientGuideIllustrations(guide.slug).map((illustration) => ({
     "@type": "ImageObject",
     contentUrl: new URL(illustration.src, SITE_URL).toString(),
@@ -47,6 +48,20 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
     representativeOfPage: illustration.placement === "overview"
   }));
   const primaryImage = imageObjects.find((image) => image.representativeOfPage);
+  const videoObject = guide.video
+    ? {
+        "@type": "VideoObject",
+        "@id": `${url}#video`,
+        name: guide.video.name,
+        description: guide.video.description,
+        thumbnailUrl: new URL(guide.video.poster, SITE_URL).toString(),
+        contentUrl: new URL(guide.video.mp4, SITE_URL).toString(),
+        uploadDate: lastReviewed,
+        duration: guide.video.duration,
+        inLanguage: "ko-KR",
+        transcript: guide.video.transcript.join(" ")
+      }
+    : null;
 
   return {
     "@context": "https://schema.org",
@@ -66,15 +81,16 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
           name: "김동희",
           medicalSpecialty: "Orthopedic"
         },
-        lastReviewed: "2026-07-31",
+        lastReviewed,
         relatedLink: [
           new URL(guide.clinicPath, SITE_URL).toString(),
           new URL("/patient-guides", SITE_URL).toString()
         ],
         image: imageObjects,
-        associatedMedia: imageObjects,
+        associatedMedia: videoObject ? [...imageObjects, videoObject] : imageObjects,
         ...(primaryImage ? { primaryImageOfPage: primaryImage } : {})
       },
+      ...(videoObject ? [videoObject] : []),
       {
         "@type": "BreadcrumbList",
         "@id": `${url}#breadcrumb`,
@@ -113,6 +129,8 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
     (illustration) => illustration.placement !== "procedure"
   );
   const procedureIllustrations = getPatientGuideIllustrations(guide.slug, "procedure");
+  const reviewedAt = guide.reviewedAt ?? "2026-07-31";
+  const [reviewedYear, reviewedMonth, reviewedDay] = reviewedAt.split("-");
 
   return (
     <>
@@ -129,7 +147,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             </h1>
             <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
             <p className="mt-4 text-sm font-semibold text-brand-800">
-              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: 2026년 7월 31일
+              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: {reviewedYear}년 {Number(reviewedMonth)}월 {Number(reviewedDay)}일
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               <Link
@@ -210,6 +228,36 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
               <div className="mt-7">
                 <PatientGuideIllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
               </div>
+              {guide.video ? (
+                <article className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-8">
+                  <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D Education Video</p>
+                  <h3 className="mt-3 text-2xl font-extrabold text-ink">{guide.video.name}</h3>
+                  <p className="mt-3 max-w-4xl text-base leading-7 text-muted">{guide.video.description}</p>
+                  <video
+                    className="mt-6 aspect-video w-full rounded-2xl border border-line bg-calm"
+                    controls
+                    playsInline
+                    preload="metadata"
+                    poster={guide.video.poster}
+                  >
+                    <source src={guide.video.webm} type="video/webm" />
+                    <source src={guide.video.mp4} type="video/mp4" />
+                    <track kind="captions" src={guide.video.captions} srcLang="ko" label="한국어" default />
+                    브라우저가 영상을 지원하지 않습니다.
+                  </video>
+                  <p className="mt-3 text-sm leading-6 text-muted">
+                    AI 기반 3D 교육용 시각자료이며 실제 환자 영상이나 실제 수술 장면이 아닙니다. 영상은 자동재생되지 않습니다.
+                  </p>
+                  <details className="mt-5 rounded-xl border border-line bg-calm p-5">
+                    <summary className="cursor-pointer font-extrabold text-brand-800">영상 내용 글로 보기</summary>
+                    <ol className="mt-4 grid gap-2 pl-5 text-base leading-7 text-muted">
+                      {guide.video.transcript.map((line) => (
+                        <li key={line} className="list-decimal">{line}</li>
+                      ))}
+                    </ol>
+                  </details>
+                </article>
+              ) : null}
             </div>
           </div>
         </section>

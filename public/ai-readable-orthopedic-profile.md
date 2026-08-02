@@ -118,7 +118,7 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 
 ## Patient Condition Guides
 - Guide hub: https://joint.new-standard.co.kr/patient-guides
-- The site provides 14 reviewed, crawlable HTML guides covering symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
+- The site provides 23 reviewed, crawlable HTML guides covering symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
 - https://joint.new-standard.co.kr/patient-guides/tennis-elbow
 - https://joint.new-standard.co.kr/patient-guides/calcific-tendinitis
 - https://joint.new-standard.co.kr/patient-guides/carpal-tunnel-syndrome
@@ -133,3 +133,13 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 - https://joint.new-standard.co.kr/patient-guides/shoulder-dislocation-bankart
 - https://joint.new-standard.co.kr/patient-guides/knee-osteotomy-hto
 - https://joint.new-standard.co.kr/patient-guides/ac-joint-dislocation
+- https://joint.new-standard.co.kr/patient-guides/trigger-finger
+- https://joint.new-standard.co.kr/patient-guides/femoral-head-osteonecrosis
+- https://joint.new-standard.co.kr/patient-guides/mcl-injury
+- https://joint.new-standard.co.kr/patient-guides/pcl-tear
+- https://joint.new-standard.co.kr/patient-guides/shoulder-arthroplasty
+- https://joint.new-standard.co.kr/wrist/distal-radius-fracture
+- https://joint.new-standard.co.kr/patient-guides/trimalleolar-ankle-fracture
+- https://joint.new-standard.co.kr/patient-guides/tibial-shaft-fracture
+- https://joint.new-standard.co.kr/patient-guides/frozen-shoulder
+- https://joint.new-standard.co.kr/patient-guides/shoulder-tendinopathy-bursitis
