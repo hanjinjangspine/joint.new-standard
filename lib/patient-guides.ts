@@ -598,7 +598,8 @@ export const patientGuides: PatientGuide[] = [
     surgeryConsiderations: [
       "충분한 비수술 치료에도 심한 통증·강직과 기능 제한이 지속되는 경우",
       "회복을 더 기다리기 어려울 정도로 수면·일상생활·업무 제한이 큰 경우",
-      "수술의 이득·위험·대안과 수술 뒤 즉시 시작하는 집중 재활을 이해한 경우"
+      "수술의 이득·위험·대안과 수술 뒤 즉시 시작하는 집중 재활을 이해한 경우",
+      "구조화된 재활, 마취하 도수조작, 관절경적 관절낭 유리술 가운데 어느 한 방법이 모든 환자에서 장기적으로 항상 우월하다고 단정할 수 없으므로 개인별 상황과 선호를 함께 고려합니다."
     ],
     procedure: [
       "관절경으로 관절낭, 연골·회전근개와 동반 병변을 확인합니다.",
@@ -623,8 +624,8 @@ export const patientGuides: PatientGuide[] = [
       name: "오십견과 관절경적 관절낭 유리술 3D 교육 영상",
       description: "오십견의 관절낭 수축, 임상 진단, 관절경적 전방·하방 및 선택적 후방 관절낭 유리와 조기 재활을 설명하는 AI 기반 3D 교육 영상입니다.",
       poster: "/patient-guides/animations/frozen-shoulder/poster.webp",
-      mp4: "/patient-guides/animations/frozen-shoulder/animation.mp4",
-      webm: "/patient-guides/animations/frozen-shoulder/animation.webm",
+      mp4: "/patient-guides/animations/frozen-shoulder/animation-v2.mp4",
+      webm: "/patient-guides/animations/frozen-shoulder/animation-v2.webm",
       captions: "/patient-guides/animations/frozen-shoulder/captions-ko.vtt",
       duration: "PT15.5S",
       transcript: [
@@ -666,7 +667,8 @@ export const patientGuides: PatientGuide[] = [
     surgeryConsiderations: [
       "충분한 기간의 비수술 치료에도 심한 통증과 기능 제한이 지속되는 경우",
       "통증 원인이 증상·진찰·영상에서 일관되게 확인되는 경우",
-      "선택적 관절경 치료의 기대 효과와 한계, 재활 계획을 이해한 경우"
+      "선택적 관절경 치료의 기대 효과와 한계, 재활 계획을 이해한 경우",
+      "현재 근거만으로 견봉하 감압술이 모든 환자에게 추가 이득을 준다고 단정할 수 없으므로 일률적으로 시행하지 않습니다."
     ],
     procedure: [
       "관절경을 선택한 경우 회전근개 힘줄의 연속성과 관절 안 동반 병변을 먼저 확인합니다.",
@@ -691,8 +693,8 @@ export const patientGuides: PatientGuide[] = [
       name: "어깨 건병증·점액낭염·이두근 건초염 3D 교육 영상",
       description: "파열과 건병증의 차이, 견봉하 점액낭과 이두근 건초의 염증, 단계적 비수술 치료와 재평가를 설명하는 AI 기반 3D 교육 영상입니다.",
       poster: "/patient-guides/animations/shoulder-tendinopathy-bursitis/poster.webp",
-      mp4: "/patient-guides/animations/shoulder-tendinopathy-bursitis/animation.mp4",
-      webm: "/patient-guides/animations/shoulder-tendinopathy-bursitis/animation.webm",
+      mp4: "/patient-guides/animations/shoulder-tendinopathy-bursitis/animation-v2.mp4",
+      webm: "/patient-guides/animations/shoulder-tendinopathy-bursitis/animation-v2.webm",
       captions: "/patient-guides/animations/shoulder-tendinopathy-bursitis/captions-ko.vtt",
       duration: "PT15.5S",
       transcript: [

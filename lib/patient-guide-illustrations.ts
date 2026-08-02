@@ -596,9 +596,9 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       placement: "comparison"
     },
     {
-      src: `${illustrationRoot}/frozen-shoulder/procedure.png`,
-      width: 2022,
-      height: 778,
+      src: `${illustrationRoot}/frozen-shoulder/procedure-v2.png`,
+      width: 1994,
+      height: 789,
       alt: "관절경으로 관절낭을 확인하고 전방·하방과 선택적 후방 관절낭을 유리하며 별도 적응증에서 점액낭을 절제하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
       caption: "관절경적 전방·하방 관절낭 유리, 선택적 후방 유리와 별도 적응증의 점액낭 절제 과정",
       note:
