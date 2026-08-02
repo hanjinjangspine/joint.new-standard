@@ -575,6 +575,66 @@ export const patientGuideIllustrations: Record<string, PatientGuideIllustration[
       note: aiMedicalIllustrationNote,
       placement: "procedure"
     }
+  ],
+  "frozen-shoulder": [
+    {
+      src: `${illustrationRoot}/frozen-shoulder/overview.png`,
+      width: 1536,
+      height: 1024,
+      alt: "오십견에서 두꺼워지고 수축한 관절낭과 보존된 회전근개 구조를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "염증으로 두꺼워지고 수축한 어깨 관절낭",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/frozen-shoulder/comparison.png`,
+      width: 1796,
+      height: 876,
+      alt: "정상 관절낭, 염증과 비후가 있는 관절낭, 수축과 유착이 진행된 관절낭을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 관절낭과 염증·비후, 수축·유착 단계의 구조 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/frozen-shoulder/procedure.png`,
+      width: 2022,
+      height: 778,
+      alt: "관절경으로 관절낭을 확인하고 전방·하방과 선택적 후방 관절낭을 유리하며 별도 적응증에서 점액낭을 절제하는 과정을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "관절경적 전방·하방 관절낭 유리, 선택적 후방 유리와 별도 적응증의 점액낭 절제 과정",
+      note:
+        "AI 기반 3D 의료 일러스트이며 실제 수술 장면이 아닙니다. 후방 유리·gentle MUA·점액낭 절제 여부와 실제 수술 범위는 운동 제한, 진찰·영상검사와 수술 중 소견에 따라 달라집니다.",
+      placement: "procedure"
+    }
+  ],
+  "shoulder-tendinopathy-bursitis": [
+    {
+      src: `${illustrationRoot}/shoulder-tendinopathy-bursitis/overview.png`,
+      width: 1536,
+      height: 1024,
+      alt: "연속성이 보존된 회전근개 힘줄과 경미한 건병증, 견봉하-삼각근하 점액낭 및 이두근 장두건초 염증을 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "파열 없이 함께 나타날 수 있는 회전근개 건병증·점액낭염·이두근 건초염",
+      note: aiMedicalIllustrationNote,
+      placement: "overview"
+    },
+    {
+      src: `${illustrationRoot}/shoulder-tendinopathy-bursitis/comparison.png`,
+      width: 1825,
+      height: 862,
+      alt: "정상 어깨, 경미한 회전근개 건병증과 점액낭염, 상완이두근 장두건초염을 비교한 AI 기반 3D 의료 일러스트",
+      caption: "정상 구조와 건병증·점액낭염·이두근 장두건초염 비교",
+      note: aiMedicalIllustrationNote,
+      placement: "comparison"
+    },
+    {
+      src: `${illustrationRoot}/shoulder-tendinopathy-bursitis/procedure.png`,
+      width: 1983,
+      height: 793,
+      alt: "회전근개 건병증, 견봉하 점액낭염, 이두근 장두건초염과 단계적 재활 뒤 진정된 상태를 나타낸 AI 기반 3D 의료 일러스트",
+      caption: "힘줄의 연속성을 확인하고 통증 조절·단계적 재활·재평가로 이어지는 회복 과정",
+      note:
+        "AI 기반 3D 의료 일러스트이며 실제 치료 전후 사진이 아닙니다. 점액낭 또는 이두근 건초의 액체만으로 증상의 원인이나 수술 적응증을 확정하지 않습니다.",
+      placement: "procedure"
+    }
   ]
 };
 
