@@ -25,8 +25,13 @@ const pageTitle = "손목 골절, 깁스만 해도 될까요? 요골 원위부 �
 const pageDescription =
   "요골 원위부 골절에서 전위, 관절면 침범, 손목 정렬, 동반 손상, 힘줄 자극 가능성을 함께 확인해 보존치료와 수술 방향을 상담하는 기준을 안내합니다.";
 const distalRadiusIllustrations = getPatientGuideIllustrations("distal-radius-fracture");
+const distalRadiusHeroIllustration = distalRadiusIllustrations.find(
+  (illustration) => illustration.placement === "overview"
+)!;
 const distalRadiusClinicalIllustrations = distalRadiusIllustrations.filter(
-  (illustration) => illustration.placement !== "procedure"
+  (illustration) =>
+    illustration.placement !== "procedure" &&
+    illustration.src !== distalRadiusHeroIllustration.src
 );
 const distalRadiusProcedureIllustrations = distalRadiusIllustrations.filter(
   (illustration) => illustration.placement === "procedure"
@@ -208,10 +213,10 @@ export default function DistalRadiusFracturePage() {
         ]}
         highlights={["X-ray", "CT", "부목·석고", "수술 판단"]}
         image={{
-          src: "/patient-guides/illustrations/distal-radius-fracture/overview.png",
-          alt: "손목 가까운 요골의 골절과 전위를 보여주는 3D 의료 일러스트",
-          width: 1659,
-          height: 948
+          src: distalRadiusHeroIllustration.src,
+          alt: distalRadiusHeroIllustration.alt,
+          width: distalRadiusHeroIllustration.width,
+          height: distalRadiusHeroIllustration.height
         }}
       />
 

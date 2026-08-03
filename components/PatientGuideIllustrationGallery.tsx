@@ -1,6 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import MedicalImageLightbox from "@/components/MedicalImageLightbox";
 import type { PatientGuideIllustration } from "@/lib/patient-guide-illustrations";
 
 type PatientGuideIllustrationGalleryProps = {
@@ -73,16 +72,15 @@ export default function PatientGuideIllustrationGallery({
                 {illustration.note ? (
                   <p className="mt-2 text-sm leading-6 text-muted">{illustration.note}</p>
                 ) : null}
-                <Link
-                  href={illustration.src}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center gap-1.5 text-sm font-extrabold text-brand-700"
-                  aria-label={`${illustration.caption} 원본 이미지 새 창에서 보기`}
-                >
-                  원본 크게 보기
-                  <ExternalLink aria-hidden="true" size={15} />
-                </Link>
+                <div className="mt-4">
+                  <MedicalImageLightbox
+                    src={illustration.src}
+                    alt={illustration.alt}
+                    width={illustration.width}
+                    height={illustration.height}
+                    caption={illustration.caption}
+                  />
+                </div>
               </figcaption>
             </figure>
           );
