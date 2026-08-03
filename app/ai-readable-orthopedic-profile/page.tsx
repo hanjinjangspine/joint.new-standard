@@ -38,7 +38,7 @@ export default function AIReadableOrthopedicProfilePage() {
       />
       <main>
         <section className="px-4 py-16 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-4xl rounded-lg border border-line bg-white p-6 shadow-sm sm:p-8">
+          <div className="mx-auto max-w-4xl break-words rounded-lg border border-line bg-white p-6 shadow-sm sm:p-8">
             <h2 className="text-2xl font-bold text-ink">관절센터 안내</h2>
             <p className="mt-4 text-lg leading-9 text-muted">{aiSummary.ko}</p>
             <p className="mt-4 text-lg leading-9 text-muted">

@@ -17,55 +17,24 @@ export default function PatientGuideIllustrationGallery({
     <>
       <div className={illustrations.length > 1 ? "grid items-start gap-6 lg:grid-cols-2" : "mx-auto max-w-5xl"}>
         {illustrations.map((illustration) => {
-          const crop = illustration.displayCrop;
-          const cropTop = crop?.top ?? 0;
-          const cropRight = crop?.right ?? 0;
-          const cropBottom = crop?.bottom ?? 0;
-          const cropLeft = crop?.left ?? 0;
-          const visibleWidth = illustration.width - cropLeft - cropRight;
-          const visibleHeight = illustration.height - cropTop - cropBottom;
+          const isPortrait = illustration.width / illustration.height < 0.85;
 
           return (
             <figure
               key={illustration.src}
               className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm"
             >
-              <div className="relative flex min-h-0 items-center justify-center overflow-hidden bg-[#F4F7F8]">
-                {crop ? (
-                  <div
-                    className="relative w-full overflow-hidden"
-                    style={{ aspectRatio: `${visibleWidth} / ${visibleHeight}` }}
-                  >
-                    <Image
-                      src={illustration.src}
-                      width={illustration.width}
-                      height={illustration.height}
-                      alt={illustration.alt}
-                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
-                      loading="lazy"
-                      decoding="async"
-                      className="absolute h-auto max-w-none object-contain"
-                      style={{
-                        width: `${(illustration.width / visibleWidth) * 100}%`,
-                        left: `${-(cropLeft / visibleWidth) * 100}%`,
-                        top: `${-(cropTop / visibleHeight) * 100}%`
-                      }}
-                    />
-                  </div>
-                ) : (
-                  <div className="flex w-full items-center justify-center p-2 sm:p-3">
-                    <Image
-                      src={illustration.src}
-                      width={illustration.width}
-                      height={illustration.height}
-                      alt={illustration.alt}
-                      sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
-                      loading="lazy"
-                      decoding="async"
-                      className="h-auto w-auto max-h-[720px] max-w-full rounded-xl object-contain"
-                    />
-                  </div>
-                )}
+              <div className="relative flex min-h-0 items-center justify-center overflow-hidden bg-[#F4F7F8] p-2 sm:p-3">
+                <Image
+                  src={illustration.src}
+                  width={illustration.width}
+                  height={illustration.height}
+                  alt={illustration.alt}
+                  sizes="(max-width: 640px) calc(100vw - 32px), (max-width: 1024px) calc(100vw - 48px), 960px"
+                  loading="lazy"
+                  decoding="async"
+                  className={`h-auto w-auto max-w-full rounded-xl object-contain ${isPortrait ? "max-h-[560px]" : "max-h-[720px]"}`}
+                />
               </div>
               <figcaption className="border-t border-line bg-white px-5 py-4 sm:px-6">
                 <p className="text-base font-extrabold leading-7 text-ink">{illustration.caption}</p>

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { doctorProfile } from "@/lib/data";
@@ -6,17 +5,8 @@ import { doctorProfile } from "@/lib/data";
 export default function DoctorIntroSection() {
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-10 rounded-lg border border-line bg-white p-5 shadow-sm sm:p-8 lg:grid-cols-[0.75fr_1.25fr] lg:items-center">
-        <div className="rounded-lg bg-brand-50 p-4">
-          <Image
-            src={doctorProfile.imageSrc}
-            alt={doctorProfile.imageAlt}
-            width={520}
-            height={680}
-            className="h-auto max-h-[520px] w-full rounded-md bg-white object-contain object-top"
-          />
-        </div>
-        <div>
+      <div className="mx-auto max-w-6xl rounded-lg border border-line bg-white p-5 shadow-sm sm:p-8">
+        <div className="mx-auto max-w-5xl">
           <p className="text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-ink sm:text-4xl">
             정형외과 전문의 김동희 원장

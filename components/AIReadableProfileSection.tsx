@@ -37,8 +37,8 @@ export default function AIReadableProfileSection() {
 
   return (
     <section className="px-4 py-16 sm:px-6 lg:px-8">
-      <div className="mx-auto grid max-w-7xl gap-8">
-        <div className="max-w-4xl">
+      <div className="mx-auto grid min-w-0 max-w-7xl gap-8">
+        <div className="min-w-0 max-w-4xl break-words [overflow-wrap:anywhere]">
           <p className="mb-3 text-sm font-bold uppercase text-brand-600">Center Profile</p>
           <h2 className="text-3xl font-bold leading-tight text-ink sm:text-4xl">
             새기준병원 관절센터 정보 한눈에 보기

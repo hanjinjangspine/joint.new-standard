@@ -88,8 +88,15 @@ a {
 
 .nsh-responsive-hero__media-column {
   display: grid;
+  width: 100%;
+  max-width: 540px;
   align-self: center;
+  justify-self: end;
   gap: 14px;
+}
+
+.nsh-responsive-hero__media-column > aside {
+  display: none;
 }
 
 .nsh-responsive-hero__media {
@@ -105,7 +112,6 @@ a {
 .nsh-responsive-hero__media-frame {
   display: flex;
   width: 100%;
-  aspect-ratio: 16 / 9;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -120,12 +126,33 @@ a {
   object-position: center;
 }
 
+.nsh-responsive-hero__media[data-media-kind="photo"] {
+  width: 100%;
+  max-width: 400px;
+  justify-self: center;
+}
+
+.nsh-responsive-hero__media[data-media-kind="photo"] .nsh-responsive-hero__media-frame img {
+  object-position: center top;
+}
+
+.nsh-responsive-hero__media[data-media-layout="portrait"] {
+  width: 100%;
+  max-width: 360px;
+  justify-self: center;
+}
+
 @media (max-width: 1023px) {
   .nsh-responsive-hero__grid {
     max-width: 920px;
     grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
+
+  .nsh-responsive-hero__media-column {
+    justify-self: center;
+  }
+
 }
 
 @media (min-width: 641px) and (max-width: 1023px) {

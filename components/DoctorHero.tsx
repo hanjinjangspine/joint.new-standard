@@ -9,7 +9,7 @@ export default function DoctorHero() {
       <div className="mx-auto max-w-7xl">
         <Breadcrumb items={[{ label: "의료진" }]} />
         <div className="mt-8 grid gap-10 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-          <div className="rounded-[28px] border border-brand-100 bg-white p-4 shadow-card sm:p-6">
+          <div className="mx-auto w-full max-w-[420px] rounded-[28px] border border-brand-100 bg-white p-4 shadow-card sm:p-6">
             <div className="overflow-hidden rounded-2xl bg-brand-50">
               <Image
                 src={doctorProfile.imageSrc}
