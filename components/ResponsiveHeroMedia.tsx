@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MedicalImageLightbox from "@/components/MedicalImageLightbox";
 
 export type ResponsiveHeroImage = {
   src: string;
@@ -10,6 +11,7 @@ export type ResponsiveHeroImage = {
 type ResponsiveHeroMediaProps = ResponsiveHeroImage & {
   priority?: boolean;
   caption?: string;
+  expandable?: boolean;
 };
 
 export default function ResponsiveHeroMedia({
@@ -18,7 +20,8 @@ export default function ResponsiveHeroMedia({
   width,
   height,
   priority = false,
-  caption
+  caption,
+  expandable = src.startsWith("/patient-guides/illustrations/")
 }: ResponsiveHeroMediaProps) {
   return (
     <figure className="nsh-responsive-hero__media">
@@ -33,9 +36,18 @@ export default function ResponsiveHeroMedia({
           className="h-full w-full object-contain object-center"
         />
       </div>
-      {caption ? (
-        <figcaption className="border-t border-brand-100 bg-white px-4 py-3 text-sm font-semibold leading-6 text-muted">
-          {caption}
+      {caption || expandable ? (
+        <figcaption className="flex flex-col gap-3 border-t border-brand-100 bg-white px-4 py-3 text-sm font-semibold leading-6 text-muted sm:flex-row sm:items-center sm:justify-between">
+          {caption ? <span>{caption}</span> : <span className="sr-only">의료 일러스트</span>}
+          {expandable ? (
+            <MedicalImageLightbox
+              src={src}
+              alt={alt}
+              width={width}
+              height={height}
+              caption={caption}
+            />
+          ) : null}
         </figcaption>
       ) : null}
     </figure>

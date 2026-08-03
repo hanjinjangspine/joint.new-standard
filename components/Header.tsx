@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Phone, X } from "lucide-react";
+import { ExternalLink, Menu, Phone, X } from "lucide-react";
 import { useState } from "react";
 import { hospitalInfo, navItems } from "@/lib/data";
 
@@ -122,6 +122,22 @@ export default function Header() {
               );
             })}
           </nav>
+        </div>
+      ) : null}
+      {pathname !== "/" ? (
+        <div className="border-t border-brand-100 bg-brand-50">
+          <div className="mx-auto flex max-w-7xl justify-end px-4 py-1.5 sm:px-6 lg:px-8">
+            <Link
+              href="https://new-standard.co.kr/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-10 items-center justify-center gap-2 rounded-md border border-brand-200 bg-white px-4 py-2 text-sm font-extrabold text-brand-800 transition hover:bg-brand-50 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+              aria-label="새기준병원 본원 홈페이지 새 창에서 보기"
+            >
+              새기준병원 본원
+              <ExternalLink aria-hidden="true" size={16} />
+            </Link>
+          </div>
         </div>
       ) : null}
     </header>
