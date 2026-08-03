@@ -75,7 +75,7 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - Postoperative recovery management
 
 ## Patient education library
-- /patient-guides provides 21 reviewed Korean condition guides as crawlable HTML pages.
+- /patient-guides provides 24 reviewed Korean condition guides as crawlable HTML pages.
 - Guide topics cover knee, hip, shoulder, foot and ankle, hand, wrist and elbow, and fracture care.
 - Each guide includes symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
 - /patient-guides/tennis-elbow
@@ -99,3 +99,6 @@ The orthopedic physician focuses on foot and ankle disorders including ankle spr
 - /patient-guides/shoulder-arthroplasty
 - /patient-guides/trimalleolar-ankle-fracture
 - /patient-guides/tibial-shaft-fracture
+- /wrist/distal-radius-fracture
+- /patient-guides/frozen-shoulder
+- /patient-guides/shoulder-tendinopathy-bursitis

@@ -145,6 +145,14 @@ export function selectUrlsForChanges({
       continue;
     }
 
+    if (
+      file.startsWith("public/patient-guides/animations/distal-radius-fracture/") ||
+      file === "public/patient-guides/pdfs/distal-radius-fracture-orif-guide-v4.5.pdf"
+    ) {
+      selected.add(new URL("/wrist/distal-radius-fracture", origin).toString());
+      continue;
+    }
+
     if (file.startsWith("public/patient-guides/")) {
       addMatchingPrefix(selected, "/patient-guides", sitemapUrls);
       continue;

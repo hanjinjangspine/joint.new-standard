@@ -40,12 +40,20 @@ const nextConfig = {
     }));
   },
   async headers() {
-    if (isIndexable) {
-      return [];
-    }
-
-    return [
+    const headers = [
       {
+        source: "/patient-guides/pdfs/:path*",
+        headers: [
+          {
+            key: "X-Robots-Tag",
+            value: "noindex, follow"
+          }
+        ]
+      }
+    ];
+
+    if (!isIndexable) {
+      headers.push({
         source: "/:path*",
         headers: [
           {
@@ -53,8 +61,10 @@ const nextConfig = {
             value: "noindex, nofollow"
           }
         ]
-      }
-    ];
+      });
+    }
+
+    return headers;
   }
 };
 

@@ -5,6 +5,7 @@ import {
   ArrowRight,
   Bone,
   ClipboardCheck,
+  Download,
   FileSearch,
   Hand,
   ShieldCheck,
@@ -21,9 +22,27 @@ import { getPatientGuideIllustrations } from "@/lib/patient-guide-illustrations"
 import { createMetadata } from "@/lib/seo";
 
 const pagePath = "/wrist/distal-radius-fracture";
-const pageTitle = "손목 골절, 깁스만 해도 될까요? 요골 원위부 골절의 보존치료와 수술 판단";
+const pageTitle = "원위 요골 골절과 콜레스 골절: 금속판 고정술(ORIF) 치료와 회복 안내";
 const pageDescription =
-  "요골 원위부 골절에서 전위, 관절면 침범, 손목 정렬, 동반 손상, 힘줄 자극 가능성을 함께 확인해 보존치료와 수술 방향을 상담하는 기준을 안내합니다.";
+  "원위 요골 골절과 콜레스 골절의 차이, 비수술 치료와 금속판 고정술(ORIF)을 고려하는 기준, 수술 과정과 회복·주의 신호를 안내합니다.";
+const reviewedAt = "2026-08-03";
+const distalRadiusVideo = {
+  name: "원위 요골 골절과 수장측 금속판 고정술 3D 교육 영상",
+  description:
+    "원위 요골 골절의 전위, 골편 정렬, 수장측 금속판 위치와 최종 고정을 설명하는 AI 기반 3D 교육 영상입니다.",
+  poster: "/patient-guides/animations/distal-radius-fracture/poster.webp",
+  mp4: "/patient-guides/animations/distal-radius-fracture/animation.mp4",
+  webm: "/patient-guides/animations/distal-radius-fracture/animation.webm",
+  captions: "/patient-guides/animations/distal-radius-fracture/captions-ko.vtt",
+  duration: "PT15.5S",
+  transcript: [
+    "원위 요골 골절은 손목 가까운 요골이 부러진 손상입니다.",
+    "어긋난 골편을 맞추어 손목 정렬과 관절면을 회복합니다.",
+    "수장측 금속판 고정술을 선택한 경우 어긋난 골편을 정렬하고 금속판을 위치시킵니다.",
+    "금속판과 나사는 뼈가 붙는 동안 정렬을 유지하도록 돕습니다."
+  ]
+};
+const pamphletHref = "/patient-guides/pdfs/distal-radius-fracture-orif-guide-v4.5.pdf";
 const distalRadiusIllustrations = getPatientGuideIllustrations("distal-radius-fracture");
 const distalRadiusHeroIllustration = distalRadiusIllustrations.find(
   (illustration) => illustration.placement === "overview"
@@ -72,15 +91,15 @@ const surgeryItems = [
   "추적 관찰 중 전위가 진행되는 경우",
   "관절면 붕괴 또는 불안정성이 의심되는 경우",
   "정복 후에도 손목 정렬 유지가 어려운 경우",
-  "골편 위치가 힘줄 자극 가능성과 관련되는 경우",
-  "나이, 활동성, 골질, 동반 손상 등을 종합했을 때 고정이 필요하다고 판단되는 경우"
+  "개방성 골절 또는 신경·혈액순환 문제가 동반된 경우",
+  "나이 자체보다 활동 수준, 골질, 동반 손상과 치료 목표를 종합했을 때 고정이 필요하다고 판단되는 경우"
 ];
 
 const followUpItems = [
-  "초기에는 1주, 2주, 4주 등 X-ray 추적 관찰이 필요할 수 있습니다.",
-  "부목이나 석고 고정 기간은 골절 형태와 정렬 유지 여부에 따라 달라집니다.",
-  "손가락 운동, 부종 관리, 감각 변화 확인은 치료 중에도 중요합니다.",
-  "수술 후에는 골유합, 금속 자극, 손목 강직, 힘줄 자극 여부를 장기적으로 확인합니다."
+  "초기 X-ray 추적 시기와 부목·석고 고정 기간은 골절 형태와 정렬 유지 여부에 따라 달라집니다.",
+  "뼈가 붙는 데에는 대체로 6~8주가 걸리지만, 무거운 작업이나 운동 복귀는 약 3개월 이상 걸릴 수 있습니다.",
+  "통증과 뻣뻣함은 6~12개월 이상 서서히 좋아질 수 있어 개인별 운동·재활 지시를 따라야 합니다.",
+  "수술 후에는 골유합, 금속 자극, 손목 강직과 힘줄 자극 여부를 장기적으로 확인합니다."
 ];
 
 const faqItems = [
@@ -112,7 +131,7 @@ const faqItems = [
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: `${pageTitle} | 새기준병원 관절센터`,
+  title: "원위 요골 골절·콜레스 골절 | ORIF | 새기준병원 관절센터",
   description: pageDescription,
   path: pagePath,
   keywords: [
@@ -122,7 +141,9 @@ export const metadata: Metadata = createMetadata({
     "손목 골절 CT",
     "요골 원위부 골절",
     "손목 골절 부목",
-    "손목 골절 금속판"
+    "손목 골절 금속판",
+    "콜레스 골절",
+    "원위 요골 골절 ORIF"
   ]
 });
 
@@ -138,6 +159,18 @@ function pageJsonLd() {
     height: illustration.height,
     representativeOfPage: illustration.placement === "overview"
   }));
+  const videoObject = {
+    "@type": "VideoObject",
+    "@id": `${url}#video`,
+    name: distalRadiusVideo.name,
+    description: distalRadiusVideo.description,
+    thumbnailUrl: new URL(distalRadiusVideo.poster, SITE_URL).toString(),
+    contentUrl: new URL(distalRadiusVideo.mp4, SITE_URL).toString(),
+    uploadDate: reviewedAt,
+    duration: distalRadiusVideo.duration,
+    inLanguage: "ko-KR",
+    transcript: distalRadiusVideo.transcript.join(" ")
+  };
 
   return {
     "@context": "https://schema.org",
@@ -150,16 +183,17 @@ function pageJsonLd() {
         url,
         inLanguage: "ko-KR",
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: ["손목 골절", "요골 원위부 골절", "보존치료", "수술적 고정", "손목 골절 CT"],
-        lastReviewed: "2026-07-31",
+        about: ["손목 골절", "원위 요골 골절", "콜레스 골절", "보존치료", "금속판 고정술", "ORIF"],
+        lastReviewed: reviewedAt,
         image: imageObjects,
-        associatedMedia: imageObjects,
+        associatedMedia: [...imageObjects, videoObject],
         reviewedBy: {
           "@type": "MedicalOrganization",
           name: hospitalInfo.centerName,
           url: SITE_URL
         }
       },
+      videoObject,
       {
         "@type": "BreadcrumbList",
         itemListElement: [
@@ -173,7 +207,7 @@ function pageJsonLd() {
             "@type": "ListItem",
             position: 2,
             name: "손·손목",
-            item: new URL("/column", SITE_URL).toString()
+            item: new URL("/hand-wrist-elbow", SITE_URL).toString()
           },
           {
             "@type": "ListItem",
@@ -357,20 +391,64 @@ export default function DistalRadiusFracturePage() {
               </article>
             </div>
             <p className="mt-6 rounded-lg bg-brand-50 p-5 text-base leading-7 text-muted">
-              수술적 고정은 모든 손목 골절에 동일하게 적용되는 치료가 아닙니다. 환자의 나이, 활동성, 골질,
-              동반 손상, 평소 손 사용 정도, 기존 치료 반응을 종합해 치료 방향을 상담합니다.
+              AAOS/ASSH 지침은 비고령 연구군에서 정복 후 요골 단축 3mm 초과, 손등 쪽 경사 10° 초과 또는
+              관절면 전위·단차 2mm 초과를 수술 고려 근거로 제시합니다. 그러나 이 숫자만으로 자동 결정하지
+              않으며, 연령은 기능 요구도의 대리 지표일 뿐입니다. 실제 활동 수준, 건강 상태와 치료 목표를
+              함께 확인해 비수술 치료와 수술을 상담합니다. 연구에서 주로 65세 이상으로 정의한 고령군에서는
+              수술이 비수술보다 장기 환자보고 결과를 개선하지 않았으나, 연령만으로 결정하지 않고 실제 기능
+              요구도를 함께 평가합니다.
             </p>
             <div className="mt-10 rounded-2xl border border-line bg-surface-recovery p-6 sm:p-8">
               <h2 className="text-2xl font-extrabold leading-8 text-ink">수장측 금속판 고정술을 선택한 경우</h2>
               <p className="mt-4 text-base leading-7 text-muted sm:text-lg sm:leading-8">
-                절개를 통해 골절 부위를 확인하고 어긋난 골편과 관절면 정렬을 맞춘 뒤, 손바닥 쪽 금속판과
-                나사로 고정할 수 있습니다. 실제 정복·고정 범위와 수술 접근은 골절 형태, 골질, 동반 손상과
-                수술 중 소견에 따라 달라집니다.
+                ORIF는 관혈적 정복 및 내고정술을 뜻합니다. 절개를 통해 골절 부위를 확인하고 어긋난 골편과
+                관절면 정렬을 맞춘 뒤 손바닥 쪽 금속판과 나사로 고정해, 뼈가 붙는 동안 위치를 유지하도록
+                돕습니다. 금속판이 골절을 즉시 치유하는 것은 아니며 실제 정복·고정 방법은 골절 형태, 골질,
+                동반 손상과 수술 중 소견에 따라 달라집니다.
               </p>
               <div className="mt-8 border-t border-line pt-8">
                 <PatientGuideIllustrationGallery illustrations={distalRadiusProcedureIllustrations} />
               </div>
             </div>
+
+            <article className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-8">
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D Education Video</p>
+              <h2 className="mt-3 text-2xl font-extrabold leading-8 text-ink">{distalRadiusVideo.name}</h2>
+              <p className="mt-3 max-w-4xl text-base leading-7 text-muted">{distalRadiusVideo.description}</p>
+              <video
+                className="mt-6 aspect-video w-full rounded-2xl border border-line bg-calm object-contain"
+                controls
+                playsInline
+                preload="metadata"
+                poster={distalRadiusVideo.poster}
+              >
+                <source src={distalRadiusVideo.webm} type="video/webm" />
+                <source src={distalRadiusVideo.mp4} type="video/mp4" />
+                <track kind="captions" src={distalRadiusVideo.captions} srcLang="ko" label="한국어" default />
+                브라우저가 영상을 지원하지 않습니다.
+              </video>
+              <p className="mt-3 text-sm leading-6 text-muted">
+                본 3D 영상은 일반적인 치료 과정을 설명하기 위한 AI 기반 교육용 시각화이며 실제 환자 영상이나
+                실제 수술 장면이 아닙니다. 실제 골절 모양과 수술 방법은 환자마다 다르며 영상은 자동재생되지 않습니다.
+              </p>
+              <details className="mt-5 rounded-xl border border-line bg-calm p-5">
+                <summary className="cursor-pointer font-extrabold text-brand-800">영상 내용 글로 보기</summary>
+                <ol className="mt-4 grid gap-2 pl-5 text-base leading-7 text-muted">
+                  {distalRadiusVideo.transcript.map((line) => (
+                    <li key={line} className="list-decimal">{line}</li>
+                  ))}
+                </ol>
+              </details>
+              <a
+                href={pamphletHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-6 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-5 py-3 font-extrabold text-white transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+              >
+                인쇄용 31번 팜플렛 PDF 열기
+                <Download aria-hidden="true" size={18} />
+              </a>
+            </article>
           </div>
         </section>
 
@@ -400,10 +478,24 @@ export default function DistalRadiusFracturePage() {
                 비교적 가벼운 낙상으로 손목이 골절됐다면 골다공증과 추가 골절 위험 평가가 필요할 수 있습니다.
                 연령, 골절 양상, 과거 골절과 복용 약을 확인하고 필요한 경우 골밀도 검사와 예방 치료를 상담합니다.
               </p>
-              <p className="mt-5 rounded-xl bg-white px-4 py-3 text-sm leading-6 text-muted">
-                손가락 감각이 빠르게 떨어지거나 손이 창백하고 차가워지는 경우, 변형과 통증이 심해지는 경우에는
-                홈페이지 안내만으로 판단하지 말고 빠르게 진료를 받으세요.
-              </p>
+            </article>
+            <article className="rounded-2xl border border-red-200 bg-red-50 p-6 sm:p-8 lg:col-span-2">
+              <h2 className="text-2xl font-extrabold leading-8 text-ink">예정된 진료일까지 기다리지 말아야 할 신호</h2>
+              <ul className="mt-5 grid gap-3 text-base leading-7 text-muted md:grid-cols-2">
+                {[
+                  "진통제를 복용해도 조절되지 않거나 빠르게 심해지는 통증",
+                  "갑자기 심해지는 붓기 또는 부목·석고가 지나치게 조이거나 헐거워진 느낌",
+                  "새로 생기거나 악화되는 손가락 저림·감각 저하·운동 장애",
+                  "손가락이 창백하거나 파래지고 차가워지는 변화",
+                  "수술 상처의 발적·열감·고름 또는 발열",
+                  "부목·석고가 젖거나 깨져 고정이 유지되지 않는 경우"
+                ].map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <ShieldCheck aria-hidden="true" className="mt-1 shrink-0 text-red-700" size={18} />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </article>
           </div>
         </section>
@@ -412,8 +504,8 @@ export default function DistalRadiusFracturePage() {
           <div className="mx-auto max-w-7xl">
             <SectionTitle
               eyebrow="Follow Up"
-              title="치료 후에는 초기에 정렬 변화를 자주 확인합니다"
-              description="손목 골절은 처음 정렬이 괜찮아 보여도 부종 변화나 골절 안정성에 따라 추적 관찰 중 전위가 진행될 수 있습니다."
+              title="골절 안정성에 따라 필요한 시기에 정렬 변화를 확인합니다"
+              description="손목 골절은 처음 정렬이 괜찮아 보여도 부종 변화와 골절 안정성에 따라 추적 관찰 중 전위가 진행될 수 있어, 담당 의료진이 정한 시기에 X-ray로 확인합니다."
             />
             <div className="mt-10 grid gap-4 md:grid-cols-2">
               {followUpItems.map((item) => (
@@ -439,6 +531,50 @@ export default function DistalRadiusFracturePage() {
                   <p className="mt-3 text-base leading-7 text-muted">{item.answer}</p>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-line bg-white px-4 py-12 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-7xl rounded-2xl border border-line bg-calm p-6 sm:p-8">
+            <h2 className="text-2xl font-extrabold text-ink">의학적 검토와 근거</h2>
+            <p className="mt-3 text-base leading-7 text-muted">
+              최근 검토일: {reviewedAt}. 미국정형외과학회·미국수부외과학회 임상진료지침과 환자자료,
+              영국정형외과협회 지침 및 골절 후 골 건강 평가 권고를 바탕으로 일반 환자교육 범위에서 정리했습니다.
+            </p>
+            <div className="mt-5 flex flex-wrap gap-3 text-sm font-extrabold">
+              <a
+                href="https://new.aaos.org/globalassets/quality-and-practice-resources/distal-radius/drfcpg.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-brand-200 bg-white px-4 py-2 text-brand-800 hover:bg-brand-50"
+              >
+                AAOS/ASSH 임상진료지침
+              </a>
+              <a
+                href="https://orthoinfo.aaos.org/en/diseases--conditions/distal-radius-fractures-broken-wrist"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-brand-200 bg-white px-4 py-2 text-brand-800 hover:bg-brand-50"
+              >
+                AAOS 환자자료
+              </a>
+              <a
+                href="https://www.boa.ac.uk/resource/boast-16-pdf.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-brand-200 bg-white px-4 py-2 text-brand-800 hover:bg-brand-50"
+              >
+                BOAST 원위 요골 골절 지침
+              </a>
+              <a
+                href="https://www.nice.org.uk/guidance/cg146/chapter/Recommendations"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-brand-200 bg-white px-4 py-2 text-brand-800 hover:bg-brand-50"
+              >
+                NICE 골절 위험 평가
+              </a>
             </div>
           </div>
         </section>
