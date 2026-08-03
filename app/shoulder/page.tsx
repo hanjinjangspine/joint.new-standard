@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import PatientGuideSection from "@/components/PatientGuideSection";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -132,9 +133,9 @@ export default function ShoulderPage() {
           path: "/shoulder"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "어깨 통증 진료" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Shoulder Clinic
@@ -169,7 +170,15 @@ export default function ShoulderPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/patient-guides/illustrations/shoulder-tendinopathy-bursitis/overview.png"
+              alt="회전근개 힘줄과 견봉하 점액낭의 위치를 보여주는 3D 의료 일러스트"
+              width={1536}
+              height={1024}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["어깨 통증", "오십견", "회전근개", "충돌증후군", "운동 제한", "영상검사"].map((item) => (
@@ -184,7 +193,8 @@ export default function ShoulderPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               통증 위치와 운동 제한, 근력, 영상검사 결과를 함께 확인해 오십견과 회전근개 파열 등을 감별합니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

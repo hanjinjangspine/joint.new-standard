@@ -10,6 +10,7 @@ import {
   Syringe
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -126,9 +127,9 @@ export default function InjectionPainPage() {
           path: "/injection-pain"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "관절 비수술 치료" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Non-surgical Joint Care
@@ -163,7 +164,15 @@ export default function InjectionPainPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/images/joint-hero.svg"
+              alt="관절 비수술 치료와 기능 회복을 상징하는 의료 일러스트"
+              width={720}
+              height={560}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["약물치료", "주사치료", "체외충격파", "재활치료", "운동치료", "치료 단계"].map((item) => (
@@ -178,7 +187,8 @@ export default function InjectionPainPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               치료 종류와 횟수는 환자 상태, 검사 결과, 기존 치료 반응에 따라 달라질 수 있습니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

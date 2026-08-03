@@ -34,9 +34,9 @@ const heroActions = [
 
 export default function HeroSection() {
   return (
-    <section className="overflow-hidden bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
-      <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1.06fr_0.94fr]">
-        <div className="max-w-3xl">
+    <section className="nsh-responsive-hero bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_50%,#FFFFFF_100%)] px-4 py-5 sm:px-6 lg:px-8 lg:py-8">
+      <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+        <div className="nsh-responsive-hero__copy max-w-3xl">
           <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-700">
             New Standard Hospital · Joint Center
           </p>
@@ -75,7 +75,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto hidden w-full max-w-[440px] sm:block lg:ml-auto">
+        <div className="nsh-responsive-hero__media-column relative mx-auto w-full max-w-[560px] lg:ml-auto">
           <div className="rounded-[26px] border border-brand-100 bg-white p-4 shadow-card sm:p-5">
             <div className="relative overflow-hidden rounded-2xl bg-brand-50">
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white to-transparent" />

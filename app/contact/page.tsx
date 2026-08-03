@@ -9,6 +9,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -127,9 +128,9 @@ export default function ContactPage() {
           path: "/contact"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "진료 상담·오시는 길" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Contact & Visit
@@ -163,7 +164,15 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/images/joint-hero.svg"
+              alt="관절센터 진료와 보행 회복을 상징하는 의료 일러스트"
+              width={720}
+              height={560}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">대표 정보</p>
             <div className="mt-4 space-y-4 text-base leading-7 text-muted">
               <p>
@@ -180,7 +189,8 @@ export default function ContactPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               진료 일정은 상황에 따라 달라질 수 있으므로 방문 전 본원 안내를 확인해 주세요.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

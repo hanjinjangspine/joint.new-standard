@@ -11,6 +11,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import PatientGuideSection from "@/components/PatientGuideSection";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -133,9 +134,9 @@ export default function FootAnklePage() {
           path: "/foot-ankle"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "족부·발목 통증 진료" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Foot & Ankle Clinic
@@ -171,7 +172,15 @@ export default function FootAnklePage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/patient-guides/illustrations/hallux-valgus-mica/overview.png"
+              alt="엄지발가락과 중족골의 정렬 변화를 보여주는 3D 의료 일러스트"
+              width={1448}
+              height={1086}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["발목 불안정성", "아킬레스건", "무지외반", "족저근막염", "보행 평가", "재활 연계"].map((item) => (
@@ -186,7 +195,8 @@ export default function FootAnklePage() {
             <p className="mt-5 text-base leading-7 text-muted">
               통증 부위만 보지 않고 발목 안정성, 발 구조, 보행과 영상검사 결과를 함께 확인합니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -104,9 +105,9 @@ export default function RecoveryPage() {
           path: "/recovery"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "관절 회복관리" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Recovery & Rehabilitation
@@ -141,7 +142,15 @@ export default function RecoveryPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/images/joint-hero.svg"
+              alt="관절 치료 후 보행과 기능 회복을 상징하는 의료 일러스트"
+              width={720}
+              height={560}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">회복관리 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["통증 관리", "부종 관리", "운동범위", "근력 회복", "보행 회복", "재활 계획"].map((item) => (
@@ -156,7 +165,8 @@ export default function RecoveryPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               회복 과정은 질환과 치료 범위, 전신 상태, 재활 참여도에 따라 달라질 수 있습니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

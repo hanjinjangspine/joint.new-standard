@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Breadcrumb from "@/components/Breadcrumb";
 import { PatientGuideCard } from "@/components/PatientGuideSection";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import {
   patientGuideCategoryOrder,
@@ -47,30 +48,41 @@ export default function PatientGuidesPage() {
         })}
       />
       <main>
-        <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-9 sm:px-6 lg:px-8 lg:py-12">
-          <div className="mx-auto max-w-7xl">
-            <Breadcrumb items={[{ label: "질환별 안내" }]} />
-            <p className="mt-5 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-              Condition Guides
-            </p>
-            <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
-              관절·골절 질환별 안내
-            </h1>
-            <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-xl sm:leading-8">
-              진단명을 몰라도 아픈 부위부터 찾을 수 있습니다. 각 질환 페이지에서 주요 증상과 검사,
-              먼저 살펴보는 치료, 수술을 고려하는 경우, 회복과 주의 신호를 확인하세요.
-            </p>
-            <nav aria-label="아픈 부위로 질환 안내 찾기" className="mt-6 flex flex-wrap gap-2">
-              {patientGuideCategoryOrder.map((category) => (
-                <a
-                  key={category}
-                  href={`#${categoryDetails[category].id}`}
-                  className="rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-extrabold text-brand-800 transition hover:bg-brand-50"
-                >
-                  {category}
-                </a>
-              ))}
-            </nav>
+        <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-9 sm:px-6 lg:px-8 lg:py-12">
+          <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+            <div className="nsh-responsive-hero__copy">
+              <Breadcrumb items={[{ label: "질환별 안내" }]} />
+              <p className="mt-5 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+                Condition Guides
+              </p>
+              <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
+                관절·골절 질환별 안내
+              </h1>
+              <p className="mt-4 max-w-4xl text-base leading-7 text-muted sm:text-xl sm:leading-8">
+                진단명을 몰라도 아픈 부위부터 찾을 수 있습니다. 각 질환 페이지에서 주요 증상과 검사,
+                먼저 살펴보는 치료, 수술을 고려하는 경우, 회복과 주의 신호를 확인하세요.
+              </p>
+              <nav aria-label="아픈 부위로 질환 안내 찾기" className="mt-6 flex flex-wrap gap-2">
+                {patientGuideCategoryOrder.map((category) => (
+                  <a
+                    key={category}
+                    href={`#${categoryDetails[category].id}`}
+                    className="rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-extrabold text-brand-800 transition hover:bg-brand-50"
+                  >
+                    {category}
+                  </a>
+                ))}
+              </nav>
+            </div>
+            <div className="nsh-responsive-hero__media-column">
+              <ResponsiveHeroMedia
+                src="/images/joint-hero.svg"
+                alt="무릎, 어깨, 발목 진료와 보행 회복을 상징하는 관절센터 의료 일러스트"
+                width={720}
+                height={560}
+                priority
+              />
+            </div>
           </div>
         </section>
 
