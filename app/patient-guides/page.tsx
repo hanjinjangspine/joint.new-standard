@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { ArrowRight, BookOpenText } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import { PatientGuideCard } from "@/components/PatientGuideSection";
 import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
@@ -109,6 +111,37 @@ export default function PatientGuidesPage() {
                     {guides.map((guide) => (
                       <PatientGuideCard key={guide.id} guide={guide} />
                     ))}
+                    {category === "손·손목·팔꿈치" ? (
+                      <article className="flex h-full flex-col rounded-2xl border border-[#E1DEE6] bg-surface-note p-6 shadow-sm transition hover:border-interactive hover:shadow-card">
+                        <div className="flex items-start justify-between gap-4">
+                          <span className="rounded-full bg-brand-50 px-3 py-1.5 text-xs font-extrabold text-brand-700">
+                            손·손목·팔꿈치
+                          </span>
+                          <BookOpenText aria-hidden="true" className="shrink-0 text-brand-600" size={24} />
+                        </div>
+                        <h3 className="mt-5 text-xl font-extrabold leading-8 text-ink">
+                          원위 요골 골절·콜레스 골절과 금속판 고정술(ORIF)
+                        </h3>
+                        <p className="mt-3 flex-1 text-base leading-7 text-muted">
+                          콜레스 골절의 의미, 비수술 치료와 수술 판단, 수장측 금속판 고정술과 회복 과정을
+                          3D 영상과 인쇄용 팜플렛으로 안내합니다.
+                        </p>
+                        <div className="mt-5 rounded-xl bg-white/75 px-4 py-3">
+                          <p className="text-xs font-extrabold text-brand-700">이런 증상을 확인하세요</p>
+                          <p className="mt-1 text-sm leading-6 text-muted">
+                            낙상 뒤 손목 통증·부종·변형 · 손가락 감각 또는 색 변화
+                          </p>
+                        </div>
+                        <Link
+                          href="/wrist/distal-radius-fracture"
+                          className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-4 py-3 text-sm font-extrabold text-white transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
+                          aria-label="원위 요골 골절과 콜레스 골절 질환 안내 보기"
+                        >
+                          원위 요골 골절 안내 보기
+                          <ArrowRight aria-hidden="true" size={17} />
+                        </Link>
+                      </article>
+                    ) : null}
                   </div>
                 </div>
               );

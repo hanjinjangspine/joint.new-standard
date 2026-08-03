@@ -118,7 +118,7 @@ The orthopedic physician at New Standard Hospital Joint & Foot-Ankle Center focu
 
 ## Patient Condition Guides
 - Guide hub: https://joint.new-standard.co.kr/patient-guides
-- The site provides 23 reviewed, crawlable HTML guides covering symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
+- The site provides 24 reviewed, crawlable HTML guides covering symptoms, examinations, treatment choices, surgery considerations, recovery, risks, and urgent warning signs.
 - https://joint.new-standard.co.kr/patient-guides/tennis-elbow
 - https://joint.new-standard.co.kr/patient-guides/calcific-tendinitis
 - https://joint.new-standard.co.kr/patient-guides/carpal-tunnel-syndrome

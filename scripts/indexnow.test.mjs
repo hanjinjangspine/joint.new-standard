@@ -14,7 +14,8 @@ const sitemapUrls = [
   `${SITE_ORIGIN}/column`,
   `${SITE_ORIGIN}/column/meniscus-tear-surgery`,
   `${SITE_ORIGIN}/patient-guides`,
-  `${SITE_ORIGIN}/patient-guides/meniscus-tear`
+  `${SITE_ORIGIN}/patient-guides/meniscus-tear`,
+  `${SITE_ORIGIN}/wrist/distal-radius-fracture`
 ];
 
 test("extractSitemapUrls keeps unique canonical HTTPS URLs", () => {
@@ -93,6 +94,21 @@ test("replaced medical images notify the pages that display them", () => {
     `${SITE_ORIGIN}/patient-guides/meniscus-tear`
   ]);
   assert.deepEqual(sharedImage, { mode: "all", urls: sitemapUrls });
+});
+
+test("distal radius animation and pamphlet assets select their canonical wrist page", () => {
+  const result = selectUrlsForChanges({
+    changedFiles: [
+      "public/patient-guides/animations/distal-radius-fracture/animation.webm",
+      "public/patient-guides/pdfs/distal-radius-fracture-orif-guide-v4.5.pdf"
+    ],
+    sitemapUrls
+  });
+
+  assert.deepEqual(result, {
+    mode: "changed",
+    urls: [`${SITE_ORIGIN}/wrist/distal-radius-fracture`]
+  });
 });
 
 test("workflow, scripts, and styling-only changes do not submit URLs", () => {
