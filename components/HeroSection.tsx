@@ -76,7 +76,7 @@ export default function HeroSection() {
         </div>
 
         <div className="nsh-responsive-hero__media-column relative mx-auto w-full max-w-[560px] lg:ml-auto">
-          <div className="rounded-[26px] border border-brand-100 bg-white p-4 shadow-card sm:p-5">
+          <div className="mx-auto w-full max-w-[420px] rounded-[26px] border border-brand-100 bg-white p-4 shadow-card sm:p-5">
             <div className="relative overflow-hidden rounded-2xl bg-brand-50">
               <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-white to-transparent" />
               <Image
