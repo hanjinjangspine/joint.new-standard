@@ -11,6 +11,7 @@ import {
 import { notFound } from "next/navigation";
 import Breadcrumb from "@/components/Breadcrumb";
 import PatientGuideIllustrationGallery from "@/components/PatientGuideIllustrationGallery";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { SITE_URL } from "@/lib/data";
 import { getPatientGuideIllustrations } from "@/lib/patient-guide-illustrations";
@@ -125,10 +126,21 @@ function BulletList({ items }: { items: string[] }) {
 export default async function PatientGuideDetailPage({ params }: PageProps) {
   const guide = getPatientGuide((await params).slug);
   if (!guide) notFound();
-  const clinicalIllustrations = getPatientGuideIllustrations(guide.slug).filter(
-    (illustration) => illustration.placement !== "procedure"
+  const allIllustrations = getPatientGuideIllustrations(guide.slug);
+  const heroIllustration = allIllustrations.find((illustration) => illustration.placement === "overview");
+  const heroImage = heroIllustration ?? {
+    src: "/images/joint-hero.svg",
+    width: 720,
+    height: 560,
+    alt: "관절 진료와 기능 회복을 상징하는 의료 일러스트",
+    caption: "관절센터 질환 안내"
+  };
+  const clinicalIllustrations = allIllustrations.filter(
+    (illustration) => illustration.placement !== "procedure" && illustration.src !== heroIllustration?.src
   );
-  const procedureIllustrations = getPatientGuideIllustrations(guide.slug, "procedure");
+  const procedureIllustrations = allIllustrations.filter(
+    (illustration) => illustration.placement === "procedure"
+  );
   const reviewedAt = guide.reviewedAt ?? "2026-07-31";
   const [reviewedYear, reviewedMonth, reviewedDay] = reviewedAt.split("-");
 
@@ -136,32 +148,44 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
     <>
       <SEOJsonLd data={guideJsonLd(guide)} />
       <main>
-        <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-          <div className="mx-auto max-w-7xl">
-            <Breadcrumb items={[{ label: "질환별 안내", href: "/patient-guides" }, { label: guide.title }]} />
-            <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-              질환별 안내 · {guide.category}
-            </p>
-            <h1 className="mt-3 max-w-5xl text-3xl font-extrabold leading-[1.2] text-ink sm:text-4xl lg:text-5xl">
-              {guide.title}
-            </h1>
-            <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
-            <p className="mt-4 text-sm font-semibold text-brand-800">
-              의학적 검토: 김동희 원장(정형외과) · 최근 검토일: {reviewedYear}년 {Number(reviewedMonth)}월 {Number(reviewedDay)}일
-            </p>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <Link
-                href="#decision"
-                className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-5 py-3 font-extrabold text-white hover:bg-brand-900"
-              >
-                결정 전 확인사항 <ArrowRight aria-hidden="true" size={18} />
-              </Link>
-              <Link
-                href={guide.clinicPath}
-                className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
-              >
-                관련 진료 안내
-              </Link>
+        <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+          <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+            <div className="nsh-responsive-hero__copy">
+              <Breadcrumb items={[{ label: "질환별 안내", href: "/patient-guides" }, { label: guide.title }]} />
+              <p className="mt-7 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+                질환별 안내 · {guide.category}
+              </p>
+              <h1 className="mt-3 max-w-5xl text-3xl font-extrabold leading-[1.2] text-ink sm:text-4xl lg:text-5xl">
+                {guide.title}
+              </h1>
+              <p className="mt-5 max-w-4xl text-lg leading-8 text-muted sm:text-xl">{guide.lead}</p>
+              <p className="mt-4 text-sm font-semibold text-brand-800">
+                의학적 검토: 김동희 원장(정형외과) · 최근 검토일: {reviewedYear}년 {Number(reviewedMonth)}월 {Number(reviewedDay)}일
+              </p>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                <Link
+                  href="#decision"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-5 py-3 font-extrabold text-white hover:bg-brand-900"
+                >
+                  결정 전 확인사항 <ArrowRight aria-hidden="true" size={18} />
+                </Link>
+                <Link
+                  href={guide.clinicPath}
+                  className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
+                >
+                  관련 진료 안내
+                </Link>
+              </div>
+            </div>
+            <div className="nsh-responsive-hero__media-column">
+              <ResponsiveHeroMedia
+                src={heroImage.src}
+                alt={heroImage.alt}
+                width={heroImage.width}
+                height={heroImage.height}
+                caption={`${heroImage.caption} · AI 기반 3D 의료 일러스트`}
+                priority
+              />
             </div>
           </div>
         </section>
@@ -219,15 +243,19 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
               </article>
             </div>
             <div id="illustrations" className="scroll-mt-24 pt-12">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-                3D Medical Illustration
-              </p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                질환의 위치와 구조를 살펴보세요
-              </h2>
-              <div className="mt-7">
-                <PatientGuideIllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
-              </div>
+              {clinicalIllustrations.length > 0 ? (
+                <>
+                  <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
+                    3D Medical Illustration
+                  </p>
+                  <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                    질환의 위치와 구조를 살펴보세요
+                  </h2>
+                  <div className="mt-7">
+                    <PatientGuideIllustrationGallery illustrations={clinicalIllustrations} showDisclosure />
+                  </div>
+                </>
+              ) : null}
               {guide.video ? (
                 <article className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-8">
                   <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D Education Video</p>

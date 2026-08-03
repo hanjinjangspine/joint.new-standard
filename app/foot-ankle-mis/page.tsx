@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
 import PatientGuideSection from "@/components/PatientGuideSection";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
@@ -137,9 +138,9 @@ export default function FootAnkleMisPage() {
           path: "/foot-ankle-mis"
         })}
       />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "최소침습 족부·발목 수술 판단" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Foot & Ankle Surgery Decision
@@ -174,7 +175,15 @@ export default function FootAnkleMisPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/patient-guides/illustrations/hallux-valgus-mica/procedure.png"
+              alt="최소침습 무지외반증 교정 과정을 보여주는 3D 의료 일러스트"
+              width={1881}
+              height={836}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">판단 기준</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["병변 위치", "손상 정도", "발목 안정성", "하지정렬", "영상검사", "회복 계획"].map((item) => (
@@ -189,7 +198,8 @@ export default function FootAnkleMisPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               수술명보다 중요한 것은 환자 상태와 검사 결과를 함께 확인해 치료 범위를 상담하는 것입니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

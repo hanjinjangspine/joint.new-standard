@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "test:indexnow": "node --test scripts/indexnow.test.mjs"
   },
   "dependencies": {

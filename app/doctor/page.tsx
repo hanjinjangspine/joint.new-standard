@@ -10,8 +10,9 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
-import { officialPatientLinks, SITE_URL } from "@/lib/data";
+import { SITE_URL } from "@/lib/data";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
@@ -174,9 +175,9 @@ export default function DoctorPage() {
         })}
       />
       <SEOJsonLd data={faqJsonLd()} />
-      <section className="border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[1fr_360px] lg:items-center">
-          <div>
+      <section className="nsh-responsive-hero border-b border-line bg-[linear-gradient(135deg,#F8FAFB_0%,#EEF4F7_58%,#FFFFFF_100%)] px-4 py-10 sm:px-6 lg:px-8 lg:py-14">
+        <div className="nsh-responsive-hero__grid mx-auto grid items-center">
+          <div className="nsh-responsive-hero__copy">
             <Breadcrumb items={[{ label: "김동희 원장" }]} />
             <p className="mt-7 text-xs font-extrabold uppercase tracking-[0.12em] text-brand-600">
               Orthopedic Surgeon
@@ -210,7 +211,15 @@ export default function DoctorPage() {
               ))}
             </div>
           </div>
-          <aside className="hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-card sm:block">
+          <div className="nsh-responsive-hero__media-column">
+            <ResponsiveHeroMedia
+              src="/images/doctors/orthopedic-doctor.png"
+              alt="새기준병원 관절센터 김동희 원장"
+              width={490}
+              height={671}
+              priority
+            />
+            <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 분야</p>
             <div className="mt-4 flex flex-wrap gap-2">
               {["족부·발목", "무릎", "어깨", "손·손목·팔꿈치", "하지 정렬", "관절 치료"].map((item) => (
@@ -225,7 +234,8 @@ export default function DoctorPage() {
             <p className="mt-5 text-base leading-7 text-muted">
               진찰과 영상검사 결과를 함께 확인해 환자 상태에 맞는 치료 방향을 상담합니다.
             </p>
-          </aside>
+            </aside>
+          </div>
         </div>
       </section>
 

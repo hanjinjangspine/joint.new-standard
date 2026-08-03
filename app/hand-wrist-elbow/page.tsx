@@ -55,6 +55,12 @@ export default function HandWristElbowPage() {
         description={description}
         breadcrumb={[{ label: title }]}
         highlights={["손 저림", "손목 통증", "팔꿈치 통증", "수근관 증후군", "테니스 엘보", "손목 골절"]}
+        image={{
+          src: "/patient-guides/illustrations/carpal-tunnel-syndrome/overview.png",
+          alt: "손목 수근관에서 정중신경이 눌리는 구조를 보여주는 3D 의료 일러스트",
+          width: 858,
+          height: 700
+        }}
       />
       <main>
         <section className="px-4 py-14 sm:px-6 lg:px-8">

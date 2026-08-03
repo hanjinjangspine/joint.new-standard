@@ -207,6 +207,12 @@ export default function DistalRadiusFracturePage() {
           { label: "손·손목 골절" }
         ]}
         highlights={["X-ray", "CT", "부목·석고", "수술 판단"]}
+        image={{
+          src: "/patient-guides/illustrations/distal-radius-fracture/overview.png",
+          alt: "손목 가까운 요골의 골절과 전위를 보여주는 3D 의료 일러스트",
+          width: 1659,
+          height: 948
+        }}
       />
 
       <main>

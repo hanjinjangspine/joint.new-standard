@@ -18,6 +18,12 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
         description={page.description}
         breadcrumb={[{ label: page.title }]}
         highlights={page.sections.flatMap((section) => section.items).slice(0, 6)}
+        image={{
+          src: "/patient-guides/illustrations/fracture-fixation/overview.png",
+          alt: "골절선과 어긋난 골편의 구조를 보여주는 3D 의료 일러스트",
+          width: 858,
+          height: 700
+        }}
       />
       <main>
         <section className="px-4 py-14 sm:px-6 lg:px-8">
