@@ -33,7 +33,7 @@ export default function HomePage() {
       <CenterIntroSection />
 
       <PatientGuideSection
-        guideIds={["20", "11", "21", "09", "03", "15"]}
+        guideIds={["37", "20", "11", "21", "09", "03", "15"]}
         title="질환별 안내로 진료 내용을 다시 확인하세요"
         description="무릎·어깨·족부·발목·손·손목·팔꿈치·골절의 증상, 검사, 치료 선택, 회복과 주의 신호를 확인할 수 있습니다."
         tone="white"

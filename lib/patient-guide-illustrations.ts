@@ -21,6 +21,17 @@ const aiMedicalIllustrationNote =
   "AI 기반 3D 의료 일러스트이며 실제 환자, 실제 수술 장면 또는 치료 전후 사진이 아닙니다. 그림의 해부 구조와 치료 범위는 이해를 돕기 위한 예시로, 실제 치료는 환자 상태와 진찰·영상검사·수술 중 소견에 따라 달라질 수 있습니다.";
 
 export const patientGuideIllustrations: Record<string, PatientGuideIllustration[]> = {
+  "scaphoid-fracture": [
+    {
+      src: `${illustrationRoot}/scaphoid-fracture/overview.png`,
+      width: 1024,
+      height: 1536,
+      alt: "엄지 쪽 손목의 주상골 위치와 주상골 몸통 골절선을 보여 주는 3D 의료 일러스트",
+      caption: "엄지 쪽 손목의 주상골 위치와 예시 골절선",
+      note: "AI 기반 3D 의료 일러스트이며 실제 환자의 X-ray, CT 또는 수술 사진이 아닙니다. 골절 위치와 치료 방법은 개인별 진찰과 영상검사 결과에 따라 달라집니다.",
+      placement: "overview"
+    }
+  ],
   "tennis-elbow": [
     {
       src: `${illustrationRoot}/tennis-elbow/overview.png`,

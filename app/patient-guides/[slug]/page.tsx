@@ -5,6 +5,7 @@ import {
   ArrowRight,
   CheckCircle2,
   ClipboardCheck,
+  Download,
   HeartPulse,
   Stethoscope
 } from "lucide-react";
@@ -175,6 +176,16 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 >
                   관련 진료 안내
                 </Link>
+                {guide.pamphletPdfPath ? (
+                  <a
+                    href={guide.pamphletPdfPath}
+                    download
+                    className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
+                  >
+                    <Download aria-hidden="true" size={18} />
+                    인쇄용 팜플렛 PDF
+                  </a>
+                ) : null}
               </div>
             </div>
             <div className="nsh-responsive-hero__media-column">
@@ -395,6 +406,31 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             </div>
           </div>
         </section>
+
+        {guide.references?.length ? (
+          <section className="border-t border-line bg-calm px-4 py-12 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+              <h2 className="text-2xl font-extrabold text-ink">근거 자료</h2>
+              <p className="mt-3 max-w-4xl text-base leading-7 text-muted">
+                아래 자료는 일반 교육 내용을 검토할 때 참고했습니다. 실제 진단과 치료 계획은 진료 시 개별적으로 결정합니다.
+              </p>
+              <ul className="mt-5 grid gap-3">
+                {guide.references.map((reference) => (
+                  <li key={reference.href}>
+                    <a
+                      href={reference.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-extrabold text-brand-800 underline decoration-brand-300 underline-offset-4 hover:text-brand-600"
+                    >
+                      {reference.title}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        ) : null}
 
         <section className="bg-brand-900 px-4 py-12 text-white sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
