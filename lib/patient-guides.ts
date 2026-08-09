@@ -24,6 +24,11 @@ export type PatientGuide = {
   clinicPath: string;
   keywords: string[];
   reviewedAt?: string;
+  pamphletPdfPath?: string;
+  references?: Array<{
+    title: string;
+    href: string;
+  }>;
   video?: {
     name: string;
     description: string;
@@ -705,6 +710,66 @@ export const patientGuides: PatientGuide[] = [
         "증상이 지속되거나 힘 빠짐이 진행하면 진찰과 영상을 다시 확인합니다."
       ]
     }
+  },
+  {
+    id: "37",
+    slug: "scaphoid-fracture",
+    title: "주상골 골절",
+    category: "손·손목·팔꿈치",
+    description: "넘어지거나 손목이 꺾인 뒤 엄지 쪽 손목에 통증이 남을 때 확인하는 주상골 골절의 검사, 고정과 수술 상담을 안내합니다.",
+    lead: "주상골은 엄지손가락 쪽 손목에 있는 작은 뼈입니다. 초기 X-ray에서 골절선이 뚜렷하지 않을 수 있어, 손목의 특정 부위가 아프다면 골절이 확인될 때까지 고정하고 필요한 영상검사를 이어가는 것이 중요합니다.",
+    decisionChecks: [
+      "처음 X-ray가 정상처럼 보여도 주상골 부위 압통과 통증이 지속되면 골절을 완전히 배제할 수 없습니다.",
+      "골절 위치, 어긋난 정도, 관절의 안정성, 혈류가 상대적으로 약한 부위인지에 따라 고정 기간과 수술 필요성이 달라집니다.",
+      "모든 주상골 골절에 수술이 필요한 것은 아닙니다. 어긋남이 적고 안정적인 골절은 고정 치료를 우선 고려할 수 있습니다."
+    ],
+    symptoms: [
+      "넘어지면서 손을 짚거나 손목이 뒤로 꺾인 뒤 엄지 쪽 손목이 아픕니다.",
+      "엄지손가락 아래 오목한 부위를 누르거나 손목을 움직일 때 통증이 심해집니다.",
+      "물건을 쥐거나 비트는 동작이 힘들고 붓기·멍이 동반될 수 있습니다."
+    ],
+    diagnosis: [
+      "다친 당시의 동작, 통증 위치와 엄지 쪽 손목의 압통을 확인하고 손가락 감각·혈류도 함께 살핍니다.",
+      "X-ray로 기본 평가를 시작하며, 주상골 골절이 의심되지만 보이지 않으면 상태에 따라 MRI 또는 추가 X-ray를 고려합니다.",
+      "골절이 확인되면 CT로 골절선과 어긋남, 관절면 및 고정 치료의 안정성을 더 정확히 확인할 수 있습니다."
+    ],
+    firstTreatments: [
+      "골절이 의심되는 동안에는 손목을 부목 또는 의료진이 정한 고정 장치로 보호하고, 무거운 물건 들기·손목 비트는 동작을 피합니다.",
+      "어긋남이 적고 안정적인 골절은 석고 또는 보조기로 고정하며, 고정 기간과 추적 촬영 시기는 골절 위치와 회복 상태에 따라 정합니다.",
+      "손가락은 의료진의 지시 범위에서 움직여 붓기와 강직을 줄이고, 정해진 진료·영상검사 일정을 지킵니다."
+    ],
+    surgeryConsiderations: [
+      "CT에서 의미 있는 어긋남 또는 불안정한 골절 양상이 확인되는 경우",
+      "주상골 몸쪽 끝 골절처럼 뼈가 잘 붙는지 더 주의 깊게 확인해야 하는 경우",
+      "고정 치료 중에도 골절이 붙지 않거나 어긋남이 진행하는 경우",
+      "직업·운동 복귀 목표, 손목 기능, 동반 손상을 함께 고려해 고정만으로 안정성을 유지하기 어려운 경우"
+    ],
+    procedure: [
+      "수술이 필요하다고 판단되면 영상으로 골절 위치와 정렬을 확인한 뒤 골절면을 맞춥니다.",
+      "골절 형태에 따라 작은 절개 또는 절개를 통해 압박 나사 등으로 고정할 수 있습니다.",
+      "수술 뒤에는 고정 상태와 뼈 붙음, 손목 운동 범위를 추적하며 재활 속도를 조절합니다."
+    ],
+    recovery: [
+      { label: "초기", body: "부목·석고 또는 수술 부위를 보호하고 손을 심장보다 높게 유지하며, 손가락 운동과 붓기 변화를 확인합니다." },
+      { label: "중기", body: "추적 X-ray 또는 CT로 뼈 붙음과 정렬을 확인한 뒤 의료진 지시에 따라 손목 운동과 가벼운 사용을 단계적으로 시작합니다." },
+      { label: "후기", body: "쥐는 힘과 손목의 움직임, 통증, 영상검사 결과를 함께 보며 업무·운동과 무거운 물건 들기로의 복귀 시점을 정합니다." }
+    ],
+    risks: [
+      "뼈 붙음이 늦어지거나 붙지 않는 상태", "손목 강직과 쥐는 힘 저하", "지속되는 통증 또는 관절 변화", "수술 시 감염·출혈·신경·힘줄 자극 또는 금속 고정 관련 문제", "추가 고정·재활 또는 수술 가능성"
+    ],
+    urgentSigns: [
+      "손목 모양이 달라졌거나 피부가 찢어진 상처가 있고, 통증·붓기가 매우 심한 경우",
+      "손가락이 창백하거나 차갑고, 감각 저하·저림·힘 빠짐이 진행하는 경우",
+      "고정 중 통증이 갑자기 심해지거나 손가락의 색·감각이 달라지는 경우"
+    ],
+    clinicPath: "/hand-wrist-elbow",
+    keywords: ["주상골 골절", "손목 골절", "엄지 쪽 손목 통증", "주상골 CT", "주상골 MRI", "손목 부목"],
+    reviewedAt: "2026-08-09",
+    pamphletPdfPath: "/patient-guides/pdfs/scaphoid-fracture-guide.pdf",
+    references: [
+      { title: "BSSH Scaphoid fracture standards", href: "https://www.bssh.ac.uk/_userfiles/pages/files/professionals/Trauma%20standards/Scaphoid%20standards.pdf" },
+      { title: "SWIFFT trial: cast immobilisation and surgery for scaphoid waist fractures", href: "https://pubmed.ncbi.nlm.nih.gov/32771106/" }
+    ]
   }
 ];
 

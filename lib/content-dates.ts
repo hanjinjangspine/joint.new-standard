@@ -1,9 +1,9 @@
 // 경로별 실제 콘텐츠 수정일 (YYYY-MM-DD). 페이지 내용을 실제 수정할 때만 갱신한다.
 // 구조화데이터·사이트맵·빌드 변경만으로는 날짜를 갱신하지 않는다.
 export const contentUpdatedAt: Record<string, string> = {
-  "/": "2026-07-31",
+  "/": "2026-08-09",
   "/doctor": "2026-07-31",
-  "/hand-wrist-elbow": "2026-07-31",
+  "/hand-wrist-elbow": "2026-08-09",
   "/knee": "2026-07-31",
   "/hip": "2026-07-31",
   "/shoulder": "2026-08-02",
@@ -16,7 +16,7 @@ export const contentUpdatedAt: Record<string, string> = {
   "/contact": "2026-07-31",
   "/column": "2026-07-31",
   "/wrist/distal-radius-fracture": "2026-08-03",
-  "/patient-guides": "2026-08-03",
+  "/patient-guides": "2026-08-09",
   "/patient-guides/trigger-finger": "2026-07-31",
   "/patient-guides/femoral-head-osteonecrosis": "2026-07-31",
   "/patient-guides/mcl-injury": "2026-07-31",
@@ -27,6 +27,7 @@ export const contentUpdatedAt: Record<string, string> = {
   "/patient-guides/tibial-shaft-fracture": "2026-07-31",
   "/patient-guides/frozen-shoulder": "2026-08-02",
   "/patient-guides/shoulder-tendinopathy-bursitis": "2026-08-02",
+  "/patient-guides/scaphoid-fracture": "2026-08-09",
   "/ai-readable-orthopedic-profile": "2026-08-03",
   "/column/rotator-cuff-surgery-decision": "2026-07-31",
   "/column/shoulder-vs-cervical-disc": "2026-07-31",

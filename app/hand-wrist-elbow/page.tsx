@@ -32,10 +32,10 @@ const symptomCards = [
     link: "테니스 엘보 안내 보기"
   },
   {
-    title: "넘어진 뒤 손목이 붓고 아파요",
-    body: "골절 여부와 뼈의 어긋남, 피부·신경 상태를 확인하고 고정 또는 수술이 필요한지 판단합니다.",
-    href: "/wrist/distal-radius-fracture",
-    link: "손목 골절 안내 보기"
+    title: "넘어진 뒤 엄지 쪽 손목이 아파요",
+    body: "주상골은 초기 X-ray에서 골절선이 뚜렷하지 않을 수 있어, 통증 위치와 필요한 MRI·CT를 함께 확인합니다.",
+    href: "/patient-guides/scaphoid-fracture",
+    link: "주상골 골절 안내 보기"
   }
 ];
 
@@ -94,7 +94,7 @@ export default function HandWristElbowPage() {
         </section>
 
         <PatientGuideSection
-          guideIds={["03", "09", "25"]}
+          guideIds={["03", "09", "25", "37"]}
           title="손·손목·팔꿈치 질환별 안내"
           description="증상과 검사, 먼저 살펴보는 치료, 수술을 고려하는 경우와 회복 과정을 확인할 수 있습니다."
           showAllLink
@@ -113,10 +113,10 @@ export default function HandWristElbowPage() {
               </div>
             </div>
             <Link
-              href="/wrist/distal-radius-fracture"
+              href="/patient-guides/scaphoid-fracture"
               className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md border border-brand-200 px-5 py-3 font-extrabold text-brand-800"
             >
-              손목 골절 자세히 보기
+              주상골 골절 자세히 보기
             </Link>
           </div>
         </section>
