@@ -78,11 +78,11 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         audience: { "@type": "Patient" },
         isPartOf: { "@id": `${SITE_URL}#website` },
         about: [{ "@type": "MedicalCondition", name: guide.title }],
-        reviewedBy: {
-          "@type": "Physician",
-          name: "김동희",
-          medicalSpecialty: "Orthopedic"
-        },
+        datePublished: lastReviewed,
+        dateModified: lastReviewed,
+        author: { "@id": `${SITE_URL}#new-standard-hospital` },
+        publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
+        reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },
         lastReviewed,
         relatedLink: [
           new URL(guide.clinicPath, SITE_URL).toString(),
