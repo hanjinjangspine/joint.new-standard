@@ -332,11 +332,16 @@ export function webPageJsonLd({
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebPage",
+        "@type": ["MedicalWebPage", "WebPage"],
         "@id": `${url}#webpage`,
         name: title,
         description,
         url,
+        inLanguage: "ko-KR",
+        dateModified: "2026-08-10",
+        author: { "@id": `${SITE_URL}#new-standard-hospital` },
+        publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
+        reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },
         isPartOf: { "@id": `${SITE_URL}#website` },
         about: mainTopics
       },

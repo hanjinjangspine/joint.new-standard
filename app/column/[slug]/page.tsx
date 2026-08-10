@@ -136,6 +136,9 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
                   )}
                 </section>
               ))}
+              <p className="mt-10 border-t border-line pt-5 text-sm font-semibold leading-6 text-muted">
+                콘텐츠 제공: 새기준병원 관절센터 · 의학적 검토: 김동희 원장(정형외과) · 최종 수정일: 2026년 8월 10일
+              </p>
             </div>
           </div>
         </article>
