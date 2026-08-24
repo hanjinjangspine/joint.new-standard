@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import MobileBottomCTA from "@/components/MobileBottomCTA";
+import PhotoOwnershipNotice from "@/components/PhotoOwnershipNotice";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import SiteAnalytics from "@/components/SiteAnalytics";
 import { hospitalInfo, SITE_URL } from "@/lib/data";
@@ -88,6 +89,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <SiteAnalytics />
         <SEOJsonLd data={entityGraphJsonLd()} />
+        <PhotoOwnershipNotice />
         <Header />
         <div id="main-content">{children}</div>
         <Footer />
