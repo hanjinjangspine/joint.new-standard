@@ -16,7 +16,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
-    label: "진료 상담 문의",
+    label: "수술 여부 진료받기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     external: true
   },
@@ -118,11 +118,11 @@ const bodyPartLinks = [
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: "최소침습 관절수술 판단 | 새기준병원 관절센터",
+  title: "용인 관절수술 판단 | 무릎·어깨·발목 치료 기준 | 새기준병원",
   description:
-    "새기준병원 관절센터는 무릎·어깨·발목·손목 질환의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 수술 여부와 치료 방법을 상담합니다.",
+    "용인 새기준병원은 무릎·어깨·발목 질환의 증상과 기능 제한, 진찰 소견, 필요한 영상검사와 비수술 치료 반응을 함께 확인해 관절수술 필요성을 상담합니다.",
   path: "/minimally-invasive-surgery",
-  keywords: ["용인 관절 치료 판단", "최소침습 관절수술 판단", "관절내시경", "인공관절", "회전근개 봉합"]
+  keywords: ["용인 무릎수술", "용인 관절수술", "용인 무릎내시경", "용인 어깨관절경"]
 });
 
 export default function MinimallyInvasiveSurgeryPage() {
@@ -130,9 +130,9 @@ export default function MinimallyInvasiveSurgeryPage() {
     <>
       <SEOJsonLd
         data={webPageJsonLd({
-          title: "최소침습 관절수술 판단 | 새기준병원 관절센터",
+          title: "용인 관절수술 판단 | 무릎·어깨·발목 치료 기준 | 새기준병원",
           description:
-            "새기준병원 관절센터는 무릎·어깨·발목·손목 질환의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 수술 여부와 치료 방법을 상담합니다.",
+            "용인 새기준병원은 무릎·어깨·발목 질환의 증상과 기능 제한, 진찰 소견, 필요한 영상검사와 비수술 치료 반응을 함께 확인해 관절수술 필요성을 상담합니다.",
           path: "/minimally-invasive-surgery"
         })}
       />
@@ -144,15 +144,15 @@ export default function MinimallyInvasiveSurgeryPage() {
               Minimally Invasive Joint Surgery
             </p>
             <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
-              최소침습 관절수술
+              관절수술, 증상·손상 정도와 회복 계획으로 판단합니다
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-8 text-brand-800 sm:text-2xl">
               수술이 필요한 경우에도 관절 상태와 회복 계획을 함께 확인합니다
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              관절 통증은 원인과 손상 정도에 따라 비수술 치료부터 수술적 치료까지 치료 방향이
-              달라질 수 있습니다. 새기준병원 관절센터는 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 관절내시경,
-              최소침습 수술, 인공관절 등 수술적 치료 가능성을 환자 상태에 따라 상담합니다.
+              MRI나 X-ray에서 손상이 보인다는 이유만으로 모두 수술하는 것은 아닙니다.
+              무릎·어깨·발목의 증상과 기능 제한, 진찰 소견, 필요한 영상검사와 비수술 치료 반응을
+              함께 확인해 관절내시경·봉합술·인공관절 등 수술 필요성과 회복 계획을 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {heroActions.map((action, index) => (

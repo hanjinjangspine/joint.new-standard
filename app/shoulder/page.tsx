@@ -17,7 +17,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
-    label: "진료 상담 문의",
+    label: "어깨 통증과 움직임 제한 진료받기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     external: true
   },
@@ -115,11 +115,11 @@ const surgeryLinks = [
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: "어깨 통증 진료 | 새기준병원 관절센터",
+  title: "용인 어깨통증 진료 | 회전근개·오십견 | 새기준병원",
   description:
-    "새기준병원 관절센터는 어깨 통증, 오십견, 회전근개 파열, 충돌증후군, 석회성 건염의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
+    "용인 새기준병원은 어깨 통증과 움직임 제한, 근력저하, 야간통, 진찰 소견과 필요한 영상검사를 함께 확인해 회전근개·오십견 치료 순서를 상담합니다.",
   path: "/shoulder",
-  keywords: ["용인 어깨 통증", "오십견", "회전근개 파열", "어깨 충돌증후군", "석회성 건염"]
+  keywords: ["용인 어깨통증", "용인 회전근개", "용인 오십견", "용인 석회성건염"]
 });
 
 export default function ShoulderPage() {
@@ -127,9 +127,9 @@ export default function ShoulderPage() {
     <>
       <SEOJsonLd
         data={webPageJsonLd({
-          title: "어깨 통증 진료 | 새기준병원 관절센터",
+          title: "용인 어깨통증 진료 | 회전근개·오십견 | 새기준병원",
           description:
-            "새기준병원 관절센터는 어깨 통증, 오십견, 회전근개 파열, 충돌증후군, 석회성 건염의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
+            "용인 새기준병원은 어깨 통증과 움직임 제한, 근력저하, 야간통, 진찰 소견과 필요한 영상검사를 함께 확인해 회전근개·오십견 치료 순서를 상담합니다.",
           path: "/shoulder"
         })}
       />
@@ -141,15 +141,15 @@ export default function ShoulderPage() {
               Shoulder Clinic
             </p>
             <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
-              어깨 통증 진료
+              용인 어깨통증, 움직임 제한과 힘줄 상태를 함께 봅니다
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-8 text-brand-800 sm:text-2xl">
               어깨 통증은 오십견과 회전근개 파열을 구분해 봐야 합니다
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              어깨 통증은 오십견, 회전근개 파열, 충돌증후군, 석회성 건염, 어깨 관절염 등
-              다양한 원인으로 발생할 수 있습니다. 새기준병원 관절센터는 통증 위치, 운동 제한,
-              근력, 영상검사 결과를 함께 확인해 비수술 치료와 수술적 치료 방향을 상담합니다.
+              같은 어깨 통증이라도 오십견, 회전근개 파열, 충돌증후군, 석회성 건염 등
+              원인이 다를 수 있습니다. 통증 위치와 운동 제한, 근력, 진찰 소견과 필요한 영상검사를
+              함께 확인해 비수술 치료를 이어갈지 수술을 검토할지 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {heroActions.map((action, index) => (

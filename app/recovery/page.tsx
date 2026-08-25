@@ -75,7 +75,8 @@ const recoverySteps = [
 
 const surgeryRecoveryLinks = [
   { label: "최소침습 족부·발목 수술", href: "/foot-ankle-mis" },
-  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" }
+  { label: "최소침습 관절수술 판단", href: "/minimally-invasive-surgery" },
+  { label: "무릎·관절 수술 후 재활 계획", href: "https://rehab.new-standard.co.kr/postoperative-recovery" }
 ];
 
 const bodyPartLinks = [

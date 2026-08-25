@@ -15,7 +15,7 @@ const heroBadges = [
 
 const heroActions = [
   {
-    label: "진료 상담 문의",
+    label: "관절 통증 원인 확인하기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     icon: CalendarCheck,
     primary: true
@@ -41,14 +41,14 @@ export default function HeroSection() {
             New Standard Hospital · Joint Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            새기준병원 관절센터
+            무릎·어깨 통증의 원인부터 치료와 회복까지
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
-            아픈 부위와 생활의 불편을 먼저 듣고, 필요한 검사와 치료 순서를 함께 정합니다.
+            용인·처인구에서 관절 진료가 필요할 때, 아픈 부위와 생활의 불편부터 확인합니다.
           </p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-8 text-muted sm:text-lg">
-            족부·발목, 무릎, 어깨, 손·손목·팔꿈치의 증상과 진찰 소견,
-            필요한 영상검사 결과를 종합해 비수술 치료부터 수술과 회복까지 설명합니다.
+            무릎·어깨·족부·발목·손목의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해
+            비수술 치료를 이어갈지 수술을 검토할지, 이후 회복은 어떻게 연결할지 설명합니다.
           </p>
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">

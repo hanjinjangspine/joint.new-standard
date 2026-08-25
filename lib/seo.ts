@@ -28,7 +28,7 @@ export function createMetadata({
   return {
     title,
     description,
-    keywords: [...defaultKeywords, ...keywords],
+    keywords: keywords.length > 0 ? keywords : defaultKeywords,
     robots: siteConfig.noIndex
       ? {
           index: false,
@@ -122,6 +122,26 @@ export function entityGraphJsonLd() {
   const clinicId = `${SITE_URL}#joint-foot-ankle-center`;
   const hospitalId = `${SITE_URL}#new-standard-hospital`;
   const logoUrl = new URL(hospitalInfo.logoPath, SITE_URL).toString();
+  const openingHoursSpecification = [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "08:30",
+      closes: "17:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Saturday",
+      opens: "08:30",
+      closes: "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: "Sunday",
+      opens: "09:00",
+      closes: "13:00"
+    }
+  ];
 
   return {
     "@context": "https://schema.org",
@@ -177,6 +197,7 @@ export function entityGraphJsonLd() {
         },
         areaServed: ["용인시", "처인구", "경기도"],
         telephone: hospitalInfo.phone,
+        openingHoursSpecification,
         contactPoint: {
           "@type": "ContactPoint",
           telephone: hospitalInfo.phone,
@@ -218,6 +239,7 @@ export function entityGraphJsonLd() {
         logo: logoUrl,
         sameAs: officialSameAs,
         telephone: hospitalInfo.phone,
+        openingHoursSpecification,
         address: {
           "@type": "PostalAddress",
           streetAddress: "중부대로 1539",

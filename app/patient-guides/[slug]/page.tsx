@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const guide = getPatientGuide((await params).slug);
   if (!guide) return {};
   return createMetadata({
-    title: `${guide.title} 환자안내 | 새기준병원 관절센터`,
+    title: guide.seoTitle ?? `${guide.title} 환자안내 | 새기준병원 관절센터`,
     description: guide.description,
     path: `/patient-guides/${guide.slug}`,
     keywords: guide.keywords
@@ -72,7 +72,7 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         "@type": ["MedicalWebPage", "WebPage"],
         "@id": `${url}#webpage`,
         url,
-        name: `${guide.title} 환자안내`,
+        name: guide.seoTitle ?? `${guide.title} 환자안내`,
         description: guide.description,
         inLanguage: "ko-KR",
         audience: { "@type": "Patient" },
@@ -174,7 +174,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                   href={guide.clinicPath}
                   className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
                 >
-                  관련 진료 안내
+                  {guide.clinicCtaLabel ?? "관련 진료 안내"}
                 </Link>
                 {guide.pamphletPdfPath ? (
                   <a
@@ -440,7 +440,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href={guide.clinicPath} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-extrabold text-brand-900">
-                관련 진료 안내 <ArrowRight aria-hidden="true" size={18} />
+                {guide.clinicCtaLabel ?? "관련 진료 안내"} <ArrowRight aria-hidden="true" size={18} />
               </Link>
               <Link href="/patient-guides" className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-5 py-3 font-extrabold text-white hover:bg-white/10">
                 전체 질환별 안내
