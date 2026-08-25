@@ -360,7 +360,7 @@ export function webPageJsonLd({
         description,
         url,
         inLanguage: "ko-KR",
-        dateModified: "2026-08-10",
+        dateModified: "2026-08-26",
         author: { "@id": `${SITE_URL}#new-standard-hospital` },
         publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
         reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },
