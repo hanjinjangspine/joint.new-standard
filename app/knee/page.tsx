@@ -17,7 +17,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
-    label: "진료 상담 문의",
+    label: "무릎 통증 원인 확인하기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     external: true
   },
@@ -115,11 +115,11 @@ const surgeryLinks = [
 ];
 
 export const metadata: Metadata = createMetadata({
-  title: "무릎 통증 진료 | 새기준병원 관절센터",
+  title: "용인 무릎통증 진료 | 관절염·연골판·십자인대 | 새기준병원",
   description:
-    "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상 연골판 손상, 십자 인대 손상, 하지 정렬 문제의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
+    "용인 새기준병원은 무릎 통증의 위치와 보행, 하지정렬, 진찰 소견, 필요한 영상검사를 함께 확인해 관절염·연골판·십자인대 치료 순서를 상담합니다.",
   path: "/knee",
-  keywords: ["용인 무릎 통증", "무릎 관절염", "반월상연골판 손상", "십자인대 손상", "하지정렬"]
+  keywords: ["용인 무릎통증", "용인 무릎관절염", "용인 반월상연골판", "용인 십자인대"]
 });
 
 export default function KneePage() {
@@ -127,9 +127,9 @@ export default function KneePage() {
     <>
       <SEOJsonLd
         data={webPageJsonLd({
-          title: "무릎 통증 진료 | 새기준병원 관절센터",
+          title: "용인 무릎통증 진료 | 관절염·연골판·십자인대 | 새기준병원",
           description:
-            "새기준병원 관절센터는 무릎 통증, 퇴행성 관절염, 반월상 연골판 손상, 십자 인대 손상, 하지 정렬 문제의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.",
+            "용인 새기준병원은 무릎 통증의 위치와 보행, 하지정렬, 진찰 소견, 필요한 영상검사를 함께 확인해 관절염·연골판·십자인대 치료 순서를 상담합니다.",
           path: "/knee"
         })}
       />
@@ -141,15 +141,15 @@ export default function KneePage() {
               Knee Clinic
             </p>
             <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
-              무릎 통증 진료
+              용인 무릎통증, 원인과 치료 단계를 함께 확인합니다
             </h1>
             <p className="mt-5 max-w-3xl text-xl font-extrabold leading-8 text-brand-800 sm:text-2xl">
               무릎 통증은 관절 상태와 보행, 하지정렬을 함께 봐야 합니다
             </p>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-muted sm:text-xl">
-              무릎 통증은 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 연골 손상,
-              하지정렬 문제 등 다양한 원인으로 발생할 수 있습니다. 새기준병원 관절센터는
-              증상과 진찰 소견, 필요한 영상검사 결과를 종합해 치료 순서를 상담합니다.
+              같은 무릎 통증이라도 관절염, 반월상연골판 손상, 십자인대 손상, 연골 손상,
+              하지정렬 문제 등 원인이 다를 수 있습니다. 통증 위치와 보행, 진찰 소견,
+              필요한 영상검사 결과를 함께 확인해 비수술 치료와 수술 판단 순서를 상담합니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {heroActions.map((action, index) => (

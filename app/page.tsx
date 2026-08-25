@@ -17,11 +17,11 @@ import { officialPatientLinks } from "@/lib/data";
 import { createMetadata, homeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
-  title: "새기준병원 관절센터 | 관절 질환별 안내",
+  title: "용인 정형외과 | 무릎·어깨 관절 진료 | 새기준병원",
   description:
-    "새기준병원 관절센터는 족부·발목, 무릎, 어깨, 손·손목·팔꿈치의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해 비수술 치료부터 수술과 회복까지 안내합니다.",
+    "용인 처인구 새기준병원 정형외과 관절 진료 안내입니다. 무릎·어깨·족부·발목·손목 통증의 원인과 검사, 비수술 치료, 수술 판단과 회복 과정을 설명합니다.",
   path: "/",
-  keywords: ["용인 관절센터", "용인 족부발목", "용인 무릎통증", "용인 어깨통증", "용인 손목통증"]
+  keywords: ["용인 정형외과", "처인구 정형외과", "용인 관절 진료"]
 });
 
 export default function HomePage() {
@@ -80,8 +80,8 @@ export default function HomePage() {
       <FAQSection />
 
       <CTASection
-        title="관절 통증이 지속된다면 현재 상태와 치료 단계를 먼저 확인해 보세요"
-        description="족부·발목, 무릎, 어깨, 손·손목·팔꿈치 통증은 원인이 다양합니다. 증상과 진찰 소견, 필요한 검사 결과를 종합해 치료 순서를 상담합니다."
+        title="무릎·어깨 통증의 원인과 현재 치료 단계를 확인해 보세요"
+        description="용인·처인구에서 관절 진료가 필요할 때 통증 위치와 움직임 제한, 진찰 소견, 필요한 검사 결과를 함께 확인해 치료 순서를 상담합니다."
       />
     </main>
   );

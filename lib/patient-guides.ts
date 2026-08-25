@@ -9,6 +9,8 @@ export type PatientGuide = {
   id: string;
   slug: string;
   title: string;
+  seoTitle?: string;
+  clinicCtaLabel?: string;
   category: PatientGuideCategory;
   description: string;
   lead: string;
@@ -255,6 +257,8 @@ export const patientGuides: PatientGuide[] = [
     id: "14",
     slug: "knee-osteoarthritis-replacement",
     title: "무릎 관절염과 인공 무릎 관절 치환술",
+    seoTitle: "용인 무릎 인공관절 | 수술이 필요한 시점과 회복 | 새기준병원",
+    clinicCtaLabel: "인공관절이 필요한 단계인지 확인하기",
     category: "무릎",
     description: "무릎 관절염의 비수술 치료와 인공 관절 치환술을 고려하는 기준, 회복 과정과 위험을 안내합니다.",
     lead: "무릎 관절염은 연골과 관절 조직의 변화로 통증, 붓기, 변형과 보행 제한이 나타나는 질환입니다. X-ray가 심해 보인다는 이유만으로 수술하지 않으며, 수술의 목표는 통증을 줄이고 일상 기능을 개선하는 것입니다.",
@@ -272,7 +276,7 @@ export const patientGuides: PatientGuide[] = [
     risks: ["감염", "출혈", "피가 굳어 혈관을 막는 문제(혈전)", "관절이 굳음", "신경·혈관 손상", "삽입물 이완", "지속되는 통증", "상처 문제 또는 재수술"],
     urgentSigns: ["무릎이 뜨겁고 심하게 부으면서 열이 나는 경우", "치료 뒤 종아리가 갑자기 붓고 아프거나 가슴통증·호흡곤란이 생기는 경우"],
     clinicPath: "/knee",
-    keywords: ["무릎 관절염", "퇴행성 관절염", "인공 무릎 관절", "무릎 치환술"],
+    keywords: ["용인 무릎인공관절", "용인 인공관절", "무릎 관절염", "무릎 치환술"],
   },
   {
     id: "15",
@@ -324,6 +328,8 @@ export const patientGuides: PatientGuide[] = [
     id: "21",
     slug: "rotator-cuff-tear",
     title: "어깨 회전근개 파열과 관절경 봉합술",
+    seoTitle: "용인 회전근개 파열 | 비수술 치료와 봉합술 판단 | 새기준병원",
+    clinicCtaLabel: "어깨 통증과 움직임 제한 진료받기",
     category: "어깨",
     description: "회전근개 파열의 증상과 검사, 비수술 치료, 관절경 봉합술 판단과 힘줄 회복 과정을 안내합니다.",
     lead: "회전근개 파열은 어깨를 움직이는 힘줄이 부분 또는 전층으로 손상된 상태입니다. 파열이 보인다는 이유만으로 바로 수술하지 않으며, 크기와 원인, 통증·근력 저하, 활동 목표와 비수술 치료 반응을 함께 봅니다.",
@@ -341,7 +347,7 @@ export const patientGuides: PatientGuide[] = [
     risks: ["감염", "관절 강직", "출혈", "봉합 부위 재파열 또는 치유 실패", "신경·혈관 손상", "잔존 통증", "추가 수술"],
     urgentSigns: ["다친 뒤 갑자기 팔을 들 수 없거나 힘이 크게 떨어진 경우", "열·붉어짐·심한 붓기 또는 새로 생긴 팔·손 저림이 있는 경우"],
     clinicPath: "/shoulder",
-    keywords: ["회전근개 파열", "어깨 힘줄 파열", "관절경 봉합술", "어깨 야간통"],
+    keywords: ["용인 회전근개", "용인 회전근개파열", "어깨 힘줄 파열", "관절경 봉합술"],
   },
   {
     id: "22",
