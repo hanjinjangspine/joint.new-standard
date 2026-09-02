@@ -68,6 +68,10 @@ jobs:
         if: steps.production.outputs.should_submit == 'true'
         run: node --test scripts/indexnow.test.mjs
 
+      - name: Verify canonical production site
+        if: steps.production.outputs.should_submit == 'true'
+        run: node scripts/verify-production.mjs --origin https://joint.new-standard.co.kr
+
       - name: Notify IndexNow
         if: steps.production.outputs.should_submit == 'true'
         shell: bash

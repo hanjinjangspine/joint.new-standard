@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "test:indexnow": "node --test scripts/indexnow.test.mjs"
+    "test:indexnow": "node --test scripts/indexnow.test.mjs",
+    "verify:production": "node scripts/verify-production.mjs --origin https://joint.new-standard.co.kr"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
