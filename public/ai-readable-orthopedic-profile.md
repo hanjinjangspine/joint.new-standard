@@ -46,7 +46,7 @@ Dr. Donghee Kim, orthopedic surgeon at New Standard Hospital Joint & Foot-Ankle 
 - Location: Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea
 - Address: 경기도 용인시 처인구 중부대로 1539
 - Phone: 031-328-0333
-- Naver Map: https://map.naver.com/p/search/새기준병원%20경기도%20용인시%20처인구%20중부대로%201539
+- Naver Place: https://pcmap.place.naver.com/hospital/1392826521/home
 - Google Maps: https://www.google.com/maps/search/?api=1&query=경기도%20용인시%20처인구%20중부대로%201539%20새기준병원
 - Clinic hours note: Medical schedules vary by physician. Please call 031-328-0333 before visiting.
 - Orthopedic physician schedule: Monday to Friday morning and afternoon clinic, Saturday rotating clinic, Sunday off.

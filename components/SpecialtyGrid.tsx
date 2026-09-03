@@ -12,7 +12,7 @@ const specialtyCards = [
     tone: "decision" as const
   },
   {
-    title: "무릎이 아파요",
+    title: "용인 무릎통증 진료",
     href: "/knee",
     description:
       "무릎 통증, 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 하지정렬 문제를 함께 확인합니다.",
@@ -20,7 +20,7 @@ const specialtyCards = [
     tone: "info" as const
   },
   {
-    title: "어깨가 아파요",
+    title: "용인 어깨통증 진료",
     href: "/shoulder",
     description:
       "회전근개 파열, 오십견, 충돌증후군, 어깨 통증의 원인을 진찰과 영상검사로 평가합니다.",
@@ -43,7 +43,7 @@ const specialtyCards = [
     tone: "decision" as const
   },
   {
-    title: "수술이 필요한지 궁금해요",
+    title: "용인 무릎수술·관절수술 판단",
     href: "/minimally-invasive-surgery",
     description:
       "관절내시경, 최소침습 수술, 수술 후 회복관리와 재활 계획은 진료와 검사 결과에 따라 상담합니다.",
