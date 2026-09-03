@@ -41,7 +41,7 @@ export default function HeroSection() {
             New Standard Hospital · Joint Center
           </p>
           <h1 className="max-w-3xl break-keep text-3xl font-extrabold leading-[1.16] tracking-[-0.01em] text-ink sm:text-4xl lg:text-[44px] xl:text-5xl 2xl:text-[56px]">
-            무릎·어깨 통증의 원인부터 치료와 회복까지
+            용인 정형외과, 무릎·어깨 통증의 원인부터 치료와 회복까지
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
             용인·처인구에서 관절 진료가 필요할 때, 아픈 부위와 생활의 불편부터 확인합니다.

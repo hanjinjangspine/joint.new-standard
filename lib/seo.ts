@@ -85,6 +85,8 @@ const officialSameAs = [
   hospitalInfo.officialHospitalPages.jointPages.nonSurgicalJointCare,
   hospitalInfo.officialHospitalPages.jointPages.persistentPostoperativePain,
   hospitalInfo.officialHospitalPages.rehabCenter,
+  hospitalInfo.naverMapUrl,
+  hospitalInfo.naverReservationUrl,
   hospitalInfo.youtubeUrl
 ];
 
@@ -165,7 +167,7 @@ export function entityGraphJsonLd() {
         url: SITE_URL,
         logo: logoUrl,
         sameAs: officialSameAs,
-        hasMap: hospitalInfo.googleMapUrl,
+        hasMap: hospitalInfo.naverMapUrl,
         parentOrganization: {
           "@type": "Hospital",
           "@id": hospitalId,

@@ -13,6 +13,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 import PatientGuideSection from "@/components/PatientGuideSection";
 import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
+import ShoulderBraceVideoSection from "@/components/ShoulderBraceVideoSection";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
@@ -327,6 +328,8 @@ export default function ShoulderPage() {
             </div>
           </div>
         </section>
+
+        <ShoulderBraceVideoSection />
 
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
