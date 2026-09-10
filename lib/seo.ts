@@ -129,6 +129,12 @@ export function entityGraphJsonLd() {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:30",
+      closes: "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "13:30",
       closes: "17:30"
     },
     {
