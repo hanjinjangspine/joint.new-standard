@@ -21,7 +21,7 @@ export const hospitalInfo = {
   officialHospitalPages: siteConfig.officialHospitalPages,
   logoPath: siteConfig.logoPath,
   logoAlt: siteConfig.logoAlt,
-  hours: "평일 08:30-17:30 / 토요일 08:30-12:30 / 일요일 09:00-13:00",
+  hours: "평일 08:30-12:30, 13:30-17:30 (점심 12:30-13:30) / 토요일 08:30-12:30 / 일요일 09:00-13:00 (토·일 점심시간 없음)",
   hoursNote: "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다.",
   hoursConfirmation: "내원 전 대표전화 031-328-0333으로 확인해 주세요.",
   baseUrl: siteConfig.baseUrl,
@@ -68,7 +68,7 @@ export const officialPatientLinks = [
 ];
 
 export const clinicHoursSummary = {
-  footer: "평일 08:30-17:30 / 토요일 08:30-12:30 / 일요일 09:00-13:00",
+  footer: "평일 08:30-12:30, 13:30-17:30 (점심 12:30-13:30) / 토요일 08:30-12:30 / 일요일 09:00-13:00 (토·일 점심시간 없음)",
   contactNotice:
     "진료 일정은 의료진 사정 및 병원 상황에 따라 변경될 수 있습니다. 내원 전 대표전화 031-328-0333으로 확인해 주세요.",
   orthopedicDoctor:
