@@ -129,6 +129,12 @@ export function entityGraphJsonLd() {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
       opens: "08:30",
+      closes: "12:30"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      opens: "13:30",
       closes: "17:30"
     },
     {
@@ -362,7 +368,8 @@ export function webPageJsonLd({
         description,
         url,
         inLanguage: "ko-KR",
-        dateModified: "2026-08-26",
+        dateModified: path === "/knee" ? "2026-09-10" : "2026-08-26",
+    ...(path === "/knee" ? { citation: ["https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/"] } : {}),
         author: { "@id": `${SITE_URL}#new-standard-hospital` },
         publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
         reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },

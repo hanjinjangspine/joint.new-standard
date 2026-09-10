@@ -442,6 +442,13 @@ export default function KneePage() {
             </div>
           </div>
         </section>
+        <section aria-label="정보 제공 및 참고자료" className="mx-auto max-w-7xl px-4 py-8 text-sm leading-7 text-slate-600 sm:px-6 lg:px-8">
+          <h2 className="font-bold text-slate-800">정보 제공 및 참고자료</h2>
+          <p>정보 제공: 새기준병원 관절센터 · <Link href="/doctor" className="underline">진료 의료진 소개</Link></p>
+          <p>페이지 갱신일: <time dateTime="2026-09-10">2026년 9월 10일</time></p>
+          <p><a href="https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/" className="underline" target="_blank" rel="noopener noreferrer">미국정형외과학회(AAOS): 무릎 관절염 안내(영문)</a></p>
+          <p>일반적인 질환 이해를 위한 참고자료이며, 개인의 치료 선택은 진찰 결과와 담당 의료진의 설명을 기준으로 합니다.</p>
+        </section>
       </main>
     </>
   );
