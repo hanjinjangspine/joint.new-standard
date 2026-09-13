@@ -122,7 +122,7 @@ const mainTopics = [
 
 export function entityGraphJsonLd() {
   const clinicId = `${SITE_URL}#joint-foot-ankle-center`;
-  const hospitalId = `${SITE_URL}#new-standard-hospital`;
+  const hospitalId = "https://new-standard.co.kr/#hospital";
   const logoUrl = new URL(hospitalInfo.logoPath, SITE_URL).toString();
   const openingHoursSpecification = [
     {
@@ -163,7 +163,7 @@ export function entityGraphJsonLd() {
         inLanguage: "ko-KR",
         description: aiSummary.ko,
         publisher: { "@id": hospitalId },
-        sameAs: officialSameAs
+        relatedLink: officialEntityUrls
       },
       {
         "@type": ["MedicalClinic", "LocalBusiness", "MedicalOrganization"],
@@ -172,7 +172,6 @@ export function entityGraphJsonLd() {
         alternateName: hospitalInfo.englishName,
         url: SITE_URL,
         logo: logoUrl,
-        sameAs: officialSameAs,
         hasMap: hospitalInfo.naverMapUrl,
         parentOrganization: {
           "@type": "Hospital",
@@ -243,9 +242,11 @@ export function entityGraphJsonLd() {
         "@type": "Hospital",
         "@id": hospitalId,
         name: hospitalInfo.hospitalName,
+        department: { "@id": clinicId },
+        employee: { "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee" },
         url: hospitalInfo.officialWebsiteUrl,
         logo: logoUrl,
-        sameAs: officialSameAs,
+        sameAs: [hospitalInfo.naverMapUrl, hospitalInfo.youtubeUrl],
         telephone: hospitalInfo.phone,
         openingHoursSpecification,
         address: {
@@ -257,13 +258,14 @@ export function entityGraphJsonLd() {
         }
       },
       {
-        "@type": "Physician",
-        "@id": `${SITE_URL}#orthopedic-physician`,
+        "@type": ["Person", "Physician"],
+        "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee",
         name: doctorProfile.name,
+        url: new URL("/doctor", SITE_URL).toString(),
         image: new URL(doctorProfile.imageSrc, SITE_URL).toString(),
         medicalSpecialty: "Orthopedic Surgery",
-        affiliation: { "@id": hospitalId },
-        worksFor: { "@id": clinicId },
+        affiliation: { "@id": clinicId },
+        worksFor: { "@id": hospitalId },
         jobTitle: doctorProfile.title,
         additionalProperty: {
           "@type": "PropertyValue",
@@ -368,13 +370,14 @@ export function webPageJsonLd({
         description,
         url,
         inLanguage: "ko-KR",
+        ...(path === "/doctor" ? { mainEntity: { "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee" } } : {}),
+        breadcrumb: { "@id": `${url}#breadcrumb` },
         dateModified: path === "/knee" ? "2026-09-10" : "2026-08-26",
     ...(path === "/knee" ? { citation: ["https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/"] } : {}),
-        author: { "@id": `${SITE_URL}#new-standard-hospital` },
-        publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
-        reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },
+        author: { "@id": "https://new-standard.co.kr/#hospital" },
+        publisher: { "@id": "https://new-standard.co.kr/#hospital" },
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: mainTopics
+        about: [{ "@id": `${SITE_URL}#joint-foot-ankle-center` }, ...mainTopics]
       },
       {
         "@type": "BreadcrumbList",

@@ -346,7 +346,7 @@ export default function FootAnklePage() {
               </p>
             </div>
             <Link
-              href="https://rehab.new-standard.co.kr"
+              href="https://rehab.new-standard.co.kr/postoperative-recovery"
               target="_blank"
               rel="noopener noreferrer"
               className="group flex min-h-20 items-center justify-between rounded-2xl border border-line bg-calm p-5 text-lg font-extrabold text-ink transition hover:border-brand-200 hover:bg-brand-50"

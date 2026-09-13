@@ -80,9 +80,9 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         about: [{ "@type": "MedicalCondition", name: guide.title }],
         datePublished: lastReviewed,
         dateModified: lastReviewed,
-        author: { "@id": `${SITE_URL}#new-standard-hospital` },
-        publisher: { "@id": `${SITE_URL}#new-standard-hospital` },
-        reviewedBy: { "@id": `${SITE_URL}#orthopedic-physician` },
+        author: { "@id": "https://new-standard.co.kr/#hospital" },
+        publisher: { "@id": "https://new-standard.co.kr/#hospital" },
+        reviewedBy: { "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee" },
         lastReviewed,
         relatedLink: [
           new URL(guide.clinicPath, SITE_URL).toString(),

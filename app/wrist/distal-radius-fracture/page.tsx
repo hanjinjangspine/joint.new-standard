@@ -187,10 +187,11 @@ function pageJsonLd() {
         lastReviewed: reviewedAt,
         image: imageObjects,
         associatedMedia: [...imageObjects, videoObject],
-        reviewedBy: {
+        publisher: {
+          "@id": "https://new-standard.co.kr/#hospital",
           "@type": "MedicalOrganization",
-          name: hospitalInfo.centerName,
-          url: SITE_URL
+          name: hospitalInfo.hospitalName,
+          url: hospitalInfo.officialWebsiteUrl
         }
       },
       videoObject,
