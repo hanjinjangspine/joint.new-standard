@@ -205,7 +205,7 @@ export default function MinimallyInvasiveSurgeryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgical Decision</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 결정</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술적 치료 상담이 필요한 경우
               </h2>
@@ -224,7 +224,7 @@ export default function MinimallyInvasiveSurgeryPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Assessment</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">진료 평가</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 최소침습 관절수술 판단에서 확인하는 요소
               </h2>
@@ -254,7 +254,7 @@ export default function MinimallyInvasiveSurgeryPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgery Scope</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 범위</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   대표적으로 함께 검토하는 수술적 치료 주제
                 </h2>
@@ -276,7 +276,7 @@ export default function MinimallyInvasiveSurgeryPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Step</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 단계</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 먼저 치료 단계를 확인합니다
               </h2>
@@ -299,7 +299,7 @@ export default function MinimallyInvasiveSurgeryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Related Care</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">연관 진료</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 부위별 치료 판단 연결
               </h2>
@@ -326,7 +326,7 @@ export default function MinimallyInvasiveSurgeryPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

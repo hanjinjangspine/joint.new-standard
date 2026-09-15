@@ -64,7 +64,7 @@ export default function PatientGuideSection({
         <div className="flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-3xl">
             <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-              Patient Guides
+              환자 안내
             </p>
             <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">{title}</h2>
             <p className="mt-4 text-lg leading-8 text-muted">{description}</p>

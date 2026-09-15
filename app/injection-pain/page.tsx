@@ -196,7 +196,7 @@ export default function InjectionPainPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Candidates</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 대상 확인</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 이런 경우 비수술 치료를 고려할 수 있습니다
               </h2>
@@ -216,7 +216,7 @@ export default function InjectionPainPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Assessment</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">진료 평가</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   관절 비수술 치료에서 함께 확인하는 것
                 </h2>
@@ -239,7 +239,7 @@ export default function InjectionPainPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Options</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 방법</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   대표적인 비수술 치료
                 </h2>
@@ -261,7 +261,7 @@ export default function InjectionPainPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Injection Care</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">주사치료 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 주사치료는 통증 원인 확인 후 시행합니다
               </h2>
@@ -291,7 +291,7 @@ export default function InjectionPainPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgical Decision</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 결정</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술적 치료가 필요한 경우도 구분해야 합니다
               </h2>
@@ -318,7 +318,7 @@ export default function InjectionPainPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

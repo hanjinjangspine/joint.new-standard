@@ -7,7 +7,6 @@ import DoctorIntroSection from "@/components/DoctorIntroSection";
 import FAQSection from "@/components/FAQSection";
 import FootAnkleFeature from "@/components/FootAnkleFeature";
 import HeroSection from "@/components/HeroSection";
-import HomeAIReadableSummary from "@/components/HomeAIReadableSummary";
 import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
@@ -45,7 +44,7 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
           <div className="grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
             <SectionTitle
-              eyebrow="Official Patient Pages"
+              eyebrow="본원 환자 안내"
               title="본원 공식 환자용 관절 진료 안내와 함께 확인하세요"
               description="관절 질환별 설명은 이 사이트에서, 병원 전체 진료시간·의료진·이용 정보는 본원 홈페이지에서 확인할 수 있습니다."
             />
@@ -76,7 +75,6 @@ export default function HomePage() {
       <DoctorIntroSection />
       <ShoulderBraceVideoSection />
 
-      <HomeAIReadableSummary />
       <FAQSection />
 
       <CTASection

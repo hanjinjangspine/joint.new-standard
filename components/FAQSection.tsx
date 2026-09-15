@@ -5,7 +5,7 @@ export default function FAQSection() {
     <section className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-bold uppercase text-brand-600">FAQ</p>
+          <p className="mb-3 text-sm font-bold uppercase text-brand-600">자주 묻는 질문</p>
           <h2 className="text-3xl font-bold leading-tight text-ink sm:text-4xl">
             자주 묻는 질문
           </h2>

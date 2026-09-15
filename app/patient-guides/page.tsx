@@ -55,7 +55,7 @@ export default function PatientGuidesPage() {
             <div className="nsh-responsive-hero__copy">
               <Breadcrumb items={[{ label: "질환별 안내" }]} />
               <p className="mt-5 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-                Condition Guides
+                질환별 안내
               </p>
               <h1 className="mt-3 max-w-4xl text-3xl font-extrabold leading-[1.2] tracking-[-0.01em] text-ink sm:text-4xl lg:text-5xl">
                 관절·골절 질환별 안내

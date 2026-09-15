@@ -175,7 +175,7 @@ export default function RecoveryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Check</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복 상태 확인</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 회복 과정에서 함께 확인하는 것
               </h2>
@@ -201,7 +201,7 @@ export default function RecoveryPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Steps</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복 단계</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   치료 후 회복은 단계적으로 봅니다
                 </h2>
@@ -223,7 +223,7 @@ export default function RecoveryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">After Surgery</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 후</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술 후 회복관리
               </h2>
@@ -251,7 +251,7 @@ export default function RecoveryPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
               <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">After Non-surgical Care</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">비수술 치료 후</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   비수술 치료 후 회복관리
                 </h2>
@@ -268,7 +268,7 @@ export default function RecoveryPage() {
                 </Link>
               </div>
               <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Related Care</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">연관 진료</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   부위별 회복관리 연결
                 </h2>
@@ -292,7 +292,7 @@ export default function RecoveryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Rehab Center</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복재활센터</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 회복재활센터에서 이어지는 회복관리
               </h2>
@@ -317,7 +317,7 @@ export default function RecoveryPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

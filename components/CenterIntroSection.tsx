@@ -31,7 +31,7 @@ export default function CenterIntroSection() {
         <div className="grid gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm lg:grid-cols-[0.9fr_1.1fr] lg:p-8">
           <div>
             <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-700">
-              Joint Care Principle
+              관절 진료 원칙
             </p>
             <h2 className="mt-3 break-keep text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
               수술부터 결정하지 않습니다

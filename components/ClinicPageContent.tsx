@@ -60,7 +60,7 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="Care Principle"
+              eyebrow="진료 원칙"
               title="비수술 치료와 수술 치료를 균형 있게 설명합니다."
               description="현재 상태에서 먼저 시도할 수 있는 치료와 치료 시기를 놓치지 않기 위해 확인해야 할 점을 함께 안내합니다."
             />

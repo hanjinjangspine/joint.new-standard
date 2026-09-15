@@ -50,7 +50,7 @@ export default function HandWristElbowPage() {
         })}
       />
       <PageHero
-        eyebrow="Hand · Wrist · Elbow"
+        eyebrow="손·손목·팔꿈치"
         title={title}
         description={description}
         breadcrumb={[{ label: title }]}
@@ -66,7 +66,7 @@ export default function HandWristElbowPage() {
         <section className="px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Find by symptom</p>
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">증상으로 찾기</p>
               <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 가장 불편한 증상부터 확인하세요
               </h2>

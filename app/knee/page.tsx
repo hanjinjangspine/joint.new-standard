@@ -202,7 +202,7 @@ export default function KneePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Symptoms</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">주요 증상</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 이런 무릎 증상이 있으면 확인이 필요합니다
               </h2>
@@ -222,7 +222,7 @@ export default function KneePage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Conditions</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">관련 질환</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   무릎에서 함께 확인하는 질환
                 </h2>
@@ -250,7 +250,7 @@ export default function KneePage() {
 
         <section className="bg-white px-4 pb-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-2xl border border-brand-100 bg-brand-50 p-6 sm:p-8">
-            <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">Different goals</p>
+            <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">치료 목표 비교</p>
             <h2 className="mt-3 text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
               인공 관절 치환술과 O자 다리 교정술은 적용 대상과 목표가 다릅니다
             </h2>
@@ -277,7 +277,7 @@ export default function KneePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Diagnosis</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">진단</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 무릎 통증은 하지정렬과 보행을 함께 봐야 합니다
               </h2>
@@ -307,7 +307,7 @@ export default function KneePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Decision</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 결정 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 먼저 치료 단계를 확인합니다
               </h2>
@@ -330,7 +330,7 @@ export default function KneePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgery & Recovery</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술과 회복</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술적 치료가 필요한 경우에도 범위와 회복 계획을 함께 상담합니다
               </h2>
@@ -357,7 +357,7 @@ export default function KneePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Rehab Center</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복재활센터</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 무릎 치료 후 보행·운동재활 연결
               </h2>
@@ -381,7 +381,7 @@ export default function KneePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

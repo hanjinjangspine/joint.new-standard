@@ -244,7 +244,7 @@ export default function DoctorPage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Clinical Focus</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">중점 진료</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   주요 진료 분야
                 </h2>
@@ -266,7 +266,7 @@ export default function DoctorPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Assessment</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">진료 평가</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 진료 시 함께 확인하는 요소
               </h2>
@@ -293,7 +293,7 @@ export default function DoctorPage() {
 
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8">
-            <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Decision</p>
+            <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 결정 안내</p>
             <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
               수술부터 결정하지 않습니다
             </h2>
@@ -309,7 +309,7 @@ export default function DoctorPage() {
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="mb-3 text-sm font-bold uppercase tracking-[0.12em] text-brand-600">
-                Joint Treatment Decision
+                Joint 치료 결정 안내
               </p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 관절 통증, 수술이 필요한 경우를 놓치지 않습니다
@@ -362,7 +362,7 @@ export default function DoctorPage() {
             </div>
 
             <div className="mt-12 max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">FAQ</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">자주 묻는 질문</p>
               <h3 className="text-2xl font-extrabold leading-tight text-ink sm:text-3xl">
                 자주 묻는 질문
               </h3>
@@ -384,7 +384,7 @@ export default function DoctorPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Care Pages</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">관련 진료 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 부위별 진료 연결
               </h2>
@@ -410,7 +410,7 @@ export default function DoctorPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Official Hospital Links</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">본원 진료 연결</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 새기준병원 본원과 함께 보는 진료
               </h2>
