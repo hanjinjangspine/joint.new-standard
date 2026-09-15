@@ -207,7 +207,7 @@ export default function FootAnkleMisPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgical Consultation</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 상담</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술적 치료 상담이 필요한 경우
               </h2>
@@ -230,7 +230,7 @@ export default function FootAnkleMisPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Decision Factors</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 결정 기준</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술 방법보다 먼저 확인해야 할 요소
               </h2>
@@ -259,7 +259,7 @@ export default function FootAnkleMisPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Procedures</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술 방법</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 대표적으로 함께 검토하는 족부·발목 수술적 치료
               </h2>
@@ -287,7 +287,7 @@ export default function FootAnkleMisPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Step</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 단계</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 먼저 치료 단계를 확인합니다
               </h2>
@@ -306,7 +306,7 @@ export default function FootAnkleMisPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술 후 회복은 재활 계획과 함께 봅니다
               </h2>
@@ -333,7 +333,7 @@ export default function FootAnkleMisPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

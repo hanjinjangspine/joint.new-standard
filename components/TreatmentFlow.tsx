@@ -22,7 +22,7 @@ export default function TreatmentFlow() {
     <section className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         <div className="max-w-3xl">
-          <p className="mb-3 text-sm font-bold uppercase text-brand-600">Care Flow</p>
+          <p className="mb-3 text-sm font-bold uppercase text-brand-600">진료 흐름</p>
           <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
             수술부터 결정하지 않고 치료 단계를 확인합니다
           </h2>

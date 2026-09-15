@@ -72,7 +72,7 @@ export default function AIReadableProfileSection() {
             { label: "Center name", value: hospitalInfo.englishName },
             { label: "Korean name", value: hospitalInfo.centerName },
             {
-              label: "Location",
+              label: "오시는 길",
               value: "Cheoin-gu, Yongin-si, Gyeonggi-do, Republic of Korea"
             },
             { label: "Address", value: hospitalInfo.address },

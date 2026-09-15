@@ -269,7 +269,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
               ) : null}
               {guide.video ? (
                 <article className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-8">
-                  <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D Education Video</p>
+                  <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D 설명 영상</p>
                   <h3 className="mt-3 text-2xl font-extrabold text-ink">{guide.video.name}</h3>
                   <p className="mt-3 max-w-4xl text-base leading-7 text-muted">{guide.video.description}</p>
                   <video

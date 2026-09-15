@@ -61,7 +61,7 @@ export default function LocationGuideCard() {
       <div className="rounded-2xl bg-brand-50 p-6 text-center sm:p-8">
         <MapPin aria-hidden="true" className="mx-auto text-brand-700" size={44} />
         <p className="mt-5 text-sm font-extrabold uppercase tracking-[0.12em] text-brand-700">
-          Location
+          오시는 길
         </p>
         <h3 className="mt-2 text-2xl font-extrabold text-ink">{hospitalInfo.centerName}</h3>
         <p className="mt-3 text-xl font-extrabold leading-8 text-brand-900">

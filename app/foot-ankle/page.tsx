@@ -204,7 +204,7 @@ export default function FootAnklePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Symptoms</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">주요 증상</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 이런 증상이 있으면 확인이 필요합니다
               </h2>
@@ -224,7 +224,7 @@ export default function FootAnklePage() {
           <div className="mx-auto max-w-7xl">
             <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
               <div>
-                <p className="mb-3 text-sm font-bold uppercase text-brand-600">Conditions</p>
+                <p className="mb-3 text-sm font-bold uppercase text-brand-600">관련 질환</p>
                 <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                   족부·발목에서 함께 확인하는 질환
                 </h2>
@@ -253,7 +253,7 @@ export default function FootAnklePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Diagnosis</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">진단</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 발과 발목은 보행과 하지정렬을 함께 봐야 합니다
               </h2>
@@ -283,7 +283,7 @@ export default function FootAnklePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-4xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Treatment Decision</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">치료 결정 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 먼저 치료 단계를 확인합니다
               </h2>
@@ -307,7 +307,7 @@ export default function FootAnklePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Surgery & Recovery</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">수술과 회복</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 수술 여부는 범위와 회복 계획까지 함께 상담합니다
               </h2>
@@ -335,7 +335,7 @@ export default function FootAnklePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Recovery Rehab Center</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">회복재활센터</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 발목 염좌와 보행 회복관리 연결
               </h2>
@@ -360,7 +360,7 @@ export default function FootAnklePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
             <div className="rounded-[28px] border border-line bg-white p-6 shadow-sm sm:p-8">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 정형외과 전문의 김동희 원장
               </h2>

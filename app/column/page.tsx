@@ -38,7 +38,7 @@ export default function ColumnPage() {
         })}
       />
       <PageHero
-        eyebrow="Joint Column"
+        eyebrow="관절 건강칼럼"
         title="새기준병원 관절칼럼"
         description="무릎·어깨·족부·발목 통증을 이해하고 상담 전 확인하면 좋은 내용을 과장 없이 정리합니다."
         breadcrumb={[{ label: "관절칼럼" }]}
@@ -47,7 +47,7 @@ export default function ColumnPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="Joint Article Hub"
+              eyebrow="관절 건강정보"
               title="새기준병원 관절칼럼 모아보기"
               description="족부·발목, 무릎, 어깨, 손·손목·팔꿈치 통증과 수술 후 회복 정보를 이해하기 쉽게 정리합니다."
             />

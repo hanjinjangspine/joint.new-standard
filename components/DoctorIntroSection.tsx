@@ -7,7 +7,7 @@ export default function DoctorIntroSection() {
     <section className="px-4 py-16 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl rounded-lg border border-line bg-white p-5 shadow-sm sm:p-8">
         <div className="mx-auto max-w-5xl">
-          <p className="text-sm font-bold uppercase text-brand-600">Orthopedic Doctor</p>
+          <p className="text-sm font-bold uppercase text-brand-600">정형외과 전문의</p>
           <h2 className="mt-3 text-3xl font-bold leading-tight text-ink sm:text-4xl">
             정형외과 전문의 김동희 원장
           </h2>

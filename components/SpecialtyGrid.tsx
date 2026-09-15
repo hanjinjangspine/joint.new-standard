@@ -12,7 +12,7 @@ const specialtyCards = [
     tone: "decision" as const
   },
   {
-    title: "용인 무릎통증 진료",
+    title: "무릎이 아파요",
     href: "/knee",
     description:
       "무릎 통증, 퇴행성 관절염, 반월상연골판 손상, 십자인대 손상, 하지정렬 문제를 함께 확인합니다.",
@@ -20,7 +20,7 @@ const specialtyCards = [
     tone: "info" as const
   },
   {
-    title: "용인 어깨통증 진료",
+    title: "어깨가 아파요",
     href: "/shoulder",
     description:
       "회전근개 파열, 오십견, 충돌증후군, 어깨 통증의 원인을 진찰과 영상검사로 평가합니다.",
@@ -43,7 +43,7 @@ const specialtyCards = [
     tone: "decision" as const
   },
   {
-    title: "용인 무릎수술·관절수술 판단",
+    title: "관절수술이 필요한지 궁금해요",
     href: "/minimally-invasive-surgery",
     description:
       "관절내시경, 최소침습 수술, 수술 후 회복관리와 재활 계획은 진료와 검사 결과에 따라 상담합니다.",
@@ -57,7 +57,7 @@ export default function SpecialtyGrid() {
     <section className="bg-[#FCFDFD] px-4 py-9 sm:px-6 lg:px-8 lg:py-10">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
-          eyebrow="Find Your Care"
+          eyebrow="아픈 부위로 찾기"
           title="아픈 부위와 질환으로 찾아보세요"
           description="진단명을 몰라도 괜찮습니다. 가장 불편한 부위를 먼저 고르면 관련 증상과 질환 안내를 확인할 수 있습니다."
           align="center"

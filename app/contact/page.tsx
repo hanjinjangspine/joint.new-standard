@@ -198,7 +198,7 @@ export default function ContactPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Before Visit</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">방문 전 확인</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 진료 상담 전 준비하면 좋은 자료
               </h2>
@@ -223,7 +223,7 @@ export default function ContactPage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Care Pages</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">관련 진료 안내</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 관절센터에서 상담할 수 있는 주요 증상
               </h2>
@@ -249,7 +249,7 @@ export default function ContactPage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 rounded-[28px] border border-brand-100 bg-white p-6 shadow-sm sm:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
             <div>
-              <p className="mb-3 text-sm font-bold uppercase text-brand-600">Official Hospital Links</p>
+              <p className="mb-3 text-sm font-bold uppercase text-brand-600">본원 진료 연결</p>
               <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                 새기준병원 본원 연결
               </h2>

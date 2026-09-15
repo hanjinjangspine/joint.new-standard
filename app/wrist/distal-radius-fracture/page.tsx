@@ -239,7 +239,7 @@ export default function DistalRadiusFracturePage() {
     <>
       <SEOJsonLd data={pageJsonLd()} />
       <PageHero
-        eyebrow="Wrist Fracture"
+        eyebrow="손목 골절"
         title={pageTitle}
         description={pageDescription}
         breadcrumb={[
@@ -260,7 +260,7 @@ export default function DistalRadiusFracturePage() {
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
             <div>
               <SectionTitle
-                eyebrow="Patient Question"
+                eyebrow="환자 질문"
                 title="넘어진 뒤 손목이 붓고 아프다면, 먼저 골절 정렬을 확인합니다"
                 description="손목을 짚고 넘어진 뒤 붓고 아프고, X-ray에서 손목 골절이 보이면 많은 분들이 깁스만 해도 되는지, 수술이 필요한지 고민합니다."
               />
@@ -278,7 +278,7 @@ export default function DistalRadiusFracturePage() {
             </div>
 
             <aside className="rounded-lg border border-dashed border-brand-200 bg-brand-50 p-6">
-              <p className="text-sm font-extrabold uppercase text-brand-700">Imaging Review</p>
+              <p className="text-sm font-extrabold uppercase text-brand-700">영상검사 확인</p>
               <h2 className="mt-3 text-2xl font-bold leading-8 text-ink">영상검사는 진료실에서 함께 확인합니다</h2>
               <p className="mt-4 text-base leading-7 text-muted">
                 진료 시에는 실제 X-ray와 CT 소견을 확인해 골절의 위치, 전위, 관절면 침범 여부를 함께 판단합니다.
@@ -291,7 +291,7 @@ export default function DistalRadiusFracturePage() {
         <section id="fracture-pattern" className="scroll-mt-24 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="Fracture Pattern"
+              eyebrow="골절 형태"
               title="콜레스 골절은 요골 원위부 골절의 한 유형입니다"
               description="콜레스 골절은 손목 가까운 요골 골절편이 손등 쪽으로 기울거나 이동한 대표적인 형태입니다. 모든 요골 원위부 골절을 콜레스 골절이라고 부르지는 않으며, 안정형·분쇄형·관절면 침범 여부에 따라 치료 판단이 달라집니다."
             />
@@ -314,7 +314,7 @@ export default function DistalRadiusFracturePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="What We Check"
+              eyebrow="진료에서 확인할 내용"
               title="손목 골절에서 확인하는 항목"
               description="골절이 보였다는 사실만으로 치료 방향이 정해지지는 않습니다. 정렬과 안정성, 관절면, 동반 손상을 함께 확인합니다."
             />
@@ -356,7 +356,7 @@ export default function DistalRadiusFracturePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="Treatment Decision"
+              eyebrow="치료 결정 안내"
               title="깁스 치료와 수술적 고정은 어떤 기준으로 나눌까요?"
               description="보존치료와 수술적 고정은 한 가지 기준만으로 결정하지 않고, 영상검사와 진찰 소견, 추적 관찰 결과를 함께 확인해 상담합니다."
             />
@@ -413,7 +413,7 @@ export default function DistalRadiusFracturePage() {
             </div>
 
             <article className="mt-10 rounded-2xl border border-line bg-white p-5 shadow-sm sm:p-8">
-              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D Education Video</p>
+              <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">3D 설명 영상</p>
               <h2 className="mt-3 text-2xl font-extrabold leading-8 text-ink">{distalRadiusVideo.name}</h2>
               <p className="mt-3 max-w-4xl text-base leading-7 text-muted">{distalRadiusVideo.description}</p>
               <video
@@ -504,7 +504,7 @@ export default function DistalRadiusFracturePage() {
         <section className="bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="Follow Up"
+              eyebrow="치료 후 확인"
               title="골절 안정성에 따라 필요한 시기에 정렬 변화를 확인합니다"
               description="손목 골절은 처음 정렬이 괜찮아 보여도 부종 변화와 골절 안정성에 따라 추적 관찰 중 전위가 진행될 수 있어, 담당 의료진이 정한 시기에 X-ray로 확인합니다."
             />
@@ -521,7 +521,7 @@ export default function DistalRadiusFracturePage() {
         <section className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <SectionTitle
-              eyebrow="FAQ"
+              eyebrow="자주 묻는 질문"
               title="자주 묻는 질문"
               description="아래 답변은 일반적인 교육 정보입니다. 개인별 판단은 진찰과 검사 결과를 함께 확인해 상담해야 합니다."
             />
