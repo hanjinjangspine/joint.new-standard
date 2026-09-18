@@ -104,7 +104,7 @@ diff --git a/sub/r40/s40e0.php b/sub/r40/s40e0.php
 - 3줄 diff 자체는 라이브와 일치합니다. 그러나 **이 3줄은 이미 `origin/main`에 커밋되어 있습니다**(`c8cb56c` 2026-09-15 「Use patient-first language across public care pages」).
 - 라이브는 `origin/main`과 100% 일치합니다. 로컬 체크아웃(`naver-site-verification-20260820`, `5f07bb3`)은 `origin/main`보다 **471커밋 뒤처져** 있고, 작업트리 파일도 전체로는 라이브와 다릅니다(파일마다 약 11–15문장 불일치).
 - 따라서 작업트리 파일을 「운영 반영분 소급 커밋」으로 올리면 라이브에 없는 옛 문장이 되살아납니다. **지시대로 멈추고 커밋하지 않았습니다.**
-- 권장: 본원 로컬 체크아웃을 `origin/main` 기준으로 맞춘 뒤(로컬 미커밋 변경 70여 개 파일의 보존 방침 결정 필요) B1 링크 작업을 `origin/main` 위에서 진행합니다. 삽입 위치(472–477행 「치료 결정 전 확인」, 547행 링크 목록)는 `origin/main`에서도 같은 줄에 있습니다.
+- 권장: 본원 로컬 체크아웃을 `origin/main` 기준으로 맞춘 뒤(로컬 미커밋·스테이징 변경 130개 파일의 보존 방침 결정 필요) B1 링크 작업을 `origin/main` 위에서 진행합니다. 삽입 위치(472–477행 「치료 결정 전 확인」, 547행 링크 목록)는 `origin/main`에서도 같은 줄에 있습니다.
 
 ---
 
@@ -237,7 +237,19 @@ sitemap `lastModified` 변경(실제로 바뀐 URL만):
 ---
 
 ## D. push·preview 확인
-{{D_RESULT}}
+- push: `origin/seo/google-indexing-recovery-20260918` `394fcd3..5c45ebf` (커밋 3개: Phase A 보고서, Phase B 계획, 본작업). merge 없음.
+- Vercel preview: 커밋 상태 `Vercel success`, 배포 ID 6517810726 (environment: Preview)
+- preview URL: `https://joint-new-standard-a7nbinhb7-ubb799-7665s-projects.vercel.app`
+- 익명 요청(쿠키 없음) 결과:
+
+| 경로 | HTTP | Location | X-Robots-Tag | 본문 노출 |
+|---|---|---|---|---|
+| `/` | 302 | `https://vercel.com/sso-api?url=…` | noindex | 없음 |
+| `/patient-guides/acl-tear` | 302 | `https://vercel.com/sso-api?url=…` | noindex | 없음 |
+| `/robots.txt` | 302 | `https://vercel.com/sso-api?url=…` | noindex | 없음 |
+
+→ preview는 SSO 보호로 **익명 접근이 차단**됩니다(`ssoProtection=all_except_custom_domains`와 일치). 이 preview에서 새 `*.vercel.app` 헤더 규칙의 동작은 익명으로 볼 수 없어서 §B의 로컬 Host 헤더 검증으로 대신했습니다.
+- 운영 `https://joint.new-standard.co.kr/patient-guides/acl-tear`: 새 섹션 없음, X-Robots-Tag 없음 → 운영 변경 없음 확인.
 
 ---
 
