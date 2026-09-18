@@ -257,7 +257,7 @@ export const patientGuides: PatientGuide[] = [
     id: "14",
     slug: "knee-osteoarthritis-replacement",
     title: "무릎 관절염과 인공 무릎 관절 치환술",
-    seoTitle: "용인 무릎 인공관절 | 수술이 필요한 시점과 회복 | 새기준병원",
+    seoTitle: "용인 무릎 인공관절 | 수술을 고려하는 시점과 회복 | 새기준병원",
     clinicCtaLabel: "인공관절이 필요한 단계인지 확인하기",
     category: "무릎",
     description: "무릎 관절염의 비수술 치료와 인공 관절 치환술을 고려하는 기준, 회복 과정과 위험을 안내합니다.",

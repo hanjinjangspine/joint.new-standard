@@ -5,7 +5,9 @@ import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import PageHero from "@/components/PageHero";
 import SEOJsonLd from "@/components/SEOJsonLd";
+import { contentUpdatedAt } from "@/lib/content-dates";
 import { columnDetails } from "@/lib/data";
+import { getRepresentativeGuide } from "@/lib/guide-links";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 type ColumnDetailPageProps = {
@@ -19,33 +21,6 @@ const categoryLinks: Record<string, { label: string; href: string }> = {
   "어깨": { label: "어깨 질환 안내", href: "/shoulder" },
   "족부·발목": { label: "족부·발목 질환 안내", href: "/foot-ankle" },
   "손·손목": { label: "손·손목·팔꿈치 질환 안내", href: "/hand-wrist-elbow" }
-};
-
-const relatedGuideByColumnSlug: Record<string, { label: string; href: string }> = {
-  "rotator-cuff-surgery-decision": {
-    label: "회전근개 파열 질환 안내",
-    href: "/patient-guides/rotator-cuff-tear"
-  },
-  "meniscus-tear-surgery": {
-    label: "반월상 연골판 파열 질환 안내",
-    href: "/patient-guides/meniscus-tear"
-  },
-  "yongin-ankle-pain-repeated-sprain": {
-    label: "발목 외측 인대 손상 질환 안내",
-    href: "/patient-guides/lateral-ankle-ligament-injury"
-  },
-  "ankle-ligament-tear-treatment": {
-    label: "발목 외측 인대 손상 질환 안내",
-    href: "/patient-guides/lateral-ankle-ligament-injury"
-  },
-  "ankle-instability": {
-    label: "발목 외측 인대 손상 질환 안내",
-    href: "/patient-guides/lateral-ankle-ligament-injury"
-  },
-  "hallux-valgus": {
-    label: "무지외반증 질환 안내",
-    href: "/patient-guides/hallux-valgus-mica"
-  }
 };
 
 function splitFaq(paragraph: string) {
@@ -85,7 +60,9 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
     notFound();
   }
   const categoryLink = categoryLinks[column.category];
-  const relatedGuide = relatedGuideByColumnSlug[column.slug];
+  const relatedGuide = getRepresentativeGuide(column.slug);
+  const updatedAt = contentUpdatedAt[`/column/${column.slug}`] ?? "2026-07-31";
+  const [updatedYear, updatedMonth, updatedDay] = updatedAt.split("-");
 
   return (
     <>
@@ -136,8 +113,20 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
                   )}
                 </section>
               ))}
+              {relatedGuide ? (
+                <p className="mt-10 rounded-md border border-brand-100 bg-brand-50 p-5 text-base leading-8 text-muted">
+                  증상·검사·비수술 치료·수술 판단·회복 과정 전체는{" "}
+                  <Link
+                    href={relatedGuide.href}
+                    className="font-extrabold text-brand-800 underline decoration-brand-300 underline-offset-4 hover:text-brand-600"
+                  >
+                    {relatedGuide.label}
+                  </Link>
+                  에서 이어서 확인할 수 있습니다.
+                </p>
+              ) : null}
               <p className="mt-10 border-t border-line pt-5 text-sm font-semibold leading-6 text-muted">
-                콘텐츠 제공: 새기준병원 관절센터 · 의학적 검토: 김동희 원장(정형외과) · 최종 수정일: 2026년 8월 10일
+                콘텐츠 제공: 새기준병원 관절센터 · 의학적 검토: 김동희 원장(정형외과) · 최종 수정일: {updatedYear}년 {Number(updatedMonth)}월 {Number(updatedDay)}일
               </p>
             </div>
           </div>

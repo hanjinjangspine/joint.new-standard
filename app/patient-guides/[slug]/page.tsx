@@ -16,6 +16,8 @@ import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { SITE_URL } from "@/lib/data";
 import { getPatientGuideIllustrations } from "@/lib/patient-guide-illustrations";
+import { contentUpdatedAt } from "@/lib/content-dates";
+import { getGuideLinks, getHubLink } from "@/lib/guide-links";
 import { getPatientGuide, patientGuides } from "@/lib/patient-guides";
 import { createMetadata } from "@/lib/seo";
 
@@ -39,6 +41,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
   const url = new URL(`/patient-guides/${guide.slug}`, SITE_URL).toString();
   const lastReviewed = guide.reviewedAt ?? "2026-07-31";
+  const dateModified = contentUpdatedAt[`/patient-guides/${guide.slug}`] ?? lastReviewed;
+  const links = getGuideLinks(guide.slug, guide.clinicPath);
   const imageObjects = getPatientGuideIllustrations(guide.slug).map((illustration) => ({
     "@type": "ImageObject",
     contentUrl: new URL(illustration.src, SITE_URL).toString(),
@@ -79,13 +83,14 @@ function guideJsonLd(guide: NonNullable<ReturnType<typeof getPatientGuide>>) {
         isPartOf: { "@id": `${SITE_URL}#website` },
         about: [{ "@type": "MedicalCondition", name: guide.title }],
         datePublished: lastReviewed,
-        dateModified: lastReviewed,
+        dateModified,
         author: { "@id": "https://new-standard.co.kr/#hospital" },
         publisher: { "@id": "https://new-standard.co.kr/#hospital" },
         reviewedBy: { "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee" },
         lastReviewed,
         relatedLink: [
           new URL(guide.clinicPath, SITE_URL).toString(),
+          ...(links ? [...links.related.map((link) => new URL(link.href, SITE_URL).toString()), links.mainSite.href] : []),
           new URL("/patient-guides", SITE_URL).toString()
         ],
         image: imageObjects,
@@ -143,6 +148,8 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
     (illustration) => illustration.placement === "procedure"
   );
   const reviewedAt = guide.reviewedAt ?? "2026-07-31";
+  const hubLink = getHubLink(guide.clinicPath);
+  const guideLinks = getGuideLinks(guide.slug, guide.clinicPath);
   const [reviewedYear, reviewedMonth, reviewedDay] = reviewedAt.split("-");
 
   return (
@@ -174,7 +181,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                   href={guide.clinicPath}
                   className="inline-flex min-h-12 items-center justify-center rounded-md border border-brand-200 bg-white px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-50"
                 >
-                  {guide.clinicCtaLabel ?? "관련 진료 안내"}
+                  {guide.clinicCtaLabel ?? hubLink.label}
                 </Link>
                 {guide.pamphletPdfPath ? (
                   <a
@@ -225,13 +232,9 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         <section id="decision" className="scroll-mt-36 px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.78fr_1.22fr]">
             <div>
-              <p className="text-sm font-extrabold text-brand-600">치료 결정 전</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
-                치료를 결정하기 전에 확인하세요
+              <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                치료 결정 전 확인
               </h2>
-              <p className="mt-5 text-lg leading-8 text-muted">
-                수술을 권유받았더라도 현재 상태와 선택 가능한 치료를 다시 확인하고 질문할 수 있습니다.
-              </p>
             </div>
             <div className="rounded-2xl border border-brand-100 bg-surface-decision p-6 sm:p-8">
               <BulletList items={guide.decisionChecks} />
@@ -256,10 +259,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             <div id="illustrations" className="scroll-mt-24 pt-12">
               {clinicalIllustrations.length > 0 ? (
                 <>
-                  <p className="text-sm font-extrabold uppercase tracking-[0.12em] text-brand-600">
-                    3D Medical Illustration
-                  </p>
-                  <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
+                  <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">
                     질환의 위치와 구조를 살펴보세요
                   </h2>
                   <div className="mt-7">
@@ -304,13 +304,11 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         <section id="treatment" className="scroll-mt-36 px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-2">
             <article className="rounded-2xl border border-line bg-surface-decision p-6 sm:p-8">
-              <p className="text-sm font-extrabold text-brand-600">먼저 살펴보는 치료</p>
-              <h2 className="mt-3 text-2xl font-extrabold text-ink">먼저 고려하는 비수술 치료</h2>
+              <h2 className="text-2xl font-extrabold text-ink">먼저 고려하는 비수술 치료</h2>
               <BulletList items={guide.firstTreatments} />
             </article>
             <article className="rounded-2xl border border-brand-200 bg-brand-900 p-6 text-white sm:p-8">
-              <p className="text-sm font-extrabold text-brand-100">수술 판단</p>
-              <h2 className="mt-3 text-2xl font-extrabold">수술을 함께 검토할 수 있는 경우</h2>
+              <h2 className="text-2xl font-extrabold">수술을 함께 검토할 수 있는 경우</h2>
               <ul className="mt-6 grid gap-3">
                 {guide.surgeryConsiderations.map((item) => (
                   <li key={item} className="flex gap-3 text-base leading-7 text-brand-50 sm:text-lg sm:leading-8">
@@ -326,11 +324,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
         <section id="procedure" className="scroll-mt-24 bg-calm px-4 py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="text-sm font-extrabold text-brand-600">수술과 회복</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">수술을 선택한 경우의 과정과 회복</h2>
-              <p className="mt-4 text-lg leading-8 text-muted">
-                아래 내용은 수술을 선택한 경우의 일반적인 설명입니다. 실제 범위와 순서는 검사 결과와 수술 중 소견에 따라 달라질 수 있습니다.
-              </p>
+              <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">수술을 선택한 경우</h2>
             </div>
             <article className="mt-9 rounded-2xl border border-line bg-surface-recovery p-6 sm:p-8">
               <div className="flex items-center gap-3">
@@ -368,11 +362,8 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
             <article className="rounded-2xl border border-amber-200 bg-amber-50 p-6 sm:p-8">
               <div className="flex items-center gap-3">
                 <AlertTriangle aria-hidden="true" className="text-amber-700" size={26} />
-                <h2 className="text-2xl font-extrabold text-ink">알아두어야 할 위험과 한계</h2>
+                <h2 className="text-2xl font-extrabold text-ink">위험과 한계</h2>
               </div>
-              <p className="mt-4 text-base leading-7 text-muted">
-                치료 전 개인별 위험을 의료진과 확인해야 합니다. 가능한 합병증에는 다음 항목이 포함될 수 있습니다.
-              </p>
               <BulletList items={guide.risks} />
             </article>
             <article className="rounded-2xl border border-red-200 bg-red-50 p-6 sm:p-8">
@@ -382,7 +373,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
               </div>
               <BulletList items={guide.urgentSigns} />
               <p className="mt-6 text-sm leading-6 text-muted">
-                응급 증상이 의심되면 홈페이지 안내만으로 판단하지 말고 가까운 응급의료기관을 이용하세요.
+                응급 증상이 의심되면 가까운 응급의료기관을 이용하세요.
               </p>
             </article>
           </div>
@@ -390,20 +381,10 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
 
         <section id="visit" className="scroll-mt-36 border-t border-line bg-white px-4 py-14 sm:px-6 lg:px-8">
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
-            <div>
-              <p className="text-sm font-extrabold text-brand-600">내원 전 준비</p>
-              <h2 className="mt-3 text-3xl font-extrabold leading-tight text-ink sm:text-4xl">진료 전 준비하면 좋은 내용</h2>
-            </div>
-            <div className="rounded-2xl border border-line bg-calm p-6 sm:p-8">
-              <BulletList
-                items={[
-                  "최근 촬영한 X-ray·초음파·MRI·CT 영상과 판독 결과",
-                  "이전에 받은 약물·주사·재활·수술 치료의 시기와 반응",
-                  "현재 복용 중인 약, 알레르기와 치료에 영향을 줄 수 있는 질환",
-                  "가장 불편한 동작과 치료 후 회복하고 싶은 일상·업무·운동 목표"
-                ]}
-              />
-            </div>
+            <h2 className="text-3xl font-extrabold leading-tight text-ink sm:text-4xl">내원 전 준비</h2>
+            <p className="rounded-2xl border border-line bg-calm p-6 text-base leading-7 text-muted sm:p-8 sm:text-lg sm:leading-8">
+              최근 영상·판독 결과, 이전 치료 기록, 복용 약·알레르기·지병, 불편한 동작과 회복 목표를 알려 주세요.
+            </p>
           </div>
         </section>
 
@@ -432,15 +413,47 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
           </section>
         ) : null}
 
+        {guideLinks ? (
+          <section id="related" aria-labelledby="related-title" className="border-t border-line bg-white px-4 py-12 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-7xl">
+              <h2 id="related-title" className="text-2xl font-extrabold text-ink sm:text-3xl">
+                {guide.title} — 함께 읽을 안내
+              </h2>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {[guideLinks.hub, ...guideLinks.related].map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="flex min-h-12 items-center justify-between gap-3 rounded-md border border-brand-100 bg-brand-50 px-5 py-3 font-extrabold text-brand-800 hover:bg-brand-100"
+                    >
+                      {link.label}
+                      <ArrowRight aria-hidden="true" className="shrink-0" size={18} />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-6 text-base leading-7 text-muted">
+                병원 진료·수술 안내:{" "}
+                <a
+                  href={guideLinks.mainSite.href}
+                  className="font-extrabold text-brand-800 underline decoration-brand-300 underline-offset-4 hover:text-brand-600"
+                >
+                  새기준병원 {guideLinks.mainSite.label}
+                </a>
+              </p>
+            </div>
+          </section>
+        ) : null}
+
         <section className="bg-brand-900 px-4 py-12 text-white sm:px-6 lg:px-8">
           <div className="mx-auto max-w-7xl">
             <h2 className="text-2xl font-extrabold sm:text-3xl">이 안내의 이용 범위</h2>
             <p className="mt-4 max-w-5xl text-base leading-7 text-brand-50 sm:text-lg sm:leading-8">
-              이 페이지는 김동희 원장의 환자안내 자료를 웹에서 읽을 수 있도록 재구성한 일반 교육 정보이며 개인별 진단이나 치료 지시를 대신하지 않습니다. 실제 치료 방법, 수술 범위와 회복 기간은 증상, 진찰, 영상검사, 전신 상태와 생활 목표에 따라 달라질 수 있습니다.
+              일반 교육 정보이며 개인별 진단·치료 지시를 대신하지 않습니다. 치료 방법·수술 범위·위험·회복 기간은 진찰과 검사, 수술 중 소견에 따라 달라질 수 있고, 수술을 권유받았더라도 다른 선택지를 다시 질문할 수 있습니다.
             </p>
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <Link href={guide.clinicPath} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-white px-5 py-3 font-extrabold text-brand-900">
-                {guide.clinicCtaLabel ?? "관련 진료 안내"} <ArrowRight aria-hidden="true" size={18} />
+                {guide.clinicCtaLabel ?? hubLink.label} <ArrowRight aria-hidden="true" size={18} />
               </Link>
               <Link href="/patient-guides" className="inline-flex min-h-12 items-center justify-center rounded-md border border-white/30 px-5 py-3 font-extrabold text-white hover:bg-white/10">
                 전체 질환별 안내

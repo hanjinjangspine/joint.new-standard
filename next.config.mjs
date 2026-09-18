@@ -52,6 +52,19 @@ const nextConfig = {
       }
     ];
 
+    // Vercel 기본 도메인(*.vercel.app)은 운영 도메인의 중복 호스트이므로 색인하지 않는다.
+    // robots.txt로 막으면 Google이 이 헤더를 읽지 못하므로 헤더로만 처리한다.
+    headers.push({
+      source: "/:path*",
+      has: [{ type: "host", value: ".*\\.vercel\\.app" }],
+      headers: [
+        {
+          key: "X-Robots-Tag",
+          value: "noindex, nofollow"
+        }
+      ]
+    });
+
     if (!isIndexable) {
       headers.push({
         source: "/:path*",

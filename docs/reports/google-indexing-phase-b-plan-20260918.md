@@ -1,5 +1,7 @@
 # Google 색인 회복 Phase B 작업 계획 (결정 반영본)
 
+> **폐기됨(2026-09-18 최신 지시).** B1–B5 계획표는 `google-indexing-phase-b-report-20260918.md`로 대체되었습니다. 본원 링크 문구 원문은 새 보고서 끝에 있습니다.
+
 - 작성일: 2026-09-18
 - 근거: `docs/reports/google-indexing-audit-20260918.md` (Phase A)
 - 원칙: **승인 전 운영 배포 금지.** 모든 항목은 self-canonical 유지, noindex·URL 변경·서브도메인 이전 없음.
