@@ -57,8 +57,7 @@ export default function PatientGuideIllustrationGallery({
       </div>
       {showDisclosure ? (
         <p className="mt-4 text-sm leading-6 text-muted">
-          치료 이해를 돕기 위한 AI 기반 3D 의료 일러스트입니다. 실제 환자의 치료 전·후 사진이 아니며,
-          치료 방법·과정·회복은 환자 상태와 의료진의 판단에 따라 달라질 수 있습니다.
+          AI 기반 3D 교육용 일러스트이며 실제 환자의 치료 전·후 사진이 아닙니다.
         </p>
       ) : null}
     </>

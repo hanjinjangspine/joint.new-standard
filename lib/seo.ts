@@ -8,6 +8,7 @@ import {
   hospitalInfo,
   SITE_URL
 } from "@/lib/data";
+import { contentUpdatedAt } from "@/lib/content-dates";
 import { officialHospitalPages, siteConfig } from "@/lib/site";
 
 type MetadataInput = {
@@ -308,6 +309,22 @@ export function entityGraphJsonLd() {
   };
 }
 
+// 페이지별 실제 주제. 목록에 없는 페이지는 관절센터 엔티티만 about으로 둔다.
+const pageTopics: Record<string, string[]> = {
+  "/": ["무릎 통증", "어깨 통증", "족부·발목 질환", "손·손목·팔꿈치 질환", "고관절 질환", "골절"],
+  "/knee": ["무릎 통증", "무릎 관절염", "반월상 연골판 손상", "십자인대 손상"],
+  "/shoulder": ["어깨 통증", "회전근개 파열", "오십견", "석회화 건염"],
+  "/foot-ankle": ["족부·발목 통증", "발목 염좌", "만성 발목 불안정성", "족저근막염", "무지외반증", "아킬레스건 질환"],
+  "/foot-ankle-mis": ["족부·발목 최소침습수술", "무지외반증", "발목 인대 손상"],
+  "/hand-wrist-elbow": ["손·손목·팔꿈치 통증", "수근관 증후군", "방아쇠수지", "테니스 엘보"],
+  "/hip": ["고관절 통증", "대퇴골두 무혈성 괴사"],
+  "/injection-pain": ["관절주사", "통증시술", "관절 비수술 치료"],
+  "/minimally-invasive-surgery": ["관절수술 판단", "관절내시경", "인공관절 수술"],
+  "/osteoporosis-fracture": ["골다공증 골절"],
+  "/recovery": ["치료 후 회복관리", "보행 회복"],
+  "/wrist/distal-radius-fracture": ["요골 원위부 골절"]
+};
+
 export function homeJsonLd() {
   return {
     "@context": "https://schema.org",
@@ -318,7 +335,8 @@ export function homeJsonLd() {
         name: "새기준병원 관절센터",
         url: SITE_URL,
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: mainTopics,
+        about: pageTopics["/"],
+        dateModified: contentUpdatedAt["/"],
         relatedLink: officialSameAs
       },
       {
@@ -372,12 +390,12 @@ export function webPageJsonLd({
         inLanguage: "ko-KR",
         ...(path === "/doctor" ? { mainEntity: { "@id": "https://joint.new-standard.co.kr/doctor#kim-donghee" } } : {}),
         breadcrumb: { "@id": `${url}#breadcrumb` },
-        dateModified: path === "/knee" ? "2026-09-10" : "2026-08-26",
+        ...(contentUpdatedAt[path] ? { dateModified: contentUpdatedAt[path] } : {}),
     ...(path === "/knee" ? { citation: ["https://www.orthoinfo.org/diseases--conditions/arthritis-of-the-knee/"] } : {}),
         author: { "@id": "https://new-standard.co.kr/#hospital" },
         publisher: { "@id": "https://new-standard.co.kr/#hospital" },
         isPartOf: { "@id": `${SITE_URL}#website` },
-        about: [{ "@id": `${SITE_URL}#joint-foot-ankle-center` }, ...mainTopics]
+        about: [{ "@id": `${SITE_URL}#joint-foot-ankle-center` }, ...(pageTopics[path] ?? [])]
       },
       {
         "@type": "BreadcrumbList",
