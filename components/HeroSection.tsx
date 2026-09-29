@@ -44,11 +44,11 @@ export default function HeroSection() {
             용인 정형외과, 무릎·어깨 통증의 원인부터 치료와 회복까지
           </h1>
           <p className="mt-5 max-w-2xl break-keep text-base font-semibold leading-8 text-brand-800 sm:text-lg lg:text-xl lg:leading-9">
-            용인·처인구에서 관절 진료가 필요할 때, 아픈 부위와 생활의 불편부터 확인합니다.
+            용인·처인구에서 관절 진료가 필요할 때, 어디가 아픈지와 일상에서 어떤 동작이 어려워졌는지 살핍니다.
           </p>
           <p className="mt-4 max-w-2xl break-keep text-base leading-8 text-muted sm:text-lg">
             무릎·어깨·족부·발목·손목의 증상과 진찰 소견, 필요한 영상검사 결과를 종합해
-            비수술 치료를 이어갈지 수술을 검토할지, 이후 회복은 어떻게 연결할지 설명합니다.
+            비수술 치료를 지속할지, 수술을 검토할지 설명하고 치료 후 회복 계획을 짚습니다.
           </p>
 
           <div className="mt-6 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center">

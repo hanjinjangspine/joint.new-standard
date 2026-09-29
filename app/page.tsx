@@ -31,7 +31,7 @@ export default function HomePage() {
       <PatientGuideSection
         guideIds={["11", "21", "20"]}
         compact
-        title="질환별 안내로 진료 내용을 다시 확인하세요"
+        title="진료실의 설명을 다시 읽는 질환 안내"
         description="무릎·어깨·족부·발목·손·손목·팔꿈치·골절의 증상, 검사, 치료 선택, 회복과 주의 신호를 확인할 수 있습니다."
         tone="white"
       />
@@ -42,7 +42,7 @@ export default function HomePage() {
             <SectionTitle
               eyebrow="본원 환자 안내"
               title="진료 준비부터 회복까지 이어집니다"
-              description="병원 이용 정보와 치료 후 회복 안내를 필요한 곳에서 확인하세요."
+              description="진료시간·병원 이용은 본원에서, 치료 후 운동과 재활은 회복재활센터에서 안내합니다."
             />
             <div className="grid gap-3 sm:grid-cols-2">
               {[

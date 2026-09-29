@@ -53,7 +53,7 @@ type PatientGuideSectionProps = {
 export default function PatientGuideSection({
   guideIds,
   title = "진료실 설명을 다시 확인하는 질환별 안내",
-  description = "질환의 증상부터 검사, 치료 선택, 회복과 주의 신호까지 차분히 확인할 수 있습니다.",
+  description = "증상과 검사, 치료 선택과 회복 과정, 진료를 서둘러야 할 신호를 정리했습니다.",
   showAllLink = true,
   tone = "calm",
   compact = false

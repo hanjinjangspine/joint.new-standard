@@ -6,7 +6,7 @@ type CTASectionProps = {
 };
 
 export default function CTASection({
-  title = "무릎·어깨·발목 통증, 현재 상태에 맞는 치료 순서를 확인하세요.",
+  title = "무릎·어깨·발목 통증의 진료와 치료를 상담하세요.",
   description = "수술이 필요한지보다 먼저 확인해야 할 것은 정확한 원인과 현재 치료 단계입니다. 새기준병원 관절센터에서 증상과 보행 상태에 맞는 치료 순서를 안내받으세요."
 }: CTASectionProps) {
   return (
