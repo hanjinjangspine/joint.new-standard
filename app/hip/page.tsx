@@ -78,7 +78,7 @@ export default function HipPage() {
           <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-2">
             <div>
               <h2 className="break-keep text-2xl font-extrabold leading-9 text-ink">진료에서는 무엇을 구분하나요?</h2>
-              <p className="mt-4 text-base leading-8 text-muted">사타구니·엉덩이·허벅지 중 아픈 위치와 통증을 만드는 동작을 확인하고, 보행과 고관절 운동범위를 살핍니다. 여러 질환이 비슷한 불편을 만들 수 있어 증상만으로 무혈성 괴사나 관절염을 단정하지 않습니다.</p>
+              <p className="mt-4 text-base leading-8 text-muted">사타구니·엉덩이·허벅지 중 어디가 아픈지, 어떤 동작에서 통증이 생기는지 묻고 보행과 고관절 운동범위를 살핍니다. 여러 질환이 비슷한 불편을 만들 수 있어 증상만으로 무혈성 괴사나 관절염을 단정하지 않습니다.</p>
               <p className="mt-4 text-base leading-8 text-muted">기존 영상이 있다면 진찰 소견과 비교하고 필요한 검사를 선택합니다. 아래 무혈성 괴사 안내는 고관절 통증의 여러 원인 중 하나를 자세히 설명하는 자료입니다.</p>
             </div>
             <div className="rounded-xl border border-line bg-calm p-6">

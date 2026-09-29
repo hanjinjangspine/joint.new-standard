@@ -164,7 +164,7 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
         </nav>
         <CTASection
           title="증상이 계속되거나 일상생활이 불편하다면 원인을 확인해 보세요"
-          description="증상과 진찰 소견, 필요한 검사 결과를 종합해 현재 상태에 맞는 치료 순서를 안내합니다."
+          description="증상, 진찰 소견과 필요한 검사 결과를 바탕으로 치료 순서를 설명합니다."
         />
       </main>
     </>
