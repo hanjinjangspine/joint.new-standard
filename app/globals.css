@@ -257,6 +257,7 @@ a {
 #main-content { scroll-margin-top:132px; }
 #main-content [id] { scroll-margin-top:140px; }
 #main-content p { max-width:720px; text-wrap:pretty; }
+#main-content h1,#main-content h2 { word-break:keep-all; overflow-wrap:anywhere; }
 .guide-directory { border:1px solid #d9e2e7; border-radius:16px; background:#fff; overflow:hidden; }
 .guide-directory summary { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:76px; padding:20px 24px; cursor:pointer; list-style:none; }
 .guide-directory summary::-webkit-details-marker { display:none; }
