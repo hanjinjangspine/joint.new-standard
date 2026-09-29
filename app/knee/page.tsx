@@ -17,7 +17,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
-    label: "무릎 통증 원인 확인하기",
+    label: "온라인 상담하기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     external: true
   },

@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "/og/og-joint-center.svg",
+        url: "/og/og-joint-center.png",
         width: 1200,
         height: 630,
         alt: "새기준병원 관절센터 대표 이미지"
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     title: "용인 정형외과 | 무릎·어깨 관절 진료 | 새기준병원",
     description:
       "용인 처인구 새기준병원 정형외과 관절 진료 안내입니다. 무릎·어깨·족부·발목·손목 통증의 원인과 검사, 비수술 치료, 수술 판단과 회복 과정을 설명합니다.",
-    images: [new URL("/og/og-joint-center.svg", SITE_URL).toString()]
+    images: [new URL("/og/og-joint-center.png", SITE_URL).toString()]
   }
 };
 

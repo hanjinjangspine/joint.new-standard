@@ -239,3 +239,45 @@ a {
     font-size: 0.61rem;
   }
 }
+
+/* Shared hospital navigation and readable content rhythm. */
+.site-switcher { background:#f1f6f8; border-bottom:1px solid #dde9ef; }
+.site-switcher a { display:inline-flex; align-items:center; min-height:44px; padding:0 12px; font-size:13px; font-weight:650; color:#4f5f68; }
+.site-switcher a[aria-current] { color:#123247; background:#fff; box-shadow:inset 0 -2px #2e5870; }
+.site-header-row { min-height:72px; }
+.center-navigation { display:flex; align-items:center; gap:4px; margin-left:auto; }
+.nav-top-link,.nav-group summary { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; padding:10px 12px; border-radius:8px; font-size:14px; font-weight:700; white-space:nowrap; cursor:pointer; list-style:none; }
+.nav-group summary::-webkit-details-marker { display:none; }
+.nav-top-link:hover,.nav-group summary:hover,.nav-top-link[aria-current],.nav-group summary.is-active { background:#eef4f7; color:#123247; }
+.nav-group { position:relative; }
+.nav-group-links { position:absolute; top:calc(100% + 8px); left:0; min-width:250px; padding:8px; border:1px solid #d9e2e7; border-radius:12px; background:#fff; box-shadow:0 14px 32px rgb(18 50 71 / 12%); }
+.nav-group-links a { display:flex; align-items:center; min-height:44px; padding:10px 12px; border-radius:6px; font-size:15px; }
+.nav-group-links a:hover,.nav-group-links a[aria-current] { background:#eef4f7; color:#123247; }
+.site-menu-toggle { display:none; }
+#main-content { scroll-margin-top:132px; }
+#main-content [id] { scroll-margin-top:140px; }
+#main-content p { max-width:720px; text-wrap:pretty; }
+.guide-directory { border:1px solid #d9e2e7; border-radius:16px; background:#fff; overflow:hidden; }
+.guide-directory summary { display:flex; align-items:center; justify-content:space-between; gap:16px; min-height:76px; padding:20px 24px; cursor:pointer; list-style:none; }
+.guide-directory summary::-webkit-details-marker { display:none; }
+.guide-directory summary::after { content:"＋"; font-size:24px; color:#2e5870; }
+.guide-directory[open] summary::after { content:"−"; }
+.guide-directory-links { border-top:1px solid #d9e2e7; padding:8px 24px 20px; }
+.guide-directory-links a { display:block; padding:16px 0; border-bottom:1px solid #eef4f7; }
+.guide-directory-links a:last-child { border-bottom:0; }
+@media(max-width:1100px) {
+  .site-menu-toggle { display:inline-flex; }
+  .site-header-row { position:relative; }
+  .center-navigation { display:none; position:absolute; top:100%; left:0; right:0; max-height:calc(100dvh - 192px); overflow:auto; padding:12px 20px 20px; border-bottom:1px solid #d9e2e7; background:#fff; }
+  .center-navigation.is-open { display:block; }
+  .nav-top-link,.nav-group summary { min-height:48px; font-size:16px; }
+  .nav-group-links { position:static; min-width:0; margin:4px 0 8px; padding:4px 12px; box-shadow:none; background:#f8fafb; }
+  .nav-group-links a { min-height:48px; }
+}
+@media(max-width:640px) {
+  #main-content > main > section,#main-content > section { padding-left:20px; padding-right:20px; }
+  .site-header-row { gap:8px; }
+  .site-switcher a { padding:0 10px; }
+  .guide-directory summary { padding:18px; }
+  .guide-directory-links { padding:4px 18px 14px; }
+}

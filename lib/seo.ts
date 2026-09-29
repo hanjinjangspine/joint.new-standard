@@ -57,7 +57,7 @@ export function createMetadata({
       type: "website",
       images: [
         {
-          url: new URL("/og/og-joint-center.svg", SITE_URL).toString(),
+          url: new URL("/og/og-joint-center.png", SITE_URL).toString(),
           width: 1200,
           height: 630,
           alt: "새기준병원 관절센터 대표 이미지"

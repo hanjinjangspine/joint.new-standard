@@ -8,7 +8,6 @@ const specialtyCards = [
     description:
       "발목 염좌 후 통증, 발목 불안정성, 아킬레스건, 무지외반, 발바닥 통증 등 발과 발목 질환을 평가합니다.",
     icon: "ankle",
-    featured: true,
     tone: "decision" as const
   },
   {
@@ -35,18 +34,18 @@ const specialtyCards = [
     tone: "note" as const
   },
   {
-    title: "수술 전 다른 치료가 궁금해요",
-    href: "/injection-pain",
+    title: "고관절이 아파요",
+    href: "/hip",
     description:
-      "약물치료, 주사치료, 체외충격파, 재활치료 등 환자 상태에 따라 비수술 치료를 먼저 고려할 수 있습니다.",
+      "사타구니·엉덩이 통증과 걷기 불편할 때 확인하는 고관절 진료를 안내합니다.",
     icon: "injection",
     tone: "decision" as const
   },
   {
-    title: "관절수술이 필요한지 궁금해요",
-    href: "/minimally-invasive-surgery",
+    title: "골절·골다공증이 궁금해요",
+    href: "/osteoporosis-fracture",
     description:
-      "관절내시경, 최소침습 수술, 수술 후 회복관리와 재활 계획은 진료와 검사 결과에 따라 상담합니다.",
+      "골절의 검사와 고정·수술 판단, 골다공증과 회복관리를 확인합니다.",
     icon: "surgery",
     tone: "info" as const
   }

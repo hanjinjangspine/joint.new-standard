@@ -15,7 +15,7 @@ const heroBadges = [
 
 const heroActions = [
   {
-    label: "관절 통증 원인 확인하기",
+    label: "온라인 상담하기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     icon: CalendarCheck,
     primary: true
