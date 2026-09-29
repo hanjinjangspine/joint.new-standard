@@ -1,12 +1,12 @@
 // 경로별 실제 콘텐츠 수정일 (YYYY-MM-DD). 페이지 내용을 실제 수정할 때만 갱신한다.
 // 구조화데이터·사이트맵·빌드 변경만으로는 날짜를 갱신하지 않는다.
 export const contentUpdatedAt: Record<string, string> = {
-  "/": "2026-09-03",
+  "/": "2026-09-29",
   "/doctor": "2026-07-31",
   "/hand-wrist-elbow": "2026-08-09",
-  "/knee": "2026-09-10",
+  "/knee": "2026-09-29",
   "/hip": "2026-07-31",
-  "/shoulder": "2026-09-03",
+  "/shoulder": "2026-09-29",
   "/foot-ankle": "2026-07-31",
   "/foot-ankle-mis": "2026-07-31",
   "/injection-pain": "2026-07-31",
@@ -16,7 +16,7 @@ export const contentUpdatedAt: Record<string, string> = {
   "/contact": "2026-07-31",
   "/column": "2026-07-31",
   "/wrist/distal-radius-fracture": "2026-09-18",
-  "/patient-guides": "2026-08-09",
+  "/patient-guides": "2026-09-29",
   "/patient-guides/trigger-finger": "2026-09-18",
   "/patient-guides/femoral-head-osteonecrosis": "2026-09-18",
   "/patient-guides/mcl-injury": "2026-09-18",

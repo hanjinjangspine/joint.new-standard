@@ -18,7 +18,7 @@ import { createMetadata, webPageJsonLd } from "@/lib/seo";
 
 const heroActions = [
   {
-    label: "어깨 통증과 움직임 제한 진료받기",
+    label: "온라인 상담하기",
     href: "https://new-standard.co.kr/bbs/board.php?bo_table=counsel",
     external: true
   },

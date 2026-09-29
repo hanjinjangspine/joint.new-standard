@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, BookOpenText } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
-import { PatientGuideCard } from "@/components/PatientGuideSection";
+import GuideDirectory from "@/components/GuideDirectory";
 import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import {
   patientGuideCategoryOrder,
   patientGuides,
+  patientGuideHref,
   type PatientGuideCategory
 } from "@/lib/patient-guides";
 import { createMetadata, webPageJsonLd } from "@/lib/seo";
@@ -64,17 +65,7 @@ export default function PatientGuidesPage() {
                 진단명을 몰라도 아픈 부위부터 찾을 수 있습니다. 각 질환 페이지에서 주요 증상과 검사,
                 먼저 살펴보는 치료, 수술을 고려하는 경우, 회복과 주의 신호를 확인하세요.
               </p>
-              <nav aria-label="아픈 부위로 질환 안내 찾기" className="mt-6 flex flex-wrap gap-2">
-                {patientGuideCategoryOrder.map((category) => (
-                  <a
-                    key={category}
-                    href={`#${categoryDetails[category].id}`}
-                    className="rounded-full border border-brand-200 bg-white px-4 py-2 text-sm font-extrabold text-brand-800 transition hover:bg-brand-50"
-                  >
-                    {category}
-                  </a>
-                ))}
-              </nav>
+              <p className="mt-6 text-sm font-bold text-brand-700">아래에서 아픈 부위를 누르면 질환 목록이 펼쳐집니다.</p>
             </div>
             <div className="nsh-responsive-hero__media-column">
               <ResponsiveHeroMedia
@@ -90,62 +81,20 @@ export default function PatientGuidesPage() {
 
         <section className="px-4 py-8 sm:px-6 lg:px-8 lg:py-16">
           <div className="mx-auto max-w-7xl">
-            {patientGuideCategoryOrder.map((category, index) => {
-              const guides = patientGuides.filter((guide) => guide.category === category);
-              const details = categoryDetails[category];
-
-              return (
-                <div
-                  key={category}
-                  id={details.id}
-                  className={`${index === 0 ? "" : "mt-14 border-t border-line pt-14"} scroll-mt-36`}
-                >
-                  <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-                    <div>
-                      <p className="text-sm font-extrabold text-brand-600">아픈 부위 {String(index + 1).padStart(2, "0")}</p>
-                      <h2 className="mt-2 text-2xl font-extrabold text-ink sm:text-3xl">{category}</h2>
-                    </div>
-                    <p className="text-sm leading-6 text-muted">{details.hint}</p>
-                  </div>
-                  <div className="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-                    {guides.map((guide) => (
-                      <PatientGuideCard key={guide.id} guide={guide} />
-                    ))}
-                    {category === "손·손목·팔꿈치" ? (
-                      <article className="flex h-full flex-col rounded-2xl border border-[#E1DEE6] bg-surface-note p-6 shadow-sm transition hover:border-interactive hover:shadow-card">
-                        <div className="flex items-start justify-between gap-4">
-                          <span className="rounded-full bg-brand-50 px-3 py-1.5 text-xs font-extrabold text-brand-700">
-                            손·손목·팔꿈치
-                          </span>
-                          <BookOpenText aria-hidden="true" className="shrink-0 text-brand-600" size={24} />
-                        </div>
-                        <h3 className="mt-5 text-xl font-extrabold leading-8 text-ink">
-                          원위 요골 골절·콜레스 골절과 금속판 고정술(ORIF)
-                        </h3>
-                        <p className="mt-3 flex-1 text-base leading-7 text-muted">
-                          콜레스 골절의 의미, 비수술 치료와 수술 판단, 수장측 금속판 고정술과 회복 과정을
-                          3D 영상과 인쇄용 팜플렛으로 안내합니다.
-                        </p>
-                        <div className="mt-5 rounded-xl bg-white/75 px-4 py-3">
-                          <p className="text-xs font-extrabold text-brand-700">이런 증상을 확인하세요</p>
-                          <p className="mt-1 text-sm leading-6 text-muted">
-                            낙상 뒤 손목 통증·부종·변형 · 손가락 감각 또는 색 변화
-                          </p>
-                        </div>
-                        <Link
-                          href="/wrist/distal-radius-fracture"
-                          className="mt-5 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-brand-800 px-4 py-3 text-sm font-extrabold text-white transition hover:bg-brand-900 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:ring-offset-2"
-                          aria-label="원위 요골 골절과 콜레스 골절 질환 안내 보기"
-                        >
-                          원위 요골 골절 안내 보기
-                          <ArrowRight aria-hidden="true" size={17} />
-                        </Link>
-                      </article>
-                    ) : null}
-                  </div>
-                </div>
-              );
-            })}
+            <GuideDirectory categories={patientGuideCategoryOrder.map((category) => ({
+              label: category,
+              ...categoryDetails[category],
+              links: [
+                ...patientGuides.filter((guide) => guide.category === category).map((guide) => ({ title: guide.title, description: guide.description, href: patientGuideHref(guide) })),
+                ...(category === "손·손목·팔꿈치" ? [{ title: "원위 요골 골절·콜레스 골절", description: "손목 골절의 검사와 치료 판단, 금속판 고정술과 회복 안내", href: "/wrist/distal-radius-fracture" }] : [])
+              ]
+            }))} />
+            <div className="mt-8 rounded-2xl bg-brand-50 p-6">
+              <h2 className="text-xl font-bold text-ink">치료 순서와 회복이 궁금하신가요?</h2>
+              <nav aria-label="치료와 회복 안내" className="mt-3 flex flex-wrap gap-3">
+                {[["비수술 치료", "/injection-pain"], ["관절수술 판단", "/minimally-invasive-surgery"], ["관절 회복관리", "/recovery"]].map(([label, href]) => <Link key={href} href={href} className="inline-flex min-h-12 items-center gap-2 rounded-lg border border-brand-200 bg-white px-4 py-3 font-bold text-brand-800">{label}<ArrowRight size={16} aria-hidden="true" /></Link>)}
+              </nav>
+            </div>
           </div>
         </section>
 
