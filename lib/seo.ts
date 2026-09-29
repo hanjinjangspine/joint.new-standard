@@ -48,6 +48,7 @@ export function createMetadata({
     alternates: {
       canonical: url
     },
+    twitter: { card: "summary_large_image", title, description, images: [new URL("/og/og-joint-center.png", SITE_URL).toString()] },
     openGraph: {
       title,
       description,

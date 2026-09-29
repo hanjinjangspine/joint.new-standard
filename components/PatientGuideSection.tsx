@@ -82,7 +82,7 @@ export default function PatientGuideSection({
           ) : null}
         </div>
 
-        <div className="mt-9 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className={`mt-9 grid gap-5 ${guides.length === 1 ? "max-w-3xl" : "md:grid-cols-2 xl:grid-cols-3"}`}>
           {guides.map((guide) => (
             <PatientGuideCard key={guide.id} guide={guide} compact={compact} />
           ))}
