@@ -1,5 +1,7 @@
 "use client";
 
+import HospitalSearch from "@/components/HospitalSearch";
+
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -84,6 +86,7 @@ export default function Header() {
             <button ref={menuButton} type="button" className="site-menu-toggle inline-flex h-11 w-11 items-center justify-center rounded-lg border border-line" aria-label={isOpen ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={isOpen} aria-controls="center-navigation" onClick={() => isOpen ? close() : setIsOpen(true)}>{isOpen ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}</button>
           </div>
         </div>
+      <HospitalSearch />
       </header>
     </>
   );
