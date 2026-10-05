@@ -1,4 +1,9 @@
-const fs=require("node:fs"),path=require("node:path"),vm=require("node:vm"),assert=require("node:assert/strict");
+import fs from "node:fs";
+import path from "node:path";
+import vm from "node:vm";
+import assert from "node:assert/strict";
+import { fileURLToPath } from "node:url";
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root=path.resolve(__dirname,".."),main=fs.existsSync(path.join(root,"head.sub.php"));
 let src=fs.readFileSync(path.join(root,main?"assets/js/hospital-search-v1.js":"lib/hospital-search.js"),"utf8").split('document.addEventListener("DOMContentLoaded"')[0].replace(/export \{[^}]+\};/g,"");
 const context=vm.createContext({});vm.runInContext(src,context);

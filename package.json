@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "test:indexnow": "node --test scripts/indexnow.test.mjs",
     "verify:production": "node scripts/verify-production.mjs --origin https://joint.new-standard.co.kr",
-    "test:search": "node scripts/test-hospital-search.cjs"
+    "test:search": "node scripts/test-hospital-search.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
