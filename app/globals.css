@@ -305,6 +305,7 @@ body.nsv-site { background-color:#f7faf9; background-image:linear-gradient(rgba(
 .nsv-media-prose { max-width:760px; height:230px; margin:20px auto 26px; }
 .nsv-media > img { display:block !important; position:static !important; width:100% !important; height:100% !important; max-width:none !important; margin:0 !important; object-fit:cover; opacity:1 !important; transform:none !important; }
 .nsv-media-anatomy > img { object-fit:contain; background:#f1ece3; }
+.nsv-media > img[src$=".svg"] { object-fit:contain; background:linear-gradient(120deg,#e7f1ec,#f8f2e7); }
 /* Wide information panels use a compact editorial image alongside their copy. */
 @media(min-width:768px) {
   .nsv-content-wide > .nsv-media-card.nsv-media-card { float:right; width:220px; height:150px; margin:0 0 16px 28px; }
