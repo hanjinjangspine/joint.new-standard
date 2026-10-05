@@ -15,7 +15,7 @@ type PageHeroProps = {
 };
 
 const defaultHeroImage: ResponsiveHeroImage = {
-  src: "/images/joint-hero.svg",
+  src: "/images/content-images-v5/rehab.webp",
   alt: "무릎, 어깨, 발목 진료와 보행 회복을 상징하는 관절센터 의료 일러스트",
   width: 720,
   height: 560

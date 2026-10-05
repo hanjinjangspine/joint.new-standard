@@ -1,3 +1,4 @@
+import { explanatoryImageAlt } from "@/lib/visual-image-labels";
 import Image from "next/image";
 import MedicalImageLightbox from "@/components/MedicalImageLightbox";
 
@@ -31,6 +32,7 @@ export default function ResponsiveHeroMedia({
   caption,
   expandable = src.startsWith("/patient-guides/illustrations/")
 }: ResponsiveHeroMediaProps) {
+  if (src.includes("/content-images-v5/")) { width = 1600; height = 900; caption = "이해를 돕기 위한 AI 연출 이미지"; }
   const mediaKind = getMediaKind(src);
   const sourceAspectRatio = width / height;
   const mediaLayout = sourceAspectRatio < 0.85 ? "portrait" : sourceAspectRatio > 1.9 ? "wide" : "standard";
@@ -50,7 +52,7 @@ export default function ResponsiveHeroMedia({
       <div className="nsh-responsive-hero__media-frame" style={{ aspectRatio: frameAspectRatio }}>
         <Image
           src={src}
-          alt={alt}
+          alt={explanatoryImageAlt(src, alt)}
           width={width}
           height={height}
           priority={priority}
@@ -64,7 +66,7 @@ export default function ResponsiveHeroMedia({
           {expandable ? (
             <MedicalImageLightbox
               src={src}
-              alt={alt}
+              alt={explanatoryImageAlt(src, alt)}
               width={width}
               height={height}
               caption={caption}

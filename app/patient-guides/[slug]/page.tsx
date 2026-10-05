@@ -135,7 +135,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
   const allIllustrations = getPatientGuideIllustrations(guide.slug);
   const heroIllustration = allIllustrations.find((illustration) => illustration.placement === "overview");
   const heroImage = heroIllustration ?? {
-    src: "/images/joint-hero.svg",
+    src: "/images/content-images-v5/rehab.webp",
     width: 720,
     height: 560,
     alt: "관절 진료와 기능 회복을 상징하는 의료 일러스트",
