@@ -302,6 +302,7 @@ body.nsv-site { background-color:#f7faf9; background-image:linear-gradient(rgba(
 .nsv-media.nsv-media { display:block; position:relative; width:100%; min-width:0; flex-shrink:0; overflow:hidden; border-radius:14px; background:#edf4f0; isolation:isolate; }
 .nsv-media-card { height:150px; margin:0 0 20px; }
 .nsv-media-section { max-width:1160px; height:230px; margin:0 auto 32px; }
+.nsv-media-prose { max-width:760px; height:230px; margin:20px auto 26px; }
 .nsv-media > img { display:block !important; position:static !important; width:100% !important; height:100% !important; max-width:none !important; margin:0 !important; object-fit:cover; opacity:1 !important; transform:none !important; }
 .nsv-media-anatomy > img { object-fit:contain; background:#f1ece3; }
 /* Wide information panels use a compact editorial image alongside their copy. */
@@ -311,5 +312,6 @@ body.nsv-site { background-color:#f7faf9; background-image:linear-gradient(rgba(
 @media(max-width:639px) {
   .nsv-media-card { height:145px; margin-bottom:16px; }
   .nsv-media-section { height:185px; width:calc(100% - 32px); margin-bottom:24px; }
+  .nsv-media-prose { height:185px; margin:16px auto 22px; }
 }
 @media print { .nsv-media { display:none !important; } }
