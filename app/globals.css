@@ -316,3 +316,7 @@ body.nsv-site { background-color:#f7faf9; background-image:linear-gradient(rgba(
   .nsv-media-prose { height:185px; margin:16px auto 22px; }
 }
 @media print { .nsv-media { display:none !important; } }
+
+/* Outrank article-local auto-height rules so the full illustration is visible. */
+.nsv-media.nsv-media > img { width:100% !important; height:100% !important; object-fit:cover !important; }
+.nsv-media.nsv-media-anatomy > img,.nsv-media.nsv-media > img[src$=".svg"] { object-fit:contain !important; }
