@@ -294,3 +294,25 @@ body.nsv-site { background-color:#f7faf9; background-image:linear-gradient(rgba(
 @media(max-width:639px) { .nsv-card.nsv-card { background-image:linear-gradient(90deg,rgba(255,255,255,.98),rgba(255,255,255,.88) 55%,rgba(255,255,255,.65)),var(--nsv-card-image) !important; } .nsv-section { background-image:linear-gradient(rgba(255,255,255,.91),rgba(255,255,255,.91)),var(--nsv-garden) !important; } }
 @media (prefers-reduced-motion:reduce) { .nsv-card { transition:none !important; transform:none !important; } }
 @media print { body.nsv-site,.nsv-card.nsv-card,.nsv-section { background-image:none !important; box-shadow:none; } }
+
+/* Full-color content media: an image area and a separate readable text area. */
+.nsv-content-card.nsv-content-card { background-image:none !important; overflow:hidden; border-color:#d9e6e1; box-shadow:0 8px 25px rgba(27,68,60,.065); }
+.nsv-content-card > .nshContextVisual,.nsv-content-card > .nshNavCardVisual,.nsv-content-card > .nshPanelAtmosphereVisual { display:none !important; }
+.nsv-content-card.nshHasContextVisual,.nsv-content-card.nshHasNavCardVisual,.nsv-content-card.nshHasPanelAtmosphere { padding-right:24px !important; }
+.nsv-media.nsv-media { display:block; position:relative; width:100%; min-width:0; flex-shrink:0; overflow:hidden; border-radius:14px; background:#edf4f0; isolation:isolate; }
+.nsv-media-card { height:150px; margin:0 0 20px; }
+.nsv-media-section { max-width:1160px; height:230px; margin:0 auto 32px; }
+.nsv-media-prose { max-width:760px; height:230px; margin:20px auto 26px; }
+.nsv-media > img { display:block !important; position:static !important; width:100% !important; height:100% !important; max-width:none !important; margin:0 !important; object-fit:cover; opacity:1 !important; transform:none !important; }
+.nsv-media-anatomy > img { object-fit:contain; background:#f1ece3; }
+.nsv-media > img[src$=".svg"] { object-fit:contain; background:linear-gradient(120deg,#e7f1ec,#f8f2e7); }
+/* Wide information panels use a compact editorial image alongside their copy. */
+@media(min-width:768px) {
+  .nsv-content-wide > .nsv-media-card.nsv-media-card { float:right; width:220px; height:150px; margin:0 0 16px 28px; }
+}
+@media(max-width:639px) {
+  .nsv-media-card { height:145px; margin-bottom:16px; }
+  .nsv-media-section { height:185px; width:calc(100% - 32px); margin-bottom:24px; }
+  .nsv-media-prose { height:185px; margin:16px auto 22px; }
+}
+@media print { .nsv-media { display:none !important; } }
