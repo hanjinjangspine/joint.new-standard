@@ -24,7 +24,7 @@ export default function GuideDirectory({ categories }: { categories: Category[] 
           <summary>
             <span><span className="block text-xl font-bold text-ink">{category.label} <span className="ml-2 text-sm font-medium text-muted">{category.links.length}개 안내</span></span><span className="mt-1 block text-sm leading-6 text-muted">{category.hint}</span></span>
           </summary>
-          <div className="guide-directory-links grid gap-x-8 md:grid-cols-2">
+          <div className="guide-directory-links grid gap-x-8 md:grid-cols-2 lg:grid-cols-3">
             {category.links.map((link) => <Link key={link.href} href={link.href} className="group"><h2 className="text-base font-bold leading-7 text-brand-800 group-hover:underline">{link.title} →</h2><p className="mt-1 text-sm leading-6 text-muted">{link.description}</p></Link>)}
           </div>
         </details>
