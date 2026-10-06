@@ -1,3 +1,4 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -172,13 +173,7 @@ export default function ShoulderPage() {
             </div>
           </div>
           <div className="nsh-responsive-hero__media-column">
-            <ResponsiveHeroMedia
-              src="/patient-guides/illustrations/shoulder-tendinopathy-bursitis/overview.png"
-              alt="회전근개 힘줄과 견봉하 점액낭의 위치를 보여주는 3D 의료 일러스트"
-              width={1536}
-              height={1024}
-              priority
-            />
+            <ResponsiveHeroMedia {...editorialMedia.shoulder} priority />
             <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">

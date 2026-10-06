@@ -1,3 +1,4 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -134,7 +135,8 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
   if (!guide) notFound();
   const allIllustrations = getPatientGuideIllustrations(guide.slug);
   const heroIllustration = allIllustrations.find((illustration) => illustration.placement === "overview");
-  const heroImage = heroIllustration ?? {
+  const symptomHero = guide.slug === "tennis-elbow" ? editorialMedia.elbow : undefined;
+  const heroImage = symptomHero ?? heroIllustration ?? {
     src: "/images/content-images-v5/rehab.webp",
     width: 720,
     height: 560,
@@ -142,7 +144,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
     caption: "관절센터 질환 안내"
   };
   const clinicalIllustrations = allIllustrations.filter(
-    (illustration) => illustration.placement !== "procedure" && illustration.src !== heroIllustration?.src
+    (illustration) => illustration.placement !== "procedure" && (symptomHero || illustration.src !== heroIllustration?.src)
   );
   const procedureIllustrations = allIllustrations.filter(
     (illustration) => illustration.placement === "procedure"
@@ -201,7 +203,7 @@ export default async function PatientGuideDetailPage({ params }: PageProps) {
                 alt={heroImage.alt}
                 width={heroImage.width}
                 height={heroImage.height}
-                caption={`${heroImage.caption} · AI 기반 3D 의료 일러스트`}
+                caption={symptomHero ? symptomHero.caption : `${heroImage.caption} · AI 기반 3D 의료 일러스트`}
                 priority
               />
             </div>

@@ -1,7 +1,9 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { CareArticleData } from "@/components/CareArticle";
 
 export const nonSurgicalCare: CareArticleData = {
   title: "관절 비수술 치료",
+  media: editorialMedia.facility,
   lead: "통증을 줄이고 일상 동작을 회복하기 위해 어떤 치료가 필요한지 상담합니다.",
   summary: "비수술 치료를 모든 환자가 수술 전에 같은 순서로 받는 것은 아닙니다. 통증 원인, 기능 제한, 이전 치료의 반응을 바탕으로 치료 순서를 정합니다.",
   sections: [
@@ -24,6 +26,7 @@ export const nonSurgicalCare: CareArticleData = {
 
 export const recoveryCare: CareArticleData = {
   title: "관절 회복관리",
+  media: editorialMedia.facility,
   lead: "치료 후 달라진 통증과 움직임을 기록해 두세요. 생활에서 필요한 회복 목표를 의료진과 상의하세요.",
   summary: "회복 속도와 허용되는 활동은 질환과 치료 범위에 따라 다릅니다. 날짜만으로 운동 단계를 올리지 않고 담당 의료진의 지시를 우선합니다.",
   sections: [

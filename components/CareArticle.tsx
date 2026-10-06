@@ -1,8 +1,11 @@
 import Link from "next/link";
+import EditorialPhoto from "@/components/EditorialPhoto";
+import type { EditorialMedia } from "@/lib/editorial-media";
 import Breadcrumb from "@/components/Breadcrumb";
 
 export type CareArticleData = {
   title: string; lead: string; summary: string;
+  media: EditorialMedia;
   sections: { id: string; title: string; paragraphs?: string[]; items?: string[] }[];
   safety: { title: string; items: string[] };
   related: { title: string; href: string; description: string }[];
@@ -29,6 +32,7 @@ export default function CareArticle({ data }: { data: CareArticleData }) {
         </ol>
       </nav>
       <div className="min-w-0">
+        <EditorialPhoto media={data.media} className="mb-8" />
         {data.sections.map((section, i) => <section id={section.id} key={section.id} className={i ? "mt-10 border-t border-line pt-10" : ""}>
           <h2 className="text-2xl font-extrabold leading-9 text-ink">{section.title}</h2>
           {section.paragraphs?.map((text) => <p key={text} className="mt-4 text-lg leading-8 text-muted">{text}</p>)}

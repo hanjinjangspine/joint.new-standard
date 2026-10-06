@@ -69,8 +69,8 @@ export default function PatientGuidesPage() {
             </div>
             <div className="nsh-responsive-hero__media-column">
               <ResponsiveHeroMedia
-                src="/images/content-images-v5/rehab.webp"
-                alt="무릎, 어깨, 발목 진료와 보행 회복을 상징하는 관절센터 의료 일러스트"
+                src="/images/content-images-v5/hospital.webp"
+                alt="새기준병원 실제 접수 공간"
                 width={720}
                 height={560}
                 priority

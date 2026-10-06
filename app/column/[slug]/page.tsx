@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import EditorialPhoto from "@/components/EditorialPhoto";
+import { columnPhotoBySlug } from "@/lib/editorial-media";
 import { ArrowRight } from "lucide-react";
 import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
@@ -89,6 +91,7 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
         <article className="px-5 py-10 sm:px-6 sm:py-14">
           <div className="mx-auto max-w-[720px]">
             <div>
+              {columnPhotoBySlug[column.slug] ? <EditorialPhoto media={columnPhotoBySlug[column.slug]} className="mb-8" /> : null}
               <nav aria-label="칼럼 목차" className="mb-10 rounded-xl border border-line bg-calm p-5">
                 <p className="text-sm font-bold text-brand-700">이 글에서 확인할 내용</p>
                 <ol className="mt-3 grid gap-1 sm:grid-cols-2">{sections.map((section, index) => <li key={section.title}><a href={`#column-section-${index}`} className="flex min-h-11 items-center text-sm font-semibold leading-6 text-muted hover:text-brand-800">{index + 1}. {section.title}</a></li>)}</ol>
@@ -120,6 +123,14 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
                   )}
                 </section>
               ))}
+              {column.slug === "shoulder-vs-cervical-disc" ? (
+                <aside className="mt-10 rounded-xl border border-brand-100 bg-brand-50 p-6">
+                  <h2 className="text-xl font-bold leading-8 text-ink">목에서 시작된 증상과 본원 척추 진료</h2>
+                  <p className="mt-3 text-base leading-8 text-muted">새기준병원은 척추 수술의 대부분을 양방향 내시경하에 진행합니다. 실제 적용 여부와 수술 범위는 환자 상태와 진찰·검사 결과를 종합해 결정하며, 모든 목 질환에 같은 수술을 적용하지는 않습니다.</p>
+                  <p className="mt-3 text-base leading-8 text-muted">어깨 관절내시경은 어깨 관절의 병변을 치료하는 방법입니다. 척추 양방향 내시경과 치료 대상이 다르므로 증상의 원인을 먼저 구분하고 해당 진료에서 치료 방법을 상담하세요.</p>
+                  <a href="https://new-standard.co.kr/" className="mt-4 inline-flex min-h-11 items-center font-bold text-brand-800 underline underline-offset-4">본원 척추·관절 진료 안내</a>
+                </aside>
+              ) : null}
               {relatedGuide ? (
                 <p className="mt-10 rounded-md border border-brand-100 bg-brand-50 p-5 text-base leading-8 text-muted">
                   증상·검사·비수술 치료·수술 판단·회복 과정 전체는{" "}
@@ -134,9 +145,9 @@ export default async function ColumnDetailPage({ params }: ColumnDetailPageProps
               ) : null}
               {guidance?.references.length ? <section className="mt-10 rounded-xl bg-calm p-5"><h2 className="text-lg font-bold text-ink">더 읽어볼 공식 환자자료</h2><ul className="mt-3 space-y-2">{guidance.references.map((reference) => <li key={reference.href}><a href={reference.href} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold leading-6 text-brand-700 underline underline-offset-4">{reference.title} (새 창)</a></li>)}</ul></section> : null}
               <p className="mt-10 border-t border-line pt-5 text-sm font-semibold leading-6 text-muted">
-                콘텐츠 제공: 새기준병원 관절센터 · {guidance ? "기존 원문 의학 검토" : "의학적 검토"}: 김동희 원장(정형외과) · 최종 편집일: {updatedYear}년 {Number(updatedMonth)}월 {Number(updatedDay)}일
+                콘텐츠 제공: 새기준병원 관절센터 · 기존 원문 의학 검토: 김동희 원장(정형외과) · 최종 편집일: {updatedYear}년 {Number(updatedMonth)}월 {Number(updatedDay)}일
               </p>
-              {guidance ? <p className="mt-3 text-sm leading-6 text-muted">추가 상담 질문과 일반 정보는 기존 질환 안내 및 공식 환자자료를 바탕으로 정리했습니다. 편집일은 새로운 의학 검토일을 의미하지 않습니다.</p> : null}
+              <p className="mt-3 text-sm leading-6 text-muted">추가 상담 질문과 일반 정보는 기존 질환 안내 및 공식 환자자료를 바탕으로 정리했습니다. 편집일은 새로운 의학 검토일을 의미하지 않습니다.</p>
             </div>
           </div>
         </article>
