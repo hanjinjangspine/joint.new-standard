@@ -1,3 +1,4 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
@@ -32,12 +33,7 @@ export default function HipPage() {
         description={page.description}
         breadcrumb={[{ label: "고관절 통증 진료" }]}
         highlights={["사타구니 통증", "보행 불편", "관절 운동범위", "영상검사", "단계별 치료 판단"]}
-        image={{
-          src: "/patient-guides/illustrations/femoral-head-osteonecrosis/overview.png",
-          alt: "대퇴 골두의 혈액 공급 저하와 무혈성 괴사 부위를 보여주는 3D 의료 일러스트",
-          width: 1586,
-          height: 992
-        }}
+        image={editorialMedia.hip}
       />
       <main>
         <aside className="border-b border-red-200 bg-red-50 px-5 py-6 sm:px-6" aria-labelledby="hip-urgent-title">

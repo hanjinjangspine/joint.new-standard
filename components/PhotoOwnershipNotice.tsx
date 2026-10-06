@@ -7,6 +7,7 @@ const excludedSource = /(?:logo|icon|favicon|apple-touch|og\/|\.svg(?:\?|$))/i;
 
 function isContentPhoto(image: HTMLImageElement) {
   const source = `${image.currentSrc} ${image.src} ${image.alt}`;
+  if (!image.closest('[data-media-source="hospital-photo"]') && !source.includes("/doctors/")) return false;
   const box = image.getBoundingClientRect();
   return !excludedSource.test(source) && image.naturalWidth >= 480 && image.naturalHeight >= 320 && box.width >= 160 && box.height >= 100;
 }

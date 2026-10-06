@@ -7,6 +7,7 @@ export type ResponsiveHeroImage = {
   alt: string;
   width: number;
   height: number;
+  caption?: string;
 };
 
 type ResponsiveHeroMediaProps = ResponsiveHeroImage & {
@@ -19,7 +20,7 @@ type MediaKind = "medical" | "photo" | "illustration";
 
 function getMediaKind(src: string): MediaKind {
   if (src.startsWith("/patient-guides/illustrations/")) return "medical";
-  if (src.includes("/doctors/")) return "photo";
+  if (src.includes("/doctors/") || /\/(hospital|facility|exterior)\.webp$/.test(src)) return "photo";
   return "illustration";
 }
 
@@ -32,7 +33,13 @@ export default function ResponsiveHeroMedia({
   caption,
   expandable = src.startsWith("/patient-guides/illustrations/")
 }: ResponsiveHeroMediaProps) {
-  if (src.includes("/content-images-v5/")) { width = 1600; height = 900; caption = "이해를 돕기 위한 AI 연출 이미지"; }
+  if (src.includes("/content-images-v5/")) {
+    width = 1600;
+    height = /\/(hospital|facility)\.webp$/.test(src) ? 1067 : 900;
+    caption ??= /\/(hospital|facility|exterior)\.webp$/.test(src)
+      ? explanatoryImageAlt(src, alt)
+      : "이해를 돕기 위한 AI 연출 이미지";
+  }
   const mediaKind = getMediaKind(src);
   const sourceAspectRatio = width / height;
   const mediaLayout = sourceAspectRatio < 0.85 ? "portrait" : sourceAspectRatio > 1.9 ? "wide" : "standard";
@@ -48,6 +55,7 @@ export default function ResponsiveHeroMedia({
       className="nsh-responsive-hero__media"
       data-media-kind={mediaKind}
       data-media-layout={mediaLayout}
+      data-media-source={src.includes("/doctors/") || /\/(hospital|facility|exterior)\.webp$/.test(src) ? "hospital-photo" : "explanatory"}
     >
       <div className="nsh-responsive-hero__media-frame" style={{ aspectRatio: frameAspectRatio }}>
         <Image

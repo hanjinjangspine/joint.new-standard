@@ -1,3 +1,4 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -171,13 +172,7 @@ export default function KneePage() {
             </div>
           </div>
           <div className="nsh-responsive-hero__media-column">
-            <ResponsiveHeroMedia
-              src="/patient-guides/illustrations/knee-osteoarthritis-replacement/overview.png"
-              alt="무릎 관절 연골과 관절 간격의 변화를 보여주는 3D 의료 일러스트"
-              width={858}
-              height={700}
-              priority
-            />
+            <ResponsiveHeroMedia {...editorialMedia.knee} priority />
             <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">

@@ -1,3 +1,4 @@
+import { editorialMedia } from "@/lib/editorial-media";
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
@@ -174,13 +175,7 @@ export default function MinimallyInvasiveSurgeryPage() {
             </div>
           </div>
           <div className="nsh-responsive-hero__media-column">
-            <ResponsiveHeroMedia
-              src="/patient-guides/illustrations/fracture-fixation/procedure.png"
-              alt="관절 주변 골절의 내고정 과정을 보여주는 3D 의료 일러스트"
-              width={917}
-              height={419}
-              priority
-            />
+            <ResponsiveHeroMedia {...editorialMedia.decision} priority />
             <aside className="hidden rounded-2xl border border-brand-100 bg-white p-5 shadow-card sm:block">
             <p className="text-sm font-extrabold text-brand-600">진료 핵심</p>
             <div className="mt-4 flex flex-wrap gap-2">

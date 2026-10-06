@@ -10,7 +10,7 @@ import { hospitalInfo, SITE_URL } from "@/lib/data";
 import { entityGraphJsonLd } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
-import SiteVisuals from "@/components/SiteVisuals";
+
 
 const suit = localFont({
   src: "./fonts/SUIT-Variable.woff2",
@@ -89,7 +89,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="ko" className={suit.variable}>
       <body>
         <SiteAnalytics />
-        <SiteVisuals />
         <SEOJsonLd data={entityGraphJsonLd()} />
         <PhotoOwnershipNotice />
         <Header />

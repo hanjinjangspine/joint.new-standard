@@ -65,21 +65,25 @@ export default function ClinicPageContent({ page }: ClinicPageContentProps) {
               description="현재 상태에서 먼저 시도할 수 있는 치료와 치료 시기를 놓치지 않기 위해 확인해야 할 점을 함께 안내합니다."
             />
             <div className="mt-10 grid gap-5 md:grid-cols-3">
-              {["정확한 진단", "충분한 설명", "회복 과정 관리"].map((item, index) => (
+              {[
+                { title: "증상과 검사를 함께 확인", body: "다친 시점, 통증 위치, 체중을 실을 수 있는지와 이전 골절·골다공증 치료 기록을 알려 주세요. 진찰과 필요한 영상검사를 함께 확인합니다." },
+                { title: "치료의 목적과 범위 상담", body: "고정이나 수술이 필요한 이유, 다른 선택지, 예상되는 위험과 추가 치료 가능성을 질문하세요. 복용 약과 전신 상태도 치료 계획에 반영합니다." },
+                { title: "다음 진료까지의 생활 계획", body: "보조기 사용, 체중을 싣는 범위, 허용 운동, 상처 관리와 다음 확인 일정을 알아두세요. 골절 회복 상태에 따라 계획을 조정합니다." }
+              ].map((item, index) => (
                 <div
-                  key={item}
+                  key={item.title}
                   className={`rounded-lg border border-line p-6 ${
                     ["bg-surface-info", "bg-surface-decision", "bg-surface-recovery"][index]
                   }`}
                 >
-                  <h3 className="text-xl font-bold text-ink">{item}</h3>
+                  <h3 className="text-xl font-bold text-ink">{item.title}</h3>
                   <p className="mt-3 text-base leading-7 text-muted">
-                    환자 상태에 맞는 치료 계획을 세우고, 검사 결과와 치료 반응을
-                    함께 확인합니다.
+                    {item.body}
                   </p>
                 </div>
               ))}
             </div>
+            <p className="mt-7 text-sm leading-6 text-muted">참고: <a href="https://orthoinfo.aaos.org/en/diseases--conditions/fractures-broken-bones/" target="_blank" rel="noopener noreferrer" className="font-semibold text-brand-700 underline underline-offset-4">AAOS 골절 환자교육 자료</a>. 일반적인 상담 준비 안내이며 고정·체중 부하·운동 범위는 담당 의료진에게 확인하세요.</p>
           </div>
         </section>
 

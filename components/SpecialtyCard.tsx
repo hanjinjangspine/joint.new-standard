@@ -1,4 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
+import { editorialMedia } from "@/lib/editorial-media";
+const cardMedia = { "/knee": editorialMedia.knee, "/shoulder": editorialMedia.shoulder, "/foot-ankle": editorialMedia.ankle, "/foot-ankle-mis": editorialMedia.forefoot, "/recovery": editorialMedia.facility, "/injection-pain": editorialMedia.facility, "/minimally-invasive-surgery": editorialMedia.decision };
 import { Activity, ArrowRight, CircleDot, ClipboardCheck, Footprints, RefreshCw, Syringe } from "lucide-react";
 
 type SpecialtyCardProps = {
@@ -35,6 +38,7 @@ export default function SpecialtyCard({
   featured = false,
   tone = "info"
 }: SpecialtyCardProps) {
+  const media = cardMedia[href as keyof typeof cardMedia];
   const Icon = iconMap[icon as keyof typeof iconMap] || Activity;
 
   return (
@@ -48,6 +52,7 @@ export default function SpecialtyCard({
       aria-label={`${title} 페이지로 이동`}
     >
       <div>
+        {media ? <div className="mb-5 overflow-hidden rounded-xl"><Image src={media.src} alt={media.alt} width={media.width} height={media.height} sizes="(max-width: 767px) 100vw, 450px" className="h-44 w-full bg-white/80 object-contain" /><p className={`px-2 py-1 text-xs leading-5 ${featured ? "text-brand-50" : "text-muted"}`}>{media.caption.startsWith("새기준병원 실제") ? media.caption : media.caption}</p></div> : null}
         {featured ? (
           <span className="mb-4 inline-flex rounded-full bg-white/12 px-3 py-1 text-xs font-extrabold text-brand-50">
             중심 진료
