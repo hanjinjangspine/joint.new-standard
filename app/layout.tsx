@@ -1,3 +1,4 @@
+import CardImageEnhancements from "@/components/CardImageEnhancements";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import Footer from "@/components/Footer";
@@ -89,6 +90,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="ko" className={suit.variable}>
       <body>
         <SiteAnalytics />
+        <CardImageEnhancements />
         <SEOJsonLd data={entityGraphJsonLd()} />
         <PhotoOwnershipNotice />
         <Header />
