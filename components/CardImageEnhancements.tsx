@@ -21,5 +21,5 @@ export default function CardImageEnhancements() {
       window.NSCardImages?.clear();
     };
   }, [pathname]);
-  return <Script src="/scripts/card-images-20261026.js" strategy="afterInteractive" />;
+  return <Script src="/scripts/card-images-20261026.js?v=2" strategy="afterInteractive" />;
 }
