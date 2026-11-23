@@ -10,6 +10,7 @@ import {
   Stethoscope
 } from "lucide-react";
 import Breadcrumb from "@/components/Breadcrumb";
+import NewDoctorAnnouncement from "@/components/NewDoctorAnnouncement";
 import ResponsiveHeroMedia from "@/components/ResponsiveHeroMedia";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import { SITE_URL } from "@/lib/data";
@@ -238,6 +239,8 @@ export default function DoctorPage() {
           </div>
         </div>
       </section>
+
+      <NewDoctorAnnouncement />
 
       <main>
         <section className="px-4 py-16 sm:px-6 lg:px-8">

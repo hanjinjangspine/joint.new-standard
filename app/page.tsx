@@ -6,6 +6,7 @@ import CTASection from "@/components/CTASection";
 import DoctorIntroSection from "@/components/DoctorIntroSection";
 import FAQSection from "@/components/FAQSection";
 import HeroSection from "@/components/HeroSection";
+import NewDoctorAnnouncement from "@/components/NewDoctorAnnouncement";
 import PatientGuideSection from "@/components/PatientGuideSection";
 import SEOJsonLd from "@/components/SEOJsonLd";
 import SectionTitle from "@/components/SectionTitle";
@@ -25,6 +26,7 @@ export default function HomePage() {
     <main>
       <SEOJsonLd data={homeJsonLd()} />
       <HeroSection />
+      <NewDoctorAnnouncement />
       <SpecialtyGrid />
       <CenterIntroSection />
 
